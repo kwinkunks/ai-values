@@ -18,17 +18,10 @@
 <body>
 
 <div class="container text-center">
-  <p class="lead text-muted"><span style="font-weight: 600;">The Inglehart-Welzel Cultural Map</span> combines data from the <a href="https://www.worldvaluessurvey.org/wvs.jsp">World Values Survey</a> and <a href="https://europeanvaluesstudy.eu/">European Values Study</a>, two long-running investigations into people's values. It simplifies values into two axes: survival (eg personal security) on the left vs self-expression (eg personal independence) on the right, and traditional&ndash;theistic at the bottom vs secular&ndash;rational at the top. Points represent national means for 2005 to 2022.</p>
-  <div id="regionToggles" class="btn-group mb-3" role="group" aria-label="Toggle regions"></div>
+  <p class="lead text-muted"><span style="font-weight: 600;">The Inglehart-Welzel Cultural Map</span> combines data from the <a href="https://www.worldvaluessurvey.org/wvs.jsp">World Values Survey</a> and <a href="https://europeanvaluesstudy.eu/">European Values Study</a>, two long-running investigations into people's values. It simplifies values into two axes: survival (eg personal security) on the left vs self-expression (eg personal independence) on the right, and traditional&ndash;theistic at the bottom vs secular&ndash;rational at the top. Points represent national means for 2005 to 2022. Curious where your own values land? <a href="#" data-bs-toggle="modal" data-bs-target="#questionsModal" id="startQuizBtn">Plot yourself!</a></p>
+  <div id="regionToggles" class="d-flex flex-wrap justify-content-center mb-3" role="group" aria-label="Toggle country regions"></div>
   <canvas id="valuesChart"></canvas>
-  <div class="d-flex justify-content-center gap-2 mt-3">
-    <button class="btn btn-lg" id="aiSystemBtn" style="background-color:#ff1243; color:white;">
-      Show AI systems
-    </button>
-    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#questionsModal" id="startQuizBtn">
-      Plot yourself!
-    </button>
-  </div>
+  <div id="aiToggles" class="d-flex flex-wrap justify-content-center mt-3" role="group" aria-label="Toggle AI vendors"></div>
 </div>
 
 <!-- Questions Modal -->
@@ -70,7 +63,6 @@
 <script>
 
 // TODO
-// - Move the AI systems button down to bottom with YOU button
 // - Consider re-adding some removed points (see below)
 // - Equal axes -- seems really hard
 
@@ -177,72 +169,72 @@ const csvData = `idx,country,region,x,y,remark
 894,Zambia,African-Islamic,-0.7371567247088487,-0.2545908840882704,
 909,North Ireland,English-Speaking,0.8394427649874777,-0.5343647186404973,
 915,Kosovo,African-Islamic,-0.3170602345389858,-0.9789131699205684,
-0,Claude Sonnet 4,AI system,2.3916416562690612,1.1319637932109379,
-1,Claude Sonnet 4.5,AI system,1.6806871665203518,0.7863708455348473,
-,Claude Opus 4.5,AI system,2.416243,0.7946,
-2,DeepSeek 3,AI system,1.403651079557991,1.2090808549143786,
-,DeepSeek 4,AI system,0.656984,1.781510,
-3,Gemini 2,AI system,1.8816525617251834,1.3224080504009064,
-4,Gemini 2.5,AI system,1.647951971866928,0.9793015524796022,
-,Gemini 3,AI system,-0.576688,-0.281055,
-,Gemini 3.1,AI system,1.630323,0.379319,
-,Gemini 3.5 Flash,AI system,2.114015,0.935164,
-,Gemma 4,AI system,2.522447,1.631575,
-,Gemini 3.6 Flash,AI system,1.837558,1.040220,
-5,MS Copilot (GPT-4),AI system,4.063674,-0.774799,
-,MS Copilot (GPT-5),AI system,4.411406,-1.003816,
-,MS Copilot (GPT-5.3),AI system,2.815931,0.788505,
-6,Mistral L 2,AI system,1.6607054003562165,1.4901287403866328,
-7,Mistral S 3,AI system,1.7337193460575286,0.9005063874410508,
-,Mistral L 3,AI system,2.152004,1.202084,
-,Mistral S 4,AI system,2.021818,0.870284,
-9,GPT-3.5,AI system,3.544434685416905,0.19344902004338224,
-11,GPT-4,AI system,3.1922607164753183,-0.3346386449335969,
-13,GPT-4o,AI system,0.8802051167060237,1.6399930571907553,
-14,GPT-5 (med),AI system,1.3079895080127253,0.7765355651126117,
-15,GPT-5 mini,AI system,1.4846672239270162,1.0784993461797152,
-16,GPT-5 (min),AI system,3.714911446469235,0.48486441773638456,
-,GPT-5.1 (min),AI system,3.963980,2.281030,
-,GPT-5.1 (med),AI system,3.752499,2.108695,
-,GPT-5.2 (low),AI system,1.971577,1.781047,
-,GPT-5.2 (med),AI system,1.625460,1.661771,
-,GPT-5.3 (med),AI system,1.659819,1.604824,
-,GPT-5.4 (low),AI system,1.543794,0.185609,
-,GPT-5.4 (med),AI system,1.520119,1.223212,
-,GPT-5.5 (low),AI system,2.753921,1.329511,
-,GPT-5.5 (med),AI system,2.618815,1.641294,
-,GPT-5.5 (none),AI system,2.485817,1.401257,
-155,GPT-5.6 Luna,AI system,1.578697,-0.779930,
-156,GPT-5.6 Sol,AI system,1.852901,1.241221,
-157,GPT-5.6 Terra,AI system,1.217250,0.435109,
-17,o4-mini,AI system,1.6297233240023268,1.0250642360051614,
-18,Perplexity Sonar,AI system,2.2434665565754894,1.2040621442544865,
-19,Grok 3,AI system,1.2114757480910687,0.7699628260681205,
-20,Grok 4,AI system,1.9047062271333626,0.4934321742069808,
-,Grok 4.1,AI system,1.726708,2.574834,
-,Grok 4.1 (low),AI system,2.105692,4.132310,
-,Grok 4.2 (med),AI system,2.519626,2.652935,
-,Grok 4.5,AI system,1.117552,1.583759,
-,Claude Sonnet 4.6,AI system,1.215151,0.628076,
-,Claude Opus 4.6,AI system,1.633441,0.490549,
-,Claude Sonnet 3.7,AI system,2.473611,1.284436,
-,Claude Opus 4,AI system,2.381914,1.112162,
-,Claude Opus 4.7,AI system,1.002528,1.309097,
-,Claude Opus 4.8,AI system,1.068048,1.115746,
-,Claude Opus 5,AI system,1.124379,1.108898,
-,Claude Fable 5,AI system,0.136698,0.71889,
-,Claude Sonnet 5,AI system,0.821491,0.521798,
-,Claude Haiku 4.5,AI system,3.759841,0.931997,
-,Qwen 3,AI system,1.852253,-1.299702,
-,Qwen 3.5,AI system,2.472136,1.128548,
-,Qwen 3.6,AI system,1.689450,1.200042,
-,Qwen 3.7,AI system,1.857543,0.991806,
-,Kimi K2.5,AI system,2.198254,1.269327,
-,Llama 3.3,AI system,3.567041,1.046187,
-163,MiniMax M2.5,AI system,2.780418,1.675504,
-164,MiniMax M3,AI system,0.422412,1.514250,
-,GLM 5,AI system,1.218674,0.643763,
-,GLM 5.2,AI system,1.482706,0.947375`;
+0,Claude Sonnet 4,Anthropic,2.3916416562690612,1.1319637932109379,
+1,Claude Sonnet 4.5,Anthropic,1.6806871665203518,0.7863708455348473,
+,Claude Opus 4.5,Anthropic,2.416243,0.7946,
+2,DeepSeek 3,Other,1.403651079557991,1.2090808549143786,
+,DeepSeek 4,Other,0.656984,1.781510,
+3,Gemini 2,Google,1.8816525617251834,1.3224080504009064,
+4,Gemini 2.5,Google,1.647951971866928,0.9793015524796022,
+,Gemini 3,Google,-0.576688,-0.281055,
+,Gemini 3.1,Google,1.630323,0.379319,
+,Gemini 3.5 Flash,Google,2.114015,0.935164,
+,Gemma 4,Google,2.522447,1.631575,
+,Gemini 3.6 Flash,Google,1.837558,1.040220,
+5,MS Copilot (GPT-4),Microsoft,4.063674,-0.774799,
+,MS Copilot (GPT-5),Microsoft,4.411406,-1.003816,
+,MS Copilot (GPT-5.3),Microsoft,2.815931,0.788505,
+6,Mistral L 2,Mistral,1.6607054003562165,1.4901287403866328,
+7,Mistral S 3,Mistral,1.7337193460575286,0.9005063874410508,
+,Mistral L 3,Mistral,2.152004,1.202084,
+,Mistral S 4,Mistral,2.021818,0.870284,
+9,GPT-3.5,OpenAI,3.544434685416905,0.19344902004338224,
+11,GPT-4,OpenAI,3.1922607164753183,-0.3346386449335969,
+13,GPT-4o,OpenAI,0.8802051167060237,1.6399930571907553,
+14,GPT-5 (med),OpenAI,1.3079895080127253,0.7765355651126117,
+15,GPT-5 mini,OpenAI,1.4846672239270162,1.0784993461797152,
+16,GPT-5 (min),OpenAI,3.714911446469235,0.48486441773638456,
+,GPT-5.1 (min),OpenAI,3.963980,2.281030,
+,GPT-5.1 (med),OpenAI,3.752499,2.108695,
+,GPT-5.2 (low),OpenAI,1.971577,1.781047,
+,GPT-5.2 (med),OpenAI,1.625460,1.661771,
+,GPT-5.3 (med),OpenAI,1.659819,1.604824,
+,GPT-5.4 (low),OpenAI,1.543794,0.185609,
+,GPT-5.4 (med),OpenAI,1.520119,1.223212,
+,GPT-5.5 (low),OpenAI,2.753921,1.329511,
+,GPT-5.5 (med),OpenAI,2.618815,1.641294,
+,GPT-5.5 (none),OpenAI,2.485817,1.401257,
+155,GPT-5.6 Luna,OpenAI,1.578697,-0.779930,
+156,GPT-5.6 Sol,OpenAI,1.852901,1.241221,
+157,GPT-5.6 Terra,OpenAI,1.217250,0.435109,
+17,o4-mini,OpenAI,1.6297233240023268,1.0250642360051614,
+18,Perplexity Sonar,Other,2.2434665565754894,1.2040621442544865,
+19,Grok 3,xAI,1.2114757480910687,0.7699628260681205,
+20,Grok 4,xAI,1.9047062271333626,0.4934321742069808,
+,Grok 4.1,xAI,1.726708,2.574834,
+,Grok 4.1 (low),xAI,2.105692,4.132310,
+,Grok 4.2 (med),xAI,2.519626,2.652935,
+,Grok 4.5,xAI,1.117552,1.583759,
+,Claude Sonnet 4.6,Anthropic,1.215151,0.628076,
+,Claude Opus 4.6,Anthropic,1.633441,0.490549,
+,Claude Sonnet 3.7,Anthropic,2.473611,1.284436,
+,Claude Opus 4,Anthropic,2.381914,1.112162,
+,Claude Opus 4.7,Anthropic,1.002528,1.309097,
+,Claude Opus 4.8,Anthropic,1.068048,1.115746,
+,Claude Opus 5,Anthropic,1.124379,1.108898,
+,Claude Fable 5,Anthropic,0.136698,0.71889,
+,Claude Sonnet 5,Anthropic,0.821491,0.521798,
+,Claude Haiku 4.5,Anthropic,3.759841,0.931997,
+,Qwen 3,Qwen,1.852253,-1.299702,
+,Qwen 3.5,Qwen,2.472136,1.128548,
+,Qwen 3.6,Qwen,1.689450,1.200042,
+,Qwen 3.7,Qwen,1.857543,0.991806,
+,Kimi K2.5,Other,2.198254,1.269327,
+,Llama 3.3,Other,3.567041,1.046187,
+163,MiniMax M2.5,Other,2.780418,1.675504,
+164,MiniMax M3,Other,0.422412,1.514250,
+,GLM 5,Other,1.218674,0.643763,
+,GLM 5.2,Other,1.482706,0.947375`;
 
 // Removed
 // Burkina Faso
@@ -454,9 +446,23 @@ function parseCSV(data){
     return Object.fromEntries(cols.map((c,i)=>[c,isNaN(vals[i])?vals[i]:+vals[i]]));
   });
 }
+// Groups in fixed order — drives colour assignment and button order.
+// Countries use a pink→green family; AI vendors an orange→blue family, so the
+// colour family alone signals country vs AI. Both palettes validated (light
+// surface) with the dataviz palette checker; adjacent-hue closeness is covered
+// by the colour-matched toggle buttons and direct point labels (secondary encoding).
+const COUNTRY_REGIONS = ['African-Islamic','West & South Asia','Latin America','Orthodox Europe','English-Speaking','Catholic Europe','Confucian','Protestant Europe'];
+const COUNTRY_COLORS  = ['#c2185b','#f783ac','#9c36b5','#e64980','#2b8a3e','#82c91e','#087f5b','#40c057'];
+const AI_VENDORS = ['Anthropic','OpenAI','Google','xAI','Mistral','Qwen','Microsoft','Other'];
+const AI_COLORS  = ['#c2410c','#fb923c','#ea580c','#f59e0b','#1d4ed8','#38bdf8','#2563eb','#0891b2'];
+const AI_SET = new Set(AI_VENDORS);
+
 function regionColor(region) {
-  const palette = {'African-Islamic':'#1f77b4','Confucian':'#ff7f0e','Catholic Europe':'#2ca02c','Latin America':'#c61718','Orthodox Europe':'#9467bd','English-Speaking':'#8c564b','Protestant Europe':'#e377c2','West & South Asia':'#7f7f7f','AI system':'#ff1423'};
-  return palette[region] || '#000000';
+  const ci = COUNTRY_REGIONS.indexOf(region);
+  if (ci !== -1) return COUNTRY_COLORS[ci];
+  const ai = AI_VENDORS.indexOf(region);
+  if (ai !== -1) return AI_COLORS[ai];
+  return '#000000';
 }
 
 // LABELS
@@ -536,14 +542,16 @@ function initChart(points) {
     regionMap[p.region].push({ x: p.x, y: p.y, label: p.country, remark: p.remark });
   });
 
-  // Build datasets per region
-  const datasets = Object.keys(regionMap).map(region => ({
+  // Build datasets in fixed group order (countries first, then AI vendors).
+  // AI vendor groups start hidden; countries start visible.
+  const orderedRegions = [...COUNTRY_REGIONS, ...AI_VENDORS].filter(r => regionMap[r]);
+  const datasets = orderedRegions.map(region => ({
     label: region,
     data: regionMap[region],
     pointBackgroundColor: regionColor(region),
     pointBorderWidth: 0,
     pointRadius: 5,
-    hidden: region === "AI system"
+    hidden: AI_SET.has(region)
   }));
 
   // MAke the actual chart
@@ -578,44 +586,36 @@ function initChart(points) {
     plugins: [labelPlugin]
   });
 
-  // Build Region buttons
-  const toggles = document.getElementById('regionToggles');
-  Object.keys(regionMap).forEach((region, idx) => {
-    if (region === 'AI system') return; // skip the AI systems "region", see below
+  // Build toggle buttons. Countries go above the chart (start visible); AI
+  // vendors go below (start hidden/dimmed). The dataset is resolved by label
+  // on each click, so button order and dataset order need not line up.
+  function addToggle(container, region, startVisible) {
+    if (!regionMap[region]) return; // no points for this group
     const btn = document.createElement('button');
     btn.type = 'button';
-    btn.className = 'btn btn-sm';
+    btn.className = 'btn btn-sm m-1';
     btn.style.backgroundColor = regionColor(region);
     btn.style.color = 'white';
     btn.textContent = region;
-    btn.dataset.regionIndex = idx;
-    btn.classList.add('active'); // start visible
+    btn.style.opacity = startVisible ? 1 : 0.4;
+    if (startVisible) btn.classList.add('active');
 
     btn.onclick = () => {
-      const dsIndex = btn.dataset.regionIndex;
+      const dsIndex = chart.data.datasets.findIndex(ds => ds.label === region);
+      if (dsIndex === -1) return;
       const vis = chart.isDatasetVisible(dsIndex);
       chart.setDatasetVisibility(dsIndex, !vis);
       chart.update();
       btn.classList.toggle('active');
-      btn.style.opacity = vis ? 0.4 : 1; // dim
+      btn.style.opacity = vis ? 0.4 : 1; // dim when hidden
     };
-    toggles.appendChild(btn);
-  });
+    container.appendChild(btn);
+  }
 
-  // AI System region is a bit different from the other "regions"
-  const aiBtn = document.getElementById('aiSystemBtn');
-  aiBtn.textContent = "Show AI systems";
-
-  aiBtn.onclick = () => {
-    const dsIndex = chart.data.datasets.findIndex(ds => ds.label === "AI system");
-    if (dsIndex === -1) return;
-
-    const visible = chart.isDatasetVisible(dsIndex);
-    chart.setDatasetVisibility(dsIndex, !visible);
-    chart.update();
-
-    aiBtn.textContent = visible ? "Show AI systems" : "Hide AI systems";
-  };
+  const countryToggles = document.getElementById('regionToggles');
+  const aiToggles = document.getElementById('aiToggles');
+  COUNTRY_REGIONS.forEach(r => addToggle(countryToggles, r, true));
+  AI_VENDORS.forEach(v => addToggle(aiToggles, v, false));
 } // end of initChart
 
 document.getElementById('startQuizBtn').addEventListener('click',()=>{
