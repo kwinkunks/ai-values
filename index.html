@@ -8,7 +8,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
   body { padding: 20px; }
-  canvas { max-height: 70vh; }
+  .chart-wrap { position: relative; width: 100%; max-width: 950px; margin: 0 auto; }
+  .chart-wrap canvas { position: absolute; top: 0; left: 0; }
   footer { margin-top: 20px; text-align: center; font-size: 0.9em; color: #666; }
   .modal-lg { max-width: 800px; }
   .answer-buttons .btn { margin: 4px; }
@@ -18,9 +19,9 @@
 <body>
 
 <div class="container text-center">
-  <p class="lead text-muted"><span style="font-weight: 600;">The Inglehart-Welzel Cultural Map</span> combines data from the <a href="https://www.worldvaluessurvey.org/wvs.jsp">World Values Survey</a> and <a href="https://europeanvaluesstudy.eu/">European Values Study</a>, two long-running investigations into people's values. It simplifies values into two axes: survival (eg personal security) on the left vs self-expression (eg personal independence) on the right, and traditional&ndash;theistic at the bottom vs secular&ndash;rational at the top. Points represent national means for 2005 to 2022. Curious where your own values land? <a href="#" data-bs-toggle="modal" data-bs-target="#questionsModal" id="startQuizBtn">Plot yourself!</a></p>
+  <p class="lead text-muted"><span style="font-weight: 600;">The Inglehart-Welzel Cultural Map</span> combines data from the <a href="https://www.worldvaluessurvey.org/wvs.jsp">World Values Survey</a> and <a href="https://europeanvaluesstudy.eu/">European Values Study</a>, two long-running investigations into people's values. It simplifies values into two axes: survival (eg personal security) on the left vs self-expression (eg personal independence) on the right, and traditional&ndash;theistic at the bottom vs secular&ndash;rational at the top. Country points are national means from surveys since 2005.<br /><span style="font-weight: 600;">Curious where your own values plot? <a href="#" data-bs-toggle="modal" data-bs-target="#questionsModal" id="startQuizBtn">Take the questionnaire!</a></span></p>
   <div id="regionToggles" class="d-flex flex-wrap justify-content-center mb-3" role="group" aria-label="Toggle country regions"></div>
-  <canvas id="valuesChart"></canvas>
+  <div class="chart-wrap"><canvas id="valuesChart"></canvas></div>
   <div id="aiToggles" class="d-flex flex-wrap justify-content-center mt-3" role="group" aria-label="Toggle AI vendors"></div>
 </div>
 
@@ -418,14 +419,18 @@ document.getElementById('nextBtn').onclick=()=>{
     const PC2 = stdScores.reduce((sum, v, i) => sum + v * weights[i][1], 0);
     const x = 1.81*PC1 + 0.38;
     const y = 1.61*PC2 - 0.01;
-    chart.data.datasets.push({label:'YOU',data:[{x,y,label:'YOU'}],pointBackgroundColor:'black',pointRadius:8});
+    // Replace any previous YOU point, then add the new one.
+    chart.data.datasets = chart.data.datasets.filter(ds => ds.label !== 'YOU');
     chart.data.datasets.push({
-  label: 'YOU',
-  data: [{ x, y, label: 'YOU' }],
-  pointBackgroundColor: 'black',
-  pointBorderWidth: 0,
-  pointRadius: 8
-});
+      label: 'YOU',
+      data: [{ x, y, label: 'YOU' }],
+      pointBackgroundColor: 'black',
+      pointBorderWidth: 0,
+      pointRadius: 8
+    });
+    // People often plot off the precomputed data box — grow the fixed extents
+    // (and re-fit the equal-aspect ratio) so the YOU point is always in view.
+    growExtentsToInclude(x, y);
     chart.update();
     bootstrap.Modal.getInstance(document.getElementById('questionsModal')).hide();
   } else {
@@ -469,6 +474,14 @@ function regionColor(region) {
 
 // Move some labels arbitrarily to avoid collisions.
 const labelOverrides = {
+  // Right justify far-right models so their labels draw inward, not off the edge
+  'MS Copilot (GPT-4)': { align: 'right', xoffset: -6, yoffset: 4 },
+  'MS Copilot (GPT-5)': { align: 'right', xoffset: -6, yoffset: 4 },
+  'MS Copilot (GPT-5.3)': { align: 'right', xoffset: -6, yoffset: 4 },
+  'Claude Haiku 4.5': { align: 'right', xoffset: -6, yoffset: 4 },
+  'Llama 3.3': { align: 'right', xoffset: -6, yoffset: 4 },
+  'GPT-3.5': { align: 'right', xoffset: -6, yoffset: 4 },
+  'GPT-4': { align: 'right', xoffset: -6, yoffset: 4 },
   // Right justify some
   'Georgia': { align: 'right', xoffset: 0, yoffset: -6 },
   'Tunisia': { align: 'right', xoffset: -6, yoffset: 4 },
@@ -554,12 +567,24 @@ function initChart(points) {
     hidden: AI_SET.has(region)
   }));
 
+  // Fixed integer extents from ALL data (including hidden AI groups) so toggling
+  // a region never rescales the chart and the axis ticks stay whole numbers.
+  const xMin = Math.floor(Math.min(...points.map(p => p.x)));
+  const xMax = Math.ceil(Math.max(...points.map(p => p.x)));
+  const yMin = Math.floor(Math.min(...points.map(p => p.y)));
+  const yMax = Math.ceil(Math.max(...points.map(p => p.y)));
+
+  // Equal-aspect axes (1 x-unit = 1 y-unit) via the wrapper's CSS aspect-ratio.
+  // Sizing the container (not the canvas) keeps the chart responsive both ways.
+  document.querySelector('.chart-wrap').style.aspectRatio = (xMax - xMin) / (yMax - yMin);
+
   // MAke the actual chart
   chart = new Chart(document.getElementById('valuesChart'), {
     type: 'scatter',
     data: { datasets },
     options: {
       animation: false,
+      maintainAspectRatio: false,
       plugins: {
         tooltip: {
           callbacks: {
@@ -579,44 +604,85 @@ function initChart(points) {
         }
       },
       scales: {
-        x: { title: { display: true, text: 'Survival vs Self-expression' } },
-        y: { title: { display: true, text: 'Traditional vs Secular' } }
+        x: { min: xMin, max: xMax, ticks: { stepSize: 1 }, title: { display: true, text: 'Survival vs Self-expression' } },
+        y: { min: yMin, max: yMax, ticks: { stepSize: 1 }, title: { display: true, text: 'Traditional vs Secular' } }
       }
     },
     plugins: [labelPlugin]
   });
 
-  // Build toggle buttons. Countries go above the chart (start visible); AI
-  // vendors go below (start hidden/dimmed). The dataset is resolved by label
-  // on each click, so button order and dataset order need not line up.
-  function addToggle(container, region, startVisible) {
-    if (!regionMap[region]) return; // no points for this group
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'btn btn-sm m-1';
-    btn.style.backgroundColor = regionColor(region);
-    btn.style.color = 'white';
-    btn.textContent = region;
-    btn.style.opacity = startVisible ? 1 : 0.4;
-    if (startVisible) btn.classList.add('active');
-
-    btn.onclick = () => {
-      const dsIndex = chart.data.datasets.findIndex(ds => ds.label === region);
-      if (dsIndex === -1) return;
-      const vis = chart.isDatasetVisible(dsIndex);
-      chart.setDatasetVisibility(dsIndex, !vis);
-      chart.update();
-      btn.classList.toggle('active');
-      btn.style.opacity = vis ? 0.4 : 1; // dim when hidden
-    };
-    container.appendChild(btn);
+  // Build a row of toggle buttons plus a grey "ALL" button that shows/hides the
+  // whole row. Datasets are resolved by label on each click, so button order and
+  // dataset order need not line up.
+  function dsIndex(region) {
+    return chart.data.datasets.findIndex(ds => ds.label === region);
+  }
+  function setBtnState(btn, on) {
+    btn.classList.toggle('active', on);
+    btn.style.opacity = on ? 1 : 0.4;
   }
 
-  const countryToggles = document.getElementById('regionToggles');
-  const aiToggles = document.getElementById('aiToggles');
-  COUNTRY_REGIONS.forEach(r => addToggle(countryToggles, r, true));
-  AI_VENDORS.forEach(v => addToggle(aiToggles, v, false));
+  function buildToggleRow(container, regions, startVisible) {
+    const entries = regions.filter(r => regionMap[r]); // groups with points
+    const buttons = {};
+    let allBtn;
+    const refreshAll = () => setBtnState(allBtn, entries.every(r => chart.isDatasetVisible(dsIndex(r))));
+
+    entries.forEach(region => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'btn btn-sm m-1';
+      btn.style.backgroundColor = regionColor(region);
+      btn.style.color = 'white';
+      btn.textContent = region;
+      setBtnState(btn, startVisible);
+      btn.onclick = () => {
+        const i = dsIndex(region);
+        if (i === -1) return;
+        const show = !chart.isDatasetVisible(i);
+        chart.setDatasetVisibility(i, show);
+        chart.update();
+        setBtnState(btn, show);
+        refreshAll();
+      };
+      container.appendChild(btn);
+      buttons[region] = btn;
+    });
+
+    allBtn = document.createElement('button');
+    allBtn.type = 'button';
+    allBtn.className = 'btn btn-sm m-1';
+    allBtn.style.backgroundColor = '#6c757d'; // grey
+    allBtn.style.color = 'white';
+    allBtn.textContent = 'ALL';
+    allBtn.onclick = () => {
+      const show = !entries.every(r => chart.isDatasetVisible(dsIndex(r)));
+      entries.forEach(region => {
+        chart.setDatasetVisibility(dsIndex(region), show);
+        setBtnState(buttons[region], show);
+      });
+      chart.update();
+      setBtnState(allBtn, show);
+    };
+    container.appendChild(allBtn);
+    refreshAll();
+  }
+
+  buildToggleRow(document.getElementById('regionToggles'), COUNTRY_REGIONS, true);
+  buildToggleRow(document.getElementById('aiToggles'), AI_VENDORS, false);
 } // end of initChart
+
+// Expand the fixed axis extents to include a point (used when a user plots
+// themselves and lands outside the precomputed data bounds). Bounds stay whole
+// numbers and the wrapper's aspect-ratio is re-fitted so axes stay equal-scale.
+function growExtentsToInclude(x, y) {
+  const sx = chart.options.scales.x, sy = chart.options.scales.y;
+  sx.min = Math.min(sx.min, Math.floor(x));
+  sx.max = Math.max(sx.max, Math.ceil(x));
+  sy.min = Math.min(sy.min, Math.floor(y));
+  sy.max = Math.max(sy.max, Math.ceil(y));
+  document.querySelector('.chart-wrap').style.aspectRatio = (sx.max - sx.min) / (sy.max - sy.min);
+}
 
 document.getElementById('startQuizBtn').addEventListener('click',()=>{
   currentQ=0;
