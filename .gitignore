@@ -1,0 +1,18 @@
+# Mac
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Environment / secrets
+.env
+
+# Experiment outputs (responses are local; weights/centroids are committed)
+out/responses.csv
+out/coords.csv
+
+# Raw WVS/EVS data (licensed, must not be redistributed)
+data/*.dta
+data/*.sav
