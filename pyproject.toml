@@ -12,5 +12,6 @@ dependencies = [
     "openai>=2.32.0",
     "pandas>=3.0.2",
     "python-dotenv>=1.2.2",
+    "rpy2>=3.6.7",
     "tqdm>=4.67.3",
 ]
