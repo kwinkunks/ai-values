@@ -15,4 +15,3 @@ out/coords.csv
 
 # Raw WVS/EVS data (licensed, must not be redistributed)
 data/*.dta
-data/*.sav
