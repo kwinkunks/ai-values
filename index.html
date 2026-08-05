@@ -61,181 +61,14 @@
   2025–2026 Matt Hall | This app has no server & transmits no data | <a href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">About</a> | <a href="https://github.com/kwinkunks/ai-values">GitHub</a>
 </footer>
 
+<script src="out/coords.js"></script>
 <script>
 
 // TODO
 // - Consider re-adding some removed points (see below)
 // - Equal axes -- seems really hard
 
-// CSV DATA
-const csvData = `idx,country,region,x,y,remark
-8,Albania,African-Islamic,-0.6513683031253179,0.5065700767510233,
-12,Algeria,African-Islamic,-0.7582593324896224,-0.5404389949657308,
-20,Andorra,Catholic Europe,2.256986281355116,0.6729333845174158,
-31,Azerbaijan,African-Islamic,-1.0605637388649314,-0.4393968649117976,
-32,Argentina,Latin America,0.6537541425664857,-0.2509776140083846,
-36,Australia,English-Speaking,2.5621694050632797,0.0559681558190461,
-40,Austria,Catholic Europe,1.2592771590123308,0.2289208281740216,
-50,Bangladesh,African-Islamic,-0.5780884973827165,-1.296050821865884,
-51,Armenia,Orthodox Europe,-0.8005537018467237,-0.6034719936248698,
-56,Belgium,Catholic Europe,1.2585555367876335,0.3171329004096196,
-68,Bolivia,Latin America,-0.2713415683678335,-1.0317183627133624,
-70,Bosnia Herzegovina,Orthodox Europe,-0.544152614012641,0.296318094953278,
-76,Brazil,Latin America,0.0990341455558271,-0.4784620118096129,
-100,Bulgaria,Orthodox Europe,-0.4134890740671729,1.355992825127911,
-104,Myanmar,West & South Asia,-0.8198832359408768,-0.8030150719520548,
-112,Belarus,Orthodox Europe,-0.3279937615826192,0.6783026763722234,
-124,Canada,English-Speaking,2.0551962950507106,0.0934349817535171,
-152,Chile,Latin America,0.2592380620561673,-0.1548454542064195,
-156,China,Confucian,0.1223348402962029,0.7296302507939841,
-158,Taiwan ROC,Confucian,-0.0989241675094803,1.3651758852619933,
-170,Colombia,Latin America,0.2514591412344316,-1.595763639808513,
-191,Croatia,Catholic Europe,0.2296250550971795,0.1340143440144715,
-203,Czechia,Catholic Europe,0.9043772710373776,1.2754065276659976,
-208,Denmark,Protestant Europe,2.704712164518167,0.6971181648703797,
-218,Ecuador,Latin America,-0.0162524589612252,-1.590517851667677,
-231,Ethiopia,African-Islamic,-0.7161078725486231,-0.7694142655384919,
-246,Finland,Protestant Europe,1.882625107497575,0.6047127396075502,
-250,France,Catholic Europe,1.350512225712502,0.514365939845673,
-268,Georgia,Orthodox Europe,-1.1516935175928231,-0.4659206345008573,
-275,Palestine,African-Islamic,-1.2023337623986583,-0.6281378086843619,
-276,Germany,Protestant Europe,1.343040274926089,1.210984586940927,
-288,Ghana,African-Islamic,-0.7424744694711967,-1.6323921086185738,
-300,Greece,Orthodox Europe,0.287323800806142,0.3463649332889463,
-320,Guatemala,Latin America,-0.1016574245224893,-1.4041904213066922,
-332,Haiti,Latin America,0.2359425710177818,-0.696748724526003,
-344,Hong Kong SAR,Confucian,0.4783712630187762,1.418848952292896,
-348,Hungary,Catholic Europe,-0.193313486243026,0.77543158071453,
-352,Iceland,Protestant Europe,1.8938655594946077,-0.058117242713395,
-356,India,West & South Asia,-0.3455399425743827,-0.4336385279582483,
-360,Indonesia,West & South Asia,-0.769024764246198,-0.7726658985855934,
-364,Iran,African-Islamic,-0.7633150104981619,-0.3040229322655758,
-368,Iraq,African-Islamic,-1.1777523287499776,-0.5200063950796097,
-372,Ireland,English-Speaking,0.8905429564589291,-1.1231229843100017,
-380,Italy,Catholic Europe,0.6282898153424533,0.2133559818705218,
-392,Japan,Confucian,1.3300136024334095,1.695318758424994,
-398,Kazakhstan,African-Islamic,-0.4242668318845144,-0.0909681871840789,
-400,Jordan,African-Islamic,-1.2097938534182422,-1.274650390553162,
-404,Kenya,African-Islamic,-0.1043982294446012,-0.7671033180239979,
-410,South Korea,Confucian,0.0140062040304424,1.2833540325942636,
-417,Kyrgyzstan,African-Islamic,-0.5075726121869187,-0.7762879755585229,
-422,Lebanon,African-Islamic,-0.8047810459177467,-0.1320463912864208,
-428,Latvia,Catholic Europe,-0.3478515809590755,1.0496514508526655,
-434,Libya,African-Islamic,-0.9426876018261308,-1.4083295045454125,
-440,Lithuania,Catholic Europe,-0.397595023224366,1.1834930408401438,
-442,Luxembourg,Catholic Europe,1.7476923190192966,0.43812274890216,
-446,Macau SAR,Confucian,0.5630227117871005,1.352332745215429,
-458,Malaysia,West & South Asia,-0.3198217262858976,-0.3714467396988119,
-462,Maldives,African-Islamic,-0.5057516197476042,-1.1563646110053754,
-470,Malta,Latin America,-0.0583083697352676,-1.2790297500253405,
-484,Mexico,Latin America,0.569046619011203,-1.3149264942047645,
-496,Mongolia,Confucian,0.4230300550042207,0.9524975637672076,
-498,Moldova,Orthodox Europe,-1.3535799136105533,0.7874378017891781,
-499,Montenegro,Orthodox Europe,-0.3627340578115172,0.3469847666263452,
-504,Morocco,African-Islamic,-0.9032100279162184,-0.3708266848542051,
-528,Netherlands,Protestant Europe,2.322205430744606,0.5671657112157945,
-554,New Zealand,English-Speaking,2.765105807574402,0.0573255265201077,
-558,Nicaragua,Latin America,-0.2743695098185092,-1.5256317053211872,
-566,Nigeria,African-Islamic,-0.7769338302145767,-1.0655441231881213,
-578,Norway,Protestant Europe,2.261462785751872,0.7113023646366945,
-586,Pakistan,African-Islamic,-0.48645128931379,-1.0687357349547963,
-604,Peru,Latin America,-0.3193485138474041,-0.8283273707521632,
-608,Philippines,Latin America,0.10472779606973,-1.2032720652947306,
-616,Poland,Catholic Europe,-0.1357436495771291,-0.2894055205633007,
-620,Portugal,Catholic Europe,-0.0928586091001266,-0.1160989985435933,
-630,Puerto Rico,Latin America,0.7333970475802377,-1.448529169901075,
-642,Romania,Orthodox Europe,-1.024159490375317,0.1102003620490555,
-643,Russia,Orthodox Europe,-0.6165084339622918,0.8452027217429248,
-646,Rwanda,African-Islamic,-0.7557017350868466,-0.9777085887740864,
-688,Serbia,Orthodox Europe,-0.1596577249295579,0.5382082864837223,
-702,Singapore,West & South Asia,0.105456852241584,0.1937886314797682,
-703,Slovakia,Catholic Europe,0.1933021481799421,0.7761393676835896,
-704,Vietnam,West & South Asia,0.4961913684926282,-0.4228966523980552,
-705,Slovenia,Catholic Europe,0.9424324799427712,0.8420296310072347,
-710,South Africa,African-Islamic,0.3068782010640267,-0.171038257642744,
-716,Zimbabwe,African-Islamic,-1.161878305135928,-0.7040385171136747,
-724,Spain,Catholic Europe,0.7072468251911928,0.1948512073518878,
-752,Sweden,Protestant Europe,2.8480636597262663,1.0859570486460322,
-756,Switzerland,Protestant Europe,2.1721990802230047,0.2205377852370606,
-764,Thailand,West & South Asia,0.1428461696114337,-0.1613944416147825,
-788,Tunisia,African-Islamic,-1.377126435289749,-0.4626917780777998,
-792,Turkey,African-Islamic,-0.8293625850529269,-0.6742092382783361,
-804,Ukraine,Orthodox Europe,-0.7888563267757666,0.7503413298320506,
-807,North Macedonia,Orthodox Europe,0.2190743756238706,0.0054696105616244,
-826,Great Britain,English-Speaking,1.9434688392950237,0.1748414916374717,
-840,United States,English-Speaking,1.5641414453193323,-0.2928376506979711,
-858,Uruguay,Latin America,1.2604695211846242,-0.2859509456807006,
-862,Venezuela,Latin America,-0.1100429956102086,-0.8804570743408835,
-887,Yemen,African-Islamic,-1.0865682256180789,-1.0908198218201637,
-894,Zambia,African-Islamic,-0.7371567247088487,-0.2545908840882704,
-909,North Ireland,English-Speaking,0.8394427649874777,-0.5343647186404973,
-915,Kosovo,African-Islamic,-0.3170602345389858,-0.9789131699205684,
-0,Claude Sonnet 4,Anthropic,2.3916416562690612,1.1319637932109379,
-1,Claude Sonnet 4.5,Anthropic,1.6806871665203518,0.7863708455348473,
-,Claude Opus 4.5,Anthropic,2.416243,0.7946,
-2,DeepSeek 3,Other,1.403651079557991,1.2090808549143786,
-,DeepSeek 4,Other,0.656984,1.781510,
-3,Gemini 2,Google,1.8816525617251834,1.3224080504009064,
-4,Gemini 2.5,Google,1.647951971866928,0.9793015524796022,
-,Gemini 3,Google,-0.576688,-0.281055,
-,Gemini 3.1,Google,1.630323,0.379319,
-,Gemini 3.5 Flash,Google,2.114015,0.935164,
-,Gemma 4,Google,2.522447,1.631575,
-,Gemini 3.6 Flash,Google,1.837558,1.040220,
-5,MS Copilot (GPT-4),Microsoft,4.063674,-0.774799,
-,MS Copilot (GPT-5),Microsoft,4.411406,-1.003816,
-,MS Copilot (GPT-5.3),Microsoft,2.815931,0.788505,
-6,Mistral L 2,Mistral,1.6607054003562165,1.4901287403866328,
-7,Mistral S 3,Mistral,1.7337193460575286,0.9005063874410508,
-,Mistral L 3,Mistral,2.152004,1.202084,
-,Mistral S 4,Mistral,2.021818,0.870284,
-9,GPT-3.5,OpenAI,3.544434685416905,0.19344902004338224,
-11,GPT-4,OpenAI,3.1922607164753183,-0.3346386449335969,
-13,GPT-4o,OpenAI,0.8802051167060237,1.6399930571907553,
-14,GPT-5 (med),OpenAI,1.3079895080127253,0.7765355651126117,
-15,GPT-5 mini,OpenAI,1.4846672239270162,1.0784993461797152,
-16,GPT-5 (min),OpenAI,3.714911446469235,0.48486441773638456,
-,GPT-5.1 (min),OpenAI,3.963980,2.281030,
-,GPT-5.1 (med),OpenAI,3.752499,2.108695,
-,GPT-5.2 (low),OpenAI,1.971577,1.781047,
-,GPT-5.2 (med),OpenAI,1.625460,1.661771,
-,GPT-5.3 (med),OpenAI,1.659819,1.604824,
-,GPT-5.4 (low),OpenAI,1.543794,0.185609,
-,GPT-5.4 (med),OpenAI,1.520119,1.223212,
-,GPT-5.5 (low),OpenAI,2.753921,1.329511,
-,GPT-5.5 (med),OpenAI,2.618815,1.641294,
-,GPT-5.5 (none),OpenAI,2.485817,1.401257,
-155,GPT-5.6 Luna,OpenAI,1.578697,-0.779930,
-156,GPT-5.6 Sol,OpenAI,1.852901,1.241221,
-157,GPT-5.6 Terra,OpenAI,1.217250,0.435109,
-17,o4-mini,OpenAI,1.6297233240023268,1.0250642360051614,
-18,Perplexity Sonar,Other,2.2434665565754894,1.2040621442544865,
-19,Grok 3,xAI,1.2114757480910687,0.7699628260681205,
-20,Grok 4,xAI,1.9047062271333626,0.4934321742069808,
-,Grok 4.1,xAI,1.726708,2.574834,
-,Grok 4.1 (low),xAI,2.105692,4.132310,
-,Grok 4.2 (med),xAI,2.519626,2.652935,
-,Grok 4.5,xAI,1.117552,1.583759,
-,Claude Sonnet 4.6,Anthropic,1.215151,0.628076,
-,Claude Opus 4.6,Anthropic,1.633441,0.490549,
-,Claude Sonnet 3.7,Anthropic,2.473611,1.284436,
-,Claude Opus 4,Anthropic,2.381914,1.112162,
-,Claude Opus 4.7,Anthropic,1.002528,1.309097,
-,Claude Opus 4.8,Anthropic,1.068048,1.115746,
-,Claude Opus 5,Anthropic,1.124379,1.108898,
-,Claude Fable 5,Anthropic,0.136698,0.71889,
-,Claude Sonnet 5,Anthropic,0.821491,0.521798,
-,Claude Haiku 4.5,Anthropic,3.759841,0.931997,
-,Qwen 3,Qwen,1.852253,-1.299702,
-,Qwen 3.5,Qwen,2.472136,1.128548,
-,Qwen 3.6,Qwen,1.689450,1.200042,
-,Qwen 3.7,Qwen,1.857543,0.991806,
-,Kimi K2.5,Other,2.198254,1.269327,
-,Llama 3.3,Other,3.567041,1.046187,
-163,MiniMax M2.5,Other,2.780418,1.675504,
-164,MiniMax M3,Other,0.422412,1.514250,
-,GLM 5,Other,1.218674,0.643763,
-,GLM 5.2,Other,1.482706,0.947375`;
+// DATA: window.COORDS is provided by out/coords.js (generated by compare.py --out out/coords.js)
 
 // Removed
 // Burkina Faso
@@ -443,14 +276,6 @@ document.getElementById('prevBtn').onclick=()=>{
 };
 
 // DATA
-function parseCSV(data){
-  const [header,...lines]=data.trim().split("\n");
-  const cols=header.split(",");
-  return lines.map(line=>{
-    const vals=line.split(",");
-    return Object.fromEntries(cols.map((c,i)=>[c,isNaN(vals[i])?vals[i]:+vals[i]]));
-  });
-}
 // Groups in fixed order — drives colour assignment and button order.
 // Countries use a pink→green family; AI vendors an orange→blue family, so the
 // colour family alone signals country vs AI. Both palettes validated (light
@@ -471,55 +296,8 @@ function regionColor(region) {
 }
 
 // LABELS
-
-// Move some labels arbitrarily to avoid collisions.
-const labelOverrides = {
-  // Right justify far-right models so their labels draw inward, not off the edge
-  'MS Copilot (GPT-4)': { align: 'right', xoffset: -6, yoffset: 4 },
-  'MS Copilot (GPT-5)': { align: 'right', xoffset: -6, yoffset: 4 },
-  'MS Copilot (GPT-5.3)': { align: 'right', xoffset: -6, yoffset: 4 },
-  'Claude Haiku 4.5': { align: 'right', xoffset: -6, yoffset: 4 },
-  'Llama 3.3': { align: 'right', xoffset: -6, yoffset: 4 },
-  'GPT-3.5': { align: 'right', xoffset: -6, yoffset: 4 },
-  'GPT-4': { align: 'right', xoffset: -6, yoffset: 4 },
-  // Right justify some
-  'Georgia': { align: 'right', xoffset: 0, yoffset: -6 },
-  'Tunisia': { align: 'right', xoffset: -6, yoffset: 4 },
-  'Australia': { align: 'right', xoffset: -6, yoffset: 4 },
-  'Italy': { align: 'right', xoffset: -6, yoffset: 4 },
-  'Chile': { align: 'right', xoffset: -3, yoffset: 10 },
-  'Indonesia': { align: 'right', xoffset: -6, yoffset: 2 },
-  'Myanmar': { align: 'right', xoffset: -6, yoffset: 8 },
-  'M365 Copilot (GPT-4)': { align: 'right', xoffset: -6, yoffset: 8 },
-  'M365 Copilot (GPT-5)': { align: 'right', xoffset: -6, yoffset: 8 },
-  'Grok 3': { align: 'right', xoffset: -6, yoffset: 4 },
-  'GLM 5': { align: 'right', xoffset: -6, yoffset: 4 },
-  'Claude Sonnet 5': { align: 'right', xoffset: -6, yoffset: 4 },
-  'Claude Opus 4': { align: 'right', xoffset: -6, yoffset: 4 },
-  'DeepSeek 3': { align: 'right', xoffset: -6, yoffset: 4 },
-  'Gemma 4': { align: 'right', xoffset: -6, yoffset: 4 },
-  'Gemini 2.5': { align: 'right', xoffset: -6, yoffset: 4 },
-  'Claude Opus 4.6': { align: 'right', xoffset: -6, yoffset: 4 },
-  'Claude Opus 4.5': { align: 'left', xoffset: 0, yoffset: -4 },
-  'Claude Opus 4.8': { align: 'right', xoffset: -6, yoffset: 4 },
-  'GPT-5 mini': { align: 'right', xoffset: -6, yoffset: 4 },
-  'GPT-5.5 (none)': { align: 'right', xoffset: -6, yoffset: 4 },
-  'GPT-5.3 (med)': { align: 'right', xoffset: -6, yoffset: 4 },
-  'GPT-5.1': { align: 'right', xoffset: -6, yoffset: 4 },
-  'GPT-5.1 (min)': { align: 'right', xoffset: -6, yoffset: 4 },
-  'GPT-5.6 Terra': { align: 'right', xoffset: -6, yoffset: 4 },
-  'GPT-5.6 Sol': { align: 'right', xoffset: -6, yoffset: -2 },
-  // Nudge some others
-  'Portugal': { align: 'left', xoffset: -6, yoffset: -6 },
-  'Thailand': { align: 'left', xoffset: 6, yoffset: 0 },
-  'India': { align: 'left', xoffset: 6, yoffset: 8 },
-  'China': { align: 'left', xoffset: 6, yoffset: 10 },
-  'Germany': { align: 'left', xoffset: 6, yoffset: -2 },
-  'Sweden': { align: 'left', xoffset: 6, yoffset: 8 },
-  'DeepSeek Chat': { align: 'left', xoffset: 6, yoffset: 8 },
-  'GPT-5 (med)': { align: 'left', xoffset: 6, yoffset: -2 }
-};
-
+// Draw each point's name to its right. No per-label collision nudging — see the
+// "better charts" TODO for a plotting lib with real label placement + zoom/pan.
 const labelPlugin = {
   id: 'pointLabels',
   afterDatasetsDraw(chart) {
@@ -529,15 +307,11 @@ const labelPlugin = {
       const meta = chart.getDatasetMeta(datasetIndex);
       dataset.data.forEach((point, index) => {
         const { x, y } = meta.data[index].getProps(['x', 'y'], true);
-        const label = point.label;
-        const overrides = labelOverrides[label] || {};
         ctx.save();
         ctx.font = '10px sans-serif';
         ctx.fillStyle = dataset.pointBackgroundColor;
-        ctx.textAlign = overrides.align || 'left';
-        const xo = overrides.xoffset || 6;
-        const yo = overrides.yoffset !== undefined ? overrides.yoffset : 4;
-        ctx.fillText(label, x + xo, y + yo);
+        ctx.textAlign = 'left';
+        ctx.fillText(point.label, x + 6, y + 4);
         ctx.restore();
       });
     });
@@ -548,11 +322,14 @@ const labelPlugin = {
 let chart;
 
 function initChart(points) {
-  // Group countries by region
+  // Group points by region. AI points carry their true vendor as region; any
+  // vendor without a legend button (e.g. DeepSeek, Meta, MiniMax) folds into 'Other'.
+  const KNOWN = new Set([...COUNTRY_REGIONS, ...AI_VENDORS]);
   const regionMap = {};
   points.forEach(p => {
-    if (!regionMap[p.region]) regionMap[p.region] = [];
-    regionMap[p.region].push({ x: p.x, y: p.y, label: p.country, remark: p.remark });
+    const region = KNOWN.has(p.region) ? p.region : 'Other';
+    if (!regionMap[region]) regionMap[region] = [];
+    regionMap[region].push({ x: p.x, y: p.y, label: p.country, remark: p.remark });
   });
 
   // Build datasets in fixed group order (countries first, then AI vendors).
@@ -690,7 +467,7 @@ document.getElementById('startQuizBtn').addEventListener('click',()=>{
   renderQuestion();
 });
 
-initChart(parseCSV(csvData));
+initChart(window.COORDS);
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

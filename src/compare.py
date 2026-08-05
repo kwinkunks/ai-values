@@ -46,19 +46,16 @@ def load_country_centroids() -> pd.DataFrame:
     return df.rename(columns={'surv-self': 'x', 'trad-sec': 'y'})
 
 
-def display_label(cfg: dict) -> str:
-    """Plot label for an experiment, with the reasoning effort appended so that
-    otherwise-identical configs (e.g. low vs high effort) stay as distinct points
-    and are never averaged together."""
-    label = cfg['label']
-    effort = cfg.get('reasoning_effort')
-    return f'{label} ({effort})' if effort else label
-
-
 def compute_llm_coordinates(df: pd.DataFrame, experiments: dict, weights, means, sds) -> pd.DataFrame:
-    label_map = {k: display_label(v) for k, v in experiments.items()}
+    # `label` is the curated display name (unique per config, incl. effort suffix
+    # where needed); `vendor` is the model's true origin, used as the plot region
+    # so points colour by vendor. Runs sharing a label are averaged into one point.
+    label_map = {k: v['label'] for k, v in experiments.items()}
+    vendor_map = {k: v['vendor'] for k, v in experiments.items()}
     df = df.copy()
-    df['country'] = df['experiment_id'].astype(str).map(label_map)
+    ids = df['experiment_id'].astype(str)
+    df['country'] = ids.map(label_map)
+    df['region'] = ids.map(vendor_map)
     df = df.dropna(subset=['country'] + VARIABLES)
 
     X_scaled = (df[VARIABLES].values - means) / sds
@@ -68,8 +65,7 @@ def compute_llm_coordinates(df: pd.DataFrame, experiments: dict, weights, means,
     df['x'] = 1.81 * transformed[:, 0] + 0.38
     df['y'] = 1.61 * transformed[:, 1] - 0.01
 
-    result = df.groupby('country')[['x', 'y']].mean().reset_index()
-    result['region'] = 'AI system'
+    result = df.groupby(['country', 'region'])[['x', 'y']].mean().reset_index()
     return result[['country', 'region', 'x', 'y']]
 
 
@@ -106,14 +102,26 @@ def main() -> None:
         countries = load_country_centroids()
         combined = pd.concat([countries, llm_coords], ignore_index=True)
 
-    csv_text = combined.to_csv(index=False, float_format='%.10f')
-    if args.out:
-        Path(args.out).write_text(csv_text)
-        print(f'Wrote {len(combined)} rows ({len(llm_coords)} LLMs'
-              + (f', {len(combined) - len(llm_coords)} countries' if not args.llm_only else '')
-              + f') to {args.out}')
+    summary = (f'{len(combined)} rows ({len(llm_coords)} LLMs'
+               + (f', {len(combined) - len(llm_coords)} countries' if not args.llm_only else '')
+               + ')')
+
+    if args.out and args.out.endswith('.js'):
+        # Emit a JS file that index.html loads via <script src> — works with
+        # `open index.html` (file://), where fetch() of a .csv is blocked.
+        records = [{'country': r.country, 'region': r.region,
+                    'x': round(r.x, 6), 'y': round(r.y, 6)}
+                   for r in combined.itertuples()]
+        js = 'window.COORDS = ' + json.dumps(records, indent=0) + ';\n'
+        Path(args.out).write_text(js)
+        print(f'Wrote {summary} to {args.out}')
     else:
-        print(csv_text, end='')
+        csv_text = combined.to_csv(index=False, float_format='%.10f')
+        if args.out:
+            Path(args.out).write_text(csv_text)
+            print(f'Wrote {summary} to {args.out}')
+        else:
+            print(csv_text, end='')
 
 
 if __name__ == '__main__':
