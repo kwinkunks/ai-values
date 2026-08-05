@@ -62,8 +62,8 @@ def compute_llm_coordinates(df: pd.DataFrame, experiments: dict, weights, means,
     transformed = np.dot(X_scaled, weights)
 
     # Inglehart-Welzel affine scaling (from Tao et al / compute_weights notebook).
-    df['x'] = 1.81 * transformed[:, 0] + 0.38
-    df['y'] = 1.61 * transformed[:, 1] - 0.01
+    df['x'] = 1.81 * transformed[:, 0] + 0.038
+    df['y'] = 1.61 * transformed[:, 1] - 0.1
 
     result = df.groupby(['country', 'region'])[['x', 'y']].mean().reset_index()
     return result[['country', 'region', 'x', 'y']]
