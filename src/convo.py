@@ -3,6 +3,7 @@ import os
 from openai import OpenAI
 
 PROVIDER_URLS = {
+    'foundry': 'https://mtha-testbed-proj-resource.openai.azure.com/openai/v1',
     'anthropic': 'https://api.anthropic.com/v1',
     'deepseek': 'https://api.deepseek.com',
     'fireworks': 'https://api.fireworks.ai/inference/v1',

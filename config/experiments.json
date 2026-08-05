@@ -2,156 +2,184 @@
   "1000": {
     "provider": "Perplexity",
     "model": "sonar",
-    "label": "sonar"
+    "label": "Perplexity Sonar",
+    "vendor": "Perplexity"
   },
   "1001": {
     "provider": "Perplexity",
     "model": "sonar",
-    "label": "sonar"
+    "label": "Perplexity Sonar",
+    "vendor": "Perplexity"
   },
   "1002": {
     "provider": "Perplexity",
     "model": "sonar",
-    "label": "sonar"
+    "label": "Perplexity Sonar",
+    "vendor": "Perplexity"
   },
   "1100": {
     "provider": "Mistral",
     "model": "mistral-small-2506",
-    "label": "mistral-S-3"
+    "label": "Mistral S 3",
+    "vendor": "Mistral"
   },
   "1101": {
     "provider": "Mistral",
     "model": "mistral-large-2411",
-    "label": "mistral-L-2"
+    "label": "Mistral L 2",
+    "vendor": "Mistral"
   },
   "1102": {
     "provider": "Mistral",
     "model": "mistral-small-2506",
-    "label": "mistral-S-3",
+    "label": "Mistral S 3",
+    "vendor": "Mistral",
     "zero_shot": true
   },
   "1103": {
     "provider": "Mistral",
     "model": "mistral-small-2506",
-    "label": "mistral-S-3"
+    "label": "Mistral S 3",
+    "vendor": "Mistral"
   },
   "1104": {
     "provider": "Mistral",
     "model": "mistral-small-2603",
-    "label": "mistral-S-4"
+    "label": "Mistral S 4",
+    "vendor": "Mistral"
   },
   "1105": {
     "provider": "Mistral",
     "model": "mistral-small-2603",
-    "label": "mistral-S-4"
+    "label": "Mistral S 4",
+    "vendor": "Mistral"
   },
   "1106": {
     "provider": "Mistral",
     "model": "mistral-small-2603",
-    "label": "mistral-S-4"
+    "label": "Mistral S 4",
+    "vendor": "Mistral"
   },
   "1107": {
     "provider": "Mistral",
     "model": "mistral-large-2512",
-    "label": "mistral-L-3"
+    "label": "Mistral L 3",
+    "vendor": "Mistral"
   },
   "1108": {
     "provider": "Mistral",
     "model": "mistral-large-2512",
-    "label": "mistral-L-3"
+    "label": "Mistral L 3",
+    "vendor": "Mistral"
   },
   "1109": {
     "provider": "Mistral",
     "model": "mistral-large-2512",
-    "label": "mistral-L-3"
+    "label": "Mistral L 3",
+    "vendor": "Mistral"
   },
   "1200": {
     "provider": "Gemini",
     "model": "gemini-2.0-flash",
-    "label": "gemini-2.0-flash"
+    "label": "Gemini 2",
+    "vendor": "Google"
   },
   "1201": {
     "provider": "Gemini",
     "model": "gemini-2.0-flash",
-    "label": "gemini-2.0-flash"
+    "label": "Gemini 2",
+    "vendor": "Google"
   },
   "1202": {
     "provider": "Gemini",
     "model": "gemini-2.0-flash",
-    "label": "gemini-2.0-flash"
+    "label": "Gemini 2",
+    "vendor": "Google"
   },
   "1203": {
     "provider": "Gemini",
     "model": "gemini-2.5-flash",
-    "label": "gemini-2.5-flash"
+    "label": "Gemini 2.5",
+    "vendor": "Google"
   },
   "1204": {
     "provider": "Gemini",
     "model": "gemini-2.5-flash",
-    "label": "gemini-2.5-flash"
+    "label": "Gemini 2.5",
+    "vendor": "Google"
   },
   "1205": {
     "provider": "Gemini",
     "model": "gemini-2.5-flash",
-    "label": "gemini-2.5-flash"
+    "label": "Gemini 2.5",
+    "vendor": "Google"
   },
   "1206": {
     "provider": "Gemini",
     "model": "gemini-3-pro-preview",
-    "label": "gemini-3-pro",
+    "label": "Gemini 3",
+    "vendor": "Google",
     "release": "2025-11"
   },
   "1207": {
     "provider": "Gemini",
     "model": "gemini-3-pro-preview",
-    "label": "gemini-3-pro",
+    "label": "Gemini 3",
+    "vendor": "Google",
     "release": "2025-11"
   },
   "1208": {
     "provider": "Gemini",
     "model": "gemini-3-pro-preview",
-    "label": "gemini-3-pro",
+    "label": "Gemini 3",
+    "vendor": "Google",
     "release": "2025-11"
   },
   "1209": {
     "provider": "Gemini",
     "model": "gemini-3-pro-preview",
-    "label": "gemini-3-pro",
+    "label": "Gemini 3 (low)",
+    "vendor": "Google",
     "reasoning_effort": "low",
     "release": "2025-11"
   },
   "1210": {
     "provider": "Gemini",
     "model": "gemini-3-pro-preview",
-    "label": "gemini-3-pro",
+    "label": "Gemini 3 (low)",
+    "vendor": "Google",
     "reasoning_effort": "low",
     "release": "2025-11"
   },
   "1211": {
     "provider": "Gemini",
     "model": "gemini-3-pro-preview",
-    "label": "gemini-3-pro",
+    "label": "Gemini 3 (low)",
+    "vendor": "Google",
     "reasoning_effort": "low",
     "release": "2025-11"
   },
   "1212": {
     "provider": "Gemini",
     "model": "gemini-3.1-pro-preview",
-    "label": "gemini-3.1-pro",
+    "label": "Gemini 3.1 (low)",
+    "vendor": "Google",
     "reasoning_effort": "low",
     "release": "2026-02"
   },
   "1213": {
     "provider": "Gemini",
     "model": "gemini-3.1-pro-preview",
-    "label": "gemini-3.1-pro",
+    "label": "Gemini 3.1 (low)",
+    "vendor": "Google",
     "reasoning_effort": "low",
     "release": "2026-02"
   },
   "1214": {
     "provider": "Gemini",
     "model": "gemini-3.1-pro-preview",
-    "label": "gemini-3.1-pro",
+    "label": "Gemini 3.1 (low)",
+    "vendor": "Google",
     "reasoning_effort": "low",
     "release": "2026-02"
   },
@@ -159,6 +187,7 @@
     "provider": "Gemini",
     "model": "gemma-4-31b-it",
     "label": "Gemma 4",
+    "vendor": "Google",
     "release": "2026-04",
     "zero_shot": true
   },
@@ -166,6 +195,7 @@
     "provider": "Gemini",
     "model": "gemma-4-31b-it",
     "label": "Gemma 4",
+    "vendor": "Google",
     "release": "2026-04",
     "zero_shot": true
   },
@@ -173,1023 +203,1211 @@
     "provider": "Gemini",
     "model": "gemma-4-31b-it",
     "label": "Gemma 4",
+    "vendor": "Google",
     "release": "2026-04",
     "zero_shot": true
   },
   "1218": {
     "provider": "Gemini",
     "model": "gemini-3.5-flash",
-    "label": "gemini-3.5-flash",
+    "label": "Gemini 3.5 Flash (low)",
+    "vendor": "Google",
     "reasoning_effort": "low",
     "release": "2026-05"
   },
   "1219": {
     "provider": "Gemini",
     "model": "gemini-3.5-flash",
-    "label": "gemini-3.5-flash",
+    "label": "Gemini 3.5 Flash (low)",
+    "vendor": "Google",
     "reasoning_effort": "low",
     "release": "2026-05"
   },
   "1220": {
     "provider": "Gemini",
     "model": "gemini-3.5-flash",
-    "label": "gemini-3.5-flash",
+    "label": "Gemini 3.5 Flash (low)",
+    "vendor": "Google",
     "reasoning_effort": "low",
     "release": "2026-05"
   },
   "1221": {
     "provider": "Gemini",
     "model": "gemini-3.5-flash",
-    "label": "gemini-3.5-flash",
+    "label": "Gemini 3.5 Flash (high)",
+    "vendor": "Google",
     "reasoning_effort": "high",
     "release": "2026-05"
   },
   "1222": {
     "provider": "Gemini",
     "model": "gemini-3.5-flash",
-    "label": "gemini-3.5-flash",
+    "label": "Gemini 3.5 Flash (high)",
+    "vendor": "Google",
     "reasoning_effort": "high",
     "release": "2026-05"
   },
   "1223": {
     "provider": "Gemini",
     "model": "gemini-3.5-flash",
-    "label": "gemini-3.5-flash",
+    "label": "Gemini 3.5 Flash (high)",
+    "vendor": "Google",
     "reasoning_effort": "high",
     "release": "2026-05"
   },
   "1224": {
     "provider": "Gemini",
     "model": "gemini-3.6-flash",
-    "label": "gemini-3.6-flash",
+    "label": "Gemini 3.6 Flash",
+    "vendor": "Google",
     "release": "2026-07"
   },
   "1225": {
     "provider": "Gemini",
     "model": "gemini-3.6-flash",
-    "label": "gemini-3.6-flash",
+    "label": "Gemini 3.6 Flash",
+    "vendor": "Google",
     "release": "2026-07"
   },
   "1226": {
     "provider": "Gemini",
     "model": "gemini-3.6-flash",
-    "label": "gemini-3.6-flash",
+    "label": "Gemini 3.6 Flash",
+    "vendor": "Google",
     "release": "2026-07"
   },
   "1300": {
     "provider": "OpenAI",
     "model": "o4-mini-2025-04-16",
-    "label": "o4-mini"
+    "label": "o4-mini",
+    "vendor": "OpenAI"
   },
   "1301": {
     "provider": "OpenAI",
     "model": "gpt-4o-2024-11-20",
-    "label": "gpt-4o"
+    "label": "GPT-4o",
+    "vendor": "OpenAI"
   },
   "1302": {
     "provider": "OpenAI",
     "model": "gpt-3.5-turbo",
-    "label": "gpt-3.5-turbo"
+    "label": "GPT-3.5",
+    "vendor": "OpenAI"
   },
   "1303": {
     "provider": "OpenAI",
     "model": "gpt-4-turbo",
-    "label": "gpt-4-turbo"
+    "label": "GPT-4",
+    "vendor": "OpenAI"
   },
   "1304": {
     "provider": "OpenAI",
     "model": "gpt-3.5-turbo",
-    "label": "gpt-3.5-turbo"
+    "label": "GPT-3.5",
+    "vendor": "OpenAI"
   },
   "1305": {
     "provider": "OpenAI",
     "model": "gpt-3.5-turbo",
-    "label": "gpt-3.5-turbo",
+    "label": "GPT-3.5",
+    "vendor": "OpenAI",
     "zero_shot": true
   },
   "1306": {
     "provider": "OpenAI",
     "model": "gpt-4-turbo",
-    "label": "gpt-4-turbo",
+    "label": "GPT-4",
+    "vendor": "OpenAI",
     "zero_shot": true
   },
   "1307": {
     "provider": "OpenAI",
     "model": "gpt-5",
-    "label": "gpt-5",
+    "label": "GPT-5",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium",
     "release": "2025-08"
   },
   "1308": {
     "provider": "OpenAI",
     "model": "gpt-5",
-    "label": "gpt-5",
+    "label": "GPT-5 (min)",
+    "vendor": "OpenAI",
     "reasoning_effort": "minimal",
     "release": "2025-08"
   },
   "1309": {
     "provider": "OpenAI",
     "model": "gpt-5",
-    "label": "gpt-5",
+    "label": "GPT-5 (min)",
+    "vendor": "OpenAI",
     "reasoning_effort": "minimal",
     "release": "2025-08"
   },
   "1310": {
     "provider": "OpenAI",
     "model": "gpt-5",
-    "label": "gpt-5",
+    "label": "GPT-5",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium",
     "release": "2025-08"
   },
   "1311": {
     "provider": "OpenAI",
     "model": "o4-mini-2025-04-16",
-    "label": "o4-mini"
+    "label": "o4-mini",
+    "vendor": "OpenAI"
   },
   "1312": {
     "provider": "OpenAI",
     "model": "o4-mini-2025-04-16",
-    "label": "o4-mini"
+    "label": "o4-mini",
+    "vendor": "OpenAI"
   },
   "1313": {
     "provider": "OpenAI",
     "model": "gpt-4o-2024-11-20",
-    "label": "gpt-4o"
+    "label": "GPT-4o",
+    "vendor": "OpenAI"
   },
   "1314": {
     "provider": "OpenAI",
     "model": "gpt-5-mini",
-    "label": "gpt-5-mini",
+    "label": "GPT-5 mini",
+    "vendor": "OpenAI",
     "release": "2025-08"
   },
   "1315": {
     "provider": "OpenAI",
     "model": "gpt-5-mini",
-    "label": "gpt-5-mini",
+    "label": "GPT-5 mini",
+    "vendor": "OpenAI",
     "release": "2025-08"
   },
   "1316": {
     "provider": "OpenAI",
     "model": "gpt-5-mini",
-    "label": "gpt-5-mini",
+    "label": "GPT-5 mini",
+    "vendor": "OpenAI",
     "release": "2025-08"
   },
   "1317": {
     "provider": "OpenAI",
     "model": "gpt-5",
-    "label": "gpt-5",
+    "label": "GPT-5 (min)",
+    "vendor": "OpenAI",
     "reasoning_effort": "minimal",
     "release": "2025-08"
   },
   "1318": {
     "provider": "OpenAI",
     "model": "gpt-5.1-2025-11-13",
-    "label": "gpt-5.1",
+    "label": "GPT-5.1",
+    "vendor": "OpenAI",
     "release": "2025-11"
   },
   "1319": {
     "provider": "OpenAI",
     "model": "gpt-5.1-2025-11-13",
-    "label": "gpt-5.1",
+    "label": "GPT-5.1",
+    "vendor": "OpenAI",
     "release": "2025-11"
   },
   "1320": {
     "provider": "OpenAI",
     "model": "gpt-5.1-2025-11-13",
-    "label": "gpt-5.1",
+    "label": "GPT-5.1",
+    "vendor": "OpenAI",
     "release": "2025-11"
   },
   "1321": {
     "provider": "OpenAI",
     "model": "gpt-5.1-2025-11-13",
-    "label": "gpt-5.1",
+    "label": "GPT-5.1",
+    "vendor": "OpenAI",
     "release": "2025-11"
   },
   "1322": {
     "provider": "OpenAI",
     "model": "gpt-5.1-2025-11-13",
-    "label": "gpt-5.1",
+    "label": "GPT-5.1",
+    "vendor": "OpenAI",
     "release": "2025-11"
   },
   "1323": {
     "provider": "OpenAI",
     "model": "gpt-5.1-2025-11-13",
-    "label": "gpt-5.1",
+    "label": "GPT-5.1",
+    "vendor": "OpenAI",
     "release": "2025-11"
   },
   "1324": {
     "provider": "OpenAI",
     "model": "gpt-5.1-2025-11-13",
-    "label": "gpt-5.1",
+    "label": "GPT-5.1 (low)",
+    "vendor": "OpenAI",
     "reasoning_effort": "low",
     "release": "2025-11"
   },
   "1325": {
     "provider": "OpenAI",
     "model": "gpt-5.1-2025-11-13",
-    "label": "gpt-5.1",
+    "label": "GPT-5.1 (low)",
+    "vendor": "OpenAI",
     "reasoning_effort": "low",
     "release": "2025-11"
   },
   "1326": {
     "provider": "OpenAI",
     "model": "gpt-5.1-2025-11-13",
-    "label": "gpt-5.1",
+    "label": "GPT-5.1 (low)",
+    "vendor": "OpenAI",
     "reasoning_effort": "low",
     "release": "2025-11"
   },
   "1327": {
     "provider": "OpenAI",
     "model": "gpt-5.2",
-    "label": "gpt-5.2",
+    "label": "GPT-5.2 (low)",
+    "vendor": "OpenAI",
     "reasoning_effort": "low",
     "release": "2025-12"
   },
   "1328": {
     "provider": "OpenAI",
     "model": "gpt-5.2",
-    "label": "gpt-5.2",
+    "label": "GPT-5.2 (low)",
+    "vendor": "OpenAI",
     "reasoning_effort": "low",
     "release": "2025-12"
   },
   "1329": {
     "provider": "OpenAI",
     "model": "gpt-5.2",
-    "label": "gpt-5.2",
+    "label": "GPT-5.2 (low)",
+    "vendor": "OpenAI",
     "reasoning_effort": "low",
     "release": "2025-12"
   },
   "1330": {
     "provider": "OpenAI",
     "model": "gpt-5.2",
-    "label": "gpt-5.2",
+    "label": "GPT-5.2",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium",
     "release": "2025-12"
   },
   "1331": {
     "provider": "OpenAI",
     "model": "gpt-5.2",
-    "label": "gpt-5.2",
+    "label": "GPT-5.2",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium",
     "release": "2025-12"
   },
   "1332": {
     "provider": "OpenAI",
     "model": "gpt-5.2",
-    "label": "gpt-5.2",
+    "label": "GPT-5.2",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium",
     "release": "2025-12"
   },
   "1333": {
     "provider": "OpenAI",
     "model": "gpt-5.2",
-    "label": "gpt-5.2",
+    "label": "GPT-5.2 (low)",
+    "vendor": "OpenAI",
     "reasoning_effort": "low",
     "release": "2025-12"
   },
   "1334": {
     "provider": "OpenAI",
     "model": "gpt-5.4-2026-03-05",
-    "label": "gpt-5.4",
+    "label": "GPT-5.4 (low)",
+    "vendor": "OpenAI",
     "reasoning_effort": "low",
     "release": "2026-03"
   },
   "1335": {
     "provider": "OpenAI",
     "model": "gpt-5.4-2026-03-05",
-    "label": "gpt-5.4",
+    "label": "GPT-5.4 (low)",
+    "vendor": "OpenAI",
     "reasoning_effort": "low",
     "release": "2026-03"
   },
   "1336": {
     "provider": "OpenAI",
     "model": "gpt-5.4-2026-03-05",
-    "label": "gpt-5.4",
+    "label": "GPT-5.4 (low)",
+    "vendor": "OpenAI",
     "reasoning_effort": "low",
     "release": "2026-03"
   },
   "1337": {
     "provider": "OpenAI",
     "model": "gpt-5.4-2026-03-05",
-    "label": "gpt-5.4",
+    "label": "GPT-5.4",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium",
     "release": "2026-03"
   },
   "1338": {
     "provider": "OpenAI",
     "model": "gpt-5.4-2026-03-05",
-    "label": "gpt-5.4",
+    "label": "GPT-5.4",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium",
     "release": "2026-03"
   },
   "1339": {
     "provider": "OpenAI",
     "model": "gpt-5.4-2026-03-05",
-    "label": "gpt-5.4",
+    "label": "GPT-5.4",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium",
     "release": "2026-03"
   },
   "1340": {
     "provider": "OpenAI",
     "model": "gpt-5.4-mini-2026-03-17",
-    "label": "gpt-5.4-mini",
+    "label": "GPT-5.4 mini",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium",
     "release": "2026-03"
   },
   "1341": {
     "provider": "OpenAI",
     "model": "gpt-5.4-mini-2026-03-17",
-    "label": "gpt-5.4-mini",
+    "label": "GPT-5.4 mini",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium",
     "release": "2026-03"
   },
   "1342": {
     "provider": "OpenAI",
     "model": "gpt-5.4-mini-2026-03-17",
-    "label": "gpt-5.4-mini",
+    "label": "GPT-5.4 mini",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium",
     "release": "2026-03"
   },
   "1343": {
     "provider": "OpenAI",
     "model": "gpt-5.3-chat-latest",
-    "label": "gpt-5.3-chat",
+    "label": "GPT-5.3",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium",
     "release": "2026-02"
   },
   "1344": {
     "provider": "OpenAI",
     "model": "gpt-5.3-chat-latest",
-    "label": "gpt-5.3-chat",
+    "label": "GPT-5.3",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium",
     "release": "2026-02"
   },
   "1345": {
     "provider": "OpenAI",
     "model": "gpt-5.3-chat-latest",
-    "label": "gpt-5.3-chat",
+    "label": "GPT-5.3",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium",
     "release": "2026-02"
   },
   "1346": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
-    "label": "gpt-5.5",
+    "label": "GPT-5.5",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium"
   },
   "1347": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
-    "label": "gpt-5.5",
+    "label": "GPT-5.5",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium"
   },
   "1348": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
-    "label": "gpt-5.5",
+    "label": "GPT-5.5",
+    "vendor": "OpenAI",
     "reasoning_effort": "medium"
   },
   "1349": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
-    "label": "gpt-5.5",
+    "label": "GPT-5.5 (low)",
+    "vendor": "OpenAI",
     "reasoning_effort": "low"
   },
   "1350": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
-    "label": "gpt-5.5",
+    "label": "GPT-5.5 (low)",
+    "vendor": "OpenAI",
     "reasoning_effort": "low"
   },
   "1351": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
-    "label": "gpt-5.5",
+    "label": "GPT-5.5 (low)",
+    "vendor": "OpenAI",
     "reasoning_effort": "low"
   },
   "1352": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
-    "label": "gpt-5.5",
+    "label": "GPT-5.5 (none)",
+    "vendor": "OpenAI",
     "reasoning_effort": "none"
   },
   "1353": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
-    "label": "gpt-5.5",
+    "label": "GPT-5.5 (none)",
+    "vendor": "OpenAI",
     "reasoning_effort": "none"
   },
   "1354": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
-    "label": "gpt-5.5",
+    "label": "GPT-5.5 (none)",
+    "vendor": "OpenAI",
     "reasoning_effort": "none"
   },
   "1355": {
     "provider": "OpenAI",
     "model": "gpt-5.6-sol",
-    "label": "gpt-5.6-sol"
+    "label": "GPT-5.6 Sol",
+    "vendor": "OpenAI"
   },
   "1356": {
     "provider": "OpenAI",
     "model": "gpt-5.6-sol",
-    "label": "gpt-5.6-sol"
+    "label": "GPT-5.6 Sol",
+    "vendor": "OpenAI"
   },
   "1357": {
     "provider": "OpenAI",
     "model": "gpt-5.6-sol",
-    "label": "gpt-5.6-sol"
+    "label": "GPT-5.6 Sol",
+    "vendor": "OpenAI"
   },
   "1358": {
     "provider": "OpenAI",
     "model": "gpt-5.6-terra",
-    "label": "gpt-5.6-terra"
+    "label": "GPT-5.6 Terra",
+    "vendor": "OpenAI"
   },
   "1359": {
     "provider": "OpenAI",
     "model": "gpt-5.6-terra",
-    "label": "gpt-5.6-terra"
+    "label": "GPT-5.6 Terra",
+    "vendor": "OpenAI"
   },
   "1360": {
     "provider": "OpenAI",
     "model": "gpt-5.6-terra",
-    "label": "gpt-5.6-terra"
+    "label": "GPT-5.6 Terra",
+    "vendor": "OpenAI"
   },
   "1361": {
     "provider": "OpenAI",
     "model": "gpt-5.6-luna",
-    "label": "gpt-5.6-luna"
+    "label": "GPT-5.6 Luna",
+    "vendor": "OpenAI"
   },
   "1362": {
     "provider": "OpenAI",
     "model": "gpt-5.6-luna",
-    "label": "gpt-5.6-luna"
+    "label": "GPT-5.6 Luna",
+    "vendor": "OpenAI"
   },
   "1363": {
     "provider": "OpenAI",
     "model": "gpt-5.6-luna",
-    "label": "gpt-5.6-luna"
+    "label": "GPT-5.6 Luna",
+    "vendor": "OpenAI"
   },
   "1400": {
     "provider": "XAI",
     "model": "grok-3",
-    "label": "grok-3"
+    "label": "Grok 3",
+    "vendor": "xAI"
   },
   "1401": {
     "provider": "XAI",
     "model": "grok-4-0709",
-    "label": "grok-4"
+    "label": "Grok 4",
+    "vendor": "xAI"
   },
   "1402": {
     "provider": "XAI",
     "model": "grok-4-0709",
-    "label": "grok-4"
+    "label": "Grok 4",
+    "vendor": "xAI"
   },
   "1403": {
     "provider": "XAI",
     "model": "grok-3",
-    "label": "grok-3"
+    "label": "Grok 3",
+    "vendor": "xAI"
   },
   "1404": {
     "provider": "XAI",
     "model": "grok-4-1-fast-non-reasoning",
-    "label": "grok-4.1",
+    "label": "Grok 4.1 (low)",
+    "vendor": "xAI",
     "reasoning_effort": "low",
     "release": "2025-11"
   },
   "1405": {
     "provider": "XAI",
     "model": "grok-4-1-fast-non-reasoning",
-    "label": "grok-4.1",
+    "label": "Grok 4.1 (low)",
+    "vendor": "xAI",
     "reasoning_effort": "low",
     "release": "2025-11"
   },
   "1406": {
     "provider": "XAI",
     "model": "grok-4-1-fast-reasoning",
-    "label": "grok-4.1",
+    "label": "Grok 4.1",
+    "vendor": "xAI",
     "release": "2025-11"
   },
   "1407": {
     "provider": "XAI",
     "model": "grok-4-1-fast-reasoning",
-    "label": "grok-4.1",
+    "label": "Grok 4.1",
+    "vendor": "xAI",
     "release": "2025-11"
   },
   "1408": {
     "provider": "XAI",
     "model": "grok-4-1-fast-non-reasoning",
-    "label": "grok-4.1",
+    "label": "Grok 4.1 (low)",
+    "vendor": "xAI",
     "reasoning_effort": "low",
     "release": "2025-11"
   },
   "1409": {
     "provider": "XAI",
     "model": "grok-4-1-fast-non-reasoning",
-    "label": "grok-4.1",
+    "label": "Grok 4.1 (low)",
+    "vendor": "xAI",
     "reasoning_effort": "low",
     "release": "2025-11"
   },
   "1410": {
     "provider": "XAI",
     "model": "grok-4.20-0309",
-    "label": "grok-4.2",
+    "label": "Grok 4.2",
+    "vendor": "xAI",
     "release": "2026-02"
   },
   "1411": {
     "provider": "XAI",
     "model": "grok-4.20-0309",
-    "label": "grok-4.2",
+    "label": "Grok 4.2",
+    "vendor": "xAI",
     "release": "2026-02"
   },
   "1412": {
     "provider": "XAI",
     "model": "grok-4.20-0309",
-    "label": "grok-4.2",
+    "label": "Grok 4.2",
+    "vendor": "xAI",
     "release": "2026-02"
   },
   "1413": {
     "provider": "XAI",
     "model": "grok-4.5",
-    "label": "grok-4.5",
+    "label": "Grok 4.5",
+    "vendor": "xAI",
     "release": "2026-07"
   },
   "1414": {
     "provider": "XAI",
     "model": "grok-4.5",
-    "label": "grok-4.5",
+    "label": "Grok 4.5",
+    "vendor": "xAI",
     "release": "2026-07"
   },
   "1415": {
     "provider": "XAI",
     "model": "grok-4.5",
-    "label": "grok-4.5",
+    "label": "Grok 4.5",
+    "vendor": "xAI",
     "release": "2026-07"
   },
   "1500": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-20250514",
-    "label": "claude-sonnet-4"
+    "label": "Claude Sonnet 4",
+    "vendor": "Anthropic"
   },
   "1501": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-20250514",
-    "label": "claude-sonnet-4"
+    "label": "Claude Sonnet 4",
+    "vendor": "Anthropic"
   },
   "1502": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-20250514",
-    "label": "claude-sonnet-4"
+    "label": "Claude Sonnet 4",
+    "vendor": "Anthropic"
   },
   "1503": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-5-20250929",
-    "label": "claude-sonnet-4.5"
+    "label": "Claude Sonnet 4.5",
+    "vendor": "Anthropic"
   },
   "1504": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-5-20250929",
-    "label": "claude-sonnet-4.5"
+    "label": "Claude Sonnet 4.5",
+    "vendor": "Anthropic"
   },
   "1505": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-5-20250929",
-    "label": "claude-sonnet-4.5"
+    "label": "Claude Sonnet 4.5",
+    "vendor": "Anthropic"
   },
   "1506": {
     "provider": "Anthropic",
     "model": "claude-opus-4-5-20251101",
-    "label": "claude-opus-4.5"
+    "label": "Claude Opus 4.5",
+    "vendor": "Anthropic"
   },
   "1507": {
     "provider": "Anthropic",
     "model": "claude-opus-4-5-20251101",
-    "label": "claude-opus-4.5"
+    "label": "Claude Opus 4.5",
+    "vendor": "Anthropic"
   },
   "1508": {
     "provider": "Anthropic",
     "model": "claude-opus-4-5-20251101",
-    "label": "claude-opus-4.5"
+    "label": "Claude Opus 4.5",
+    "vendor": "Anthropic"
   },
   "1509": {
     "provider": "Anthropic",
     "model": "claude-opus-4-5-20251101",
-    "label": "claude-opus-4.5"
+    "label": "Claude Opus 4.5",
+    "vendor": "Anthropic"
   },
   "1510": {
     "provider": "Anthropic",
     "model": "claude-opus-4-6",
-    "label": "claude-opus-4.6"
+    "label": "Claude Opus 4.6",
+    "vendor": "Anthropic"
   },
   "1511": {
     "provider": "Anthropic",
     "model": "claude-opus-4-6",
-    "label": "claude-opus-4.6"
+    "label": "Claude Opus 4.6",
+    "vendor": "Anthropic"
   },
   "1512": {
     "provider": "Anthropic",
     "model": "claude-opus-4-6",
-    "label": "claude-opus-4.6"
+    "label": "Claude Opus 4.6",
+    "vendor": "Anthropic"
   },
   "1513": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-6",
-    "label": "claude-sonnet-4.6"
+    "label": "Claude Sonnet 4.6",
+    "vendor": "Anthropic"
   },
   "1514": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-6",
-    "label": "claude-sonnet-4.6"
+    "label": "Claude Sonnet 4.6",
+    "vendor": "Anthropic"
   },
   "1515": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-6",
-    "label": "claude-sonnet-4.6"
+    "label": "Claude Sonnet 4.6",
+    "vendor": "Anthropic"
   },
   "1516": {
     "provider": "Anthropic",
     "model": "claude-3-7-sonnet-20250219",
-    "label": "claude-sonnet-3.7"
+    "label": "Claude Sonnet 3.7",
+    "vendor": "Anthropic"
   },
   "1517": {
     "provider": "Anthropic",
     "model": "claude-3-7-sonnet-20250219",
-    "label": "claude-sonnet-3.7"
+    "label": "Claude Sonnet 3.7",
+    "vendor": "Anthropic"
   },
   "1518": {
     "provider": "Anthropic",
     "model": "claude-3-7-sonnet-20250219",
-    "label": "claude-sonnet-3.7"
+    "label": "Claude Sonnet 3.7",
+    "vendor": "Anthropic"
   },
   "1519": {
     "provider": "Anthropic",
     "model": "claude-opus-4-20250514",
-    "label": "claude-opus-4"
+    "label": "Claude Opus 4",
+    "vendor": "Anthropic"
   },
   "1520": {
     "provider": "Anthropic",
     "model": "claude-opus-4-20250514",
-    "label": "claude-opus-4"
+    "label": "Claude Opus 4",
+    "vendor": "Anthropic"
   },
   "1521": {
     "provider": "Anthropic",
     "model": "claude-opus-4-20250514",
-    "label": "claude-opus-4"
+    "label": "Claude Opus 4",
+    "vendor": "Anthropic"
   },
   "1522": {
     "provider": "Anthropic",
     "model": "claude-opus-4-7",
-    "label": "claude-opus-4.7"
+    "label": "Claude Opus 4.7",
+    "vendor": "Anthropic"
   },
   "1523": {
     "provider": "Anthropic",
     "model": "claude-opus-4-7",
-    "label": "claude-opus-4.7"
+    "label": "Claude Opus 4.7",
+    "vendor": "Anthropic"
   },
   "1524": {
     "provider": "Anthropic",
     "model": "claude-opus-4-7",
-    "label": "claude-opus-4.7"
+    "label": "Claude Opus 4.7",
+    "vendor": "Anthropic"
   },
   "1525": {
     "provider": "Anthropic",
     "model": "claude-opus-4-8",
-    "label": "claude-opus-4.8"
+    "label": "Claude Opus 4.8",
+    "vendor": "Anthropic"
   },
   "1526": {
     "provider": "Anthropic",
     "model": "claude-opus-4-8",
-    "label": "claude-opus-4.8"
+    "label": "Claude Opus 4.8",
+    "vendor": "Anthropic"
   },
   "1527": {
     "provider": "Anthropic",
     "model": "claude-opus-4-8",
-    "label": "claude-opus-4.8"
+    "label": "Claude Opus 4.8",
+    "vendor": "Anthropic"
   },
   "1528": {
     "provider": "Anthropic",
     "model": "claude-fable-5",
-    "label": "claude-fable-5"
+    "label": "Claude Fable 5",
+    "vendor": "Anthropic"
   },
   "1529": {
     "provider": "Anthropic",
     "model": "claude-fable-5",
-    "label": "claude-fable-5"
+    "label": "Claude Fable 5",
+    "vendor": "Anthropic"
   },
   "1530": {
     "provider": "Anthropic",
     "model": "claude-fable-5",
-    "label": "claude-fable-5"
+    "label": "Claude Fable 5",
+    "vendor": "Anthropic"
   },
   "1531": {
     "provider": "Anthropic",
     "model": "claude-haiku-4-5-20251001",
-    "label": "claude-haiku-4.5"
+    "label": "Claude Haiku 4.5",
+    "vendor": "Anthropic"
   },
   "1532": {
     "provider": "Anthropic",
     "model": "claude-haiku-4-5-20251001",
-    "label": "claude-haiku-4.5"
+    "label": "Claude Haiku 4.5",
+    "vendor": "Anthropic"
   },
   "1533": {
     "provider": "Anthropic",
     "model": "claude-haiku-4-5-20251001",
-    "label": "claude-haiku-4.5"
+    "label": "Claude Haiku 4.5",
+    "vendor": "Anthropic"
   },
   "1534": {
     "provider": "Anthropic",
     "model": "claude-sonnet-5",
-    "label": "claude-sonnet-5"
+    "label": "Claude Sonnet 5",
+    "vendor": "Anthropic"
   },
   "1535": {
     "provider": "Anthropic",
     "model": "claude-sonnet-5",
-    "label": "claude-sonnet-5"
+    "label": "Claude Sonnet 5",
+    "vendor": "Anthropic"
   },
   "1536": {
     "provider": "Anthropic",
     "model": "claude-sonnet-5",
-    "label": "claude-sonnet-5"
+    "label": "Claude Sonnet 5",
+    "vendor": "Anthropic"
   },
   "1537": {
     "provider": "Anthropic",
     "model": "claude-fable-5",
-    "label": "claude-fable-5"
+    "label": "Claude Fable 5",
+    "vendor": "Anthropic"
   },
   "1538": {
     "provider": "Anthropic",
     "model": "claude-fable-5",
-    "label": "claude-fable-5"
+    "label": "Claude Fable 5",
+    "vendor": "Anthropic"
   },
   "1539": {
     "provider": "Anthropic",
     "model": "claude-fable-5",
-    "label": "claude-fable-5"
+    "label": "Claude Fable 5",
+    "vendor": "Anthropic"
   },
   "1540": {
     "provider": "Anthropic",
     "model": "claude-opus-5",
-    "label": "claude-opus-5"
+    "label": "Claude Opus 5",
+    "vendor": "Anthropic"
   },
   "1541": {
     "provider": "Anthropic",
     "model": "claude-opus-5",
-    "label": "claude-opus-5"
+    "label": "Claude Opus 5",
+    "vendor": "Anthropic"
   },
   "1542": {
     "provider": "Anthropic",
     "model": "claude-opus-5",
-    "label": "claude-opus-5"
+    "label": "Claude Opus 5",
+    "vendor": "Anthropic"
   },
   "1543": {
     "provider": "Anthropic",
-    "model": "claude-opus-5",
-    "label": "claude-opus-5"
+    "model": "claude-haiku-4-5-20251001",
+    "label": "Claude Haiku 4.5",
+    "vendor": "Anthropic"
   },
   "1600": {
     "provider": "Microsoft",
     "model": "M365 Copilot",
-    "label": "M365 Copilot",
+    "label": "MS Copilot (GPT-4)",
+    "vendor": "Microsoft",
     "manual": true
   },
   "1601": {
     "provider": "Microsoft",
     "model": "M365 Copilot",
-    "label": "M365 Copilot",
+    "label": "MS Copilot (GPT-4)",
+    "vendor": "Microsoft",
     "manual": true
   },
   "1602": {
     "provider": "Microsoft",
     "model": "M365 Copilot",
-    "label": "M365 Copilot",
+    "label": "MS Copilot (GPT-4)",
+    "vendor": "Microsoft",
     "manual": true
   },
   "1603": {
     "provider": "Microsoft",
     "model": "M365 Copilot",
-    "label": "M365 Copilot (GPT-5)",
+    "label": "MS Copilot (GPT-5)",
+    "vendor": "Microsoft",
     "manual": true
   },
   "1604": {
     "provider": "Microsoft",
     "model": "M365 Copilot",
-    "label": "M365 Copilot (GPT-5)",
+    "label": "MS Copilot (GPT-5)",
+    "vendor": "Microsoft",
     "manual": true
   },
   "1605": {
     "provider": "Microsoft",
     "model": "M365 Copilot",
-    "label": "M365 Copilot (GPT-5.3 Quick)",
+    "label": "MS Copilot (GPT-5.3)",
+    "vendor": "Microsoft",
     "manual": true
   },
   "1700": {
     "provider": "DeepSeek",
     "model": "deepseek-chat",
-    "label": "deepseek-3"
+    "label": "DeepSeek 3",
+    "vendor": "DeepSeek"
   },
   "1701": {
     "provider": "DeepSeek",
     "model": "deepseek-chat",
-    "label": "deepseek-3"
+    "label": "DeepSeek 3",
+    "vendor": "DeepSeek"
   },
   "1702": {
     "provider": "DeepSeek",
     "model": "deepseek-chat",
-    "label": "deepseek-3"
+    "label": "DeepSeek 3",
+    "vendor": "DeepSeek"
   },
   "1703": {
     "provider": "DeepSeek",
     "model": "deepseek-v4-pro",
-    "label": "deepseek-4"
+    "label": "DeepSeek 4",
+    "vendor": "DeepSeek"
   },
   "1704": {
     "provider": "DeepSeek",
     "model": "deepseek-v4-pro",
-    "label": "deepseek-4"
+    "label": "DeepSeek 4",
+    "vendor": "DeepSeek"
   },
   "1705": {
     "provider": "DeepSeek",
     "model": "deepseek-v4-pro",
-    "label": "deepseek-4"
+    "label": "DeepSeek 4",
+    "vendor": "DeepSeek"
   },
   "1800": {
     "provider": "Qwen",
     "model": "qwen-plus",
-    "label": "qwen-3"
+    "label": "Qwen 3",
+    "vendor": "Qwen"
   },
   "1801": {
     "provider": "Qwen",
     "model": "qwen-plus",
-    "label": "qwen-3"
+    "label": "Qwen 3",
+    "vendor": "Qwen"
   },
   "1802": {
     "provider": "Qwen",
     "model": "qwen-plus",
-    "label": "qwen-3"
+    "label": "Qwen 3",
+    "vendor": "Qwen"
   },
   "1803": {
     "provider": "Qwen",
     "model": "qwen-plus-latest",
-    "label": "qwen-3"
+    "label": "Qwen 3",
+    "vendor": "Qwen"
   },
   "1804": {
     "provider": "Qwen",
     "model": "qwen-plus-latest",
-    "label": "qwen-3"
+    "label": "Qwen 3",
+    "vendor": "Qwen"
   },
   "1805": {
     "provider": "Qwen",
     "model": "qwen-plus-latest",
-    "label": "qwen-3"
+    "label": "Qwen 3",
+    "vendor": "Qwen"
   },
   "1806": {
     "provider": "Qwen",
     "model": "qwen3.5-plus-2026-02-15",
-    "label": "qwen-3.5"
+    "label": "Qwen 3.5",
+    "vendor": "Qwen"
   },
   "1807": {
     "provider": "Qwen",
     "model": "qwen3.5-plus-2026-02-15",
-    "label": "qwen-3.5"
+    "label": "Qwen 3.5",
+    "vendor": "Qwen"
   },
   "1808": {
     "provider": "Qwen",
     "model": "qwen3.5-plus-2026-02-15",
-    "label": "qwen-3.5"
+    "label": "Qwen 3.5",
+    "vendor": "Qwen"
   },
   "1809": {
     "provider": "Qwen",
     "model": "qwen3.6-plus",
-    "label": "qwen-3.6"
+    "label": "Qwen 3.6",
+    "vendor": "Qwen"
   },
   "1810": {
     "provider": "Qwen",
     "model": "qwen3.6-plus",
-    "label": "qwen-3.6"
+    "label": "Qwen 3.6",
+    "vendor": "Qwen"
   },
   "1811": {
     "provider": "Qwen",
     "model": "qwen3.6-plus",
-    "label": "qwen-3.6"
+    "label": "Qwen 3.6",
+    "vendor": "Qwen"
   },
   "1812": {
     "provider": "Qwen",
     "model": "qwen3.7-plus",
-    "label": "qwen-3.7"
+    "label": "Qwen 3.7",
+    "vendor": "Qwen"
   },
   "1813": {
     "provider": "Qwen",
     "model": "qwen3.7-plus",
-    "label": "qwen-3.7"
+    "label": "Qwen 3.7",
+    "vendor": "Qwen"
   },
   "1814": {
     "provider": "Qwen",
     "model": "qwen3.7-plus",
-    "label": "qwen-3.7"
+    "label": "Qwen 3.7",
+    "vendor": "Qwen"
   },
   "1900": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/gpt-oss-120b",
-    "label": "gpt-oss-120b"
+    "label": "GPT-OSS 120b",
+    "vendor": "OpenAI"
   },
   "1901": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/gpt-oss-120b",
-    "label": "gpt-oss-120b"
+    "label": "GPT-OSS 120b",
+    "vendor": "OpenAI"
   },
   "1902": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/gpt-oss-120b",
-    "label": "gpt-oss-120b"
+    "label": "GPT-OSS 120b",
+    "vendor": "OpenAI"
   },
   "2000": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/glm-5",
-    "label": "glm-5"
+    "label": "GLM 5",
+    "vendor": "Zhipu"
   },
   "2001": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/glm-5",
-    "label": "glm-5"
+    "label": "GLM 5",
+    "vendor": "Zhipu"
   },
   "2002": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/glm-5",
-    "label": "glm-5"
+    "label": "GLM 5",
+    "vendor": "Zhipu"
   },
   "2003": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/glm-5p2",
-    "label": "glm-5.2"
+    "label": "GLM 5.2",
+    "vendor": "Zhipu"
   },
   "2004": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/glm-5p2",
-    "label": "glm-5.2"
+    "label": "GLM 5.2",
+    "vendor": "Zhipu"
   },
   "2005": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/glm-5p2",
-    "label": "glm-5.2"
+    "label": "GLM 5.2",
+    "vendor": "Zhipu"
   },
   "2100": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/kimi-k2p5",
-    "label": "kimi-k2.5"
+    "label": "Kimi K2.5",
+    "vendor": "Moonshot"
   },
   "2101": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/kimi-k2p5",
-    "label": "kimi-k2.5"
+    "label": "Kimi K2.5",
+    "vendor": "Moonshot"
   },
   "2102": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/kimi-k2p5",
-    "label": "kimi-k2.5"
+    "label": "Kimi K2.5",
+    "vendor": "Moonshot"
   },
   "2200": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/minimax-m2p5",
-    "label": "minimax-m2.5"
+    "label": "MiniMax M2.5",
+    "vendor": "MiniMax"
   },
   "2201": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/minimax-m2p5",
-    "label": "minimax-m2.5"
+    "label": "MiniMax M2.5",
+    "vendor": "MiniMax"
   },
   "2202": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/minimax-m2p5",
-    "label": "minimax-m2.5"
+    "label": "MiniMax M2.5",
+    "vendor": "MiniMax"
   },
   "2203": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/minimax-m3",
-    "label": "minimax-m3"
+    "label": "MiniMax M3",
+    "vendor": "MiniMax"
   },
   "2204": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/minimax-m3",
-    "label": "minimax-m3"
+    "label": "MiniMax M3",
+    "vendor": "MiniMax"
   },
   "2205": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/minimax-m3",
-    "label": "minimax-m3"
+    "label": "MiniMax M3",
+    "vendor": "MiniMax"
   },
   "2300": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/llama-v3p3-70b-instruct",
-    "label": "Llama 3.3 70b"
+    "label": "Llama 3.3",
+    "vendor": "Meta"
   },
   "2301": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/llama-v3p3-70b-instruct",
-    "label": "Llama 3.3 70b"
+    "label": "Llama 3.3",
+    "vendor": "Meta"
   },
   "2302": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/llama-v3p3-70b-instruct",
-    "label": "Llama 3.3 70b"
+    "label": "Llama 3.3",
+    "vendor": "Meta"
+  },
+  "2400": {
+    "provider": "Foundry",
+    "model": "gpt-5-mini",
+    "label": "GPT-5 mini",
+    "vendor": "OpenAI"
   }
 }
