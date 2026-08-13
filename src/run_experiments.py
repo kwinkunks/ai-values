@@ -106,25 +106,24 @@ def append_responses(rows: list[dict]) -> None:
     df_out.to_csv(RESPONSES_FILE, index=False)
 
 
-def select_experiments(all_expts: dict, ids: list[str] | None, provider: str | None) -> dict:
-    if ids is not None:
-        unknown = [i for i in ids if i not in all_expts]
-        if unknown:
-            print(f'Warning: unknown experiment IDs: {unknown}')
-        return {k: all_expts[k] for k in ids if k in all_expts}
-    return {k: v for k, v in all_expts.items()
-            if v.get('provider', '').casefold() == provider.casefold()}
+def select_experiments(all_expts: dict, ids: list[str]) -> dict:
+    """
+    Return a dict of experiments to run, filtered by the given IDs (or all if None).
+    """
+    unknown = [i for i in ids if i not in all_expts]
+    if unknown:
+        print(f'Warning: unknown experiment IDs: {unknown}')
+    return {k: all_expts[k] for k in ids if k in all_expts}
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('--expts', nargs='+', metavar='ID', help='Experiment IDs to run')
-    group.add_argument('--provider', help='Run all experiments for this provider')
     args = parser.parse_args()
 
     all_expts = load_experiments()
-    to_run = select_experiments(all_expts, args.expts, args.provider)
+    to_run = select_experiments(all_expts, args.expts)
 
     if not to_run:
         print('No experiments matched.')

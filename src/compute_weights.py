@@ -53,12 +53,6 @@ TRAD_ITEMS = {'F063', 'Y003', 'F120', 'G006', 'E018'}   # Traditional vs Secular
 EVS_WAVES = ['4.0.0 (2015-10-30)', '5.0.0 (2022-06-08)']
 WVS_WAVES = ['WVS5 v.20180912', 'WVS6 v.20201117', 'WVS7 v.5.0']
 
-# Inglehart-Welzel affine map, using the WVS official rescaling constants
-# (+0.038 x, -0.1 y). Tao et al.'s R code uses +0.38 / -0.01, a decimal-slip
-# error we deliberately do not reproduce. It is only a rigid translation.
-X_SLOPE, X_INTERCEPT = 1.81, 0.038
-Y_SLOPE, Y_INTERCEPT = 1.61, -0.1
-
 CRAN = 'https://cloud.r-project.org'
 
 
@@ -166,10 +160,13 @@ def main() -> None:
     column_means = np.nanmean(X, axis=0)
     column_sds = np.nanstd(X, axis=0, ddof=1)
 
+    # Inglehart-Welzel affine map, using the WVS official rescaling constants.
+    # NB Tao et al. (2024)'s R code erroneously uses +0.38 / -0.01.
+
     # Scores by projection (identical to psych's factor scores; NaN-safe row-wise).
     scores = ((X - column_means) / column_sds) @ weights
-    dx = dx.assign(**{'surv-self': X_SLOPE * scores[:, 0] + X_INTERCEPT,
-                      'trad-sec': Y_SLOPE * scores[:, 1] + Y_INTERCEPT})
+    dx = dx.assign(**{'surv-self': 1.81 * scores[:, 0] + 0.038,
+                      'trad-sec': 1.61 * scores[:, 1] - 0.1})
 
     cc = dx.groupby('S003')[['surv-self', 'trad-sec']].mean()
     s003 = pd.read_csv(S003_FILE).rename(

@@ -960,6 +960,12 @@ window.COORDS = [
 "y": 1.474157
 },
 {
+"country": "Grok 4.6",
+"region": "xAI",
+"x": 1.301981,
+"y": 1.71123
+},
+{
 "country": "Kimi K2.5",
 "region": "Moonshot",
 "x": 1.976331,

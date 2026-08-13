@@ -846,6 +846,27 @@
     "vendor": "xAI",
     "release": "2026-07"
   },
+  "1416": {
+    "provider": "XAI",
+    "model": "grok-4.6",
+    "label": "Grok 4.6",
+    "vendor": "xAI",
+    "release": "2026-08"
+  },
+  "1417": {
+    "provider": "XAI",
+    "model": "grok-4.6",
+    "label": "Grok 4.6",
+    "vendor": "xAI",
+    "release": "2026-08"
+  },
+  "1418": {
+    "provider": "XAI",
+    "model": "grok-4.6",
+    "label": "Grok 4.6",
+    "vendor": "xAI",
+    "release": "2026-08"
+  },
   "1500": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-20250514",
