@@ -918,6 +918,12 @@ window.COORDS = [
 "y": 0.874222
 },
 {
+"country": "Gemini 3.7 Flash",
+"region": "Google",
+"x": 0.822712,
+"y": 0.239553
+},
+{
 "country": "Gemma 4",
 "region": "Google",
 "x": 2.431063,
