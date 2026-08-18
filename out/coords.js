@@ -985,7 +985,7 @@ window.COORDS = [
 },
 {
 "country": "MAI Thinking 1",
-"region": "OpenAI",
+"region": "Microsoft",
 "x": 0.281063,
 "y": 0.020849
 },

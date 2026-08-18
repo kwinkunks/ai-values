@@ -1456,18 +1456,18 @@
     "provider": "Foundry",
     "model": "MAI-Thinking-1",
     "label": "MAI Thinking 1",
-    "vendor": "OpenAI"
+    "vendor": "Microsoft"
   },
   "2402": {
     "provider": "Foundry",
     "model": "MAI-Thinking-1",
     "label": "MAI Thinking 1",
-    "vendor": "OpenAI"
+    "vendor": "Microsoft"
   },
   "2403": {
     "provider": "Foundry",
     "model": "MAI-Thinking-1",
     "label": "MAI Thinking 1",
-    "vendor": "OpenAI"
+    "vendor": "Microsoft"
   }
 }
