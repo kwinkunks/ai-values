@@ -1451,5 +1451,23 @@
     "model": "gpt-5-mini",
     "label": "GPT-5 mini",
     "vendor": "OpenAI"
+  },
+  "2401": {
+    "provider": "Foundry",
+    "model": "MAI-Thinking-1",
+    "label": "MAI Thinking 1",
+    "vendor": "OpenAI"
+  },
+  "2402": {
+    "provider": "Foundry",
+    "model": "MAI-Thinking-1",
+    "label": "MAI Thinking 1",
+    "vendor": "OpenAI"
+  },
+  "2403": {
+    "provider": "Foundry",
+    "model": "MAI-Thinking-1",
+    "label": "MAI Thinking 1",
+    "vendor": "OpenAI"
   }
 }
