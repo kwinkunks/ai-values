@@ -1469,5 +1469,17 @@
     "model": "MAI-Thinking-1",
     "label": "MAI Thinking 1",
     "vendor": "Microsoft"
+  },
+  "2404": {
+    "provider": "Foundry",
+    "model": "MAI-Thinking-1",
+    "label": "MAI Thinking 1",
+    "vendor": "Microsoft"
+  },
+  "2405": {
+    "provider": "Foundry",
+    "model": "MAI-Thinking-1",
+    "label": "MAI Thinking 1",
+    "vendor": "Microsoft"
   }
 }
