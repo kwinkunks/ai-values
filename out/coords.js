@@ -744,6 +744,12 @@ window.COORDS = [
 "y": 0.842047
 },
 {
+"country": "GLM 5.3",
+"region": "Zhipu",
+"x": 1.745912,
+"y": 0.473257
+},
+{
 "country": "GPT-3.5",
 "region": "OpenAI",
 "x": 3.233408,
@@ -986,8 +992,8 @@ window.COORDS = [
 {
 "country": "MAI Thinking 1",
 "region": "Microsoft",
-"x": 0.281063,
-"y": 0.020849
+"x": 0.322332,
+"y": 0.271203
 },
 {
 "country": "MS Copilot (GPT-4)",
