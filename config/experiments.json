@@ -297,6 +297,27 @@
     "vendor": "Google",
     "release": "2026-08"
   },
+  "1230": {
+    "provider": "Gemini",
+    "model": "gemini-3.8-flash",
+    "label": "Gemini 3.8 Flash",
+    "vendor": "Google",
+    "release": "2026-09"
+  },
+  "1231": {
+    "provider": "Gemini",
+    "model": "gemini-3.8-flash",
+    "label": "Gemini 3.8 Flash",
+    "vendor": "Google",
+    "release": "2026-09"
+  },
+  "1232": {
+    "provider": "Gemini",
+    "model": "gemini-3.8-flash",
+    "label": "Gemini 3.8 Flash",
+    "vendor": "Google",
+    "release": "2026-09"
+  },
   "1300": {
     "provider": "OpenAI",
     "model": "o4-mini-2025-04-16",
