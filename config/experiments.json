@@ -1152,6 +1152,24 @@
     "label": "Claude Haiku 4.5",
     "vendor": "Anthropic"
   },
+  "1544": {
+    "provider": "Anthropic",
+    "model": "claude-fable-5-1",
+    "label": "Claude Fable 5.1",
+    "vendor": "Anthropic"
+  },
+  "1545": {
+    "provider": "Anthropic",
+    "model": "claude-fable-5-1",
+    "label": "Claude Fable 5.1",
+    "vendor": "Anthropic"
+  },
+  "1546": {
+    "provider": "Anthropic",
+    "model": "claude-fable-5-1",
+    "label": "Claude Fable 5.1",
+    "vendor": "Anthropic"
+  },
   "1600": {
     "provider": "Microsoft",
     "model": "M365 Copilot",

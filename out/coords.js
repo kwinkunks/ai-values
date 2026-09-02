@@ -648,6 +648,12 @@ window.COORDS = [
 "y": 0.519973
 },
 {
+"country": "Claude Fable 5.1",
+"region": "Anthropic",
+"x": 0.520852,
+"y": 0.553318
+},
+{
 "country": "Claude Haiku 4.5",
 "region": "Anthropic",
 "x": 3.637108,
