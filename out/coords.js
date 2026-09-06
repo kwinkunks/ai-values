@@ -876,6 +876,12 @@ window.COORDS = [
 "y": 0.501547
 },
 {
+"country": "GPT-6 Astra",
+"region": "OpenAI",
+"x": 2.136774,
+"y": 2.073269
+},
+{
 "country": "GPT-OSS 120b",
 "region": "OpenAI",
 "x": 2.368567,

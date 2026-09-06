@@ -776,6 +776,24 @@
     "label": "GPT-5.6 Luna",
     "vendor": "OpenAI"
   },
+  "1364": {
+    "provider": "Foundry",
+    "model": "gpt-6-astra",
+    "label": "GPT-6 Astra",
+    "vendor": "OpenAI"
+  },
+  "1365": {
+    "provider": "Foundry",
+    "model": "gpt-6-astra",
+    "label": "GPT-6 Astra",
+    "vendor": "OpenAI"
+  },
+  "1366": {
+    "provider": "Foundry",
+    "model": "gpt-6-astra",
+    "label": "GPT-6 Astra",
+    "vendor": "OpenAI"
+  },
   "1400": {
     "provider": "XAI",
     "model": "grok-3",
