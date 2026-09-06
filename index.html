@@ -319,6 +319,47 @@ const labelPlugin = {
   }
 };
 
+// UNCERTAINTY ELLIPSES
+// For LLM points (which carry ea/eb/etheta = semi-axes + major-axis angle from
+// compare.py's Hotelling T^2), draw the confidence ellipse of the model's mean.
+// Drawn under the points (beforeDatasetsDraw). The boundary is built in DATA
+// coordinates and mapped per-vertex to pixels, so it stays correct under the
+// chart's aspect ratio and any axis rescaling.
+const ellipsePlugin = {
+  id: 'meanEllipses',
+  beforeDatasetsDraw(chart) {
+    const { ctx, scales: { x: sx, y: sy } } = chart;
+    const STEPS = 64;
+    chart.data.datasets.forEach((dataset, datasetIndex) => {
+      if (!chart.isDatasetVisible(datasetIndex)) return;
+      dataset.data.forEach(point => {
+        if (point.ea == null) return;  // countries / YOU / human-average: no ellipse
+        const cos = Math.cos(point.etheta), sin = Math.sin(point.etheta);
+        ctx.save();
+        ctx.beginPath();
+        for (let i = 0; i <= STEPS; i++) {
+          const t = (i / STEPS) * 2 * Math.PI;
+          // point on the ellipse in data space (rotate the axis-aligned ellipse)
+          const dx = point.ea * Math.cos(t) * cos - point.eb * Math.sin(t) * sin;
+          const dy = point.ea * Math.cos(t) * sin + point.eb * Math.sin(t) * cos;
+          const px = sx.getPixelForValue(point.x + dx);
+          const py = sy.getPixelForValue(point.y + dy);
+          if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+        }
+        ctx.closePath();
+        ctx.fillStyle = dataset.pointBackgroundColor;
+        ctx.globalAlpha = 0.15;
+        ctx.fill();
+        ctx.globalAlpha = 0.45;
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = dataset.pointBackgroundColor;
+        ctx.stroke();
+        ctx.restore();
+      });
+    });
+  }
+};
+
 // CHART
 let chart;
 
@@ -330,7 +371,8 @@ function initChart(points) {
   points.forEach(p => {
     const region = KNOWN.has(p.region) ? p.region : 'Other';
     if (!regionMap[region]) regionMap[region] = [];
-    regionMap[region].push({ x: p.x, y: p.y, label: p.country, remark: p.remark });
+    regionMap[region].push({ x: p.x, y: p.y, label: p.country, remark: p.remark,
+                             ea: p.ea, eb: p.eb, etheta: p.etheta, en: p.en });
   });
 
   // Build datasets in fixed group order (countries first, then AI vendors).
@@ -390,6 +432,7 @@ function initChart(points) {
                 out += " — " + point.remark;
               }
               out += ` (x: ${point.x.toFixed(2)}, y: ${point.y.toFixed(2)})`;
+              if (point.en) out += ` — n=${point.en}, 80% CI`;
               return out;
             }
           }
@@ -403,7 +446,7 @@ function initChart(points) {
         y: { min: yMin, max: yMax, ticks: { stepSize: 1 }, title: { display: true, text: 'Traditional vs Secular' } }
       }
     },
-    plugins: [labelPlugin]
+    plugins: [ellipsePlugin, labelPlugin]
   });
 
   // Build a row of toggle buttons plus a grey "ALL" button that shows/hides the

@@ -17,6 +17,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from scipy.stats import f as f_dist
 
 ROOT = Path(__file__).parent.parent
 EXPERIMENTS_FILE = ROOT / 'config' / 'experiments.json'
@@ -27,6 +28,29 @@ MEANS_FILE = ROOT / 'out' / 'column_means.txt'
 SDS_FILE = ROOT / 'out' / 'column_sds.txt'
 
 VARIABLES = ['F063', 'Y003', 'F120', 'G006', 'E018', 'Y002', 'A008', 'F118', 'E025', 'A165']
+
+# Fewest per-label points needed for a Hotelling ellipse (needs n-2 >= 1 F dof,
+# but 4 is the practical floor for a non-silly 2x2 covariance).
+MIN_ELLIPSE_N = 4
+
+
+def hotelling_ellipse(x: np.ndarray, y: np.ndarray, conf: float) -> dict | None:
+    """80%-style confidence ellipse *of the mean* of n (x, y) points, via
+    Hotelling's T^2. Returns semi-axes (ea, eb), major-axis angle (etheta, rad)
+    and n (en), or None if there aren't enough / the covariance is degenerate."""
+    n = len(x)
+    if n < MIN_ELLIPSE_N:
+        return None
+    S = np.cov(x, y, ddof=1)
+    lam, vecs = np.linalg.eigh(S)               # ascending eigenvalues
+    lam, vecs = lam[::-1], vecs[:, ::-1]         # major axis first
+    if lam[1] <= 0:                              # collinear / degenerate spread
+        return None
+    # Radius^2 so the true mean lies inside with probability `conf`.
+    c2 = 2 * (n - 1) / (n * (n - 2)) * f_dist.ppf(conf, 2, n - 2)
+    a, b = np.sqrt(c2 * lam)
+    theta = float(np.arctan2(vecs[1, 0], vecs[0, 0]))
+    return {'ea': a, 'eb': b, 'etheta': theta, 'en': int(n)}
 
 
 def load_responses(latest_only: bool) -> pd.DataFrame:
@@ -46,7 +70,8 @@ def load_country_centroids() -> pd.DataFrame:
     return df.rename(columns={'surv-self': 'x', 'trad-sec': 'y'})
 
 
-def compute_llm_coordinates(df: pd.DataFrame, experiments: dict, weights, means, sds) -> pd.DataFrame:
+def compute_llm_coordinates(df: pd.DataFrame, experiments: dict, weights, means, sds,
+                            conf: float = 0.80) -> pd.DataFrame:
     # `label` is the curated display name (unique per config, incl. effort suffix
     # where needed); `vendor` is the model's true origin, used as the plot region
     # so points colour by vendor. Runs sharing a label are averaged into one point.
@@ -65,8 +90,19 @@ def compute_llm_coordinates(df: pd.DataFrame, experiments: dict, weights, means,
     df['x'] = 1.81 * transformed[:, 0] + 0.038
     df['y'] = 1.61 * transformed[:, 1] - 0.1
 
-    result = df.groupby(['country', 'region'])[['x', 'y']].mean().reset_index()
-    return result[['country', 'region', 'x', 'y']]
+    grouped = df.groupby(['country', 'region'])
+    result = grouped[['x', 'y']].mean().reset_index()
+
+    # Per-label confidence ellipse of the mean (from that label's spread of
+    # per-persona/run points). Country centroids are precomputed means with no
+    # per-sample spread here, so only LLM labels get ellipse columns.
+    ellipses = {name: hotelling_ellipse(g['x'].values, g['y'].values, conf)
+                for name, g in grouped}
+    for col in ('ea', 'eb', 'etheta', 'en'):
+        result[col] = [(e or {}).get(col, np.nan)
+                       for e in map(ellipses.get, zip(result['country'], result['region']))]
+
+    return result[['country', 'region', 'x', 'y', 'ea', 'eb', 'etheta', 'en']]
 
 
 def main() -> None:
@@ -77,6 +113,8 @@ def main() -> None:
                         help='Output LLM coordinates only, without country centroids')
     parser.add_argument('--out', metavar='FILE',
                         help='Write output to FILE instead of stdout')
+    parser.add_argument('--conf', type=float, default=0.80, metavar='C',
+                        help="Confidence level for each LLM's mean ellipse (default: 0.80)")
     args = parser.parse_args()
 
     required = [EXPERIMENTS_FILE, RESPONSES_FILE, WEIGHTS_FILE, MEANS_FILE, SDS_FILE]
@@ -94,7 +132,7 @@ def main() -> None:
     sds = np.loadtxt(SDS_FILE)
 
     df = load_responses(latest_only=not args.all_runs)
-    llm_coords = compute_llm_coordinates(df, experiments, weights, means, sds)
+    llm_coords = compute_llm_coordinates(df, experiments, weights, means, sds, conf=args.conf)
 
     if args.llm_only:
         combined = llm_coords
@@ -109,9 +147,15 @@ def main() -> None:
     if args.out and args.out.endswith('.js'):
         # Emit a JS file that index.html loads via <script src> — works with
         # `open index.html` (file://), where fetch() of a .csv is blocked.
-        records = [{'country': r.country, 'region': r.region,
-                    'x': round(r.x, 6), 'y': round(r.y, 6)}
-                   for r in combined.itertuples()]
+        records = []
+        for r in combined.itertuples():
+            rec = {'country': r.country, 'region': r.region,
+                   'x': round(r.x, 6), 'y': round(r.y, 6)}
+            # Ellipse fields only for LLM rows (countries have NaN).
+            if pd.notna(r.ea):
+                rec.update(ea=round(r.ea, 6), eb=round(r.eb, 6),
+                           etheta=round(r.etheta, 6), en=int(r.en))
+            records.append(rec)
         js = 'window.COORDS = ' + json.dumps(records, indent=0) + ';\n'
         Path(args.out).write_text(js)
         print(f'Wrote {summary} to {args.out}')
