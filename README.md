@@ -4,7 +4,7 @@ A one-page app showing how LLMs plot on the [Inglehart–Welzel Cultural Map](ht
 
 [The app has no server and shares no data, try it right now.](https://kwinkunks.github.io/ai-values)
 
-<img width="1234" alt="image" src="https://github.com/user-attachments/assets/47b69ae5-9ab0-4fea-bceb-358439386eec" />
+<img height="800" alt="image" src="https://github.com/user-attachments/assets/82d68df3-6949-4264-a3a1-083dcb60cae4" />
 
 ## Setup
 
