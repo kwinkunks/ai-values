@@ -93,14 +93,23 @@ def compute_llm_coordinates(df: pd.DataFrame, experiments: dict, weights, means,
     grouped = df.groupby(['country', 'region'])
     result = grouped[['x', 'y']].mean().reset_index()
 
-    # Per-label confidence ellipse of the mean (from that label's spread of
-    # per-persona/run points). Country centroids are precomputed means with no
-    # per-sample spread here, so only LLM labels get ellipse columns.
-    ellipses = {name: hotelling_ellipse(g['x'].values, g['y'].values, conf)
-                for name, g in grouped}
+    # Per-label confidence ellipse of the mean, computed over the label's
+    # PERSONA means (one point per respondent-descriptor). Variance analysis
+    # showed ~68% of a model's spread is persona/prompt-sensitivity and only ~3%
+    # is run-to-run, so the persona is the meaningful sampling unit: the ellipse
+    # then reads as "how much rephrasing moves this model" (n = #personas ~10),
+    # not a spurious n=30 of correlated draws. Countries are precomputed means
+    # with no per-sample spread here, so only LLM labels get ellipse columns.
+    ellipses = {}
+    pts_map = {}   # raw per-response (x, y) points per label, for the faint scatter
+    for name, g in grouped:
+        pm = g.groupby('system')[['x', 'y']].mean()
+        ellipses[name] = hotelling_ellipse(pm['x'].values, pm['y'].values, conf)
+        pts_map[name] = [[round(float(a), 4), round(float(b), 4)] for a, b in zip(g['x'], g['y'])]
     for col in ('ea', 'eb', 'etheta', 'en'):
         result[col] = [(e or {}).get(col, np.nan)
                        for e in map(ellipses.get, zip(result['country'], result['region']))]
+    result['pts'] = [pts_map.get(key) for key in zip(result['country'], result['region'])]
 
     # Lineage grouping + release date (constant per label) for "join the dots".
     # A blank/absent lineage means the point is not connected to any line.
@@ -110,7 +119,7 @@ def compute_llm_coordinates(df: pd.DataFrame, experiments: dict, weights, means,
     result['release'] = result['country'].map(release_map)
 
     return result[['country', 'region', 'x', 'y', 'ea', 'eb', 'etheta', 'en',
-                   'lineage', 'release']]
+                   'lineage', 'release', 'pts']]
 
 
 def main() -> None:
@@ -168,12 +177,15 @@ def main() -> None:
                 rec['lineage'] = r.lineage
             if pd.notna(r.release):
                 rec['release'] = r.release
+            # Raw per-response points for the faint scatter (LLM rows only).
+            if isinstance(r.pts, list):
+                rec['pts'] = r.pts
             records.append(rec)
         js = 'window.COORDS = ' + json.dumps(records, indent=0) + ';\n'
         Path(args.out).write_text(js)
         print(f'Wrote {summary} to {args.out}')
     else:
-        csv_text = combined.to_csv(index=False, float_format='%.10f')
+        csv_text = combined.drop(columns=['pts']).to_csv(index=False, float_format='%.10f')
         if args.out:
             Path(args.out).write_text(csv_text)
             print(f'Wrote {summary} to {args.out}')
