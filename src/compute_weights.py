@@ -17,14 +17,14 @@ Reproduces Tao et al. (2024)'s workflow but fixes its errors:
   * clean Y003 (valid components only, clamped to [-2, 2]) and pairwise missing
     (replace missing codes with NaN rather than dropping rows).
 
-Case weighting is S017 * S018 by default (WVS demographic weight x the N=1000
-country-size normalisation, so large samples don't dominate the PCA);
-`--weight s017` selects S017 only. Requires R with `psych` (installed on first
-run) and the licensed WVS/EVS .dta files in data/.
+Case weighting is S017, the WVS demographic weight (matching the WVS SPSS
+syntax and Tao et al.). NB S018 is deliberately NOT used: it is S017 rescaled so
+each survey sums to N=1000 and is meant to REPLACE S017 for equal-country
+pooling, never to be multiplied by it. Requires R with `psych` (installed on
+first run) and the licensed WVS/EVS .dta files in data/.
 
 Usage:
   uv run python src/compute_weights.py
-  uv run python src/compute_weights.py --weight s017
 """
 import argparse
 import sys
@@ -44,7 +44,7 @@ S003_FILE = DATA / 's003.csv'
 # VARIABLES). Varimax is order-invariant, so this matches SPSS's alphabetical
 # order as a map; only the row order of weights.txt differs.
 FEATURES = ['F063', 'Y003', 'F120', 'G006', 'E018', 'Y002', 'A008', 'F118', 'E025', 'A165']
-META = ['S003', 'S017', 'S018', 'versn_w']   # S018 only used by --weight s017s018
+META = ['S003', 'S017', 'versn_w']
 
 # Item clusters (Inglehart-Welzel), used to assign components to axes by content.
 SURV_ITEMS = {'Y002', 'A008', 'F118', 'E025', 'A165'}   # Survival vs Self-expression
@@ -137,10 +137,8 @@ def assign_axes(weights: np.ndarray) -> np.ndarray:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--weight', choices=['s017', 's017s018'], default='s017s018',
-                    help='Case weighting: S017*S018 (default; WVS N=1000 weight) or S017 only')
-    args = ap.parse_args()
+    argparse.ArgumentParser(description=__doc__,
+                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
 
     for f in (EVS_FILE, WVS_FILE, S003_FILE):
         if not f.exists():
@@ -148,10 +146,10 @@ def main() -> None:
 
     dx = load_ivs()
     X = dx[FEATURES].astype(float).values                 # contains NaN (missing)
-    # psych wants an n x p weight matrix; every column is the case weight.
-    w = dx['S017'] if args.weight == 's017' else dx['S017'] * dx['S018']
-    weight = w.astype(float).values[:, None] * np.ones((len(dx), len(FEATURES)))
-    print(f'Case weighting: {args.weight}')
+    # psych wants an n x p weight matrix; every column is the S017 case weight.
+    w = dx['S017'].astype(float).values
+    weight = w[:, None] * np.ones((len(dx), len(FEATURES)))
+    print('Case weighting: S017')
 
     weights = assign_axes(principal_weights(X, weight))
 

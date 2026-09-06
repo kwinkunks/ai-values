@@ -2,653 +2,653 @@ window.COORDS = [
 {
 "country": "Albania",
 "region": "African-Islamic",
-"x": -0.878468,
-"y": 0.399872
+"x": -0.878327,
+"y": 0.41664
 },
 {
 "country": "Algeria",
 "region": "African-Islamic",
-"x": -1.124826,
-"y": -0.596425
+"x": -1.140872,
+"y": -0.580168
 },
 {
 "country": "Andorra",
 "region": "Catholic Europe",
-"x": 1.994391,
-"y": 0.572512
+"x": 2.029924,
+"y": 0.530197
 },
 {
 "country": "Argentina",
 "region": "Latin America",
-"x": 0.345008,
-"y": -0.345738
+"x": 0.352881,
+"y": -0.353706
 },
 {
 "country": "Armenia",
 "region": "Orthodox Europe",
-"x": -1.099007,
-"y": -0.697456
+"x": -1.117672,
+"y": -0.678157
 },
 {
 "country": "Australia",
 "region": "English-Speaking",
-"x": 2.339516,
-"y": -0.148315
+"x": 2.359675,
+"y": -0.190756
 },
 {
 "country": "Austria",
 "region": "Catholic Europe",
-"x": 1.028659,
-"y": 0.102418
+"x": 1.027023,
+"y": 0.089814
 },
 {
 "country": "Azerbaijan",
 "region": "African-Islamic",
-"x": -1.310858,
-"y": -0.505174
+"x": -1.326302,
+"y": -0.484968
 },
 {
 "country": "Bangladesh",
 "region": "African-Islamic",
-"x": -0.990651,
-"y": -1.366634
+"x": -1.013369,
+"y": -1.352789
 },
 {
 "country": "Belarus",
 "region": "Orthodox Europe",
-"x": -0.519488,
-"y": 0.5179
+"x": -0.5066,
+"y": 0.522159
 },
 {
 "country": "Belgium",
 "region": "Catholic Europe",
-"x": 1.00647,
-"y": 0.168752
+"x": 1.022135,
+"y": 0.153992
 },
 {
 "country": "Bolivia",
 "region": "Latin America",
-"x": -0.69482,
-"y": -1.071606
+"x": -0.699415,
+"y": -1.066127
 },
 {
 "country": "Bosnia Herzegovina",
 "region": "Orthodox Europe",
-"x": -0.787379,
-"y": 0.147419
+"x": -0.783793,
+"y": 0.163631
 },
 {
 "country": "Brazil",
 "region": "Latin America",
-"x": -0.278926,
-"y": -0.56672
+"x": -0.267051,
+"y": -0.563193
 },
 {
 "country": "Bulgaria",
 "region": "Orthodox Europe",
-"x": -0.532951,
-"y": 1.21246
+"x": -0.507334,
+"y": 1.217527
 },
 {
 "country": "Burkina Faso",
 "region": "African-Islamic",
-"x": -1.028124,
-"y": -1.122585
+"x": -1.051084,
+"y": -1.104926
 },
 {
 "country": "Canada",
 "region": "English-Speaking",
-"x": 1.809447,
-"y": -0.081915
+"x": 1.82671,
+"y": -0.115842
 },
 {
 "country": "Chile",
 "region": "Latin America",
-"x": -0.062478,
-"y": -0.209267
+"x": -0.054649,
+"y": -0.210887
 },
 {
 "country": "China",
 "region": "Confucian",
-"x": 0.073835,
-"y": 0.467716
+"x": 0.051068,
+"y": 0.489102
 },
 {
 "country": "Colombia",
 "region": "Latin America",
-"x": -0.207725,
-"y": -1.653196
+"x": -0.22216,
+"y": -1.65268
 },
 {
 "country": "Croatia",
 "region": "Catholic Europe",
-"x": -0.12195,
-"y": -0.098726
+"x": -0.118729,
+"y": -0.095475
 },
 {
 "country": "Cyprus",
 "region": "West & South Asia",
-"x": -0.445633,
-"y": -0.385266
+"x": -0.449476,
+"y": -0.37976
 },
 {
 "country": "Czechia",
 "region": "Catholic Europe",
-"x": 0.768006,
-"y": 1.103442
+"x": 0.792664,
+"y": 1.092334
 },
 {
 "country": "Denmark",
 "region": "Protestant Europe",
-"x": 2.531485,
-"y": 0.501843
+"x": 2.549866,
+"y": 0.457372
 },
 {
 "country": "Ecuador",
 "region": "Latin America",
-"x": -0.465667,
-"y": -1.639005
+"x": -0.484883,
+"y": -1.634438
 },
 {
 "country": "Estonia",
 "region": "Orthodox Europe",
-"x": -0.210193,
-"y": 1.14168
+"x": -0.199888,
+"y": 1.149206
 },
 {
 "country": "Ethiopia",
 "region": "African-Islamic",
-"x": -1.046425,
-"y": -0.85827
+"x": -1.074504,
+"y": -0.837064
 },
 {
 "country": "Finland",
 "region": "Protestant Europe",
-"x": 1.711507,
-"y": 0.413437
+"x": 1.71543,
+"y": 0.386485
 },
 {
 "country": "France",
 "region": "Catholic Europe",
-"x": 1.11921,
-"y": 0.349999
+"x": 1.147286,
+"y": 0.328291
 },
 {
 "country": "Georgia",
 "region": "Orthodox Europe",
-"x": -1.453167,
-"y": -0.557099
+"x": -1.469098,
+"y": -0.534437
 },
 {
 "country": "Germany",
 "region": "Protestant Europe",
-"x": 1.194227,
-"y": 1.066622
+"x": 1.21878,
+"y": 1.050984
 },
 {
 "country": "Ghana",
 "region": "African-Islamic",
-"x": -1.176978,
-"y": -1.704468
+"x": -1.202406,
+"y": -1.687917
 },
 {
 "country": "Great Britain",
 "region": "English-Speaking",
-"x": 1.713939,
-"y": -0.019162
+"x": 1.734262,
+"y": -0.048283
 },
 {
 "country": "Greece",
 "region": "Orthodox Europe",
-"x": 0.028867,
-"y": 0.273847
+"x": 0.025615,
+"y": 0.271933
 },
 {
 "country": "Guatemala",
 "region": "Latin America",
-"x": -0.513858,
-"y": -1.267761
+"x": -0.527857,
+"y": -1.261439
 },
 {
 "country": "Haiti",
 "region": "Latin America",
-"x": -0.159059,
-"y": -0.78264
+"x": -0.149043,
+"y": -0.790753
 },
 {
 "country": "Hong Kong SAR",
 "region": "Confucian",
-"x": 0.358232,
-"y": 1.290492
+"x": 0.366615,
+"y": 1.295077
 },
 {
 "country": "Hungary",
 "region": "Catholic Europe",
-"x": -0.365344,
-"y": 0.637658
+"x": -0.354461,
+"y": 0.642923
 },
 {
 "country": "Iceland",
 "region": "Protestant Europe",
-"x": 1.664076,
-"y": -0.226222
+"x": 1.667602,
+"y": -0.25162
 },
 {
 "country": "India",
 "region": "West & South Asia",
-"x": -0.614725,
-"y": -0.546809
+"x": -0.6441,
+"y": -0.526887
 },
 {
 "country": "Indonesia",
 "region": "West & South Asia",
-"x": -1.128916,
-"y": -0.813661
+"x": -1.176759,
+"y": -0.784989
 },
 {
 "country": "Iran",
 "region": "African-Islamic",
-"x": -1.076446,
-"y": -0.368529
+"x": -1.097576,
+"y": -0.350892
 },
 {
 "country": "Iraq",
 "region": "African-Islamic",
-"x": -1.531803,
-"y": -0.652929
+"x": -1.541984,
+"y": -0.632366
 },
 {
 "country": "Ireland",
 "region": "English-Speaking",
-"x": 0.483121,
-"y": -1.350034
+"x": 0.464664,
+"y": -1.351738
 },
 {
 "country": "Italy",
 "region": "Catholic Europe",
-"x": 0.3509,
-"y": 0.082203
+"x": 0.361189,
+"y": 0.074008
 },
 {
 "country": "Japan",
 "region": "Confucian",
-"x": 1.253633,
-"y": 1.558239
+"x": 1.244501,
+"y": 1.555722
 },
 {
 "country": "Jordan",
 "region": "African-Islamic",
-"x": -1.592496,
-"y": -1.388081
+"x": -1.619829,
+"y": -1.362752
 },
 {
 "country": "Kazakhstan",
 "region": "African-Islamic",
-"x": -0.643282,
-"y": -0.213133
+"x": -0.663804,
+"y": -0.197882
 },
 {
 "country": "Kenya",
 "region": "African-Islamic",
-"x": -0.499077,
-"y": -0.823559
+"x": -0.49777,
+"y": -0.822931
 },
 {
 "country": "Kosovo",
 "region": "African-Islamic",
-"x": -0.618147,
-"y": -1.102889
+"x": -0.641322,
+"y": -1.085546
 },
 {
 "country": "Kyrgyzstan",
 "region": "African-Islamic",
-"x": -0.789818,
-"y": -0.862126
+"x": -0.824139,
+"y": -0.840622
 },
 {
 "country": "Latvia",
 "region": "Catholic Europe",
-"x": -0.51496,
-"y": 0.925856
+"x": -0.510293,
+"y": 0.938891
 },
 {
 "country": "Lebanon",
 "region": "African-Islamic",
-"x": -1.099358,
-"y": -0.188831
+"x": -1.1015,
+"y": -0.171862
 },
 {
 "country": "Libya",
 "region": "African-Islamic",
-"x": -1.369954,
-"y": -1.478108
+"x": -1.396872,
+"y": -1.456775
 },
 {
 "country": "Lithuania",
 "region": "Catholic Europe",
-"x": -0.543588,
-"y": 1.075073
+"x": -0.529487,
+"y": 1.08553
 },
 {
 "country": "Luxembourg",
 "region": "Catholic Europe",
-"x": 1.54095,
-"y": 0.283358
+"x": 1.556428,
+"y": 0.260775
 },
 {
 "country": "Macau SAR",
 "region": "Confucian",
-"x": 0.444806,
-"y": 1.211309
+"x": 0.445321,
+"y": 1.216515
 },
 {
 "country": "Malaysia",
 "region": "West & South Asia",
-"x": -0.628972,
-"y": -0.427989
+"x": -0.640876,
+"y": -0.41598
 },
 {
 "country": "Maldives",
 "region": "African-Islamic",
-"x": -0.905996,
-"y": -1.286017
+"x": -0.921454,
+"y": -1.274293
 },
 {
 "country": "Mali",
 "region": "African-Islamic",
-"x": -0.35757,
-"y": -1.356948
+"x": -0.373207,
+"y": -1.355934
 },
 {
 "country": "Malta",
 "region": "Latin America",
-"x": -0.41963,
-"y": -1.428554
+"x": -0.436542,
+"y": -1.41683
 },
 {
 "country": "Mexico",
 "region": "Latin America",
-"x": 0.1404,
-"y": -1.354491
+"x": 0.129648,
+"y": -1.361372
 },
 {
 "country": "Moldova",
 "region": "Orthodox Europe",
-"x": -1.58365,
-"y": 0.717875
+"x": -1.577033,
+"y": 0.74438
 },
 {
 "country": "Mongolia",
 "region": "Confucian",
-"x": 0.243569,
-"y": 0.807475
+"x": 0.252939,
+"y": 0.808554
 },
 {
 "country": "Montenegro",
 "region": "Orthodox Europe",
-"x": -0.585664,
-"y": 0.22005
+"x": -0.58211,
+"y": 0.229888
 },
 {
 "country": "Morocco",
 "region": "African-Islamic",
-"x": -1.234984,
-"y": -0.456099
+"x": -1.243088,
+"y": -0.438975
 },
 {
 "country": "Myanmar",
 "region": "West & South Asia",
-"x": -1.192093,
-"y": -0.821969
+"x": -1.239822,
+"y": -0.794318
 },
 {
 "country": "Netherlands",
 "region": "Protestant Europe",
-"x": 2.11141,
-"y": 0.381875
+"x": 2.146307,
+"y": 0.342432
 },
 {
 "country": "New Zealand",
 "region": "English-Speaking",
-"x": 2.575749,
-"y": -0.179676
+"x": 2.5888,
+"y": -0.221331
 },
 {
 "country": "Nicaragua",
 "region": "Latin America",
-"x": -0.750347,
-"y": -1.553772
+"x": -0.766322,
+"y": -1.546827
 },
 {
 "country": "Nigeria",
 "region": "African-Islamic",
-"x": -1.179747,
-"y": -1.138766
+"x": -1.198424,
+"y": -1.120423
 },
 {
 "country": "North Ireland",
 "region": "English-Speaking",
-"x": 0.54333,
-"y": -0.687801
+"x": 0.54545,
+"y": -0.69389
 },
 {
 "country": "North Macedonia",
 "region": "Orthodox Europe",
-"x": -0.17613,
-"y": 0.213919
+"x": -0.152177,
+"y": 0.201998
 },
 {
 "country": "Northern Cyprus",
 "region": "West & South Asia",
-"x": -0.756485,
-"y": -0.095616
+"x": -0.762822,
+"y": -0.083357
 },
 {
 "country": "Norway",
 "region": "Protestant Europe",
-"x": 2.120748,
-"y": 0.477865
+"x": 2.121001,
+"y": 0.450149
 },
 {
 "country": "Pakistan",
 "region": "African-Islamic",
-"x": -0.87696,
-"y": -1.136017
+"x": -0.923392,
+"y": -1.113863
 },
 {
 "country": "Palestine",
 "region": "African-Islamic",
-"x": -1.554728,
-"y": -0.732525
+"x": -1.572832,
+"y": -0.708678
 },
 {
 "country": "Peru",
 "region": "Latin America",
-"x": -0.698353,
-"y": -0.893798
+"x": -0.707935,
+"y": -0.883726
 },
 {
 "country": "Philippines",
 "region": "Latin America",
-"x": -0.297571,
-"y": -1.237825
+"x": -0.306586,
+"y": -1.238687
 },
 {
 "country": "Poland",
 "region": "Catholic Europe",
-"x": -0.449015,
-"y": -0.422584
+"x": -0.458463,
+"y": -0.415508
 },
 {
 "country": "Portugal",
 "region": "Catholic Europe",
-"x": -0.369668,
-"y": -0.253129
+"x": -0.362259,
+"y": -0.25144
 },
 {
 "country": "Puerto Rico",
 "region": "Latin America",
-"x": 0.287604,
-"y": -1.502089
+"x": 0.282218,
+"y": -1.512885
 },
 {
 "country": "Romania",
 "region": "Orthodox Europe",
-"x": -1.311777,
-"y": 0.038656
+"x": -1.302779,
+"y": 0.052721
 },
 {
 "country": "Russia",
 "region": "Orthodox Europe",
-"x": -0.777998,
-"y": 0.701754
+"x": -0.769433,
+"y": 0.714058
 },
 {
 "country": "Rwanda",
 "region": "African-Islamic",
-"x": -1.103638,
-"y": -1.082306
+"x": -1.126861,
+"y": -1.061628
 },
 {
 "country": "Serbia",
 "region": "Orthodox Europe",
-"x": -0.382347,
-"y": 0.419837
+"x": -0.370265,
+"y": 0.423914
 },
 {
 "country": "Singapore",
 "region": "West & South Asia",
-"x": -0.109587,
-"y": 0.077181
+"x": -0.123967,
+"y": 0.086089
 },
 {
 "country": "Slovakia",
 "region": "Catholic Europe",
-"x": -0.008292,
-"y": 0.626467
+"x": 0.016294,
+"y": 0.624161
 },
 {
 "country": "Slovenia",
 "region": "Catholic Europe",
-"x": 0.771968,
-"y": 0.745073
+"x": 0.792122,
+"y": 0.726534
 },
 {
 "country": "South Africa",
 "region": "African-Islamic",
-"x": 0.018836,
-"y": -0.263859
+"x": 0.02019,
+"y": -0.268628
 },
 {
 "country": "South Korea",
 "region": "Confucian",
-"x": -0.083229,
-"y": 1.121162
+"x": -0.091186,
+"y": 1.137723
 },
 {
 "country": "Spain",
 "region": "Catholic Europe",
-"x": 0.452507,
-"y": 0.041448
+"x": 0.465433,
+"y": 0.031546
 },
 {
 "country": "Sweden",
 "region": "Protestant Europe",
-"x": 2.691248,
-"y": 0.887598
+"x": 2.702765,
+"y": 0.846034
 },
 {
 "country": "Switzerland",
 "region": "Protestant Europe",
-"x": 1.984878,
-"y": 0.005186
+"x": 1.999562,
+"y": -0.024497
 },
 {
 "country": "Taiwan ROC",
 "region": "Confucian",
-"x": -0.225152,
-"y": 1.262502
+"x": -0.231214,
+"y": 1.279982
 },
 {
 "country": "Thailand",
 "region": "West & South Asia",
-"x": -0.102861,
-"y": -0.277542
+"x": -0.146114,
+"y": -0.259664
 },
 {
 "country": "Trinidad and Tobago",
 "region": "Latin America",
-"x": -0.674524,
-"y": -1.688782
+"x": -0.694912,
+"y": -1.678348
 },
 {
 "country": "Tunisia",
 "region": "African-Islamic",
-"x": -1.671098,
-"y": -0.565487
+"x": -1.685819,
+"y": -0.538319
 },
 {
 "country": "Turkey",
 "region": "African-Islamic",
-"x": -1.000537,
-"y": -0.55323
+"x": -1.01887,
+"y": -0.535925
 },
 {
 "country": "Ukraine",
 "region": "Orthodox Europe",
-"x": -0.999868,
-"y": 0.629419
+"x": -0.990398,
+"y": 0.644573
 },
 {
 "country": "United States",
 "region": "English-Speaking",
-"x": 1.271044,
-"y": -0.453178
+"x": 1.281019,
+"y": -0.477576
 },
 {
 "country": "Uruguay",
 "region": "Latin America",
-"x": 0.935836,
-"y": -0.356391
+"x": 0.949697,
+"y": -0.378463
 },
 {
 "country": "Venezuela",
 "region": "Latin America",
-"x": -0.493354,
-"y": -0.962141
+"x": -0.498681,
+"y": -0.958887
 },
 {
 "country": "Vietnam",
 "region": "West & South Asia",
-"x": 0.254372,
-"y": -0.555967
+"x": 0.244614,
+"y": -0.556862
 },
 {
 "country": "Yemen",
 "region": "African-Islamic",
-"x": -1.425286,
-"y": -1.28197
+"x": -1.450037,
+"y": -1.260036
 },
 {
 "country": "Zambia",
 "region": "African-Islamic",
-"x": -1.088793,
-"y": -0.31895
+"x": -1.088619,
+"y": -0.30843
 },
 {
 "country": "Zimbabwe",
 "region": "African-Islamic",
-"x": -1.529284,
-"y": -0.771654
+"x": -1.541304,
+"y": -0.748741
 },
 {
 "country": "Claude Fable 5",
 "region": "Anthropic",
-"x": 0.00715,
-"y": 0.519973,
-"ea": 0.185466,
-"eb": 0.058314,
-"etheta": -2.797875,
+"x": 0.045909,
+"y": 0.51913,
+"ea": 0.186051,
+"eb": 0.05854,
+"etheta": -2.819959,
 "en": 60,
 "lineage": "Claude Fable",
 "release": "2026-06-09"
@@ -656,11 +656,11 @@ window.COORDS = [
 {
 "country": "Claude Fable 5.1",
 "region": "Anthropic",
-"x": 0.520852,
-"y": 0.553318,
-"ea": 0.381439,
-"eb": 0.106738,
-"etheta": -2.671918,
+"x": 0.566549,
+"y": 0.543917,
+"ea": 0.379957,
+"eb": 0.10757,
+"etheta": -2.68631,
 "en": 30,
 "lineage": "Claude Fable",
 "release": "2026-09-01"
@@ -668,11 +668,11 @@ window.COORDS = [
 {
 "country": "Claude Haiku 4.5",
 "region": "Anthropic",
-"x": 3.637108,
-"y": 0.722115,
-"ea": 0.194125,
-"eb": 0.063996,
-"etheta": 2.464019,
+"x": 3.665848,
+"y": 0.65975,
+"ea": 0.193565,
+"eb": 0.064058,
+"etheta": 2.449853,
 "en": 40,
 "lineage": "Claude Haiku",
 "release": "2025-10-01"
@@ -680,11 +680,11 @@ window.COORDS = [
 {
 "country": "Claude Opus 4",
 "region": "Anthropic",
-"x": 2.049808,
-"y": 1.173978,
-"ea": 0.196487,
-"eb": 0.079762,
-"etheta": -2.509804,
+"x": 2.097345,
+"y": 1.129775,
+"ea": 0.196359,
+"eb": 0.082885,
+"etheta": -2.535283,
 "en": 30,
 "lineage": "Claude Opus",
 "release": "2025-05-14"
@@ -692,11 +692,11 @@ window.COORDS = [
 {
 "country": "Claude Opus 4.5",
 "region": "Anthropic",
-"x": 2.115959,
-"y": 0.78336,
-"ea": 0.232423,
-"eb": 0.076588,
-"etheta": 3.089679,
+"x": 2.156563,
+"y": 0.739032,
+"ea": 0.230753,
+"eb": 0.07631,
+"etheta": 3.069779,
 "en": 40,
 "lineage": "Claude Opus",
 "release": "2025-11-01"
@@ -704,11 +704,11 @@ window.COORDS = [
 {
 "country": "Claude Opus 4.6",
 "region": "Anthropic",
-"x": 1.407328,
-"y": 0.361538,
-"ea": 0.239362,
-"eb": 0.058552,
-"etheta": 3.096427,
+"x": 1.457926,
+"y": 0.330246,
+"ea": 0.236401,
+"eb": 0.057992,
+"etheta": 3.079736,
 "en": 30,
 "lineage": "Claude Opus",
 "release": "2026-02-05"
@@ -716,11 +716,11 @@ window.COORDS = [
 {
 "country": "Claude Opus 4.7",
 "region": "Anthropic",
-"x": 0.881502,
-"y": 1.156264,
-"ea": 0.643184,
-"eb": 0.137175,
-"etheta": -2.384297,
+"x": 0.936286,
+"y": 1.137335,
+"ea": 0.644398,
+"eb": 0.136639,
+"etheta": -2.405187,
 "en": 30,
 "lineage": "Claude Opus",
 "release": "2026-04-16"
@@ -728,11 +728,11 @@ window.COORDS = [
 {
 "country": "Claude Opus 4.8",
 "region": "Anthropic",
-"x": 0.875267,
-"y": 0.981825,
-"ea": 0.900751,
-"eb": 0.124296,
-"etheta": 0.804174,
+"x": 0.91637,
+"y": 0.965917,
+"ea": 0.901924,
+"eb": 0.1254,
+"etheta": -2.357822,
 "en": 30,
 "lineage": "Claude Opus",
 "release": "2026-05-28"
@@ -740,11 +740,11 @@ window.COORDS = [
 {
 "country": "Claude Opus 5",
 "region": "Anthropic",
-"x": 0.987743,
-"y": 0.935133,
-"ea": 0.786341,
-"eb": 0.100839,
-"etheta": 0.979364,
+"x": 1.031821,
+"y": 0.918742,
+"ea": 0.784665,
+"eb": 0.100085,
+"etheta": 0.961903,
 "en": 29,
 "lineage": "Claude Opus",
 "release": "2026-07-24"
@@ -752,11 +752,11 @@ window.COORDS = [
 {
 "country": "Claude Sonnet 3.7",
 "region": "Anthropic",
-"x": 2.160274,
-"y": 1.372855,
-"ea": 0.238849,
-"eb": 0.111829,
-"etheta": 1.00079,
+"x": 2.21103,
+"y": 1.326502,
+"ea": 0.238817,
+"eb": 0.113676,
+"etheta": 0.991547,
 "en": 30,
 "lineage": "Claude Sonnet",
 "release": "2025-02-19"
@@ -764,11 +764,11 @@ window.COORDS = [
 {
 "country": "Claude Sonnet 4",
 "region": "Anthropic",
-"x": 2.068223,
-"y": 1.198174,
-"ea": 0.094501,
-"eb": 0.017936,
-"etheta": -2.41861,
+"x": 2.11523,
+"y": 1.154806,
+"ea": 0.094818,
+"eb": 0.018764,
+"etheta": -2.440432,
 "en": 30,
 "lineage": "Claude Sonnet",
 "release": "2025-05-14"
@@ -776,11 +776,11 @@ window.COORDS = [
 {
 "country": "Claude Sonnet 4.5",
 "region": "Anthropic",
-"x": 1.396903,
-"y": 0.778749,
-"ea": 0.239166,
-"eb": 0.057214,
-"etheta": -2.794458,
+"x": 1.444056,
+"y": 0.74736,
+"ea": 0.236842,
+"eb": 0.058155,
+"etheta": -2.810789,
 "en": 30,
 "lineage": "Claude Sonnet",
 "release": "2025-09-29"
@@ -788,11 +788,11 @@ window.COORDS = [
 {
 "country": "Claude Sonnet 4.6",
 "region": "Anthropic",
-"x": 0.929015,
-"y": 0.5075,
-"ea": 0.245924,
-"eb": 0.075316,
-"etheta": -2.770846,
+"x": 0.973142,
+"y": 0.485053,
+"ea": 0.244002,
+"eb": 0.078302,
+"etheta": -2.798781,
 "en": 30,
 "lineage": "Claude Sonnet",
 "release": "2026-02-17"
@@ -800,22 +800,22 @@ window.COORDS = [
 {
 "country": "Claude Sonnet 5",
 "region": "Anthropic",
-"x": 0.628371,
-"y": 0.332779,
-"ea": 0.239147,
-"eb": 0.140824,
-"etheta": -2.54549,
+"x": 0.667564,
+"y": 0.320342,
+"ea": 0.237429,
+"eb": 0.140467,
+"etheta": -2.560435,
 "en": 30,
 "lineage": "Claude Sonnet"
 },
 {
 "country": "DeepSeek 3",
 "region": "DeepSeek",
-"x": 1.136163,
-"y": 1.271062,
-"ea": 0.180773,
-"eb": 0.098985,
-"etheta": -2.485659,
+"x": 1.180971,
+"y": 1.242518,
+"ea": 0.178634,
+"eb": 0.102628,
+"etheta": -2.500394,
 "en": 30,
 "lineage": "DeepSeek",
 "release": "2024-12-26"
@@ -823,11 +823,11 @@ window.COORDS = [
 {
 "country": "DeepSeek 4",
 "region": "DeepSeek",
-"x": 0.577202,
-"y": 1.652508,
-"ea": 0.466342,
-"eb": 0.253026,
-"etheta": -2.599326,
+"x": 0.599675,
+"y": 1.650727,
+"ea": 0.466253,
+"eb": 0.252257,
+"etheta": -2.618617,
 "en": 30,
 "lineage": "DeepSeek",
 "release": "2026-08-13"
@@ -835,11 +835,11 @@ window.COORDS = [
 {
 "country": "GLM 5",
 "region": "Zhipu",
-"x": 0.962878,
-"y": 0.563099,
-"ea": 0.475609,
-"eb": 0.187065,
-"etheta": -2.823852,
+"x": 1.006288,
+"y": 0.53994,
+"ea": 0.47596,
+"eb": 0.187177,
+"etheta": -2.842524,
 "en": 30,
 "lineage": "GLM",
 "release": "2026-02-12"
@@ -847,11 +847,11 @@ window.COORDS = [
 {
 "country": "GLM 5.2",
 "region": "Zhipu",
-"x": 1.27384,
-"y": 0.842047,
-"ea": 0.546758,
-"eb": 0.240771,
-"etheta": -2.663072,
+"x": 1.313843,
+"y": 0.816512,
+"ea": 0.546075,
+"eb": 0.242287,
+"etheta": -2.681131,
 "en": 30,
 "lineage": "GLM",
 "release": "2026-06-16"
@@ -859,11 +859,11 @@ window.COORDS = [
 {
 "country": "GLM 5.3",
 "region": "Zhipu",
-"x": 1.745912,
-"y": 0.473257,
-"ea": 0.561922,
-"eb": 0.296194,
-"etheta": -2.477685,
+"x": 1.767774,
+"y": 0.441903,
+"ea": 0.562004,
+"eb": 0.295874,
+"etheta": -2.496877,
 "en": 30,
 "lineage": "GLM",
 "release": "2026-08-14"
@@ -871,11 +871,11 @@ window.COORDS = [
 {
 "country": "GPT-3.5",
 "region": "OpenAI",
-"x": 3.233408,
-"y": 0.184805,
-"ea": 0.405905,
-"eb": 0.170163,
-"etheta": 2.450274,
+"x": 3.256777,
+"y": 0.120756,
+"ea": 0.405144,
+"eb": 0.169499,
+"etheta": 2.431125,
 "en": 28,
 "lineage": "GPT-3.5",
 "release": "2023-03-01"
@@ -883,11 +883,11 @@ window.COORDS = [
 {
 "country": "GPT-4",
 "region": "OpenAI",
-"x": 2.602176,
-"y": -0.11549,
-"ea": 0.215384,
-"eb": 0.168433,
-"etheta": 2.333894,
+"x": 2.651424,
+"y": -0.171377,
+"ea": 0.219823,
+"eb": 0.169663,
+"etheta": 2.345822,
 "en": 20,
 "lineage": "GPT-4",
 "release": "2024-04-09"
@@ -895,11 +895,11 @@ window.COORDS = [
 {
 "country": "GPT-4o",
 "region": "OpenAI",
-"x": 0.690198,
-"y": 1.614286,
-"ea": 0.52832,
-"eb": 0.320664,
-"etheta": 2.148587,
+"x": 0.740288,
+"y": 1.596363,
+"ea": 0.527595,
+"eb": 0.317635,
+"etheta": 2.127181,
 "en": 16,
 "lineage": "GPT-4",
 "release": "2024-11-20"
@@ -907,11 +907,11 @@ window.COORDS = [
 {
 "country": "GPT-5",
 "region": "OpenAI",
-"x": 1.12322,
-"y": 0.635175,
-"ea": 0.849609,
-"eb": 0.292128,
-"etheta": -2.763382,
+"x": 1.148917,
+"y": 0.613979,
+"ea": 0.84685,
+"eb": 0.291468,
+"etheta": -2.779438,
 "en": 19,
 "lineage": "GPT-5",
 "release": "2025-08-07"
@@ -919,33 +919,33 @@ window.COORDS = [
 {
 "country": "GPT-5 (min)",
 "region": "OpenAI",
-"x": 2.657126,
-"y": 0.323018,
-"ea": 0.606374,
-"eb": 0.259061,
-"etheta": -3.098604,
+"x": 2.673725,
+"y": 0.280124,
+"ea": 0.603912,
+"eb": 0.258386,
+"etheta": -3.112999,
 "en": 30,
 "release": "2025-08-07"
 },
 {
 "country": "GPT-5 mini",
 "region": "OpenAI",
-"x": 1.521177,
-"y": 0.950749,
-"ea": 0.30451,
-"eb": 0.140558,
-"etheta": 3.073558,
+"x": 1.545392,
+"y": 0.926669,
+"ea": 0.303738,
+"eb": 0.140478,
+"etheta": 3.054087,
 "en": 40,
 "release": "2025-08-07"
 },
 {
 "country": "GPT-5.1",
 "region": "OpenAI",
-"x": 3.662692,
-"y": 2.117801,
-"ea": 0.187757,
-"eb": 0.161443,
-"etheta": 1.886268,
+"x": 3.706174,
+"y": 2.050865,
+"ea": 0.188355,
+"eb": 0.159555,
+"etheta": 1.864887,
 "en": 60,
 "lineage": "GPT-5",
 "release": "2025-11-13"
@@ -953,22 +953,22 @@ window.COORDS = [
 {
 "country": "GPT-5.1 (low)",
 "region": "OpenAI",
-"x": 3.615719,
-"y": 1.531286,
-"ea": 0.320206,
-"eb": 0.225631,
-"etheta": 0.904152,
+"x": 3.660886,
+"y": 1.461659,
+"ea": 0.318315,
+"eb": 0.225286,
+"etheta": 0.922832,
 "en": 30,
 "release": "2025-11-13"
 },
 {
 "country": "GPT-5.2",
 "region": "OpenAI",
-"x": 1.386397,
-"y": 1.679393,
-"ea": 0.439399,
-"eb": 0.228233,
-"etheta": -2.552663,
+"x": 1.433277,
+"y": 1.64574,
+"ea": 0.440702,
+"eb": 0.228124,
+"etheta": -2.576393,
 "en": 29,
 "lineage": "GPT-5",
 "release": "2025-12-11"
@@ -976,22 +976,22 @@ window.COORDS = [
 {
 "country": "GPT-5.2 (low)",
 "region": "OpenAI",
-"x": 1.624869,
-"y": 1.774576,
-"ea": 0.328315,
-"eb": 0.207882,
-"etheta": -2.413728,
+"x": 1.677952,
+"y": 1.733179,
+"ea": 0.329397,
+"eb": 0.207379,
+"etheta": -2.442147,
 "en": 40,
 "release": "2025-12-11"
 },
 {
 "country": "GPT-5.3",
 "region": "OpenAI",
-"x": 1.52762,
-"y": 1.53177,
-"ea": 0.261709,
-"eb": 0.152094,
-"etheta": 2.649897,
+"x": 1.567441,
+"y": 1.504494,
+"ea": 0.262529,
+"eb": 0.152573,
+"etheta": 2.633263,
 "en": 30,
 "lineage": "GPT-5",
 "release": "2026-02-05"
@@ -999,11 +999,11 @@ window.COORDS = [
 {
 "country": "GPT-5.4",
 "region": "OpenAI",
-"x": 1.346834,
-"y": 0.681588,
-"ea": 0.534026,
-"eb": 0.298104,
-"etheta": 0.952031,
+"x": 1.373254,
+"y": 0.653827,
+"ea": 0.533883,
+"eb": 0.295321,
+"etheta": 0.914989,
 "en": 30,
 "lineage": "GPT-5",
 "release": "2026-03-05"
@@ -1011,33 +1011,33 @@ window.COORDS = [
 {
 "country": "GPT-5.4 (low)",
 "region": "OpenAI",
-"x": 1.213193,
-"y": 0.205325,
-"ea": 0.528658,
-"eb": 0.362976,
-"etheta": 1.307834,
+"x": 1.231422,
+"y": 0.180324,
+"ea": 0.525277,
+"eb": 0.363566,
+"etheta": 1.269836,
 "en": 30,
 "release": "2026-03-05"
 },
 {
 "country": "GPT-5.4 mini",
 "region": "OpenAI",
-"x": 1.360576,
-"y": 1.66244,
-"ea": 0.736431,
-"eb": 0.403612,
-"etheta": 2.77402,
+"x": 1.362513,
+"y": 1.662687,
+"ea": 0.749659,
+"eb": 0.40216,
+"etheta": 2.760474,
 "en": 30,
 "release": "2026-03-17"
 },
 {
 "country": "GPT-5.5",
 "region": "OpenAI",
-"x": 2.377687,
-"y": 1.664845,
-"ea": 0.435238,
-"eb": 0.167583,
-"etheta": 1.140806,
+"x": 2.438421,
+"y": 1.616792,
+"ea": 0.435009,
+"eb": 0.168779,
+"etheta": 1.130309,
 "en": 30,
 "lineage": "GPT-5",
 "release": "2026-04-23"
@@ -1045,33 +1045,33 @@ window.COORDS = [
 {
 "country": "GPT-5.5 (low)",
 "region": "OpenAI",
-"x": 2.528031,
-"y": 1.280952,
-"ea": 0.534139,
-"eb": 0.212106,
-"etheta": 0.957874,
+"x": 2.578522,
+"y": 1.231022,
+"ea": 0.532938,
+"eb": 0.212107,
+"etheta": 0.944368,
 "en": 30,
 "release": "2026-04-23"
 },
 {
 "country": "GPT-5.5 (none)",
 "region": "OpenAI",
-"x": 2.264295,
-"y": 1.365647,
-"ea": 0.532262,
-"eb": 0.244583,
-"etheta": 0.867969,
+"x": 2.322437,
+"y": 1.319735,
+"ea": 0.531912,
+"eb": 0.24551,
+"etheta": 0.84946,
 "en": 30,
 "release": "2026-04-23"
 },
 {
 "country": "GPT-5.6 Luna",
 "region": "OpenAI",
-"x": 1.346163,
-"y": -1.039828,
-"ea": 0.654888,
-"eb": 0.43956,
-"etheta": 0.977104,
+"x": 1.344897,
+"y": -1.057646,
+"ea": 0.654002,
+"eb": 0.438691,
+"etheta": 0.954524,
 "en": 30,
 "lineage": "GPT-5.6",
 "release": "2026-07-09"
@@ -1079,11 +1079,11 @@ window.COORDS = [
 {
 "country": "GPT-5.6 Sol",
 "region": "OpenAI",
-"x": 1.547596,
-"y": 1.245607,
-"ea": 0.769193,
-"eb": 0.198,
-"etheta": 0.973745,
+"x": 1.584606,
+"y": 1.216838,
+"ea": 0.768477,
+"eb": 0.199936,
+"etheta": 0.955773,
 "en": 30,
 "lineage": "GPT-5.6",
 "release": "2026-07-11"
@@ -1091,11 +1091,11 @@ window.COORDS = [
 {
 "country": "GPT-5.6 Terra",
 "region": "OpenAI",
-"x": 0.866824,
-"y": 0.501547,
-"ea": 0.864787,
-"eb": 0.203513,
-"etheta": 1.112254,
+"x": 0.895462,
+"y": 0.477195,
+"ea": 0.863569,
+"eb": 0.203475,
+"etheta": 1.090763,
 "en": 30,
 "lineage": "GPT-5.6",
 "release": "2026-07-10"
@@ -1103,22 +1103,22 @@ window.COORDS = [
 {
 "country": "GPT-6 Astra",
 "region": "OpenAI",
-"x": 2.222565,
-"y": 2.036124,
-"ea": 0.257316,
-"eb": 0.110304,
-"etheta": -2.549689,
+"x": 2.287184,
+"y": 1.98557,
+"ea": 0.256504,
+"eb": 0.110671,
+"etheta": -2.563993,
 "en": 50,
 "lineage": "GPT-6"
 },
 {
 "country": "GPT-OSS 120b",
 "region": "OpenAI",
-"x": 2.368567,
-"y": 0.957586,
-"ea": 0.172096,
-"eb": 0.1536,
-"etheta": 2.358498,
+"x": 2.377607,
+"y": 0.922728,
+"ea": 0.175697,
+"eb": 0.153588,
+"etheta": 2.370767,
 "en": 27,
 "lineage": "GPT-OSS",
 "release": "2025-08-05"
@@ -1126,11 +1126,11 @@ window.COORDS = [
 {
 "country": "Gemini 2",
 "region": "Google",
-"x": 1.615301,
-"y": 1.31521,
-"ea": 0.805241,
-"eb": 0.379858,
-"etheta": 1.264877,
+"x": 1.687777,
+"y": 1.271049,
+"ea": 0.805679,
+"eb": 0.375536,
+"etheta": 1.265446,
 "en": 10,
 "lineage": "Gemini",
 "release": "2025-02-05"
@@ -1138,11 +1138,11 @@ window.COORDS = [
 {
 "country": "Gemini 2.5",
 "region": "Google",
-"x": 1.392562,
-"y": 0.917585,
-"ea": 0.377327,
-"eb": 0.242307,
-"etheta": 0.931846,
+"x": 1.461577,
+"y": 0.877288,
+"ea": 0.376011,
+"eb": 0.245914,
+"etheta": 0.9247,
 "en": 30,
 "lineage": "Gemini",
 "release": "2025-04-17"
@@ -1150,11 +1150,11 @@ window.COORDS = [
 {
 "country": "Gemini 3",
 "region": "Google",
-"x": -0.825466,
-"y": -0.471289,
-"ea": 0.592558,
-"eb": 0.145623,
-"etheta": 0.815678,
+"x": -0.823008,
+"y": -0.456718,
+"ea": 0.593541,
+"eb": 0.144291,
+"etheta": 0.795326,
 "en": 30,
 "lineage": "Gemini",
 "release": "2025-11-18"
@@ -1162,22 +1162,22 @@ window.COORDS = [
 {
 "country": "Gemini 3 (low)",
 "region": "Google",
-"x": 0.610851,
-"y": 0.275089,
-"ea": 0.6729,
-"eb": 0.350845,
-"etheta": -2.545086,
+"x": 0.627986,
+"y": 0.266125,
+"ea": 0.673373,
+"eb": 0.351821,
+"etheta": -2.564347,
 "en": 30,
 "release": "2025-11-18"
 },
 {
 "country": "Gemini 3.1 (low)",
 "region": "Google",
-"x": 1.406928,
-"y": 0.272778,
-"ea": 0.30702,
-"eb": 0.210686,
-"etheta": 2.180637,
+"x": 1.430269,
+"y": 0.247346,
+"ea": 0.310022,
+"eb": 0.209328,
+"etheta": 2.172412,
 "en": 30,
 "lineage": "Gemini",
 "release": "2026-02"
@@ -1185,22 +1185,22 @@ window.COORDS = [
 {
 "country": "Gemini 3.5 Flash (high)",
 "region": "Google",
-"x": 1.771185,
-"y": 0.770379,
-"ea": 0.686503,
-"eb": 0.206915,
-"etheta": 0.867634,
+"x": 1.804475,
+"y": 0.736402,
+"ea": 0.686048,
+"eb": 0.205975,
+"etheta": 0.845735,
 "en": 30,
 "release": "2026-05-19"
 },
 {
 "country": "Gemini 3.5 Flash (low)",
 "region": "Google",
-"x": 1.983174,
-"y": 1.035101,
-"ea": 0.544259,
-"eb": 0.220036,
-"etheta": 0.804339,
+"x": 2.023757,
+"y": 0.99623,
+"ea": 0.543446,
+"eb": 0.219713,
+"etheta": 0.788174,
 "en": 30,
 "lineage": "Gemini",
 "release": "2026-05-19"
@@ -1208,11 +1208,11 @@ window.COORDS = [
 {
 "country": "Gemini 3.6 Flash",
 "region": "Google",
-"x": 1.730516,
-"y": 0.874222,
-"ea": 0.567137,
-"eb": 0.241676,
-"etheta": -2.70722,
+"x": 1.768653,
+"y": 0.844246,
+"ea": 0.563059,
+"eb": 0.24142,
+"etheta": -2.721139,
 "en": 29,
 "lineage": "Gemini",
 "release": "2026-07-21"
@@ -1220,11 +1220,11 @@ window.COORDS = [
 {
 "country": "Gemini 3.7 Flash",
 "region": "Google",
-"x": 0.822712,
-"y": 0.239553,
-"ea": 0.489954,
-"eb": 0.176011,
-"etheta": -2.794021,
+"x": 0.856797,
+"y": 0.22703,
+"ea": 0.488811,
+"eb": 0.174831,
+"etheta": -2.806571,
 "en": 30,
 "lineage": "Gemini",
 "release": "2026-08"
@@ -1232,11 +1232,11 @@ window.COORDS = [
 {
 "country": "Gemini 3.8 Flash",
 "region": "Google",
-"x": 1.114819,
-"y": 0.3707,
-"ea": 0.505821,
-"eb": 0.181597,
-"etheta": -2.869375,
+"x": 1.146675,
+"y": 0.354354,
+"ea": 0.503212,
+"eb": 0.18123,
+"etheta": -2.8833,
 "en": 30,
 "lineage": "Gemini",
 "release": "2026-09"
@@ -1244,11 +1244,11 @@ window.COORDS = [
 {
 "country": "Gemma 4",
 "region": "Google",
-"x": 2.431063,
-"y": 1.511483,
-"ea": 0.276701,
-"eb": 0.065578,
-"etheta": 2.877755,
+"x": 2.470645,
+"y": 1.478948,
+"ea": 0.275029,
+"eb": 0.065796,
+"etheta": 2.859987,
 "en": 24,
 "lineage": "Gemma",
 "release": "2026-04-02"
@@ -1256,11 +1256,11 @@ window.COORDS = [
 {
 "country": "Grok 3",
 "region": "xAI",
-"x": 1.050718,
-"y": 0.615406,
-"ea": 0.48007,
-"eb": 0.150914,
-"etheta": -3.053842,
+"x": 1.103998,
+"y": 0.592113,
+"ea": 0.480795,
+"eb": 0.151148,
+"etheta": -3.074539,
 "en": 20,
 "lineage": "Grok",
 "release": "2025-02-19"
@@ -1268,11 +1268,11 @@ window.COORDS = [
 {
 "country": "Grok 4",
 "region": "xAI",
-"x": 1.594,
-"y": 0.367691,
-"ea": 0.903084,
-"eb": 0.432036,
-"etheta": 1.010771,
+"x": 1.628347,
+"y": 0.335832,
+"ea": 0.900352,
+"eb": 0.428058,
+"etheta": 0.997348,
 "en": 18,
 "lineage": "Grok",
 "release": "2025-07-09"
@@ -1280,11 +1280,11 @@ window.COORDS = [
 {
 "country": "Grok 4.1",
 "region": "xAI",
-"x": 1.643212,
-"y": 2.573003,
-"ea": 0.88096,
-"eb": 0.324049,
-"etheta": 1.109398,
+"x": 1.689717,
+"y": 2.549453,
+"ea": 0.88052,
+"eb": 0.324684,
+"etheta": 1.087961,
 "en": 20,
 "lineage": "Grok",
 "release": "2025-11"
@@ -1292,22 +1292,22 @@ window.COORDS = [
 {
 "country": "Grok 4.1 (low)",
 "region": "xAI",
-"x": 2.023208,
-"y": 4.201862,
-"ea": 0.736361,
-"eb": 0.112433,
-"etheta": 1.897356,
+"x": 2.111339,
+"y": 4.157727,
+"ea": 0.731976,
+"eb": 0.110131,
+"etheta": 1.876816,
 "en": 40,
 "release": "2025-11"
 },
 {
 "country": "Grok 4.2",
 "region": "xAI",
-"x": 2.409356,
-"y": 2.604449,
-"ea": 0.555852,
-"eb": 0.496817,
-"etheta": 1.247127,
+"x": 2.454095,
+"y": 2.567764,
+"ea": 0.555278,
+"eb": 0.494472,
+"etheta": 1.233435,
 "en": 29,
 "lineage": "Grok",
 "release": "2026-02"
@@ -1315,11 +1315,11 @@ window.COORDS = [
 {
 "country": "Grok 4.5",
 "region": "xAI",
-"x": 0.970975,
-"y": 1.474157,
-"ea": 0.737399,
-"eb": 0.20364,
-"etheta": -2.710358,
+"x": 1.003061,
+"y": 1.457686,
+"ea": 0.737336,
+"eb": 0.204771,
+"etheta": -2.729458,
 "en": 28,
 "lineage": "Grok",
 "release": "2026-07-08"
@@ -1327,11 +1327,11 @@ window.COORDS = [
 {
 "country": "Grok 4.6",
 "region": "xAI",
-"x": 1.301981,
-"y": 1.71123,
-"ea": 0.776218,
-"eb": 0.253507,
-"etheta": -2.587478,
+"x": 1.340534,
+"y": 1.689566,
+"ea": 0.7742,
+"eb": 0.253248,
+"etheta": -2.602643,
 "en": 30,
 "lineage": "Grok",
 "release": "2026-08"
@@ -1339,11 +1339,11 @@ window.COORDS = [
 {
 "country": "Kimi K2.5",
 "region": "Moonshot",
-"x": 1.976331,
-"y": 1.211554,
-"ea": 0.444479,
-"eb": 0.20332,
-"etheta": -3.05289,
+"x": 2.016586,
+"y": 1.174602,
+"ea": 0.443644,
+"eb": 0.20352,
+"etheta": -3.072771,
 "en": 30,
 "lineage": "Kimi",
 "release": "2026-01-27"
@@ -1351,11 +1351,11 @@ window.COORDS = [
 {
 "country": "Llama 3.3",
 "region": "Meta",
-"x": 3.407341,
-"y": 0.922347,
-"ea": 0.173819,
-"eb": 0.058628,
-"etheta": 3.131878,
+"x": 3.442802,
+"y": 0.859777,
+"ea": 0.176409,
+"eb": 0.058361,
+"etheta": 3.109047,
 "en": 30,
 "lineage": "Llama",
 "release": "2024-12-06"
@@ -1363,22 +1363,22 @@ window.COORDS = [
 {
 "country": "MAI Thinking 1",
 "region": "Microsoft",
-"x": 0.322332,
-"y": 0.271203,
-"ea": 0.343964,
-"eb": 0.198227,
-"etheta": 1.669554,
+"x": 0.341578,
+"y": 0.261216,
+"ea": 0.343354,
+"eb": 0.200406,
+"etheta": 1.661733,
 "en": 50,
 "lineage": "MAI"
 },
 {
 "country": "MS Copilot (GPT-4)",
 "region": "Microsoft",
-"x": 3.805998,
-"y": -0.895308,
-"ea": 0.382473,
-"eb": 0.206777,
-"etheta": 2.812401,
+"x": 3.844242,
+"y": -0.970312,
+"ea": 0.383503,
+"eb": 0.208115,
+"etheta": 2.799448,
 "en": 15,
 "lineage": "MS Copilot",
 "release": "2024-01"
@@ -1386,11 +1386,11 @@ window.COORDS = [
 {
 "country": "MS Copilot (GPT-5)",
 "region": "Microsoft",
-"x": 4.088252,
-"y": -1.040086,
-"ea": 0.282718,
-"eb": 0.144647,
-"etheta": -3.00783,
+"x": 4.12263,
+"y": -1.126133,
+"ea": 0.282362,
+"eb": 0.141974,
+"etheta": -3.011883,
 "en": 20,
 "lineage": "MS Copilot",
 "release": "2025-08"
@@ -1398,11 +1398,11 @@ window.COORDS = [
 {
 "country": "MS Copilot (GPT-5.3)",
 "region": "Microsoft",
-"x": 2.573253,
-"y": 0.679233,
-"ea": 0.223992,
-"eb": 0.119168,
-"etheta": -2.400291,
+"x": 2.613401,
+"y": 0.619485,
+"ea": 0.218154,
+"eb": 0.125362,
+"etheta": -2.394513,
 "en": 10,
 "lineage": "MS Copilot",
 "release": "2026-02"
@@ -1410,22 +1410,22 @@ window.COORDS = [
 {
 "country": "MiniMax M2.5",
 "region": "MiniMax",
-"x": 2.656732,
-"y": 1.545217,
-"ea": 0.403429,
-"eb": 0.337076,
-"etheta": 1.358268,
+"x": 2.686268,
+"y": 1.506564,
+"ea": 0.404778,
+"eb": 0.333741,
+"etheta": 1.371319,
 "en": 22,
 "lineage": "MiniMax"
 },
 {
 "country": "MiniMax M3",
 "region": "MiniMax",
-"x": 0.396015,
-"y": 1.338736,
-"ea": 0.266269,
-"eb": 0.212109,
-"etheta": 1.2944,
+"x": 0.418446,
+"y": 1.346399,
+"ea": 0.26656,
+"eb": 0.214059,
+"etheta": 1.328674,
 "en": 29,
 "lineage": "MiniMax",
 "release": "2026-06-01"
@@ -1433,11 +1433,11 @@ window.COORDS = [
 {
 "country": "Mistral L 2",
 "region": "Mistral",
-"x": 1.51104,
-"y": 1.409389,
-"ea": 0.356527,
-"eb": 0.048195,
-"etheta": 1.261124,
+"x": 1.548344,
+"y": 1.391874,
+"ea": 0.356232,
+"eb": 0.04959,
+"etheta": 1.230166,
 "en": 10,
 "lineage": "Mistral Large",
 "release": "2024-11"
@@ -1445,11 +1445,11 @@ window.COORDS = [
 {
 "country": "Mistral L 3",
 "region": "Mistral",
-"x": 1.817703,
-"y": 1.323586,
-"ea": 0.186924,
-"eb": 0.086095,
-"etheta": 3.120521,
+"x": 1.867869,
+"y": 1.279023,
+"ea": 0.189713,
+"eb": 0.086678,
+"etheta": 3.099191,
 "en": 30,
 "lineage": "Mistral Large",
 "release": "2025-12"
@@ -1457,11 +1457,11 @@ window.COORDS = [
 {
 "country": "Mistral S 3",
 "region": "Mistral",
-"x": 1.381513,
-"y": 0.938496,
-"ea": 0.259244,
-"eb": 0.131501,
-"etheta": 2.751977,
+"x": 1.420401,
+"y": 0.907785,
+"ea": 0.262974,
+"eb": 0.131129,
+"etheta": 2.729269,
 "en": 30,
 "lineage": "Mistral Small",
 "release": "2025-06"
@@ -1469,11 +1469,11 @@ window.COORDS = [
 {
 "country": "Mistral S 4",
 "region": "Mistral",
-"x": 1.837525,
-"y": 0.715427,
-"ea": 0.375891,
-"eb": 0.095193,
-"etheta": 2.877753,
+"x": 1.85743,
+"y": 0.685001,
+"ea": 0.376734,
+"eb": 0.095531,
+"etheta": 2.860483,
 "en": 30,
 "lineage": "Mistral Small",
 "release": "2026-03"
@@ -1481,11 +1481,11 @@ window.COORDS = [
 {
 "country": "Perplexity Sonar",
 "region": "Perplexity",
-"x": 2.123828,
-"y": 1.088718,
-"ea": 0.364853,
-"eb": 0.199001,
-"etheta": 2.944033,
+"x": 2.179769,
+"y": 1.044669,
+"ea": 0.363723,
+"eb": 0.199574,
+"etheta": 2.913526,
 "en": 30,
 "lineage": "Perplexity",
 "release": "2025-01-21"
@@ -1493,11 +1493,11 @@ window.COORDS = [
 {
 "country": "Qwen 3",
 "region": "Qwen",
-"x": 1.543448,
-"y": -1.535154,
-"ea": 0.274004,
-"eb": 0.092,
-"etheta": -2.798233,
+"x": 1.518457,
+"y": -1.547343,
+"ea": 0.274012,
+"eb": 0.093399,
+"etheta": -2.820494,
 "en": 60,
 "lineage": "Qwen",
 "release": "2025-04-28"
@@ -1505,11 +1505,11 @@ window.COORDS = [
 {
 "country": "Qwen 3.5",
 "region": "Qwen",
-"x": 2.183513,
-"y": 1.185461,
-"ea": 0.184587,
-"eb": 0.069529,
-"etheta": -3.112106,
+"x": 2.234634,
+"y": 1.139241,
+"ea": 0.186746,
+"eb": 0.069196,
+"etheta": -3.137587,
 "en": 30,
 "lineage": "Qwen",
 "release": "2026-02-15"
@@ -1517,11 +1517,11 @@ window.COORDS = [
 {
 "country": "Qwen 3.6",
 "region": "Qwen",
-"x": 1.529404,
-"y": 1.126954,
-"ea": 0.314587,
-"eb": 0.15644,
-"etheta": 3.018386,
+"x": 1.561309,
+"y": 1.1008,
+"ea": 0.315109,
+"eb": 0.156262,
+"etheta": 2.997908,
 "en": 30,
 "lineage": "Qwen",
 "release": "2026-04-15"
@@ -1529,11 +1529,11 @@ window.COORDS = [
 {
 "country": "Qwen 3.7",
 "region": "Qwen",
-"x": 1.722662,
-"y": 0.825104,
-"ea": 0.475798,
-"eb": 0.153075,
-"etheta": 2.872152,
+"x": 1.748648,
+"y": 0.800438,
+"ea": 0.476494,
+"eb": 0.152506,
+"etheta": 2.852396,
 "en": 30,
 "lineage": "Qwen",
 "release": "2026-05-20"
@@ -1541,11 +1541,11 @@ window.COORDS = [
 {
 "country": "o4-mini",
 "region": "OpenAI",
-"x": 1.461905,
-"y": 0.911968,
-"ea": 0.434985,
-"eb": 0.269874,
-"etheta": -2.791745,
+"x": 1.481328,
+"y": 0.889773,
+"ea": 0.433936,
+"eb": 0.270146,
+"etheta": -2.808752,
 "en": 29,
 "lineage": "GPT o-series",
 "release": "2025-04-16"
