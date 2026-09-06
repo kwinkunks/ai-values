@@ -304,6 +304,7 @@ const labelPlugin = {
     const { ctx } = chart;
     chart.data.datasets.forEach((dataset, datasetIndex) => {
       if (!chart.isDatasetVisible(datasetIndex)) return;
+      if (dataset.noLabel) return;  // e.g. the human-average marker: hover only
       const meta = chart.getDatasetMeta(datasetIndex);
       dataset.data.forEach((point, index) => {
         const { x, y } = meta.data[index].getProps(['x', 'y'], true);
@@ -344,6 +345,22 @@ function initChart(points) {
     hidden: AI_SET.has(region)
   }));
 
+  // Fixed reference marker: the human population mean sits at the affine
+  // intercept (0.038, -0.1), not the origin — see src/human_mean.py. Drawn as a
+  // black '+', always visible, with only a hover label (no on-canvas text, no
+  // toggle button since its label matches no region/vendor).
+  datasets.push({
+    label: 'human average',
+    data: [{ x: 0.038, y: -0.1, label: 'human average', hoverOnly: true }],
+    pointStyle: 'cross',
+    pointBorderColor: 'black',
+    pointBackgroundColor: 'black',
+    pointBorderWidth: 2,
+    pointRadius: 7,
+    pointHoverRadius: 9,
+    noLabel: true
+  });
+
   // Fixed integer extents from ALL data (including hidden AI groups) so toggling
   // a region never rescales the chart and the axis ticks stay whole numbers.
   const xMin = Math.floor(Math.min(...points.map(p => p.x)));
@@ -367,6 +384,7 @@ function initChart(points) {
           callbacks: {
             label: function(ctx) {
               const point = ctx.raw;
+              if (point.hoverOnly) return point.label;  // e.g. human-average marker
               let out = point.label || "";
               if (point.remark) {
                 out += " — " + point.remark;
