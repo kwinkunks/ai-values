@@ -3,137 +3,178 @@
     "provider": "Perplexity",
     "model": "sonar",
     "label": "Perplexity Sonar",
-    "vendor": "Perplexity"
+    "vendor": "Perplexity",
+    "lineage": "Perplexity",
+    "release": "2025-01-21"
   },
   "1001": {
     "provider": "Perplexity",
     "model": "sonar",
     "label": "Perplexity Sonar",
-    "vendor": "Perplexity"
+    "vendor": "Perplexity",
+    "lineage": "Perplexity",
+    "release": "2025-01-21"
   },
   "1002": {
     "provider": "Perplexity",
     "model": "sonar",
     "label": "Perplexity Sonar",
-    "vendor": "Perplexity"
+    "vendor": "Perplexity",
+    "lineage": "Perplexity",
+    "release": "2025-01-21"
   },
   "1100": {
     "provider": "Mistral",
     "model": "mistral-small-2506",
     "label": "Mistral S 3",
-    "vendor": "Mistral"
+    "vendor": "Mistral",
+    "lineage": "Mistral Small",
+    "release": "2025-06"
   },
   "1101": {
     "provider": "Mistral",
     "model": "mistral-large-2411",
     "label": "Mistral L 2",
-    "vendor": "Mistral"
+    "vendor": "Mistral",
+    "lineage": "Mistral Large",
+    "release": "2024-11"
   },
   "1102": {
     "provider": "Mistral",
     "model": "mistral-small-2506",
     "label": "Mistral S 3",
     "vendor": "Mistral",
-    "zero_shot": true
+    "zero_shot": true,
+    "lineage": "Mistral Small",
+    "release": "2025-06"
   },
   "1103": {
     "provider": "Mistral",
     "model": "mistral-small-2506",
     "label": "Mistral S 3",
-    "vendor": "Mistral"
+    "vendor": "Mistral",
+    "lineage": "Mistral Small",
+    "release": "2025-06"
   },
   "1104": {
     "provider": "Mistral",
     "model": "mistral-small-2603",
     "label": "Mistral S 4",
-    "vendor": "Mistral"
+    "vendor": "Mistral",
+    "lineage": "Mistral Small",
+    "release": "2026-03"
   },
   "1105": {
     "provider": "Mistral",
     "model": "mistral-small-2603",
     "label": "Mistral S 4",
-    "vendor": "Mistral"
+    "vendor": "Mistral",
+    "lineage": "Mistral Small",
+    "release": "2026-03"
   },
   "1106": {
     "provider": "Mistral",
     "model": "mistral-small-2603",
     "label": "Mistral S 4",
-    "vendor": "Mistral"
+    "vendor": "Mistral",
+    "lineage": "Mistral Small",
+    "release": "2026-03"
   },
   "1107": {
     "provider": "Mistral",
     "model": "mistral-large-2512",
     "label": "Mistral L 3",
-    "vendor": "Mistral"
+    "vendor": "Mistral",
+    "lineage": "Mistral Large",
+    "release": "2025-12"
   },
   "1108": {
     "provider": "Mistral",
     "model": "mistral-large-2512",
     "label": "Mistral L 3",
-    "vendor": "Mistral"
+    "vendor": "Mistral",
+    "lineage": "Mistral Large",
+    "release": "2025-12"
   },
   "1109": {
     "provider": "Mistral",
     "model": "mistral-large-2512",
     "label": "Mistral L 3",
-    "vendor": "Mistral"
+    "vendor": "Mistral",
+    "lineage": "Mistral Large",
+    "release": "2025-12"
   },
   "1200": {
     "provider": "Gemini",
     "model": "gemini-2.0-flash",
     "label": "Gemini 2",
-    "vendor": "Google"
+    "vendor": "Google",
+    "lineage": "Gemini",
+    "release": "2025-02-05"
   },
   "1201": {
     "provider": "Gemini",
     "model": "gemini-2.0-flash",
     "label": "Gemini 2",
-    "vendor": "Google"
+    "vendor": "Google",
+    "lineage": "Gemini",
+    "release": "2025-02-05"
   },
   "1202": {
     "provider": "Gemini",
     "model": "gemini-2.0-flash",
     "label": "Gemini 2",
-    "vendor": "Google"
+    "vendor": "Google",
+    "lineage": "Gemini",
+    "release": "2025-02-05"
   },
   "1203": {
     "provider": "Gemini",
     "model": "gemini-2.5-flash",
     "label": "Gemini 2.5",
-    "vendor": "Google"
+    "vendor": "Google",
+    "lineage": "Gemini",
+    "release": "2025-04-17"
   },
   "1204": {
     "provider": "Gemini",
     "model": "gemini-2.5-flash",
     "label": "Gemini 2.5",
-    "vendor": "Google"
+    "vendor": "Google",
+    "lineage": "Gemini",
+    "release": "2025-04-17"
   },
   "1205": {
     "provider": "Gemini",
     "model": "gemini-2.5-flash",
     "label": "Gemini 2.5",
-    "vendor": "Google"
+    "vendor": "Google",
+    "lineage": "Gemini",
+    "release": "2025-04-17"
   },
   "1206": {
     "provider": "Gemini",
     "model": "gemini-3-pro-preview",
     "label": "Gemini 3",
     "vendor": "Google",
-    "release": "2025-11"
+    "release": "2025-11-18",
+    "lineage": "Gemini"
   },
   "1207": {
     "provider": "Gemini",
     "model": "gemini-3-pro-preview",
     "label": "Gemini 3",
     "vendor": "Google",
-    "release": "2025-11"
+    "release": "2025-11-18",
+    "lineage": "Gemini"
   },
   "1208": {
     "provider": "Gemini",
     "model": "gemini-3-pro-preview",
     "label": "Gemini 3",
     "vendor": "Google",
-    "release": "2025-11"
+    "release": "2025-11-18",
+    "lineage": "Gemini"
   },
   "1209": {
     "provider": "Gemini",
@@ -141,7 +182,8 @@
     "label": "Gemini 3 (low)",
     "vendor": "Google",
     "reasoning_effort": "low",
-    "release": "2025-11"
+    "release": "2025-11-18",
+    "lineage": ""
   },
   "1210": {
     "provider": "Gemini",
@@ -149,7 +191,8 @@
     "label": "Gemini 3 (low)",
     "vendor": "Google",
     "reasoning_effort": "low",
-    "release": "2025-11"
+    "release": "2025-11-18",
+    "lineage": ""
   },
   "1211": {
     "provider": "Gemini",
@@ -157,7 +200,8 @@
     "label": "Gemini 3 (low)",
     "vendor": "Google",
     "reasoning_effort": "low",
-    "release": "2025-11"
+    "release": "2025-11-18",
+    "lineage": ""
   },
   "1212": {
     "provider": "Gemini",
@@ -165,7 +209,8 @@
     "label": "Gemini 3.1 (low)",
     "vendor": "Google",
     "reasoning_effort": "low",
-    "release": "2026-02"
+    "release": "2026-02",
+    "lineage": "Gemini"
   },
   "1213": {
     "provider": "Gemini",
@@ -173,7 +218,8 @@
     "label": "Gemini 3.1 (low)",
     "vendor": "Google",
     "reasoning_effort": "low",
-    "release": "2026-02"
+    "release": "2026-02",
+    "lineage": "Gemini"
   },
   "1214": {
     "provider": "Gemini",
@@ -181,31 +227,35 @@
     "label": "Gemini 3.1 (low)",
     "vendor": "Google",
     "reasoning_effort": "low",
-    "release": "2026-02"
+    "release": "2026-02",
+    "lineage": "Gemini"
   },
   "1215": {
     "provider": "Gemini",
     "model": "gemma-4-31b-it",
     "label": "Gemma 4",
     "vendor": "Google",
-    "release": "2026-04",
-    "zero_shot": true
+    "release": "2026-04-02",
+    "zero_shot": true,
+    "lineage": "Gemma"
   },
   "1216": {
     "provider": "Gemini",
     "model": "gemma-4-31b-it",
     "label": "Gemma 4",
     "vendor": "Google",
-    "release": "2026-04",
-    "zero_shot": true
+    "release": "2026-04-02",
+    "zero_shot": true,
+    "lineage": "Gemma"
   },
   "1217": {
     "provider": "Gemini",
     "model": "gemma-4-31b-it",
     "label": "Gemma 4",
     "vendor": "Google",
-    "release": "2026-04",
-    "zero_shot": true
+    "release": "2026-04-02",
+    "zero_shot": true,
+    "lineage": "Gemma"
   },
   "1218": {
     "provider": "Gemini",
@@ -213,7 +263,8 @@
     "label": "Gemini 3.5 Flash (low)",
     "vendor": "Google",
     "reasoning_effort": "low",
-    "release": "2026-05"
+    "release": "2026-05-19",
+    "lineage": "Gemini"
   },
   "1219": {
     "provider": "Gemini",
@@ -221,7 +272,8 @@
     "label": "Gemini 3.5 Flash (low)",
     "vendor": "Google",
     "reasoning_effort": "low",
-    "release": "2026-05"
+    "release": "2026-05-19",
+    "lineage": "Gemini"
   },
   "1220": {
     "provider": "Gemini",
@@ -229,7 +281,8 @@
     "label": "Gemini 3.5 Flash (low)",
     "vendor": "Google",
     "reasoning_effort": "low",
-    "release": "2026-05"
+    "release": "2026-05-19",
+    "lineage": "Gemini"
   },
   "1221": {
     "provider": "Gemini",
@@ -237,7 +290,8 @@
     "label": "Gemini 3.5 Flash (high)",
     "vendor": "Google",
     "reasoning_effort": "high",
-    "release": "2026-05"
+    "release": "2026-05-19",
+    "lineage": ""
   },
   "1222": {
     "provider": "Gemini",
@@ -245,7 +299,8 @@
     "label": "Gemini 3.5 Flash (high)",
     "vendor": "Google",
     "reasoning_effort": "high",
-    "release": "2026-05"
+    "release": "2026-05-19",
+    "lineage": ""
   },
   "1223": {
     "provider": "Gemini",
@@ -253,114 +308,138 @@
     "label": "Gemini 3.5 Flash (high)",
     "vendor": "Google",
     "reasoning_effort": "high",
-    "release": "2026-05"
+    "release": "2026-05-19",
+    "lineage": ""
   },
   "1224": {
     "provider": "Gemini",
     "model": "gemini-3.6-flash",
     "label": "Gemini 3.6 Flash",
     "vendor": "Google",
-    "release": "2026-07"
+    "release": "2026-07-21",
+    "lineage": "Gemini"
   },
   "1225": {
     "provider": "Gemini",
     "model": "gemini-3.6-flash",
     "label": "Gemini 3.6 Flash",
     "vendor": "Google",
-    "release": "2026-07"
+    "release": "2026-07-21",
+    "lineage": "Gemini"
   },
   "1226": {
     "provider": "Gemini",
     "model": "gemini-3.6-flash",
     "label": "Gemini 3.6 Flash",
     "vendor": "Google",
-    "release": "2026-07"
+    "release": "2026-07-21",
+    "lineage": "Gemini"
   },
   "1227": {
     "provider": "Gemini",
     "model": "gemini-3.7-flash",
     "label": "Gemini 3.7 Flash",
     "vendor": "Google",
-    "release": "2026-08"
+    "release": "2026-08",
+    "lineage": "Gemini"
   },
   "1228": {
     "provider": "Gemini",
     "model": "gemini-3.7-flash",
     "label": "Gemini 3.7 Flash",
     "vendor": "Google",
-    "release": "2026-08"
+    "release": "2026-08",
+    "lineage": "Gemini"
   },
   "1229": {
     "provider": "Gemini",
     "model": "gemini-3.7-flash",
     "label": "Gemini 3.7 Flash",
     "vendor": "Google",
-    "release": "2026-08"
+    "release": "2026-08",
+    "lineage": "Gemini"
   },
   "1230": {
     "provider": "Gemini",
     "model": "gemini-3.8-flash",
     "label": "Gemini 3.8 Flash",
     "vendor": "Google",
-    "release": "2026-09"
+    "release": "2026-09",
+    "lineage": "Gemini"
   },
   "1231": {
     "provider": "Gemini",
     "model": "gemini-3.8-flash",
     "label": "Gemini 3.8 Flash",
     "vendor": "Google",
-    "release": "2026-09"
+    "release": "2026-09",
+    "lineage": "Gemini"
   },
   "1232": {
     "provider": "Gemini",
     "model": "gemini-3.8-flash",
     "label": "Gemini 3.8 Flash",
     "vendor": "Google",
-    "release": "2026-09"
+    "release": "2026-09",
+    "lineage": "Gemini"
   },
   "1300": {
     "provider": "OpenAI",
     "model": "o4-mini-2025-04-16",
     "label": "o4-mini",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT o-series",
+    "release": "2025-04-16"
   },
   "1301": {
     "provider": "OpenAI",
     "model": "gpt-4o-2024-11-20",
     "label": "GPT-4o",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-4",
+    "release": "2024-11-20"
   },
   "1302": {
     "provider": "OpenAI",
     "model": "gpt-3.5-turbo",
     "label": "GPT-3.5",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-3.5",
+    "release": "2023-03-01"
   },
   "1303": {
     "provider": "OpenAI",
     "model": "gpt-4-turbo",
     "label": "GPT-4",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-4",
+    "release": "2024-04-09"
   },
   "1304": {
     "provider": "OpenAI",
     "model": "gpt-3.5-turbo",
     "label": "GPT-3.5",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-3.5",
+    "release": "2023-03-01"
   },
   "1305": {
     "provider": "OpenAI",
     "model": "gpt-3.5-turbo",
     "label": "GPT-3.5",
     "vendor": "OpenAI",
-    "zero_shot": true
+    "zero_shot": true,
+    "lineage": "GPT-3.5",
+    "release": "2023-03-01"
   },
   "1306": {
     "provider": "OpenAI",
     "model": "gpt-4-turbo",
     "label": "GPT-4",
     "vendor": "OpenAI",
-    "zero_shot": true
+    "zero_shot": true,
+    "lineage": "GPT-4",
+    "release": "2024-04-09"
   },
   "1307": {
     "provider": "OpenAI",
@@ -368,7 +447,8 @@
     "label": "GPT-5",
     "vendor": "OpenAI",
     "reasoning_effort": "medium",
-    "release": "2025-08"
+    "release": "2025-08-07",
+    "lineage": "GPT-5"
   },
   "1308": {
     "provider": "OpenAI",
@@ -376,7 +456,8 @@
     "label": "GPT-5 (min)",
     "vendor": "OpenAI",
     "reasoning_effort": "minimal",
-    "release": "2025-08"
+    "release": "2025-08-07",
+    "lineage": ""
   },
   "1309": {
     "provider": "OpenAI",
@@ -384,7 +465,8 @@
     "label": "GPT-5 (min)",
     "vendor": "OpenAI",
     "reasoning_effort": "minimal",
-    "release": "2025-08"
+    "release": "2025-08-07",
+    "lineage": ""
   },
   "1310": {
     "provider": "OpenAI",
@@ -392,46 +474,56 @@
     "label": "GPT-5",
     "vendor": "OpenAI",
     "reasoning_effort": "medium",
-    "release": "2025-08"
+    "release": "2025-08-07",
+    "lineage": "GPT-5"
   },
   "1311": {
     "provider": "OpenAI",
     "model": "o4-mini-2025-04-16",
     "label": "o4-mini",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT o-series",
+    "release": "2025-04-16"
   },
   "1312": {
     "provider": "OpenAI",
     "model": "o4-mini-2025-04-16",
     "label": "o4-mini",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT o-series",
+    "release": "2025-04-16"
   },
   "1313": {
     "provider": "OpenAI",
     "model": "gpt-4o-2024-11-20",
     "label": "GPT-4o",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-4",
+    "release": "2024-11-20"
   },
   "1314": {
     "provider": "OpenAI",
     "model": "gpt-5-mini",
     "label": "GPT-5 mini",
     "vendor": "OpenAI",
-    "release": "2025-08"
+    "release": "2025-08-07",
+    "lineage": ""
   },
   "1315": {
     "provider": "OpenAI",
     "model": "gpt-5-mini",
     "label": "GPT-5 mini",
     "vendor": "OpenAI",
-    "release": "2025-08"
+    "release": "2025-08-07",
+    "lineage": ""
   },
   "1316": {
     "provider": "OpenAI",
     "model": "gpt-5-mini",
     "label": "GPT-5 mini",
     "vendor": "OpenAI",
-    "release": "2025-08"
+    "release": "2025-08-07",
+    "lineage": ""
   },
   "1317": {
     "provider": "OpenAI",
@@ -439,49 +531,56 @@
     "label": "GPT-5 (min)",
     "vendor": "OpenAI",
     "reasoning_effort": "minimal",
-    "release": "2025-08"
+    "release": "2025-08-07",
+    "lineage": ""
   },
   "1318": {
     "provider": "OpenAI",
     "model": "gpt-5.1-2025-11-13",
     "label": "GPT-5.1",
     "vendor": "OpenAI",
-    "release": "2025-11"
+    "release": "2025-11-13",
+    "lineage": "GPT-5"
   },
   "1319": {
     "provider": "OpenAI",
     "model": "gpt-5.1-2025-11-13",
     "label": "GPT-5.1",
     "vendor": "OpenAI",
-    "release": "2025-11"
+    "release": "2025-11-13",
+    "lineage": "GPT-5"
   },
   "1320": {
     "provider": "OpenAI",
     "model": "gpt-5.1-2025-11-13",
     "label": "GPT-5.1",
     "vendor": "OpenAI",
-    "release": "2025-11"
+    "release": "2025-11-13",
+    "lineage": "GPT-5"
   },
   "1321": {
     "provider": "OpenAI",
     "model": "gpt-5.1-2025-11-13",
     "label": "GPT-5.1",
     "vendor": "OpenAI",
-    "release": "2025-11"
+    "release": "2025-11-13",
+    "lineage": "GPT-5"
   },
   "1322": {
     "provider": "OpenAI",
     "model": "gpt-5.1-2025-11-13",
     "label": "GPT-5.1",
     "vendor": "OpenAI",
-    "release": "2025-11"
+    "release": "2025-11-13",
+    "lineage": "GPT-5"
   },
   "1323": {
     "provider": "OpenAI",
     "model": "gpt-5.1-2025-11-13",
     "label": "GPT-5.1",
     "vendor": "OpenAI",
-    "release": "2025-11"
+    "release": "2025-11-13",
+    "lineage": "GPT-5"
   },
   "1324": {
     "provider": "OpenAI",
@@ -489,7 +588,8 @@
     "label": "GPT-5.1 (low)",
     "vendor": "OpenAI",
     "reasoning_effort": "low",
-    "release": "2025-11"
+    "release": "2025-11-13",
+    "lineage": ""
   },
   "1325": {
     "provider": "OpenAI",
@@ -497,7 +597,8 @@
     "label": "GPT-5.1 (low)",
     "vendor": "OpenAI",
     "reasoning_effort": "low",
-    "release": "2025-11"
+    "release": "2025-11-13",
+    "lineage": ""
   },
   "1326": {
     "provider": "OpenAI",
@@ -505,7 +606,8 @@
     "label": "GPT-5.1 (low)",
     "vendor": "OpenAI",
     "reasoning_effort": "low",
-    "release": "2025-11"
+    "release": "2025-11-13",
+    "lineage": ""
   },
   "1327": {
     "provider": "OpenAI",
@@ -513,7 +615,8 @@
     "label": "GPT-5.2 (low)",
     "vendor": "OpenAI",
     "reasoning_effort": "low",
-    "release": "2025-12"
+    "release": "2025-12-11",
+    "lineage": ""
   },
   "1328": {
     "provider": "OpenAI",
@@ -521,7 +624,8 @@
     "label": "GPT-5.2 (low)",
     "vendor": "OpenAI",
     "reasoning_effort": "low",
-    "release": "2025-12"
+    "release": "2025-12-11",
+    "lineage": ""
   },
   "1329": {
     "provider": "OpenAI",
@@ -529,7 +633,8 @@
     "label": "GPT-5.2 (low)",
     "vendor": "OpenAI",
     "reasoning_effort": "low",
-    "release": "2025-12"
+    "release": "2025-12-11",
+    "lineage": ""
   },
   "1330": {
     "provider": "OpenAI",
@@ -537,7 +642,8 @@
     "label": "GPT-5.2",
     "vendor": "OpenAI",
     "reasoning_effort": "medium",
-    "release": "2025-12"
+    "release": "2025-12-11",
+    "lineage": "GPT-5"
   },
   "1331": {
     "provider": "OpenAI",
@@ -545,7 +651,8 @@
     "label": "GPT-5.2",
     "vendor": "OpenAI",
     "reasoning_effort": "medium",
-    "release": "2025-12"
+    "release": "2025-12-11",
+    "lineage": "GPT-5"
   },
   "1332": {
     "provider": "OpenAI",
@@ -553,7 +660,8 @@
     "label": "GPT-5.2",
     "vendor": "OpenAI",
     "reasoning_effort": "medium",
-    "release": "2025-12"
+    "release": "2025-12-11",
+    "lineage": "GPT-5"
   },
   "1333": {
     "provider": "OpenAI",
@@ -561,7 +669,8 @@
     "label": "GPT-5.2 (low)",
     "vendor": "OpenAI",
     "reasoning_effort": "low",
-    "release": "2025-12"
+    "release": "2025-12-11",
+    "lineage": ""
   },
   "1334": {
     "provider": "OpenAI",
@@ -569,7 +678,8 @@
     "label": "GPT-5.4 (low)",
     "vendor": "OpenAI",
     "reasoning_effort": "low",
-    "release": "2026-03"
+    "release": "2026-03-05",
+    "lineage": ""
   },
   "1335": {
     "provider": "OpenAI",
@@ -577,7 +687,8 @@
     "label": "GPT-5.4 (low)",
     "vendor": "OpenAI",
     "reasoning_effort": "low",
-    "release": "2026-03"
+    "release": "2026-03-05",
+    "lineage": ""
   },
   "1336": {
     "provider": "OpenAI",
@@ -585,7 +696,8 @@
     "label": "GPT-5.4 (low)",
     "vendor": "OpenAI",
     "reasoning_effort": "low",
-    "release": "2026-03"
+    "release": "2026-03-05",
+    "lineage": ""
   },
   "1337": {
     "provider": "OpenAI",
@@ -593,7 +705,8 @@
     "label": "GPT-5.4",
     "vendor": "OpenAI",
     "reasoning_effort": "medium",
-    "release": "2026-03"
+    "release": "2026-03-05",
+    "lineage": "GPT-5"
   },
   "1338": {
     "provider": "OpenAI",
@@ -601,7 +714,8 @@
     "label": "GPT-5.4",
     "vendor": "OpenAI",
     "reasoning_effort": "medium",
-    "release": "2026-03"
+    "release": "2026-03-05",
+    "lineage": "GPT-5"
   },
   "1339": {
     "provider": "OpenAI",
@@ -609,7 +723,8 @@
     "label": "GPT-5.4",
     "vendor": "OpenAI",
     "reasoning_effort": "medium",
-    "release": "2026-03"
+    "release": "2026-03-05",
+    "lineage": "GPT-5"
   },
   "1340": {
     "provider": "OpenAI",
@@ -617,7 +732,8 @@
     "label": "GPT-5.4 mini",
     "vendor": "OpenAI",
     "reasoning_effort": "medium",
-    "release": "2026-03"
+    "release": "2026-03-17",
+    "lineage": ""
   },
   "1341": {
     "provider": "OpenAI",
@@ -625,7 +741,8 @@
     "label": "GPT-5.4 mini",
     "vendor": "OpenAI",
     "reasoning_effort": "medium",
-    "release": "2026-03"
+    "release": "2026-03-17",
+    "lineage": ""
   },
   "1342": {
     "provider": "OpenAI",
@@ -633,7 +750,8 @@
     "label": "GPT-5.4 mini",
     "vendor": "OpenAI",
     "reasoning_effort": "medium",
-    "release": "2026-03"
+    "release": "2026-03-17",
+    "lineage": ""
   },
   "1343": {
     "provider": "OpenAI",
@@ -641,7 +759,8 @@
     "label": "GPT-5.3",
     "vendor": "OpenAI",
     "reasoning_effort": "medium",
-    "release": "2026-02"
+    "release": "2026-02-05",
+    "lineage": "GPT-5"
   },
   "1344": {
     "provider": "OpenAI",
@@ -649,7 +768,8 @@
     "label": "GPT-5.3",
     "vendor": "OpenAI",
     "reasoning_effort": "medium",
-    "release": "2026-02"
+    "release": "2026-02-05",
+    "lineage": "GPT-5"
   },
   "1345": {
     "provider": "OpenAI",
@@ -657,178 +777,228 @@
     "label": "GPT-5.3",
     "vendor": "OpenAI",
     "reasoning_effort": "medium",
-    "release": "2026-02"
+    "release": "2026-02-05",
+    "lineage": "GPT-5"
   },
   "1346": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
     "label": "GPT-5.5",
     "vendor": "OpenAI",
-    "reasoning_effort": "medium"
+    "reasoning_effort": "medium",
+    "lineage": "GPT-5",
+    "release": "2026-04-23"
   },
   "1347": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
     "label": "GPT-5.5",
     "vendor": "OpenAI",
-    "reasoning_effort": "medium"
+    "reasoning_effort": "medium",
+    "lineage": "GPT-5",
+    "release": "2026-04-23"
   },
   "1348": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
     "label": "GPT-5.5",
     "vendor": "OpenAI",
-    "reasoning_effort": "medium"
+    "reasoning_effort": "medium",
+    "lineage": "GPT-5",
+    "release": "2026-04-23"
   },
   "1349": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
     "label": "GPT-5.5 (low)",
     "vendor": "OpenAI",
-    "reasoning_effort": "low"
+    "reasoning_effort": "low",
+    "lineage": "",
+    "release": "2026-04-23"
   },
   "1350": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
     "label": "GPT-5.5 (low)",
     "vendor": "OpenAI",
-    "reasoning_effort": "low"
+    "reasoning_effort": "low",
+    "lineage": "",
+    "release": "2026-04-23"
   },
   "1351": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
     "label": "GPT-5.5 (low)",
     "vendor": "OpenAI",
-    "reasoning_effort": "low"
+    "reasoning_effort": "low",
+    "lineage": "",
+    "release": "2026-04-23"
   },
   "1352": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
     "label": "GPT-5.5 (none)",
     "vendor": "OpenAI",
-    "reasoning_effort": "none"
+    "reasoning_effort": "none",
+    "lineage": "",
+    "release": "2026-04-23"
   },
   "1353": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
     "label": "GPT-5.5 (none)",
     "vendor": "OpenAI",
-    "reasoning_effort": "none"
+    "reasoning_effort": "none",
+    "lineage": "",
+    "release": "2026-04-23"
   },
   "1354": {
     "provider": "OpenAI",
     "model": "gpt-5.5-2026-04-23",
     "label": "GPT-5.5 (none)",
     "vendor": "OpenAI",
-    "reasoning_effort": "none"
+    "reasoning_effort": "none",
+    "lineage": "",
+    "release": "2026-04-23"
   },
   "1355": {
     "provider": "OpenAI",
     "model": "gpt-5.6-sol",
     "label": "GPT-5.6 Sol",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "release": "2026-07-11"
   },
   "1356": {
     "provider": "OpenAI",
     "model": "gpt-5.6-sol",
     "label": "GPT-5.6 Sol",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "release": "2026-07-11"
   },
   "1357": {
     "provider": "OpenAI",
     "model": "gpt-5.6-sol",
     "label": "GPT-5.6 Sol",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "release": "2026-07-11"
   },
   "1358": {
     "provider": "OpenAI",
     "model": "gpt-5.6-terra",
     "label": "GPT-5.6 Terra",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "release": "2026-07-10"
   },
   "1359": {
     "provider": "OpenAI",
     "model": "gpt-5.6-terra",
     "label": "GPT-5.6 Terra",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "release": "2026-07-10"
   },
   "1360": {
     "provider": "OpenAI",
     "model": "gpt-5.6-terra",
     "label": "GPT-5.6 Terra",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "release": "2026-07-10"
   },
   "1361": {
     "provider": "OpenAI",
     "model": "gpt-5.6-luna",
     "label": "GPT-5.6 Luna",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "release": "2026-07-09"
   },
   "1362": {
     "provider": "OpenAI",
     "model": "gpt-5.6-luna",
     "label": "GPT-5.6 Luna",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "release": "2026-07-09"
   },
   "1363": {
     "provider": "OpenAI",
     "model": "gpt-5.6-luna",
     "label": "GPT-5.6 Luna",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "release": "2026-07-09"
   },
   "1364": {
     "provider": "Foundry",
     "model": "gpt-6-astra",
     "label": "GPT-6 Astra",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-6"
   },
   "1365": {
     "provider": "Foundry",
     "model": "gpt-6-astra",
     "label": "GPT-6 Astra",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-6"
   },
   "1366": {
     "provider": "Foundry",
     "model": "gpt-6-astra",
     "label": "GPT-6 Astra",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-6"
   },
   "1367": {
     "provider": "Foundry",
     "model": "gpt-6-astra",
     "label": "GPT-6 Astra",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-6"
   },
   "1368": {
     "provider": "Foundry",
     "model": "gpt-6-astra",
     "label": "GPT-6 Astra",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-6"
   },
   "1400": {
     "provider": "XAI",
     "model": "grok-3",
     "label": "Grok 3",
-    "vendor": "xAI"
+    "vendor": "xAI",
+    "lineage": "Grok",
+    "release": "2025-02-19"
   },
   "1401": {
     "provider": "XAI",
     "model": "grok-4-0709",
     "label": "Grok 4",
-    "vendor": "xAI"
+    "vendor": "xAI",
+    "lineage": "Grok",
+    "release": "2025-07-09"
   },
   "1402": {
     "provider": "XAI",
     "model": "grok-4-0709",
     "label": "Grok 4",
-    "vendor": "xAI"
+    "vendor": "xAI",
+    "lineage": "Grok",
+    "release": "2025-07-09"
   },
   "1403": {
     "provider": "XAI",
     "model": "grok-3",
     "label": "Grok 3",
-    "vendor": "xAI"
+    "vendor": "xAI",
+    "lineage": "Grok",
+    "release": "2025-02-19"
   },
   "1404": {
     "provider": "XAI",
@@ -836,7 +1006,8 @@
     "label": "Grok 4.1 (low)",
     "vendor": "xAI",
     "reasoning_effort": "low",
-    "release": "2025-11"
+    "release": "2025-11",
+    "lineage": ""
   },
   "1405": {
     "provider": "XAI",
@@ -844,21 +1015,24 @@
     "label": "Grok 4.1 (low)",
     "vendor": "xAI",
     "reasoning_effort": "low",
-    "release": "2025-11"
+    "release": "2025-11",
+    "lineage": ""
   },
   "1406": {
     "provider": "XAI",
     "model": "grok-4-1-fast-reasoning",
     "label": "Grok 4.1",
     "vendor": "xAI",
-    "release": "2025-11"
+    "release": "2025-11",
+    "lineage": "Grok"
   },
   "1407": {
     "provider": "XAI",
     "model": "grok-4-1-fast-reasoning",
     "label": "Grok 4.1",
     "vendor": "xAI",
-    "release": "2025-11"
+    "release": "2025-11",
+    "lineage": "Grok"
   },
   "1408": {
     "provider": "XAI",
@@ -866,7 +1040,8 @@
     "label": "Grok 4.1 (low)",
     "vendor": "xAI",
     "reasoning_effort": "low",
-    "release": "2025-11"
+    "release": "2025-11",
+    "lineage": ""
   },
   "1409": {
     "provider": "XAI",
@@ -874,699 +1049,906 @@
     "label": "Grok 4.1 (low)",
     "vendor": "xAI",
     "reasoning_effort": "low",
-    "release": "2025-11"
+    "release": "2025-11",
+    "lineage": ""
   },
   "1410": {
     "provider": "XAI",
     "model": "grok-4.20-0309",
     "label": "Grok 4.2",
     "vendor": "xAI",
-    "release": "2026-02"
+    "release": "2026-02",
+    "lineage": "Grok"
   },
   "1411": {
     "provider": "XAI",
     "model": "grok-4.20-0309",
     "label": "Grok 4.2",
     "vendor": "xAI",
-    "release": "2026-02"
+    "release": "2026-02",
+    "lineage": "Grok"
   },
   "1412": {
     "provider": "XAI",
     "model": "grok-4.20-0309",
     "label": "Grok 4.2",
     "vendor": "xAI",
-    "release": "2026-02"
+    "release": "2026-02",
+    "lineage": "Grok"
   },
   "1413": {
     "provider": "XAI",
     "model": "grok-4.5",
     "label": "Grok 4.5",
     "vendor": "xAI",
-    "release": "2026-07"
+    "release": "2026-07-08",
+    "lineage": "Grok"
   },
   "1414": {
     "provider": "XAI",
     "model": "grok-4.5",
     "label": "Grok 4.5",
     "vendor": "xAI",
-    "release": "2026-07"
+    "release": "2026-07-08",
+    "lineage": "Grok"
   },
   "1415": {
     "provider": "XAI",
     "model": "grok-4.5",
     "label": "Grok 4.5",
     "vendor": "xAI",
-    "release": "2026-07"
+    "release": "2026-07-08",
+    "lineage": "Grok"
   },
   "1416": {
     "provider": "XAI",
     "model": "grok-4.6",
     "label": "Grok 4.6",
     "vendor": "xAI",
-    "release": "2026-08"
+    "release": "2026-08",
+    "lineage": "Grok"
   },
   "1417": {
     "provider": "XAI",
     "model": "grok-4.6",
     "label": "Grok 4.6",
     "vendor": "xAI",
-    "release": "2026-08"
+    "release": "2026-08",
+    "lineage": "Grok"
   },
   "1418": {
     "provider": "XAI",
     "model": "grok-4.6",
     "label": "Grok 4.6",
     "vendor": "xAI",
-    "release": "2026-08"
+    "release": "2026-08",
+    "lineage": "Grok"
   },
   "1500": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-20250514",
     "label": "Claude Sonnet 4",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "release": "2025-05-14"
   },
   "1501": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-20250514",
     "label": "Claude Sonnet 4",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "release": "2025-05-14"
   },
   "1502": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-20250514",
     "label": "Claude Sonnet 4",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "release": "2025-05-14"
   },
   "1503": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-5-20250929",
     "label": "Claude Sonnet 4.5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "release": "2025-09-29"
   },
   "1504": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-5-20250929",
     "label": "Claude Sonnet 4.5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "release": "2025-09-29"
   },
   "1505": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-5-20250929",
     "label": "Claude Sonnet 4.5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "release": "2025-09-29"
   },
   "1506": {
     "provider": "Anthropic",
     "model": "claude-opus-4-5-20251101",
     "label": "Claude Opus 4.5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2025-11-01"
   },
   "1507": {
     "provider": "Anthropic",
     "model": "claude-opus-4-5-20251101",
     "label": "Claude Opus 4.5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2025-11-01"
   },
   "1508": {
     "provider": "Anthropic",
     "model": "claude-opus-4-5-20251101",
     "label": "Claude Opus 4.5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2025-11-01"
   },
   "1509": {
     "provider": "Anthropic",
     "model": "claude-opus-4-5-20251101",
     "label": "Claude Opus 4.5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2025-11-01"
   },
   "1510": {
     "provider": "Anthropic",
     "model": "claude-opus-4-6",
     "label": "Claude Opus 4.6",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2026-02-05"
   },
   "1511": {
     "provider": "Anthropic",
     "model": "claude-opus-4-6",
     "label": "Claude Opus 4.6",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2026-02-05"
   },
   "1512": {
     "provider": "Anthropic",
     "model": "claude-opus-4-6",
     "label": "Claude Opus 4.6",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2026-02-05"
   },
   "1513": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-6",
     "label": "Claude Sonnet 4.6",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "release": "2026-02-17"
   },
   "1514": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-6",
     "label": "Claude Sonnet 4.6",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "release": "2026-02-17"
   },
   "1515": {
     "provider": "Anthropic",
     "model": "claude-sonnet-4-6",
     "label": "Claude Sonnet 4.6",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "release": "2026-02-17"
   },
   "1516": {
     "provider": "Anthropic",
     "model": "claude-3-7-sonnet-20250219",
     "label": "Claude Sonnet 3.7",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "release": "2025-02-19"
   },
   "1517": {
     "provider": "Anthropic",
     "model": "claude-3-7-sonnet-20250219",
     "label": "Claude Sonnet 3.7",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "release": "2025-02-19"
   },
   "1518": {
     "provider": "Anthropic",
     "model": "claude-3-7-sonnet-20250219",
     "label": "Claude Sonnet 3.7",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "release": "2025-02-19"
   },
   "1519": {
     "provider": "Anthropic",
     "model": "claude-opus-4-20250514",
     "label": "Claude Opus 4",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2025-05-14"
   },
   "1520": {
     "provider": "Anthropic",
     "model": "claude-opus-4-20250514",
     "label": "Claude Opus 4",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2025-05-14"
   },
   "1521": {
     "provider": "Anthropic",
     "model": "claude-opus-4-20250514",
     "label": "Claude Opus 4",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2025-05-14"
   },
   "1522": {
     "provider": "Anthropic",
     "model": "claude-opus-4-7",
     "label": "Claude Opus 4.7",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2026-04-16"
   },
   "1523": {
     "provider": "Anthropic",
     "model": "claude-opus-4-7",
     "label": "Claude Opus 4.7",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2026-04-16"
   },
   "1524": {
     "provider": "Anthropic",
     "model": "claude-opus-4-7",
     "label": "Claude Opus 4.7",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2026-04-16"
   },
   "1525": {
     "provider": "Anthropic",
     "model": "claude-opus-4-8",
     "label": "Claude Opus 4.8",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2026-05-28"
   },
   "1526": {
     "provider": "Anthropic",
     "model": "claude-opus-4-8",
     "label": "Claude Opus 4.8",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2026-05-28"
   },
   "1527": {
     "provider": "Anthropic",
     "model": "claude-opus-4-8",
     "label": "Claude Opus 4.8",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2026-05-28"
   },
   "1528": {
     "provider": "Anthropic",
     "model": "claude-fable-5",
     "label": "Claude Fable 5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Fable",
+    "release": "2026-06-09"
   },
   "1529": {
     "provider": "Anthropic",
     "model": "claude-fable-5",
     "label": "Claude Fable 5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Fable",
+    "release": "2026-06-09"
   },
   "1530": {
     "provider": "Anthropic",
     "model": "claude-fable-5",
     "label": "Claude Fable 5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Fable",
+    "release": "2026-06-09"
   },
   "1531": {
     "provider": "Anthropic",
     "model": "claude-haiku-4-5-20251001",
     "label": "Claude Haiku 4.5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Haiku",
+    "release": "2025-10-01"
   },
   "1532": {
     "provider": "Anthropic",
     "model": "claude-haiku-4-5-20251001",
     "label": "Claude Haiku 4.5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Haiku",
+    "release": "2025-10-01"
   },
   "1533": {
     "provider": "Anthropic",
     "model": "claude-haiku-4-5-20251001",
     "label": "Claude Haiku 4.5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Haiku",
+    "release": "2025-10-01"
   },
   "1534": {
     "provider": "Anthropic",
     "model": "claude-sonnet-5",
     "label": "Claude Sonnet 5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet"
   },
   "1535": {
     "provider": "Anthropic",
     "model": "claude-sonnet-5",
     "label": "Claude Sonnet 5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet"
   },
   "1536": {
     "provider": "Anthropic",
     "model": "claude-sonnet-5",
     "label": "Claude Sonnet 5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet"
   },
   "1537": {
     "provider": "Anthropic",
     "model": "claude-fable-5",
     "label": "Claude Fable 5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Fable",
+    "release": "2026-06-09"
   },
   "1538": {
     "provider": "Anthropic",
     "model": "claude-fable-5",
     "label": "Claude Fable 5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Fable",
+    "release": "2026-06-09"
   },
   "1539": {
     "provider": "Anthropic",
     "model": "claude-fable-5",
     "label": "Claude Fable 5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Fable",
+    "release": "2026-06-09"
   },
   "1540": {
     "provider": "Anthropic",
     "model": "claude-opus-5",
     "label": "Claude Opus 5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2026-07-24"
   },
   "1541": {
     "provider": "Anthropic",
     "model": "claude-opus-5",
     "label": "Claude Opus 5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2026-07-24"
   },
   "1542": {
     "provider": "Anthropic",
     "model": "claude-opus-5",
     "label": "Claude Opus 5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "release": "2026-07-24"
   },
   "1543": {
     "provider": "Anthropic",
     "model": "claude-haiku-4-5-20251001",
     "label": "Claude Haiku 4.5",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Haiku",
+    "release": "2025-10-01"
   },
   "1544": {
     "provider": "Anthropic",
     "model": "claude-fable-5-1",
     "label": "Claude Fable 5.1",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Fable",
+    "release": "2026-09-01"
   },
   "1545": {
     "provider": "Anthropic",
     "model": "claude-fable-5-1",
     "label": "Claude Fable 5.1",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Fable",
+    "release": "2026-09-01"
   },
   "1546": {
     "provider": "Anthropic",
     "model": "claude-fable-5-1",
     "label": "Claude Fable 5.1",
-    "vendor": "Anthropic"
+    "vendor": "Anthropic",
+    "lineage": "Claude Fable",
+    "release": "2026-09-01"
   },
   "1600": {
     "provider": "Microsoft",
     "model": "M365 Copilot",
     "label": "MS Copilot (GPT-4)",
     "vendor": "Microsoft",
-    "manual": true
+    "manual": true,
+    "lineage": "MS Copilot",
+    "release": "2024-01"
   },
   "1601": {
     "provider": "Microsoft",
     "model": "M365 Copilot",
     "label": "MS Copilot (GPT-4)",
     "vendor": "Microsoft",
-    "manual": true
+    "manual": true,
+    "lineage": "MS Copilot",
+    "release": "2024-01"
   },
   "1602": {
     "provider": "Microsoft",
     "model": "M365 Copilot",
     "label": "MS Copilot (GPT-4)",
     "vendor": "Microsoft",
-    "manual": true
+    "manual": true,
+    "lineage": "MS Copilot",
+    "release": "2024-01"
   },
   "1603": {
     "provider": "Microsoft",
     "model": "M365 Copilot",
     "label": "MS Copilot (GPT-5)",
     "vendor": "Microsoft",
-    "manual": true
+    "manual": true,
+    "lineage": "MS Copilot",
+    "release": "2025-08"
   },
   "1604": {
     "provider": "Microsoft",
     "model": "M365 Copilot",
     "label": "MS Copilot (GPT-5)",
     "vendor": "Microsoft",
-    "manual": true
+    "manual": true,
+    "lineage": "MS Copilot",
+    "release": "2025-08"
   },
   "1605": {
     "provider": "Microsoft",
     "model": "M365 Copilot",
     "label": "MS Copilot (GPT-5.3)",
     "vendor": "Microsoft",
-    "manual": true
+    "manual": true,
+    "lineage": "MS Copilot",
+    "release": "2026-02"
   },
   "1700": {
     "provider": "DeepSeek",
     "model": "deepseek-chat",
     "label": "DeepSeek 3",
-    "vendor": "DeepSeek"
+    "vendor": "DeepSeek",
+    "lineage": "DeepSeek",
+    "release": "2024-12-26"
   },
   "1701": {
     "provider": "DeepSeek",
     "model": "deepseek-chat",
     "label": "DeepSeek 3",
-    "vendor": "DeepSeek"
+    "vendor": "DeepSeek",
+    "lineage": "DeepSeek",
+    "release": "2024-12-26"
   },
   "1702": {
     "provider": "DeepSeek",
     "model": "deepseek-chat",
     "label": "DeepSeek 3",
-    "vendor": "DeepSeek"
+    "vendor": "DeepSeek",
+    "lineage": "DeepSeek",
+    "release": "2024-12-26"
   },
   "1703": {
     "provider": "DeepSeek",
     "model": "deepseek-v4-pro",
     "label": "DeepSeek 4",
-    "vendor": "DeepSeek"
+    "vendor": "DeepSeek",
+    "lineage": "DeepSeek",
+    "release": "2026-08-13"
   },
   "1704": {
     "provider": "DeepSeek",
     "model": "deepseek-v4-pro",
     "label": "DeepSeek 4",
-    "vendor": "DeepSeek"
+    "vendor": "DeepSeek",
+    "lineage": "DeepSeek",
+    "release": "2026-08-13"
   },
   "1705": {
     "provider": "DeepSeek",
     "model": "deepseek-v4-pro",
     "label": "DeepSeek 4",
-    "vendor": "DeepSeek"
+    "vendor": "DeepSeek",
+    "lineage": "DeepSeek",
+    "release": "2026-08-13"
   },
   "1800": {
     "provider": "Qwen",
     "model": "qwen-plus",
     "label": "Qwen 3",
-    "vendor": "Qwen"
+    "vendor": "Qwen",
+    "lineage": "Qwen",
+    "release": "2025-04-28"
   },
   "1801": {
     "provider": "Qwen",
     "model": "qwen-plus",
     "label": "Qwen 3",
-    "vendor": "Qwen"
+    "vendor": "Qwen",
+    "lineage": "Qwen",
+    "release": "2025-04-28"
   },
   "1802": {
     "provider": "Qwen",
     "model": "qwen-plus",
     "label": "Qwen 3",
-    "vendor": "Qwen"
+    "vendor": "Qwen",
+    "lineage": "Qwen",
+    "release": "2025-04-28"
   },
   "1803": {
     "provider": "Qwen",
     "model": "qwen-plus-latest",
     "label": "Qwen 3",
-    "vendor": "Qwen"
+    "vendor": "Qwen",
+    "lineage": "Qwen",
+    "release": "2025-04-28"
   },
   "1804": {
     "provider": "Qwen",
     "model": "qwen-plus-latest",
     "label": "Qwen 3",
-    "vendor": "Qwen"
+    "vendor": "Qwen",
+    "lineage": "Qwen",
+    "release": "2025-04-28"
   },
   "1805": {
     "provider": "Qwen",
     "model": "qwen-plus-latest",
     "label": "Qwen 3",
-    "vendor": "Qwen"
+    "vendor": "Qwen",
+    "lineage": "Qwen",
+    "release": "2025-04-28"
   },
   "1806": {
     "provider": "Qwen",
     "model": "qwen3.5-plus-2026-02-15",
     "label": "Qwen 3.5",
-    "vendor": "Qwen"
+    "vendor": "Qwen",
+    "lineage": "Qwen",
+    "release": "2026-02-15"
   },
   "1807": {
     "provider": "Qwen",
     "model": "qwen3.5-plus-2026-02-15",
     "label": "Qwen 3.5",
-    "vendor": "Qwen"
+    "vendor": "Qwen",
+    "lineage": "Qwen",
+    "release": "2026-02-15"
   },
   "1808": {
     "provider": "Qwen",
     "model": "qwen3.5-plus-2026-02-15",
     "label": "Qwen 3.5",
-    "vendor": "Qwen"
+    "vendor": "Qwen",
+    "lineage": "Qwen",
+    "release": "2026-02-15"
   },
   "1809": {
     "provider": "Qwen",
     "model": "qwen3.6-plus",
     "label": "Qwen 3.6",
-    "vendor": "Qwen"
+    "vendor": "Qwen",
+    "lineage": "Qwen",
+    "release": "2026-04-15"
   },
   "1810": {
     "provider": "Qwen",
     "model": "qwen3.6-plus",
     "label": "Qwen 3.6",
-    "vendor": "Qwen"
+    "vendor": "Qwen",
+    "lineage": "Qwen",
+    "release": "2026-04-15"
   },
   "1811": {
     "provider": "Qwen",
     "model": "qwen3.6-plus",
     "label": "Qwen 3.6",
-    "vendor": "Qwen"
+    "vendor": "Qwen",
+    "lineage": "Qwen",
+    "release": "2026-04-15"
   },
   "1812": {
     "provider": "Qwen",
     "model": "qwen3.7-plus",
     "label": "Qwen 3.7",
-    "vendor": "Qwen"
+    "vendor": "Qwen",
+    "lineage": "Qwen",
+    "release": "2026-05-20"
   },
   "1813": {
     "provider": "Qwen",
     "model": "qwen3.7-plus",
     "label": "Qwen 3.7",
-    "vendor": "Qwen"
+    "vendor": "Qwen",
+    "lineage": "Qwen",
+    "release": "2026-05-20"
   },
   "1814": {
     "provider": "Qwen",
     "model": "qwen3.7-plus",
     "label": "Qwen 3.7",
-    "vendor": "Qwen"
+    "vendor": "Qwen",
+    "lineage": "Qwen",
+    "release": "2026-05-20"
   },
   "1900": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/gpt-oss-120b",
     "label": "GPT-OSS 120b",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-OSS",
+    "release": "2025-08-05"
   },
   "1901": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/gpt-oss-120b",
     "label": "GPT-OSS 120b",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-OSS",
+    "release": "2025-08-05"
   },
   "1902": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/gpt-oss-120b",
     "label": "GPT-OSS 120b",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "GPT-OSS",
+    "release": "2025-08-05"
   },
   "2000": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/glm-5",
     "label": "GLM 5",
-    "vendor": "Zhipu"
+    "vendor": "Zhipu",
+    "lineage": "GLM",
+    "release": "2026-02-12"
   },
   "2001": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/glm-5",
     "label": "GLM 5",
-    "vendor": "Zhipu"
+    "vendor": "Zhipu",
+    "lineage": "GLM",
+    "release": "2026-02-12"
   },
   "2002": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/glm-5",
     "label": "GLM 5",
-    "vendor": "Zhipu"
+    "vendor": "Zhipu",
+    "lineage": "GLM",
+    "release": "2026-02-12"
   },
   "2003": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/glm-5p2",
     "label": "GLM 5.2",
-    "vendor": "Zhipu"
+    "vendor": "Zhipu",
+    "lineage": "GLM",
+    "release": "2026-06-16"
   },
   "2004": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/glm-5p2",
     "label": "GLM 5.2",
-    "vendor": "Zhipu"
+    "vendor": "Zhipu",
+    "lineage": "GLM",
+    "release": "2026-06-16"
   },
   "2005": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/glm-5p2",
     "label": "GLM 5.2",
-    "vendor": "Zhipu"
+    "vendor": "Zhipu",
+    "lineage": "GLM",
+    "release": "2026-06-16"
   },
   "2006": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/glm-5p3",
     "label": "GLM 5.3",
-    "vendor": "Zhipu"
+    "vendor": "Zhipu",
+    "lineage": "GLM",
+    "release": "2026-08-14"
   },
   "2007": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/glm-5p3",
     "label": "GLM 5.3",
-    "vendor": "Zhipu"
+    "vendor": "Zhipu",
+    "lineage": "GLM",
+    "release": "2026-08-14"
   },
   "2008": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/glm-5p3",
     "label": "GLM 5.3",
-    "vendor": "Zhipu"
+    "vendor": "Zhipu",
+    "lineage": "GLM",
+    "release": "2026-08-14"
   },
   "2100": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/kimi-k2p5",
     "label": "Kimi K2.5",
-    "vendor": "Moonshot"
+    "vendor": "Moonshot",
+    "lineage": "Kimi",
+    "release": "2026-01-27"
   },
   "2101": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/kimi-k2p5",
     "label": "Kimi K2.5",
-    "vendor": "Moonshot"
+    "vendor": "Moonshot",
+    "lineage": "Kimi",
+    "release": "2026-01-27"
   },
   "2102": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/kimi-k2p5",
     "label": "Kimi K2.5",
-    "vendor": "Moonshot"
+    "vendor": "Moonshot",
+    "lineage": "Kimi",
+    "release": "2026-01-27"
   },
   "2200": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/minimax-m2p5",
     "label": "MiniMax M2.5",
-    "vendor": "MiniMax"
+    "vendor": "MiniMax",
+    "lineage": "MiniMax"
   },
   "2201": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/minimax-m2p5",
     "label": "MiniMax M2.5",
-    "vendor": "MiniMax"
+    "vendor": "MiniMax",
+    "lineage": "MiniMax"
   },
   "2202": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/minimax-m2p5",
     "label": "MiniMax M2.5",
-    "vendor": "MiniMax"
+    "vendor": "MiniMax",
+    "lineage": "MiniMax"
   },
   "2203": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/minimax-m3",
     "label": "MiniMax M3",
-    "vendor": "MiniMax"
+    "vendor": "MiniMax",
+    "lineage": "MiniMax",
+    "release": "2026-06-01"
   },
   "2204": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/minimax-m3",
     "label": "MiniMax M3",
-    "vendor": "MiniMax"
+    "vendor": "MiniMax",
+    "lineage": "MiniMax",
+    "release": "2026-06-01"
   },
   "2205": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/minimax-m3",
     "label": "MiniMax M3",
-    "vendor": "MiniMax"
+    "vendor": "MiniMax",
+    "lineage": "MiniMax",
+    "release": "2026-06-01"
   },
   "2300": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/llama-v3p3-70b-instruct",
     "label": "Llama 3.3",
-    "vendor": "Meta"
+    "vendor": "Meta",
+    "lineage": "Llama",
+    "release": "2024-12-06"
   },
   "2301": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/llama-v3p3-70b-instruct",
     "label": "Llama 3.3",
-    "vendor": "Meta"
+    "vendor": "Meta",
+    "lineage": "Llama",
+    "release": "2024-12-06"
   },
   "2302": {
     "provider": "fireworks",
     "model": "accounts/fireworks/models/llama-v3p3-70b-instruct",
     "label": "Llama 3.3",
-    "vendor": "Meta"
+    "vendor": "Meta",
+    "lineage": "Llama",
+    "release": "2024-12-06"
   },
   "2400": {
     "provider": "Foundry",
     "model": "gpt-5-mini",
     "label": "GPT-5 mini",
-    "vendor": "OpenAI"
+    "vendor": "OpenAI",
+    "lineage": "",
+    "release": "2025-08-07"
   },
   "2401": {
     "provider": "Foundry",
     "model": "MAI-Thinking-1",
     "label": "MAI Thinking 1",
-    "vendor": "Microsoft"
+    "vendor": "Microsoft",
+    "lineage": "MAI"
   },
   "2402": {
     "provider": "Foundry",
     "model": "MAI-Thinking-1",
     "label": "MAI Thinking 1",
-    "vendor": "Microsoft"
+    "vendor": "Microsoft",
+    "lineage": "MAI"
   },
   "2403": {
     "provider": "Foundry",
     "model": "MAI-Thinking-1",
     "label": "MAI Thinking 1",
-    "vendor": "Microsoft"
+    "vendor": "Microsoft",
+    "lineage": "MAI"
   },
   "2404": {
     "provider": "Foundry",
     "model": "MAI-Thinking-1",
     "label": "MAI Thinking 1",
-    "vendor": "Microsoft"
+    "vendor": "Microsoft",
+    "lineage": "MAI"
   },
   "2405": {
     "provider": "Foundry",
     "model": "MAI-Thinking-1",
     "label": "MAI Thinking 1",
-    "vendor": "Microsoft"
+    "vendor": "Microsoft",
+    "lineage": "MAI"
   }
 }

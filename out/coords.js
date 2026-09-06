@@ -649,7 +649,9 @@ window.COORDS = [
 "ea": 0.185466,
 "eb": 0.058314,
 "etheta": -2.797875,
-"en": 60
+"en": 60,
+"lineage": "Claude Fable",
+"release": "2026-06-09"
 },
 {
 "country": "Claude Fable 5.1",
@@ -659,7 +661,9 @@ window.COORDS = [
 "ea": 0.381439,
 "eb": 0.106738,
 "etheta": -2.671918,
-"en": 30
+"en": 30,
+"lineage": "Claude Fable",
+"release": "2026-09-01"
 },
 {
 "country": "Claude Haiku 4.5",
@@ -669,7 +673,9 @@ window.COORDS = [
 "ea": 0.194125,
 "eb": 0.063996,
 "etheta": 2.464019,
-"en": 40
+"en": 40,
+"lineage": "Claude Haiku",
+"release": "2025-10-01"
 },
 {
 "country": "Claude Opus 4",
@@ -679,7 +685,9 @@ window.COORDS = [
 "ea": 0.196487,
 "eb": 0.079762,
 "etheta": -2.509804,
-"en": 30
+"en": 30,
+"lineage": "Claude Opus",
+"release": "2025-05-14"
 },
 {
 "country": "Claude Opus 4.5",
@@ -689,7 +697,9 @@ window.COORDS = [
 "ea": 0.232423,
 "eb": 0.076588,
 "etheta": 3.089679,
-"en": 40
+"en": 40,
+"lineage": "Claude Opus",
+"release": "2025-11-01"
 },
 {
 "country": "Claude Opus 4.6",
@@ -699,7 +709,9 @@ window.COORDS = [
 "ea": 0.239362,
 "eb": 0.058552,
 "etheta": 3.096427,
-"en": 30
+"en": 30,
+"lineage": "Claude Opus",
+"release": "2026-02-05"
 },
 {
 "country": "Claude Opus 4.7",
@@ -709,7 +721,9 @@ window.COORDS = [
 "ea": 0.643184,
 "eb": 0.137175,
 "etheta": -2.384297,
-"en": 30
+"en": 30,
+"lineage": "Claude Opus",
+"release": "2026-04-16"
 },
 {
 "country": "Claude Opus 4.8",
@@ -719,7 +733,9 @@ window.COORDS = [
 "ea": 0.900751,
 "eb": 0.124296,
 "etheta": 0.804174,
-"en": 30
+"en": 30,
+"lineage": "Claude Opus",
+"release": "2026-05-28"
 },
 {
 "country": "Claude Opus 5",
@@ -729,7 +745,9 @@ window.COORDS = [
 "ea": 0.786341,
 "eb": 0.100839,
 "etheta": 0.979364,
-"en": 29
+"en": 29,
+"lineage": "Claude Opus",
+"release": "2026-07-24"
 },
 {
 "country": "Claude Sonnet 3.7",
@@ -739,7 +757,9 @@ window.COORDS = [
 "ea": 0.238849,
 "eb": 0.111829,
 "etheta": 1.00079,
-"en": 30
+"en": 30,
+"lineage": "Claude Sonnet",
+"release": "2025-02-19"
 },
 {
 "country": "Claude Sonnet 4",
@@ -749,7 +769,9 @@ window.COORDS = [
 "ea": 0.094501,
 "eb": 0.017936,
 "etheta": -2.41861,
-"en": 30
+"en": 30,
+"lineage": "Claude Sonnet",
+"release": "2025-05-14"
 },
 {
 "country": "Claude Sonnet 4.5",
@@ -759,7 +781,9 @@ window.COORDS = [
 "ea": 0.239166,
 "eb": 0.057214,
 "etheta": -2.794458,
-"en": 30
+"en": 30,
+"lineage": "Claude Sonnet",
+"release": "2025-09-29"
 },
 {
 "country": "Claude Sonnet 4.6",
@@ -769,7 +793,9 @@ window.COORDS = [
 "ea": 0.245924,
 "eb": 0.075316,
 "etheta": -2.770846,
-"en": 30
+"en": 30,
+"lineage": "Claude Sonnet",
+"release": "2026-02-17"
 },
 {
 "country": "Claude Sonnet 5",
@@ -779,7 +805,8 @@ window.COORDS = [
 "ea": 0.239147,
 "eb": 0.140824,
 "etheta": -2.54549,
-"en": 30
+"en": 30,
+"lineage": "Claude Sonnet"
 },
 {
 "country": "DeepSeek 3",
@@ -789,7 +816,9 @@ window.COORDS = [
 "ea": 0.180773,
 "eb": 0.098985,
 "etheta": -2.485659,
-"en": 30
+"en": 30,
+"lineage": "DeepSeek",
+"release": "2024-12-26"
 },
 {
 "country": "DeepSeek 4",
@@ -799,7 +828,9 @@ window.COORDS = [
 "ea": 0.466342,
 "eb": 0.253026,
 "etheta": -2.599326,
-"en": 30
+"en": 30,
+"lineage": "DeepSeek",
+"release": "2026-08-13"
 },
 {
 "country": "GLM 5",
@@ -809,7 +840,9 @@ window.COORDS = [
 "ea": 0.475609,
 "eb": 0.187065,
 "etheta": -2.823852,
-"en": 30
+"en": 30,
+"lineage": "GLM",
+"release": "2026-02-12"
 },
 {
 "country": "GLM 5.2",
@@ -819,7 +852,9 @@ window.COORDS = [
 "ea": 0.546758,
 "eb": 0.240771,
 "etheta": -2.663072,
-"en": 30
+"en": 30,
+"lineage": "GLM",
+"release": "2026-06-16"
 },
 {
 "country": "GLM 5.3",
@@ -829,7 +864,9 @@ window.COORDS = [
 "ea": 0.561922,
 "eb": 0.296194,
 "etheta": -2.477685,
-"en": 30
+"en": 30,
+"lineage": "GLM",
+"release": "2026-08-14"
 },
 {
 "country": "GPT-3.5",
@@ -839,7 +876,9 @@ window.COORDS = [
 "ea": 0.405905,
 "eb": 0.170163,
 "etheta": 2.450274,
-"en": 28
+"en": 28,
+"lineage": "GPT-3.5",
+"release": "2023-03-01"
 },
 {
 "country": "GPT-4",
@@ -849,7 +888,9 @@ window.COORDS = [
 "ea": 0.215384,
 "eb": 0.168433,
 "etheta": 2.333894,
-"en": 20
+"en": 20,
+"lineage": "GPT-4",
+"release": "2024-04-09"
 },
 {
 "country": "GPT-4o",
@@ -859,7 +900,9 @@ window.COORDS = [
 "ea": 0.52832,
 "eb": 0.320664,
 "etheta": 2.148587,
-"en": 16
+"en": 16,
+"lineage": "GPT-4",
+"release": "2024-11-20"
 },
 {
 "country": "GPT-5",
@@ -869,7 +912,9 @@ window.COORDS = [
 "ea": 0.849609,
 "eb": 0.292128,
 "etheta": -2.763382,
-"en": 19
+"en": 19,
+"lineage": "GPT-5",
+"release": "2025-08-07"
 },
 {
 "country": "GPT-5 (min)",
@@ -879,7 +924,8 @@ window.COORDS = [
 "ea": 0.606374,
 "eb": 0.259061,
 "etheta": -3.098604,
-"en": 30
+"en": 30,
+"release": "2025-08-07"
 },
 {
 "country": "GPT-5 mini",
@@ -889,7 +935,8 @@ window.COORDS = [
 "ea": 0.30451,
 "eb": 0.140558,
 "etheta": 3.073558,
-"en": 40
+"en": 40,
+"release": "2025-08-07"
 },
 {
 "country": "GPT-5.1",
@@ -899,7 +946,9 @@ window.COORDS = [
 "ea": 0.187757,
 "eb": 0.161443,
 "etheta": 1.886268,
-"en": 60
+"en": 60,
+"lineage": "GPT-5",
+"release": "2025-11-13"
 },
 {
 "country": "GPT-5.1 (low)",
@@ -909,7 +958,8 @@ window.COORDS = [
 "ea": 0.320206,
 "eb": 0.225631,
 "etheta": 0.904152,
-"en": 30
+"en": 30,
+"release": "2025-11-13"
 },
 {
 "country": "GPT-5.2",
@@ -919,7 +969,9 @@ window.COORDS = [
 "ea": 0.439399,
 "eb": 0.228233,
 "etheta": -2.552663,
-"en": 29
+"en": 29,
+"lineage": "GPT-5",
+"release": "2025-12-11"
 },
 {
 "country": "GPT-5.2 (low)",
@@ -929,7 +981,8 @@ window.COORDS = [
 "ea": 0.328315,
 "eb": 0.207882,
 "etheta": -2.413728,
-"en": 40
+"en": 40,
+"release": "2025-12-11"
 },
 {
 "country": "GPT-5.3",
@@ -939,7 +992,9 @@ window.COORDS = [
 "ea": 0.261709,
 "eb": 0.152094,
 "etheta": 2.649897,
-"en": 30
+"en": 30,
+"lineage": "GPT-5",
+"release": "2026-02-05"
 },
 {
 "country": "GPT-5.4",
@@ -949,7 +1004,9 @@ window.COORDS = [
 "ea": 0.534026,
 "eb": 0.298104,
 "etheta": 0.952031,
-"en": 30
+"en": 30,
+"lineage": "GPT-5",
+"release": "2026-03-05"
 },
 {
 "country": "GPT-5.4 (low)",
@@ -959,7 +1016,8 @@ window.COORDS = [
 "ea": 0.528658,
 "eb": 0.362976,
 "etheta": 1.307834,
-"en": 30
+"en": 30,
+"release": "2026-03-05"
 },
 {
 "country": "GPT-5.4 mini",
@@ -969,7 +1027,8 @@ window.COORDS = [
 "ea": 0.736431,
 "eb": 0.403612,
 "etheta": 2.77402,
-"en": 30
+"en": 30,
+"release": "2026-03-17"
 },
 {
 "country": "GPT-5.5",
@@ -979,7 +1038,9 @@ window.COORDS = [
 "ea": 0.435238,
 "eb": 0.167583,
 "etheta": 1.140806,
-"en": 30
+"en": 30,
+"lineage": "GPT-5",
+"release": "2026-04-23"
 },
 {
 "country": "GPT-5.5 (low)",
@@ -989,7 +1050,8 @@ window.COORDS = [
 "ea": 0.534139,
 "eb": 0.212106,
 "etheta": 0.957874,
-"en": 30
+"en": 30,
+"release": "2026-04-23"
 },
 {
 "country": "GPT-5.5 (none)",
@@ -999,7 +1061,8 @@ window.COORDS = [
 "ea": 0.532262,
 "eb": 0.244583,
 "etheta": 0.867969,
-"en": 30
+"en": 30,
+"release": "2026-04-23"
 },
 {
 "country": "GPT-5.6 Luna",
@@ -1009,7 +1072,9 @@ window.COORDS = [
 "ea": 0.654888,
 "eb": 0.43956,
 "etheta": 0.977104,
-"en": 30
+"en": 30,
+"lineage": "GPT-5.6",
+"release": "2026-07-09"
 },
 {
 "country": "GPT-5.6 Sol",
@@ -1019,7 +1084,9 @@ window.COORDS = [
 "ea": 0.769193,
 "eb": 0.198,
 "etheta": 0.973745,
-"en": 30
+"en": 30,
+"lineage": "GPT-5.6",
+"release": "2026-07-11"
 },
 {
 "country": "GPT-5.6 Terra",
@@ -1029,7 +1096,9 @@ window.COORDS = [
 "ea": 0.864787,
 "eb": 0.203513,
 "etheta": 1.112254,
-"en": 30
+"en": 30,
+"lineage": "GPT-5.6",
+"release": "2026-07-10"
 },
 {
 "country": "GPT-6 Astra",
@@ -1039,7 +1108,8 @@ window.COORDS = [
 "ea": 0.257316,
 "eb": 0.110304,
 "etheta": -2.549689,
-"en": 50
+"en": 50,
+"lineage": "GPT-6"
 },
 {
 "country": "GPT-OSS 120b",
@@ -1049,7 +1119,9 @@ window.COORDS = [
 "ea": 0.172096,
 "eb": 0.1536,
 "etheta": 2.358498,
-"en": 27
+"en": 27,
+"lineage": "GPT-OSS",
+"release": "2025-08-05"
 },
 {
 "country": "Gemini 2",
@@ -1059,7 +1131,9 @@ window.COORDS = [
 "ea": 0.805241,
 "eb": 0.379858,
 "etheta": 1.264877,
-"en": 10
+"en": 10,
+"lineage": "Gemini",
+"release": "2025-02-05"
 },
 {
 "country": "Gemini 2.5",
@@ -1069,7 +1143,9 @@ window.COORDS = [
 "ea": 0.377327,
 "eb": 0.242307,
 "etheta": 0.931846,
-"en": 30
+"en": 30,
+"lineage": "Gemini",
+"release": "2025-04-17"
 },
 {
 "country": "Gemini 3",
@@ -1079,7 +1155,9 @@ window.COORDS = [
 "ea": 0.592558,
 "eb": 0.145623,
 "etheta": 0.815678,
-"en": 30
+"en": 30,
+"lineage": "Gemini",
+"release": "2025-11-18"
 },
 {
 "country": "Gemini 3 (low)",
@@ -1089,7 +1167,8 @@ window.COORDS = [
 "ea": 0.6729,
 "eb": 0.350845,
 "etheta": -2.545086,
-"en": 30
+"en": 30,
+"release": "2025-11-18"
 },
 {
 "country": "Gemini 3.1 (low)",
@@ -1099,7 +1178,9 @@ window.COORDS = [
 "ea": 0.30702,
 "eb": 0.210686,
 "etheta": 2.180637,
-"en": 30
+"en": 30,
+"lineage": "Gemini",
+"release": "2026-02"
 },
 {
 "country": "Gemini 3.5 Flash (high)",
@@ -1109,7 +1190,8 @@ window.COORDS = [
 "ea": 0.686503,
 "eb": 0.206915,
 "etheta": 0.867634,
-"en": 30
+"en": 30,
+"release": "2026-05-19"
 },
 {
 "country": "Gemini 3.5 Flash (low)",
@@ -1119,7 +1201,9 @@ window.COORDS = [
 "ea": 0.544259,
 "eb": 0.220036,
 "etheta": 0.804339,
-"en": 30
+"en": 30,
+"lineage": "Gemini",
+"release": "2026-05-19"
 },
 {
 "country": "Gemini 3.6 Flash",
@@ -1129,7 +1213,9 @@ window.COORDS = [
 "ea": 0.567137,
 "eb": 0.241676,
 "etheta": -2.70722,
-"en": 29
+"en": 29,
+"lineage": "Gemini",
+"release": "2026-07-21"
 },
 {
 "country": "Gemini 3.7 Flash",
@@ -1139,7 +1225,9 @@ window.COORDS = [
 "ea": 0.489954,
 "eb": 0.176011,
 "etheta": -2.794021,
-"en": 30
+"en": 30,
+"lineage": "Gemini",
+"release": "2026-08"
 },
 {
 "country": "Gemini 3.8 Flash",
@@ -1149,7 +1237,9 @@ window.COORDS = [
 "ea": 0.505821,
 "eb": 0.181597,
 "etheta": -2.869375,
-"en": 30
+"en": 30,
+"lineage": "Gemini",
+"release": "2026-09"
 },
 {
 "country": "Gemma 4",
@@ -1159,7 +1249,9 @@ window.COORDS = [
 "ea": 0.276701,
 "eb": 0.065578,
 "etheta": 2.877755,
-"en": 24
+"en": 24,
+"lineage": "Gemma",
+"release": "2026-04-02"
 },
 {
 "country": "Grok 3",
@@ -1169,7 +1261,9 @@ window.COORDS = [
 "ea": 0.48007,
 "eb": 0.150914,
 "etheta": -3.053842,
-"en": 20
+"en": 20,
+"lineage": "Grok",
+"release": "2025-02-19"
 },
 {
 "country": "Grok 4",
@@ -1179,7 +1273,9 @@ window.COORDS = [
 "ea": 0.903084,
 "eb": 0.432036,
 "etheta": 1.010771,
-"en": 18
+"en": 18,
+"lineage": "Grok",
+"release": "2025-07-09"
 },
 {
 "country": "Grok 4.1",
@@ -1189,7 +1285,9 @@ window.COORDS = [
 "ea": 0.88096,
 "eb": 0.324049,
 "etheta": 1.109398,
-"en": 20
+"en": 20,
+"lineage": "Grok",
+"release": "2025-11"
 },
 {
 "country": "Grok 4.1 (low)",
@@ -1199,7 +1297,8 @@ window.COORDS = [
 "ea": 0.736361,
 "eb": 0.112433,
 "etheta": 1.897356,
-"en": 40
+"en": 40,
+"release": "2025-11"
 },
 {
 "country": "Grok 4.2",
@@ -1209,7 +1308,9 @@ window.COORDS = [
 "ea": 0.555852,
 "eb": 0.496817,
 "etheta": 1.247127,
-"en": 29
+"en": 29,
+"lineage": "Grok",
+"release": "2026-02"
 },
 {
 "country": "Grok 4.5",
@@ -1219,7 +1320,9 @@ window.COORDS = [
 "ea": 0.737399,
 "eb": 0.20364,
 "etheta": -2.710358,
-"en": 28
+"en": 28,
+"lineage": "Grok",
+"release": "2026-07-08"
 },
 {
 "country": "Grok 4.6",
@@ -1229,7 +1332,9 @@ window.COORDS = [
 "ea": 0.776218,
 "eb": 0.253507,
 "etheta": -2.587478,
-"en": 30
+"en": 30,
+"lineage": "Grok",
+"release": "2026-08"
 },
 {
 "country": "Kimi K2.5",
@@ -1239,7 +1344,9 @@ window.COORDS = [
 "ea": 0.444479,
 "eb": 0.20332,
 "etheta": -3.05289,
-"en": 30
+"en": 30,
+"lineage": "Kimi",
+"release": "2026-01-27"
 },
 {
 "country": "Llama 3.3",
@@ -1249,7 +1356,9 @@ window.COORDS = [
 "ea": 0.173819,
 "eb": 0.058628,
 "etheta": 3.131878,
-"en": 30
+"en": 30,
+"lineage": "Llama",
+"release": "2024-12-06"
 },
 {
 "country": "MAI Thinking 1",
@@ -1259,7 +1368,8 @@ window.COORDS = [
 "ea": 0.343964,
 "eb": 0.198227,
 "etheta": 1.669554,
-"en": 50
+"en": 50,
+"lineage": "MAI"
 },
 {
 "country": "MS Copilot (GPT-4)",
@@ -1269,7 +1379,9 @@ window.COORDS = [
 "ea": 0.382473,
 "eb": 0.206777,
 "etheta": 2.812401,
-"en": 15
+"en": 15,
+"lineage": "MS Copilot",
+"release": "2024-01"
 },
 {
 "country": "MS Copilot (GPT-5)",
@@ -1279,7 +1391,9 @@ window.COORDS = [
 "ea": 0.282718,
 "eb": 0.144647,
 "etheta": -3.00783,
-"en": 20
+"en": 20,
+"lineage": "MS Copilot",
+"release": "2025-08"
 },
 {
 "country": "MS Copilot (GPT-5.3)",
@@ -1289,7 +1403,9 @@ window.COORDS = [
 "ea": 0.223992,
 "eb": 0.119168,
 "etheta": -2.400291,
-"en": 10
+"en": 10,
+"lineage": "MS Copilot",
+"release": "2026-02"
 },
 {
 "country": "MiniMax M2.5",
@@ -1299,7 +1415,8 @@ window.COORDS = [
 "ea": 0.403429,
 "eb": 0.337076,
 "etheta": 1.358268,
-"en": 22
+"en": 22,
+"lineage": "MiniMax"
 },
 {
 "country": "MiniMax M3",
@@ -1309,7 +1426,9 @@ window.COORDS = [
 "ea": 0.266269,
 "eb": 0.212109,
 "etheta": 1.2944,
-"en": 29
+"en": 29,
+"lineage": "MiniMax",
+"release": "2026-06-01"
 },
 {
 "country": "Mistral L 2",
@@ -1319,7 +1438,9 @@ window.COORDS = [
 "ea": 0.356527,
 "eb": 0.048195,
 "etheta": 1.261124,
-"en": 10
+"en": 10,
+"lineage": "Mistral Large",
+"release": "2024-11"
 },
 {
 "country": "Mistral L 3",
@@ -1329,7 +1450,9 @@ window.COORDS = [
 "ea": 0.186924,
 "eb": 0.086095,
 "etheta": 3.120521,
-"en": 30
+"en": 30,
+"lineage": "Mistral Large",
+"release": "2025-12"
 },
 {
 "country": "Mistral S 3",
@@ -1339,7 +1462,9 @@ window.COORDS = [
 "ea": 0.259244,
 "eb": 0.131501,
 "etheta": 2.751977,
-"en": 30
+"en": 30,
+"lineage": "Mistral Small",
+"release": "2025-06"
 },
 {
 "country": "Mistral S 4",
@@ -1349,7 +1474,9 @@ window.COORDS = [
 "ea": 0.375891,
 "eb": 0.095193,
 "etheta": 2.877753,
-"en": 30
+"en": 30,
+"lineage": "Mistral Small",
+"release": "2026-03"
 },
 {
 "country": "Perplexity Sonar",
@@ -1359,7 +1486,9 @@ window.COORDS = [
 "ea": 0.364853,
 "eb": 0.199001,
 "etheta": 2.944033,
-"en": 30
+"en": 30,
+"lineage": "Perplexity",
+"release": "2025-01-21"
 },
 {
 "country": "Qwen 3",
@@ -1369,7 +1498,9 @@ window.COORDS = [
 "ea": 0.274004,
 "eb": 0.092,
 "etheta": -2.798233,
-"en": 60
+"en": 60,
+"lineage": "Qwen",
+"release": "2025-04-28"
 },
 {
 "country": "Qwen 3.5",
@@ -1379,7 +1510,9 @@ window.COORDS = [
 "ea": 0.184587,
 "eb": 0.069529,
 "etheta": -3.112106,
-"en": 30
+"en": 30,
+"lineage": "Qwen",
+"release": "2026-02-15"
 },
 {
 "country": "Qwen 3.6",
@@ -1389,7 +1522,9 @@ window.COORDS = [
 "ea": 0.314587,
 "eb": 0.15644,
 "etheta": 3.018386,
-"en": 30
+"en": 30,
+"lineage": "Qwen",
+"release": "2026-04-15"
 },
 {
 "country": "Qwen 3.7",
@@ -1399,7 +1534,9 @@ window.COORDS = [
 "ea": 0.475798,
 "eb": 0.153075,
 "etheta": 2.872152,
-"en": 30
+"en": 30,
+"lineage": "Qwen",
+"release": "2026-05-20"
 },
 {
 "country": "o4-mini",
@@ -1409,6 +1546,8 @@ window.COORDS = [
 "ea": 0.434985,
 "eb": 0.269874,
 "etheta": -2.791745,
-"en": 29
+"en": 29,
+"lineage": "GPT o-series",
+"release": "2025-04-16"
 }
 ];

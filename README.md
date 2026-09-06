@@ -54,7 +54,9 @@ PC0/PC1 are the dot product of standardized scores with the 10×2 PCA weight mat
 1. Add entries to `config/experiments.json`. I usually add 3 runs for each model (each 'run' is 10 rounds of the 10 questions).
 2. Run `run_experiments.py --expts <ids>`, then `compare.py --out out/coords.js`, then reload `index.html`.
 
-The experiments are groups into 1000's (you'll see when you look at them). Required fields: `provider`, `model`, `label` (display name shown on the plot), `vendor` (the model's origin, as opposed to the API provider; used for looking up the endpoint). Optional: `release` (YYYY-MM), `reasoning_effort` (passed to the API), `zero_shot` (bool, default false), `manual` (bool, skips the CLI runner). Label convention: add an effort suffix (e.g. `GPT-5.5 (low)`) only to separate a model run at more than one reasoning effort.
+The experiments are groups into 1000's (you'll see when you look at them). Required fields: `provider`, `model`, `label` (display name shown on the plot), `vendor` (the model's origin, as opposed to the API provider; used for looking up the endpoint). Optional: `release` (`YYYY-MM` or `YYYY-MM-DD`; dates sourced from the [Wikipedia LLM list](https://en.wikipedia.org/wiki/List_of_large_language_models)), `lineage` (family name, e.g. `Claude Opus`, `GPT-5`, `Grok`), `reasoning_effort` (passed to the API), `zero_shot` (bool, default false), `manual` (bool, skips the CLI runner). Label convention: add an effort suffix (e.g. `GPT-5.5 (low)`) only to separate a model run at more than one reasoning effort.
+
+Hovering a model on the plot traces its `lineage` — a line through that family's models in `release` order (Claude Opus 4 → 4.5 → … → 5), so a family's drift over time is visible without cluttering the map. A point joins the line only when it has a non-blank `lineage` **and** a `release` date; leave `lineage` blank to exclude a point (variants like `(low)`/`mini` are blank by default).
 
 ## Scoring the 10 questions
 

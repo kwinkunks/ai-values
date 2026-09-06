@@ -368,9 +368,60 @@ const ellipsePlugin = {
   }
 };
 
+// LINEAGE LINES ("join the dots")
+// On hover over a model, trace *that model's* lineage (e.g. Claude Opus 4 →
+// 4.5 → … → 5) in release-date order, so a family's drift over time is visible
+// without cluttering the map. Only the hovered lineage is drawn, under the
+// points, connecting currently-visible dated members (≥2 needed for a line).
+let hoveredLineage = null;
+const lineagePlugin = {
+  id: 'lineages',
+  // Track which lineage the cursor is over; request a redraw when it changes.
+  afterEvent(chart, args) {
+    let lineage = null;
+    if (args.event.type !== 'mouseout') {
+      const els = chart.getElementsAtEventForMode(args.event, 'nearest', { intersect: true }, true);
+      if (els.length) lineage = chart.data.datasets[els[0].datasetIndex].data[els[0].index].lineage || null;
+    }
+    if (lineage !== hoveredLineage) { hoveredLineage = lineage; args.changed = true; }
+  },
+  beforeDatasetsDraw(chart) {
+    if (!hoveredLineage) return;
+    const { ctx, scales: { x: sx, y: sy } } = chart;
+    const pts = [];
+    chart.data.datasets.forEach((dataset, i) => {
+      if (!chart.isDatasetVisible(i)) return;
+      dataset.data.forEach(p => {
+        if (p.lineage === hoveredLineage && p.release) pts.push({ ...p, color: dataset.pointBackgroundColor });
+      });
+    });
+    if (pts.length < 2) return;
+    // Oldest → newest; break date ties by label for a stable path.
+    pts.sort((a, b) => a.release.localeCompare(b.release) || a.label.localeCompare(b.label));
+    ctx.save();
+    ctx.beginPath();
+    pts.forEach((p, j) => {
+      const px = sx.getPixelForValue(p.x), py = sy.getPixelForValue(p.y);
+      if (j === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    });
+    ctx.strokeStyle = pts[0].color;  // lineage is single-vendor → single colour
+    ctx.globalAlpha = 0.6;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    // Small filled marker at the newest end to show direction of travel.
+    const last = pts[pts.length - 1];
+    ctx.globalAlpha = 0.9;
+    ctx.fillStyle = last.color;
+    ctx.beginPath();
+    ctx.arc(sx.getPixelForValue(last.x), sy.getPixelForValue(last.y), 3.5, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.restore();
+  }
+};
+
 // CHART
 let chart;
-let showEllipses = true;  // toggled by the #ellipseToggle checkbox
+let showEllipses = true;   // toggled by the #ellipseToggle checkbox
 
 function initChart(points) {
   // Group points by region. AI points carry their true vendor as region; any
@@ -381,7 +432,8 @@ function initChart(points) {
     const region = KNOWN.has(p.region) ? p.region : 'Other';
     if (!regionMap[region]) regionMap[region] = [];
     regionMap[region].push({ x: p.x, y: p.y, label: p.country, remark: p.remark,
-                             ea: p.ea, eb: p.eb, etheta: p.etheta, en: p.en });
+                             ea: p.ea, eb: p.eb, etheta: p.etheta, en: p.en,
+                             lineage: p.lineage, release: p.release });
   });
 
   // Build datasets in fixed group order (countries first, then AI vendors).
@@ -455,7 +507,7 @@ function initChart(points) {
         y: { min: yMin, max: yMax, ticks: { stepSize: 1 }, title: { display: true, text: 'Traditional vs Secular' } }
       }
     },
-    plugins: [ellipsePlugin, labelPlugin]
+    plugins: [ellipsePlugin, lineagePlugin, labelPlugin]
   });
 
   // Build a row of toggle buttons plus a grey "ALL" button that shows/hides the

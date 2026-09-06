@@ -102,7 +102,15 @@ def compute_llm_coordinates(df: pd.DataFrame, experiments: dict, weights, means,
         result[col] = [(e or {}).get(col, np.nan)
                        for e in map(ellipses.get, zip(result['country'], result['region']))]
 
-    return result[['country', 'region', 'x', 'y', 'ea', 'eb', 'etheta', 'en']]
+    # Lineage grouping + release date (constant per label) for "join the dots".
+    # A blank/absent lineage means the point is not connected to any line.
+    lineage_map = {v['label']: v.get('lineage') for v in experiments.values()}
+    release_map = {v['label']: v.get('release') for v in experiments.values()}
+    result['lineage'] = result['country'].map(lineage_map)
+    result['release'] = result['country'].map(release_map)
+
+    return result[['country', 'region', 'x', 'y', 'ea', 'eb', 'etheta', 'en',
+                   'lineage', 'release']]
 
 
 def main() -> None:
@@ -155,6 +163,11 @@ def main() -> None:
             if pd.notna(r.ea):
                 rec.update(ea=round(r.ea, 6), eb=round(r.eb, 6),
                            etheta=round(r.etheta, 6), en=int(r.en))
+            # Lineage/release only where set (LLM rows with a non-blank lineage).
+            if pd.notna(r.lineage) and r.lineage:
+                rec['lineage'] = r.lineage
+            if pd.notna(r.release):
+                rec['release'] = r.release
             records.append(rec)
         js = 'window.COORDS = ' + json.dumps(records, indent=0) + ';\n'
         Path(args.out).write_text(js)
