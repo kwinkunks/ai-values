@@ -12,6 +12,7 @@ Usage:
 """
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -28,6 +29,16 @@ MEANS_FILE = ROOT / 'out' / 'column_means.txt'
 SDS_FILE = ROOT / 'out' / 'column_sds.txt'
 
 VARIABLES = ['F063', 'Y003', 'F120', 'G006', 'E018', 'Y002', 'A008', 'F118', 'E025', 'A165']
+
+# Some legacy rows stored the persona WITH run_experiments' appended terseness
+# suffix and others without, which splits one persona into two grouping keys.
+# Strip it so the ellipse counts personas correctly (the suffix is constant, so
+# carries no persona information).
+_SUFFIX_RE = re.compile(r'\s*It is very important to respond EXACTLY as requested\.\s*Be terse\.\s*$')
+
+
+def _persona(system: str) -> str:
+    return _SUFFIX_RE.sub('', system).strip()
 
 # Fewest per-label points needed for a Hotelling ellipse (needs n-2 >= 1 F dof,
 # but 4 is the practical floor for a non-silly 2x2 covariance).
@@ -103,7 +114,7 @@ def compute_llm_coordinates(df: pd.DataFrame, experiments: dict, weights, means,
     ellipses = {}
     pts_map = {}   # raw per-response (x, y) points per label, for the faint scatter
     for name, g in grouped:
-        pm = g.groupby('system')[['x', 'y']].mean()
+        pm = g.groupby(g['system'].map(_persona))[['x', 'y']].mean()
         ellipses[name] = hotelling_ellipse(pm['x'].values, pm['y'].values, conf)
         pts_map[name] = [[round(float(a), 4), round(float(b), 4)] for a, b in zip(g['x'], g['y'])]
     for col in ('ea', 'eb', 'etheta', 'en'):

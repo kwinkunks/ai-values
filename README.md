@@ -51,10 +51,12 @@ PC0/PC1 are the dot product of standardized scores with the 10×2 PCA weight mat
 
 ## Adding a new model
 
-1. Add entries to `config/experiments.json`. I usually add 3 runs for each model (each 'run' is 10 rounds of the 10 questions).
+1. Add entries to `config/experiments.json`. Each experiment is one run; add a couple of entries per model if you want more runs. Set `batch: v2` on new experiments to interrogate the model with the full 30 persona phrasings (better-sampled position → tighter ellipse).
 2. Run `run_experiments.py --expts <ids>`, then `compare.py --out out/coords.js`, then reload `index.html`.
 
-The experiments are groups into 1000's (you'll see when you look at them). Required fields: `provider`, `model`, `label` (display name shown on the plot), `vendor` (the model's origin, as opposed to the API provider; used for looking up the endpoint). Optional: `release` (`YYYY-MM` or `YYYY-MM-DD`; dates sourced from the [Wikipedia LLM list](https://en.wikipedia.org/wiki/List_of_large_language_models)), `lineage` (family name, e.g. `Claude Opus`, `GPT-5`, `Grok`), `reasoning_effort` (passed to the API), `zero_shot` (bool, default false), `manual` (bool, skips the CLI runner). Label convention: add an effort suffix (e.g. `GPT-5.5 (low)`) only to separate a model run at more than one reasoning effort.
+The experiments are groups into 1000's (you'll see when you look at them). Required fields: `provider`, `model`, `label` (display name shown on the plot), `vendor` (the model's origin, as opposed to the API provider; used for looking up the endpoint). Optional: `release` (`YYYY-MM` or `YYYY-MM-DD`; dates sourced from the [Wikipedia LLM list](https://en.wikipedia.org/wiki/List_of_large_language_models)), `lineage` (family name, e.g. `Claude Opus`, `GPT-5`, `Grok`), `batch` (persona set: `v1` = original 10 phrasings, `v2` = all 30, `v1.5` = only the 20 added in v2 — add a `v1.5` experiment to *upgrade* an existing `v1` model to 30 personas without re-running the first 10; default `v1`), `reasoning_effort` (passed to the API), `zero_shot` (bool, default false), `manual` (bool, skips the CLI runner). Label convention: add an effort suffix (e.g. `GPT-5.5 (low)`) only to separate a model run at more than one reasoning effort.
+
+The 30 persona phrasings live in `data/Prompts_Respondent_Descriptors_General.csv`, each tagged with the `batch` (version) it was introduced in; batches are cumulative (`v2` includes `v1`). `config/experiments.json` is the single source of truth for which persona set each experiment used.
 
 Hovering a model on the plot traces its `lineage` — a line through that family's models in `release` order (Claude Opus 4 → 4.5 → … → 5), so a family's drift over time is visible without cluttering the map. A point joins the line only when it has a non-blank `lineage` **and** a `release` date; leave `lineage` blank to exclude a point (variants like `(low)`/`mini` are blank by default).
 

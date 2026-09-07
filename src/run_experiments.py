@@ -56,8 +56,27 @@ def load_questions() -> dict[str, str]:
     return {k.upper(): v[10:] for k, v in questions.items()}
 
 
-def load_respondents() -> list[str]:
-    return pd.read_csv(RESPONDENTS_FILE)['respondent_descriptor'].tolist()
+# Which persona batches each experiment `batch` value selects. v1 = original 10;
+# v2 = all 30 (cumulative); v1.5 = only the 20 added in v2, to *upgrade* an
+# existing v1 model (add a new experiment tagged v1.5 → its label reaches 30
+# without re-running the original 10).
+BATCH_SELECTORS = {
+    'v1':   {'v1'},
+    'v1.5': {'v2'},
+    'v2':   {'v1', 'v2'},
+}
+
+
+def load_respondents() -> pd.DataFrame:
+    """Persona descriptors with the batch (version) each was introduced in."""
+    return pd.read_csv(RESPONDENTS_FILE)[['respondent_descriptor', 'batch']]
+
+
+def personas_for(respondents: pd.DataFrame, batch: str) -> list[str]:
+    """Descriptors selected by an experiment's `batch` (see BATCH_SELECTORS)."""
+    if batch not in BATCH_SELECTORS:
+        raise ValueError(f'Unknown batch {batch!r}. Known: {sorted(BATCH_SELECTORS)}')
+    return respondents[respondents['batch'].isin(BATCH_SELECTORS[batch])]['respondent_descriptor'].tolist()
 
 
 def run_experiment(expt_id: str, cfg: dict, questions: dict, respondents: list,
@@ -171,7 +190,8 @@ def main() -> None:
     workers = max(1, min(args.jobs, len(to_run)))
     with ThreadPoolExecutor(max_workers=workers) as pool:
         futures = {
-            pool.submit(run_experiment, expt_id, cfg, questions, respondents, position=i + 1): expt_id
+            pool.submit(run_experiment, expt_id, cfg, questions,
+                        personas_for(respondents, cfg.get('batch', 'v1')), position=i + 1): expt_id
             for i, (expt_id, cfg) in enumerate(to_run.items())
         }
         for expt_id, cfg in to_run.items():
