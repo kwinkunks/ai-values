@@ -1,6 +1,15 @@
 import os
+import re
 
 from openai import OpenAI
+
+# Some models (e.g. Gemma) prefix the answer with a reasoning block like
+# <thought>...</thought>5. Strip such blocks so only the actual reply is scored.
+_THINK_RE = re.compile(r'<(thought|thinking|think)>.*?</\1>', re.IGNORECASE | re.DOTALL)
+
+
+def _strip_thoughts(text: str) -> str:
+    return _THINK_RE.sub('', text).strip()
 
 PROVIDER_URLS = {
     'foundry': 'https://mtha-testbed-proj-resource.openai.azure.com/openai/v1',
@@ -43,6 +52,8 @@ class Convo:
             params['reasoning_effort'] = reasoning_effort
         response = self._client.chat.completions.create(**params)
         content = response.choices[0].message.content
+        if content:
+            content = _strip_thoughts(content)
         self.log_data.append(response)
         self.messages.append({'role': 'assistant', 'content': content})
         return content
