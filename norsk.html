@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VALUES – English vs Norwegian prompting</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  body { padding: 20px; }
+  .chart-wrap { position: relative; width: 100%; max-width: 950px; margin: 0 auto; }
+  .chart-wrap canvas { position: absolute; top: 0; left: 0; }
+  footer { margin-top: 20px; text-align: center; font-size: 0.9em; color: #666; }
+  .form-check.d-inline-block { font-size: 0.9em; }
+  .shape-key { font-size: 0.85em; color: #444; }
+  .shape-key .glyph { font-size: 1.1em; vertical-align: middle; }
+</style>
+</head>
+<body>
+
+<div class="container text-center">
+  <p class="lead text-muted"><span style="font-weight: 600;">Does the language of the question change a model's values?</span> Each model below was asked the same 10 <a href="https://www.worldvaluessurvey.org/wvs.jsp">World Values Survey</a> / <a href="https://europeanvaluesstudy.eu/">European Values Study</a> questions twice — once in English, once in Norwegian (bokmål) — and plotted on the <span style="font-weight: 600;">Inglehart-Welzel Cultural Map</span>. An arrow runs from each model's English position to its Norwegian one; shaded areas are 80% confidence ellipses of the mean. Country points (light blue) are national means from surveys since 2005, and the heavy <strong>+</strong> marks the global average.</p>
+  <div class="chart-wrap"><canvas id="valuesChart"></canvas></div>
+  <div id="aiToggles" class="d-flex flex-wrap justify-content-center mt-3" role="group" aria-label="Toggle AI vendors"></div>
+  <div class="mt-2 shape-key">
+    <span class="glyph">●</span> English prompt &nbsp;&nbsp; <span class="glyph">◆</span> Norwegian prompt &nbsp;&nbsp; <span class="glyph">&lowast;</span> Norway &nbsp;&nbsp; <span class="glyph">+</span> Global average
+  </div>
+  <div class="mt-2">
+    <div class="form-check d-inline-block me-3">
+      <input class="form-check-input" type="checkbox" id="ellipseToggle" checked>
+      <label class="form-check-label" for="ellipseToggle">Show uncertainty ellipses</label>
+    </div>
+    <div class="form-check d-inline-block">
+      <input class="form-check-input" type="checkbox" id="vectorToggle" checked>
+      <label class="form-check-label" for="vectorToggle">Show shift vectors</label>
+    </div>
+  </div>
+</div>
+
+<footer>
+  2025–2026 Matt Hall | This app has no server & transmits no data | <a href="https://github.com/kwinkunks/ai-values">GitHub</a>
+</footer>
+
+<script src="out/coords_norsk.js"></script>
+<script>
+
+// DATA: window.NORSK_COORDS = { countries: [...], models: [...] } from
+// src/make_norsk.py. Only models with BOTH an EN and a NO run are included;
+// each model carries language ('EN'/'NO') and a shared `base` name.
+
+// Vendor colours match index.html's AI palette (orange family = AI).
+const VENDOR_COLORS = { 'Anthropic': '#c2410c', 'OpenAI': '#fb923c' };
+const VENDORS = ['Anthropic', 'OpenAI'];
+const COUNTRY_COLOR = '#8ecae6';   // light blue — distinct from the grey response dots
+const VECTOR_COLOR = '#7a7a7a';
+
+let showEllipses = true;   // #ellipseToggle
+let showVectors = true;    // #vectorToggle
+let hoveredPoint = null;   // model under the cursor → drives the response scatter
+
+// LABELS — draw each model's name beside its point (Norwegian runs in bold).
+const labelPlugin = {
+  id: 'pointLabels',
+  afterDatasetsDraw(chart) {
+    const { ctx } = chart;
+    chart.data.datasets.forEach((dataset, datasetIndex) => {
+      if (!chart.isDatasetVisible(datasetIndex)) return;
+      if (dataset.noLabel) return;
+      const meta = chart.getDatasetMeta(datasetIndex);
+      dataset.data.forEach((point, index) => {
+        const { x, y } = meta.data[index].getProps(['x', 'y'], true);
+        ctx.save();
+        const bold = point.language === 'NO';
+        ctx.font = (bold ? 'bold ' : '') + '10px sans-serif';
+        ctx.fillStyle = dataset.labelColor || dataset.pointBackgroundColor;
+        ctx.textAlign = 'left';
+        const text = point.language === 'NO' ? point.label + ' (NO)' : point.label;
+        ctx.fillText(text, x + 7, y + 4);
+        ctx.restore();
+      });
+    });
+  }
+};
+
+// RAW RESPONSE SCATTER — on hover, show the hovered model's individual persona
+// responses as faint grey dots (same idea as index.html).
+const scatterPlugin = {
+  id: 'responseScatter',
+  beforeDatasetsDraw(chart) {
+    if (!hoveredPoint || !hoveredPoint.pts) return;
+    const { ctx, scales: { x: sx, y: sy } } = chart;
+    ctx.save();
+    ctx.fillStyle = 'rgba(70, 70, 70, 0.5)';
+    hoveredPoint.pts.forEach(([x, y]) => {
+      ctx.beginPath();
+      ctx.arc(sx.getPixelForValue(x), sy.getPixelForValue(y), 2, 0, 2 * Math.PI);
+      ctx.fill();
+    });
+    ctx.restore();
+  },
+  afterEvent(chart, args) {
+    let point = null;
+    if (args.event.type !== 'mouseout') {
+      const els = chart.getElementsAtEventForMode(args.event, 'nearest', { intersect: true }, true);
+      if (els.length) point = chart.data.datasets[els[0].datasetIndex].data[els[0].index];
+    }
+    if (point !== hoveredPoint) { hoveredPoint = point; args.changed = true; }
+  }
+};
+
+// UNCERTAINTY ELLIPSES — identical maths to index.html: ea/eb are semi-axes and
+// etheta the major-axis angle from compare.py's Hotelling T^2. Built in data
+// space and mapped per-vertex so they stay correct under the equal-aspect axes.
+const ellipsePlugin = {
+  id: 'meanEllipses',
+  beforeDatasetsDraw(chart) {
+    if (!showEllipses) return;
+    const { ctx, scales: { x: sx, y: sy } } = chart;
+    const STEPS = 64;
+    chart.data.datasets.forEach((dataset, datasetIndex) => {
+      if (!chart.isDatasetVisible(datasetIndex)) return;
+      dataset.data.forEach(point => {
+        if (point.ea == null) return;
+        const cos = Math.cos(point.etheta), sin = Math.sin(point.etheta);
+        ctx.save();
+        ctx.beginPath();
+        for (let i = 0; i <= STEPS; i++) {
+          const t = (i / STEPS) * 2 * Math.PI;
+          const dx = point.ea * Math.cos(t) * cos - point.eb * Math.sin(t) * sin;
+          const dy = point.ea * Math.cos(t) * sin + point.eb * Math.sin(t) * cos;
+          const px = sx.getPixelForValue(point.x + dx);
+          const py = sy.getPixelForValue(point.y + dy);
+          if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+        }
+        ctx.closePath();
+        ctx.fillStyle = dataset.pointBackgroundColor;
+        ctx.globalAlpha = 0.12;
+        ctx.fill();
+        ctx.globalAlpha = 0.4;
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = dataset.pointBackgroundColor;
+        ctx.stroke();
+        ctx.restore();
+      });
+    });
+  }
+};
+
+// SHIFT VECTORS — one arrow per model, from its English point to its Norwegian
+// point, drawn only when both endpoints belong to currently-visible datasets.
+const vectorPlugin = {
+  id: 'shiftVectors',
+  beforeDatasetsDraw(chart) {
+    if (!showVectors) return;
+    const { ctx, scales: { x: sx, y: sy } } = chart;
+    const pairs = {};
+    chart.data.datasets.forEach((dataset, i) => {
+      if (!chart.isDatasetVisible(i)) return;
+      dataset.data.forEach(p => {
+        if (!p.base || !p.language) return;
+        (pairs[p.base] = pairs[p.base] || {})[p.language] = p;
+      });
+    });
+    ctx.save();
+    Object.values(pairs).forEach(({ EN, NO }) => {
+      if (!EN || !NO) return;
+      let x1 = sx.getPixelForValue(EN.x), y1 = sy.getPixelForValue(EN.y);
+      let x2 = sx.getPixelForValue(NO.x), y2 = sy.getPixelForValue(NO.y);
+      const ang = Math.atan2(y2 - y1, x2 - x1);
+      const pad = 9;                                  // clear the markers at each end
+      x1 += pad * Math.cos(ang); y1 += pad * Math.sin(ang);
+      x2 -= pad * Math.cos(ang); y2 -= pad * Math.sin(ang);
+      ctx.globalAlpha = 0.75;
+      ctx.strokeStyle = VECTOR_COLOR;
+      ctx.fillStyle = VECTOR_COLOR;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+      const h = 9;                                    // arrowhead
+      ctx.beginPath();
+      ctx.moveTo(x2, y2);
+      ctx.lineTo(x2 - h * Math.cos(ang - Math.PI / 6), y2 - h * Math.sin(ang - Math.PI / 6));
+      ctx.lineTo(x2 - h * Math.cos(ang + Math.PI / 6), y2 - h * Math.sin(ang + Math.PI / 6));
+      ctx.closePath(); ctx.fill();
+    });
+    ctx.restore();
+  }
+};
+
+// CHART
+let chart;
+
+function initChart(data) {
+  const { countries, models } = data;
+  const norway = countries.find(c => c.country === 'Norway');
+  const backdrop = countries.filter(c => c.country !== 'Norway');
+  const allPoints = countries.concat(models);
+
+  const datasets = [];
+
+  // Country backdrop — recessive light blue, hover label only.
+  datasets.push({
+    label: 'Countries',
+    data: backdrop.map(c => ({ x: c.x, y: c.y, label: c.country })),
+    pointBackgroundColor: COUNTRY_COLOR,
+    pointBorderWidth: 0,
+    pointRadius: 3,
+    pointHoverRadius: 5,
+    noLabel: true,
+    order: 10
+  });
+
+  // Global average — the affine intercept (0.038, -0.1), i.e. the human
+  // population mean (see src/human_mean.py). Marked with a heavy '+'.
+  datasets.push({
+    label: 'global average',
+    data: [{ x: 0.038, y: -0.1, label: 'global average', hoverOnly: true }],
+    pointStyle: 'cross',
+    pointBorderColor: '#000000',
+    pointBackgroundColor: '#000000',
+    pointBorderWidth: 2.5,
+    pointRadius: 10,
+    pointHoverRadius: 12,
+    noLabel: true,
+    order: 3
+  });
+
+  // Per-vendor model datasets: EN as circles, NO as diamonds (rectRot).
+  VENDORS.forEach(vendor => {
+    const pts = models.filter(m => m.region === vendor);
+    if (!pts.length) return;
+    datasets.push({
+      label: vendor,
+      data: pts.map(m => ({ x: m.x, y: m.y, label: m.base, language: m.language,
+                            base: m.base, ea: m.ea, eb: m.eb, etheta: m.etheta,
+                            en: m.en, pts: m.pts })),
+      pointBackgroundColor: VENDOR_COLORS[vendor],
+      pointBorderColor: 'white',
+      pointBorderWidth: 1,
+      pointStyle: pts.map(m => m.language === 'NO' ? 'rectRot' : 'circle'),
+      pointRadius: pts.map(m => m.language === 'NO' ? 7 : 5),
+      pointHoverRadius: pts.map(m => m.language === 'NO' ? 9 : 7),
+      order: 2
+    });
+  });
+
+  // Norway — highlighted reference star.
+  if (norway) {
+    datasets.push({
+      label: 'Norway',
+      data: [{ x: norway.x, y: norway.y, label: 'Norway' }],
+      pointStyle: 'star',
+      pointBackgroundColor: '#000000',
+      pointBorderColor: '#000000',
+      pointBorderWidth: 1,
+      pointRadius: 10,
+      pointHoverRadius: 12,
+      labelColor: '#000000',
+      order: 1
+    });
+  }
+
+  // Fixed integer extents from ALL points so toggling never rescales the chart.
+  const xMin = Math.floor(Math.min(...allPoints.map(p => p.x)));
+  const xMax = Math.ceil(Math.max(...allPoints.map(p => p.x)));
+  const yMin = Math.floor(Math.min(...allPoints.map(p => p.y)));
+  const yMax = Math.ceil(Math.max(...allPoints.map(p => p.y)));
+
+  // Equal-aspect axes (1 x-unit = 1 y-unit) via the wrapper's CSS aspect-ratio.
+  document.querySelector('.chart-wrap').style.aspectRatio = (xMax - xMin) / (yMax - yMin);
+
+  chart = new Chart(document.getElementById('valuesChart'), {
+    type: 'scatter',
+    data: { datasets },
+    options: {
+      animation: false,
+      maintainAspectRatio: false,
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: function(ctx) {
+              const point = ctx.raw;
+              let out = point.label || '';
+              if (point.language) out += ' (' + point.language + ')';
+              out += ` (x: ${point.x.toFixed(2)}, y: ${point.y.toFixed(2)})`;
+              if (point.en) out += ` — ${point.en} personas, 80% CI`;
+              return out;
+            }
+          }
+        },
+        legend: { display: false }
+      },
+      scales: {
+        x: { min: xMin, max: xMax, ticks: { stepSize: 1 }, title: { display: true, text: 'Survival vs Self-expression' } },
+        y: { min: yMin, max: yMax, ticks: { stepSize: 1 }, title: { display: true, text: 'Traditional vs Secular' } }
+      }
+    },
+    plugins: [ellipsePlugin, vectorPlugin, scatterPlugin, labelPlugin]
+  });
+
+  // Vendor toggle buttons (both vendors visible by default here).
+  const container = document.getElementById('aiToggles');
+  function dsIndex(label) { return chart.data.datasets.findIndex(ds => ds.label === label); }
+  function setBtnState(btn, on) { btn.classList.toggle('active', on); btn.style.opacity = on ? 1 : 0.4; }
+  VENDORS.forEach(vendor => {
+    if (dsIndex(vendor) === -1) return;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'btn btn-sm m-1';
+    btn.style.backgroundColor = VENDOR_COLORS[vendor];
+    btn.style.color = 'white';
+    btn.textContent = vendor;
+    setBtnState(btn, true);
+    btn.onclick = () => {
+      const i = dsIndex(vendor);
+      const show = !chart.isDatasetVisible(i);
+      chart.setDatasetVisibility(i, show);
+      chart.update();
+      setBtnState(btn, show);
+    };
+    container.appendChild(btn);
+  });
+}
+
+initChart(window.NORSK_COORDS);
+
+document.getElementById('ellipseToggle').addEventListener('change', e => {
+  showEllipses = e.target.checked; chart.update();
+});
+document.getElementById('vectorToggle').addEventListener('change', e => {
+  showVectors = e.target.checked; chart.update();
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
