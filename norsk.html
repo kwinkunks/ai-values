@@ -263,7 +263,7 @@ function initChart(data) {
   const xMin = Math.floor(Math.min(...allPoints.map(p => p.x)));
   const xMax = Math.ceil(Math.max(...allPoints.map(p => p.x)));
   const yMin = Math.floor(Math.min(...allPoints.map(p => p.y)));
-  const yMax = Math.ceil(Math.max(...allPoints.map(p => p.y)));
+  const yMax = Math.max(3, Math.ceil(Math.max(...allPoints.map(p => p.y))));  // headroom so tall ellipses aren't clipped
 
   // Equal-aspect axes (1 x-unit = 1 y-unit) via the wrapper's CSS aspect-ratio.
   document.querySelector('.chart-wrap').style.aspectRatio = (xMax - xMin) / (yMax - yMin);
