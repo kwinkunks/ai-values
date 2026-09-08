@@ -34,8 +34,19 @@ RESPONSES_FILE = ROOT / 'out' / 'responses.csv'
 
 VARIABLES = ['F063', 'Y003', 'F120', 'G006', 'E018', 'Y002', 'A008', 'F118', 'E025', 'A165']
 
-# Appended to every system prompt to encourage terse, parseable answers.
-SYSTEM_SUFFIX = '\n\nIt is very important to respond EXACTLY as requested. Be terse.'
+# Appended to every system prompt to encourage terse, parseable answers, per language.
+SYSTEM_SUFFIX_EN = '\n\nIt is very important to respond EXACTLY as requested. Be terse.'
+SYSTEM_SUFFIX_NO = '\n\nDet er svært viktig å svare NØYAKTIG som bedt om. Vær kortfattet.'
+
+# Per-language sources: which CSV columns hold the questions/personas, the question
+# prefix to (strip then) re-add, and the terseness suffix. An experiment's optional
+# `language` field selects an entry; absent → 'EN', so existing configs are unchanged.
+LANG = {
+    'EN': {'q_col': 'prompt',    'q_prefix': 'Question: ',
+           'persona_col': 'respondent_descriptor',    'suffix': SYSTEM_SUFFIX_EN},
+    'NO': {'q_col': 'prompt_no', 'q_prefix': 'Spørsmål: ',
+           'persona_col': 'respondent_descriptor_no', 'suffix': SYSTEM_SUFFIX_NO},
+}
 
 # In non-zero-shot mode, re-ask a question up to this many times until the
 # answer is short enough to parse (< 5 chars). The growing conversation
@@ -49,11 +60,13 @@ def load_experiments() -> dict:
         return json.load(f)
 
 
-def load_questions() -> dict[str, str]:
-    """Return {VARIABLE: prompt_text} with the 'Question: ' prefix stripped."""
+def load_questions(language: str = 'EN') -> dict[str, str]:
+    """Return {VARIABLE: prompt_text} for `language`, with the question prefix stripped
+    (it is re-added, localised, in run_experiment)."""
+    col, prefix = LANG[language]['q_col'], LANG[language]['q_prefix']
     df = pd.read_csv(QUESTIONS_FILE)
-    questions = df.set_index('scale')['prompt'].to_dict()
-    return {k.upper(): v[10:] for k, v in questions.items()}
+    questions = df.set_index('scale')[col].to_dict()
+    return {k.upper(): v.removeprefix(prefix) for k, v in questions.items()}
 
 
 # Which persona batches each experiment `batch` value selects. v1 = original 10;
@@ -68,15 +81,17 @@ BATCH_SELECTORS = {
 
 
 def load_respondents() -> pd.DataFrame:
-    """Persona descriptors with the batch (version) each was introduced in."""
-    return pd.read_csv(RESPONDENTS_FILE)[['respondent_descriptor', 'batch']]
+    """Persona descriptors (all languages) with the batch (version) each was introduced in."""
+    cols = ['batch'] + [v['persona_col'] for v in LANG.values()]
+    return pd.read_csv(RESPONDENTS_FILE)[cols]
 
 
-def personas_for(respondents: pd.DataFrame, batch: str) -> list[str]:
-    """Descriptors selected by an experiment's `batch` (see BATCH_SELECTORS)."""
+def personas_for(respondents: pd.DataFrame, batch: str, language: str = 'EN') -> list[str]:
+    """Descriptors for `language`, selected by an experiment's `batch` (see BATCH_SELECTORS)."""
     if batch not in BATCH_SELECTORS:
         raise ValueError(f'Unknown batch {batch!r}. Known: {sorted(BATCH_SELECTORS)}')
-    return respondents[respondents['batch'].isin(BATCH_SELECTORS[batch])]['respondent_descriptor'].tolist()
+    col = LANG[language]['persona_col']
+    return respondents[respondents['batch'].isin(BATCH_SELECTORS[batch])][col].tolist()
 
 
 def run_experiment(expt_id: str, cfg: dict, questions: dict, respondents: list,
@@ -85,6 +100,8 @@ def run_experiment(expt_id: str, cfg: dict, questions: dict, respondents: list,
     model = cfg['model']
     zero_shot = cfg.get('zero_shot', False)
     reasoning_effort = cfg.get('reasoning_effort')
+    language = cfg.get('language', 'EN')
+    suffix, q_prefix = LANG[language]['suffix'], LANG[language]['q_prefix']
     run_at = datetime.now(timezone.utc).isoformat(timespec='seconds')
 
     rows = []
@@ -92,12 +109,12 @@ def run_experiment(expt_id: str, cfg: dict, questions: dict, respondents: list,
     # (position 0 is the top-level bar in main()), so they don't clobber each
     # other and you can see per-respondent progress within every experiment.
     for system in tqdm(respondents, desc=f'  {expt_id}', position=position, leave=False):
-        system_prompt = system + SYSTEM_SUFFIX
+        system_prompt = system + suffix
         convo = None if zero_shot else Convo(provider, model, system_prompt)
         row = {'experiment_id': expt_id, 'run_at': run_at, 'system': system}
 
         for variable, question in questions.items():
-            prompt = f'Question: {question}'
+            prompt = f'{q_prefix}{question}'
 
             if zero_shot:
                 answer = Convo(provider, model, system_prompt).ask(prompt, reasoning_effort).casefold()
@@ -181,7 +198,7 @@ def main() -> None:
         print('Nothing to run.')
         return
 
-    questions = load_questions()
+    questions_by_lang = {lang: load_questions(lang) for lang in LANG}
     respondents = load_respondents()
 
     # Experiments are independent and I/O-bound, so run them concurrently.
@@ -190,8 +207,10 @@ def main() -> None:
     workers = max(1, min(args.jobs, len(to_run)))
     with ThreadPoolExecutor(max_workers=workers) as pool:
         futures = {
-            pool.submit(run_experiment, expt_id, cfg, questions,
-                        personas_for(respondents, cfg.get('batch', 'v1')), position=i + 1): expt_id
+            pool.submit(run_experiment, expt_id, cfg,
+                        questions_by_lang[cfg.get('language', 'EN')],
+                        personas_for(respondents, cfg.get('batch', 'v1'), cfg.get('language', 'EN')),
+                        position=i + 1): expt_id
             for i, (expt_id, cfg) in enumerate(to_run.items())
         }
         for expt_id, cfg in to_run.items():

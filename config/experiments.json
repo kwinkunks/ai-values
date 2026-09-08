@@ -2067,5 +2067,75 @@
     "label": "MAI Thinking 1",
     "vendor": "Microsoft",
     "lineage": "MAI"
+  },
+  "20000": {
+    "provider": "OpenAI",
+    "model": "gpt-5.6-terra",
+    "label": "GPT-5.6 Terra (NO)",
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "batch": "v2",
+    "language": "NO",
+    "release": "2026-07-10"
+  },
+  "20001": {
+    "provider": "OpenAI",
+    "model": "gpt-5.6-sol",
+    "label": "GPT-5.6 Sol (NO)",
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "batch": "v2",
+    "language": "NO",
+    "release": "2026-07-11"
+  },
+  "20002": {
+    "provider": "OpenAI",
+    "model": "gpt-5.6-luna",
+    "label": "GPT-5.6 Luna (NO)",
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "batch": "v2",
+    "language": "NO",
+    "release": "2026-07-09"
+  },
+  "21000": {
+    "provider": "Anthropic",
+    "model": "claude-sonnet-5",
+    "label": "Claude Sonnet 5 (NO)",
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "batch": "v2",
+    "language": "NO",
+    "release": "2026-06-30"
+  },
+  "21001": {
+    "provider": "Anthropic",
+    "model": "claude-opus-5",
+    "label": "Claude Opus 5 (NO)",
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "batch": "v2",
+    "language": "NO",
+    "release": "2026-07-24"
+  },
+  "21002": {
+    "provider": "Anthropic",
+    "model": "claude-opus-4-6",
+    "label": "Claude Opus 4.6 (NO)",
+    "vendor": "Anthropic",
+    "lineage": "Claude Opus",
+    "batch": "v2",
+    "language": "NO",
+    "release": "2026-02-05"
+  },
+  "21003": {
+    "provider": "Anthropic",
+    "model": "claude-fable-5",
+    "label": "Claude Fable 5 (NO)",
+    "vendor": "Anthropic",
+    "lineage": "Claude Fable",
+    "batch": "v2",
+    "language": "NO",
+    "release": "2026-06-09"
   }
 }

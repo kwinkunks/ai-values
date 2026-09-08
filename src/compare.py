@@ -9,6 +9,7 @@ Usage:
   python src/compare.py --all-runs       # average across all runs
   python src/compare.py --out coords.csv # write to file instead of stdout
   python src/compare.py --llm-only       # skip country centroids
+  python src/compare.py --language NO --out out/coords_no.js  # Norwegian-run results
 """
 import argparse
 import json
@@ -143,6 +144,9 @@ def main() -> None:
                         help='Write output to FILE instead of stdout')
     parser.add_argument('--conf', type=float, default=0.80, metavar='C',
                         help="Confidence level for each LLM's mean ellipse (default: 0.80)")
+    parser.add_argument('--language', default='EN', metavar='LANG',
+                        help="Only include experiments run in this language, per their "
+                             "config `language` field (default: EN; absent field ⇒ EN)")
     args = parser.parse_args()
 
     required = [EXPERIMENTS_FILE, RESPONSES_FILE, WEIGHTS_FILE, MEANS_FILE, SDS_FILE]
@@ -160,6 +164,13 @@ def main() -> None:
     sds = np.loadtxt(SDS_FILE)
 
     df = load_responses(latest_only=not args.all_runs)
+
+    # Keep only experiments run in the requested language. Language is a property of
+    # the experiment (config), not stored per response row; IDs missing from the
+    # config (legacy rows) default to EN.
+    lang_map = {k: v.get('language', 'EN') for k, v in experiments.items()}
+    df = df[df['experiment_id'].astype(str).map(lang_map).fillna('EN') == args.language]
+
     llm_coords = compute_llm_coordinates(df, experiments, weights, means, sds, conf=args.conf)
 
     if args.llm_only:
