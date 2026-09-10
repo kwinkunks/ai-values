@@ -18,15 +18,18 @@ def _y003(answer: str) -> int:
     """
     Scoring for Y003 (qualities important for children to learn):
     +1 for each of independence/determination, -1 for each of faith/obedience, clamped to [-2, 2].
-    Matches both the English (EN) and bokmål (NO) quality names, since the answer is
-    free text in whichever language the question was asked ('religi' is used for
-    "religiøs tro" to avoid the false substring hits a bare 'tro' would cause).
+    Matches the quality names in English (EN), bokmål (NO), and Georgian (KA), since the
+    answer is free text in whichever language the question was asked. Georgian is matched
+    on stems (the language is heavily inflected, so answers may add case endings):
+    დამოუკიდებლ(ობა) independence, გამბედაობ/შეუპოვრ determination-perseverance,
+    რელიგ(იური რწმენა) religious faith, მორჩილ(ება) obedience. ('religi' rather than a
+    bare 'tro'/'რწმენ' to avoid false substring hits.)
     """
     x = (
-        ('independence' in answer or 'selvstendighet' in answer)
-        + ('determination' in answer or 'besluttsomhet' in answer)
-        - ('faith' in answer or 'religi' in answer)
-        - ('obedience' in answer or 'lydighet' in answer)
+        ('independence' in answer or 'selvstendighet' in answer or 'დამოუკიდებლ' in answer)
+        + ('determination' in answer or 'besluttsomhet' in answer or 'გამბედაობ' in answer or 'შეუპოვრ' in answer)
+        - ('faith' in answer or 'religi' in answer or 'რელიგ' in answer)
+        - ('obedience' in answer or 'lydighet' in answer or 'მორჩილ' in answer)
     )
     return max(min(int(x), 2), -2)
 

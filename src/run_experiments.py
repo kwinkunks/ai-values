@@ -28,8 +28,7 @@ load_dotenv()
 
 ROOT = Path(__file__).parent.parent
 EXPERIMENTS_FILE = ROOT / 'config' / 'experiments.json'
-QUESTIONS_FILE = ROOT / 'data' / 'Prompts_Questions.csv'
-RESPONDENTS_FILE = ROOT / 'data' / 'Prompts_Respondent_Descriptors_General.csv'
+PROMPTS_DIR = ROOT / 'data' / 'prompts'
 RESPONSES_FILE = ROOT / 'out' / 'responses.csv'
 
 VARIABLES = ['F063', 'Y003', 'F120', 'G006', 'E018', 'Y002', 'A008', 'F118', 'E025', 'A165']
@@ -37,15 +36,20 @@ VARIABLES = ['F063', 'Y003', 'F120', 'G006', 'E018', 'Y002', 'A008', 'F118', 'E0
 # Appended to every system prompt to encourage terse, parseable answers, per language.
 SYSTEM_SUFFIX_EN = '\n\nIt is very important to respond EXACTLY as requested. Be terse.'
 SYSTEM_SUFFIX_NO = '\n\nDet er svært viktig å svare NØYAKTIG som bedt om. Vær kortfattet.'
+SYSTEM_SUFFIX_KA = '\n\nძალიან მნიშვნელოვანია, რომ უპასუხოთ ზუსტად ისე, როგორც მოთხოვნილია. იყავით ლაკონური.'
 
-# Per-language sources: which CSV columns hold the questions/personas, the question
-# prefix to (strip then) re-add, and the terseness suffix. An experiment's optional
-# `language` field selects an entry; absent → 'EN', so existing configs are unchanged.
+# Per-language sources. Each language has its own questions/respondents CSV under
+# data/prompts/ (columns `scale,prompt` and `variant,respondent_descriptor,batch`),
+# plus the question prefix to (strip then) re-add and the terseness suffix. An
+# experiment's optional `language` field selects an entry; absent → 'EN'. Add a
+# language by dropping in its two CSVs and adding one row here.
 LANG = {
-    'EN': {'q_col': 'prompt',    'q_prefix': 'Question: ',
-           'persona_col': 'respondent_descriptor',    'suffix': SYSTEM_SUFFIX_EN},
-    'NO': {'q_col': 'prompt_no', 'q_prefix': 'Spørsmål: ',
-           'persona_col': 'respondent_descriptor_no', 'suffix': SYSTEM_SUFFIX_NO},
+    'EN': {'questions': 'questions_en.csv', 'respondents': 'respondents_en.csv',
+           'q_prefix': 'Question: ',  'suffix': SYSTEM_SUFFIX_EN},
+    'NO': {'questions': 'questions_no.csv', 'respondents': 'respondents_no.csv',
+           'q_prefix': 'Spørsmål: ', 'suffix': SYSTEM_SUFFIX_NO},
+    'KA': {'questions': 'questions_ka.csv', 'respondents': 'respondents_ka.csv',
+           'q_prefix': 'კითხვა: ', 'suffix': SYSTEM_SUFFIX_KA},
 }
 
 # In non-zero-shot mode, re-ask a question up to this many times until the
@@ -63,9 +67,9 @@ def load_experiments() -> dict:
 def load_questions(language: str = 'EN') -> dict[str, str]:
     """Return {VARIABLE: prompt_text} for `language`, with the question prefix stripped
     (it is re-added, localised, in run_experiment)."""
-    col, prefix = LANG[language]['q_col'], LANG[language]['q_prefix']
-    df = pd.read_csv(QUESTIONS_FILE)
-    questions = df.set_index('scale')[col].to_dict()
+    prefix = LANG[language]['q_prefix']
+    df = pd.read_csv(PROMPTS_DIR / LANG[language]['questions'])
+    questions = df.set_index('scale')['prompt'].to_dict()
     return {k.upper(): v.removeprefix(prefix) for k, v in questions.items()}
 
 
@@ -80,18 +84,16 @@ BATCH_SELECTORS = {
 }
 
 
-def load_respondents() -> pd.DataFrame:
-    """Persona descriptors (all languages) with the batch (version) each was introduced in."""
-    cols = ['batch'] + [v['persona_col'] for v in LANG.values()]
-    return pd.read_csv(RESPONDENTS_FILE)[cols]
+def load_respondents(language: str = 'EN') -> pd.DataFrame:
+    """Persona descriptors for `language`, with the batch (version) each was introduced in."""
+    return pd.read_csv(PROMPTS_DIR / LANG[language]['respondents'])[['respondent_descriptor', 'batch']]
 
 
-def personas_for(respondents: pd.DataFrame, batch: str, language: str = 'EN') -> list[str]:
-    """Descriptors for `language`, selected by an experiment's `batch` (see BATCH_SELECTORS)."""
+def personas_for(respondents: pd.DataFrame, batch: str) -> list[str]:
+    """Descriptors selected by an experiment's `batch` (see BATCH_SELECTORS)."""
     if batch not in BATCH_SELECTORS:
         raise ValueError(f'Unknown batch {batch!r}. Known: {sorted(BATCH_SELECTORS)}')
-    col = LANG[language]['persona_col']
-    return respondents[respondents['batch'].isin(BATCH_SELECTORS[batch])][col].tolist()
+    return respondents[respondents['batch'].isin(BATCH_SELECTORS[batch])]['respondent_descriptor'].tolist()
 
 
 def run_experiment(expt_id: str, cfg: dict, questions: dict, respondents: list,
@@ -199,7 +201,7 @@ def main() -> None:
         return
 
     questions_by_lang = {lang: load_questions(lang) for lang in LANG}
-    respondents = load_respondents()
+    respondents_by_lang = {lang: load_respondents(lang) for lang in LANG}
 
     # Experiments are independent and I/O-bound, so run them concurrently.
     # Completions are collected in this (main) thread, keeping all CSV writes
@@ -209,7 +211,7 @@ def main() -> None:
         futures = {
             pool.submit(run_experiment, expt_id, cfg,
                         questions_by_lang[cfg.get('language', 'EN')],
-                        personas_for(respondents, cfg.get('batch', 'v1'), cfg.get('language', 'EN')),
+                        personas_for(respondents_by_lang[cfg.get('language', 'EN')], cfg.get('batch', 'v1')),
                         position=i + 1): expt_id
             for i, (expt_id, cfg) in enumerate(to_run.items())
         }
