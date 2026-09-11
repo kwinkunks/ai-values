@@ -145,8 +145,12 @@ def main() -> None:
     parser.add_argument('--conf', type=float, default=0.80, metavar='C',
                         help="Confidence level for each LLM's mean ellipse (default: 0.80)")
     parser.add_argument('--language', default='EN', metavar='LANG',
-                        help="Only include experiments run in this language, per their "
-                             "config `language` field (default: EN; absent field ⇒ EN)")
+                        help="Only include experiments whose question language matches, per "
+                             "their config `language` field (default: EN; absent field ⇒ EN)")
+    parser.add_argument('--persona', default=None, metavar='SET',
+                        help="Only include experiments using this persona set, per their config "
+                             "`persona` field (default: the generic set for --language, i.e. "
+                             "language.lower(); pass e.g. en_no_role for a role condition)")
     args = parser.parse_args()
 
     required = [EXPERIMENTS_FILE, RESPONSES_FILE, WEIGHTS_FILE, MEANS_FILE, SDS_FILE]
@@ -165,11 +169,17 @@ def main() -> None:
 
     df = load_responses(latest_only=not args.all_runs)
 
-    # Keep only experiments run in the requested language. Language is a property of
-    # the experiment (config), not stored per response row; IDs missing from the
-    # config (legacy rows) default to EN.
+    # Keep only experiments matching the requested (question-language, persona) cell.
+    # Both are properties of the experiment (config), not stored per response row; IDs
+    # missing from the config (legacy rows) default to EN / generic. The persona filter
+    # defaults to the generic set for the language, so the plain `--language X` output
+    # (and the main map) stays generic even once role/native conditions are added.
+    persona = args.persona or args.language.lower()
     lang_map = {k: v.get('language', 'EN') for k, v in experiments.items()}
-    df = df[df['experiment_id'].astype(str).map(lang_map).fillna('EN') == args.language]
+    persona_map = {k: v.get('persona', v.get('language', 'EN').lower()) for k, v in experiments.items()}
+    ids = df['experiment_id'].astype(str)
+    df = df[(ids.map(lang_map).fillna('EN') == args.language)
+            & (ids.map(persona_map).fillna('en') == persona)]
 
     llm_coords = compute_llm_coordinates(df, experiments, weights, means, sds, conf=args.conf)
 

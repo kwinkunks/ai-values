@@ -2245,5 +2245,146 @@
     "lineage": "MAI",
     "batch": "v2",
     "language": "KA"
+  },
+  "40001": {
+    "provider": "Foundry",
+    "model": "gpt-5.6-sol",
+    "label": "GPT-5.6 Sol (NO role)",
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "batch": "v2",
+    "language": "EN",
+    "persona": "en_no_role",
+    "release": "2026-07-11"
+  },
+  "40003": {
+    "provider": "Foundry",
+    "model": "gpt-6-astra",
+    "label": "GPT-6 Astra (NO role)",
+    "vendor": "OpenAI",
+    "lineage": "GPT-6",
+    "batch": "v2",
+    "language": "EN",
+    "persona": "en_no_role",
+    "release": "2026-09-04"
+  },
+  "42000": {
+    "provider": "Foundry",
+    "model": "MAI-Thinking-1",
+    "label": "MAI Thinking 1 (NO role)",
+    "vendor": "Microsoft",
+    "lineage": "MAI",
+    "batch": "v2",
+    "language": "EN",
+    "persona": "en_no_role"
+  },
+  "41001": {
+    "provider": "Foundry",
+    "model": "gpt-5.6-sol",
+    "label": "GPT-5.6 Sol (KA role)",
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "batch": "v2",
+    "language": "EN",
+    "persona": "en_ka_role",
+    "release": "2026-07-11"
+  },
+  "41003": {
+    "provider": "Foundry",
+    "model": "gpt-6-astra",
+    "label": "GPT-6 Astra (KA role)",
+    "vendor": "OpenAI",
+    "lineage": "GPT-6",
+    "batch": "v2",
+    "language": "EN",
+    "persona": "en_ka_role",
+    "release": "2026-09-04"
+  },
+  "50001": {
+    "provider": "Foundry",
+    "model": "gpt-5.6-sol",
+    "label": "GPT-5.6 Sol (NO native)",
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "batch": "v2",
+    "language": "NO",
+    "persona": "no_no_role",
+    "release": "2026-07-11"
+  },
+  "50003": {
+    "provider": "Foundry",
+    "model": "gpt-6-astra",
+    "label": "GPT-6 Astra (NO native)",
+    "vendor": "OpenAI",
+    "lineage": "GPT-6",
+    "batch": "v2",
+    "language": "NO",
+    "persona": "no_no_role",
+    "release": "2026-09-04"
+  },
+  "51001": {
+    "provider": "Foundry",
+    "model": "gpt-5.6-sol",
+    "label": "GPT-5.6 Sol (KA native)",
+    "vendor": "OpenAI",
+    "lineage": "GPT-5.6",
+    "batch": "v2",
+    "language": "KA",
+    "persona": "ka_ka_role",
+    "release": "2026-07-11"
+  },
+  "51003": {
+    "provider": "Foundry",
+    "model": "gpt-6-astra",
+    "label": "GPT-6 Astra (KA native)",
+    "vendor": "OpenAI",
+    "lineage": "GPT-6",
+    "batch": "v2",
+    "language": "KA",
+    "persona": "ka_ka_role",
+    "release": "2026-09-04"
+  },
+  "52000": {
+    "provider": "Anthropic",
+    "model": "claude-sonnet-5",
+    "label": "Claude Sonnet 5 (NO role)",
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "batch": "v2",
+    "language": "EN",
+    "persona": "en_no_role",
+    "release": "2026-06-30"
+  },
+  "52001": {
+    "provider": "Anthropic",
+    "model": "claude-sonnet-5",
+    "label": "Claude Sonnet 5 (NO native)",
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "batch": "v2",
+    "language": "NO",
+    "persona": "no_no_role",
+    "release": "2026-06-30"
+  },
+  "52002": {
+    "provider": "Anthropic",
+    "model": "claude-sonnet-5",
+    "label": "Claude Sonnet 5 (KA role)",
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "batch": "v2",
+    "language": "EN",
+    "persona": "en_ka_role",
+    "release": "2026-06-30"
+  },
+  "52003": {
+    "provider": "Anthropic",
+    "model": "claude-sonnet-5",
+    "label": "Claude Sonnet 5 (KA native)",
+    "vendor": "Anthropic",
+    "lineage": "Claude Sonnet",
+    "batch": "v2",
+    "language": "KA",
+    "persona": "ka_ka_role"
   }
 }

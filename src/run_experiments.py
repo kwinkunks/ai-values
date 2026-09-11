@@ -38,19 +38,25 @@ SYSTEM_SUFFIX_EN = '\n\nIt is very important to respond EXACTLY as requested. Be
 SYSTEM_SUFFIX_NO = '\n\nDet er svært viktig å svare NØYAKTIG som bedt om. Vær kortfattet.'
 SYSTEM_SUFFIX_KA = '\n\nძალიან მნიშვნელოვანია, რომ უპასუხოთ ზუსტად ისე, როგორც მოთხოვნილია. იყავით ლაკონური.'
 
-# Per-language sources. Each language has its own questions/respondents CSV under
-# data/prompts/ (columns `scale,prompt` and `variant,respondent_descriptor,batch`),
-# plus the question prefix to (strip then) re-add and the terseness suffix. An
-# experiment's optional `language` field selects an entry; absent → 'EN'. Add a
-# language by dropping in its two CSVs and adding one row here.
-LANG = {
-    'EN': {'questions': 'questions_en.csv', 'respondents': 'respondents_en.csv',
-           'q_prefix': 'Question: ',  'suffix': SYSTEM_SUFFIX_EN},
-    'NO': {'questions': 'questions_no.csv', 'respondents': 'respondents_no.csv',
-           'q_prefix': 'Spørsmål: ', 'suffix': SYSTEM_SUFFIX_NO},
-    'KA': {'questions': 'questions_ka.csv', 'respondents': 'respondents_ka.csv',
-           'q_prefix': 'კითხვა: ', 'suffix': SYSTEM_SUFFIX_KA},
+# The question language and the persona set are chosen INDEPENDENTLY, so any style can
+# be combined freely (English questions + Georgian-role persona; Norwegian questions +
+# Norwegian-role persona in Norwegian; …).
+#
+# `language` (experiment field, default 'EN') picks the questions file, the question
+# prefix to (strip then) re-add, and the terseness suffix — all in that language.
+QLANG = {
+    'EN': {'questions': 'questions_en.csv', 'q_prefix': 'Question: ',  'suffix': SYSTEM_SUFFIX_EN},
+    'NO': {'questions': 'questions_no.csv', 'q_prefix': 'Spørsmål: ', 'suffix': SYSTEM_SUFFIX_NO},
+    'KA': {'questions': 'questions_ka.csv', 'q_prefix': 'კითხვა: ', 'suffix': SYSTEM_SUFFIX_KA},
 }
+
+# `persona` (experiment field) picks data/prompts/respondents_<persona>.csv (columns
+# variant,respondent_descriptor,batch). It defaults to the generic "average person" set
+# in the question language (e.g. language 'NO' → 'respondents_no.csv'). Role sets follow
+# the naming respondents_<persona-lang>_<role>.csv, e.g. 'en_no_role' (Norwegian role in
+# English), 'no_no_role' (Norwegian role in Norwegian), 'ka_ka_role' (Georgian in Georgian).
+def persona_of(cfg: dict) -> str:
+    return cfg.get('persona', cfg.get('language', 'EN').lower())
 
 # In non-zero-shot mode, re-ask a question up to this many times until the
 # answer is short enough to parse (< 5 chars). The growing conversation
@@ -67,8 +73,8 @@ def load_experiments() -> dict:
 def load_questions(language: str = 'EN') -> dict[str, str]:
     """Return {VARIABLE: prompt_text} for `language`, with the question prefix stripped
     (it is re-added, localised, in run_experiment)."""
-    prefix = LANG[language]['q_prefix']
-    df = pd.read_csv(PROMPTS_DIR / LANG[language]['questions'])
+    prefix = QLANG[language]['q_prefix']
+    df = pd.read_csv(PROMPTS_DIR / QLANG[language]['questions'])
     questions = df.set_index('scale')['prompt'].to_dict()
     return {k.upper(): v.removeprefix(prefix) for k, v in questions.items()}
 
@@ -84,9 +90,10 @@ BATCH_SELECTORS = {
 }
 
 
-def load_respondents(language: str = 'EN') -> pd.DataFrame:
-    """Persona descriptors for `language`, with the batch (version) each was introduced in."""
-    return pd.read_csv(PROMPTS_DIR / LANG[language]['respondents'])[['respondent_descriptor', 'batch']]
+def load_respondents(persona: str = 'en') -> pd.DataFrame:
+    """Persona descriptors for a `persona` set (respondents_<persona>.csv), with the
+    batch (version) each was introduced in."""
+    return pd.read_csv(PROMPTS_DIR / f'respondents_{persona}.csv')[['respondent_descriptor', 'batch']]
 
 
 def personas_for(respondents: pd.DataFrame, batch: str) -> list[str]:
@@ -103,7 +110,7 @@ def run_experiment(expt_id: str, cfg: dict, questions: dict, respondents: list,
     zero_shot = cfg.get('zero_shot', False)
     reasoning_effort = cfg.get('reasoning_effort')
     language = cfg.get('language', 'EN')
-    suffix, q_prefix = LANG[language]['suffix'], LANG[language]['q_prefix']
+    suffix, q_prefix = QLANG[language]['suffix'], QLANG[language]['q_prefix']
     run_at = datetime.now(timezone.utc).isoformat(timespec='seconds')
 
     rows = []
@@ -200,8 +207,8 @@ def main() -> None:
         print('Nothing to run.')
         return
 
-    questions_by_lang = {lang: load_questions(lang) for lang in LANG}
-    respondents_by_lang = {lang: load_respondents(lang) for lang in LANG}
+    questions_by_lang = {lang: load_questions(lang) for lang in QLANG}
+    respondents_by_persona = {p: load_respondents(p) for p in {persona_of(cfg) for cfg in to_run.values()}}
 
     # Experiments are independent and I/O-bound, so run them concurrently.
     # Completions are collected in this (main) thread, keeping all CSV writes
@@ -211,7 +218,7 @@ def main() -> None:
         futures = {
             pool.submit(run_experiment, expt_id, cfg,
                         questions_by_lang[cfg.get('language', 'EN')],
-                        personas_for(respondents_by_lang[cfg.get('language', 'EN')], cfg.get('batch', 'v1')),
+                        personas_for(respondents_by_persona[persona_of(cfg)], cfg.get('batch', 'v1')),
                         position=i + 1): expt_id
             for i, (expt_id, cfg) in enumerate(to_run.items())
         }

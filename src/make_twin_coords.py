@@ -56,14 +56,20 @@ def main() -> None:
     sds = np.loadtxt(C.SDS_FILE)
 
     df = C.load_responses(latest_only=True)
-    langs = df['experiment_id'].astype(str).map(
-        {k: v.get('language', 'EN') for k, v in experiments.items()}).fillna('EN')
+    ids = df['experiment_id'].astype(str)
+    langs = ids.map({k: v.get('language', 'EN') for k, v in experiments.items()}).fillna('EN')
+    # Only the GENERIC persona per language (persona == language.lower()) — this page
+    # compares the language effect, not role/native conditions that share a language.
+    personas = ids.map({k: v.get('persona', v.get('language', 'EN').lower())
+                        for k, v in experiments.items()}).fillna('en')
 
-    tgt_llm = C.compute_llm_coordinates(df[langs == lang], experiments, weights, means, sds)
+    tgt_llm = C.compute_llm_coordinates(
+        df[(langs == lang) & (personas == lang.lower())], experiments, weights, means, sds)
     if tgt_llm.empty:
-        sys.exit(f'No experiments found for language {lang!r} in responses.csv')
+        sys.exit(f'No generic experiments found for language {lang!r} in responses.csv')
     twin_bases = {c.replace(f' ({lang})', '') for c in tgt_llm['country']}
-    en_all = C.compute_llm_coordinates(df[langs == 'EN'], experiments, weights, means, sds)
+    en_all = C.compute_llm_coordinates(
+        df[(langs == 'EN') & (personas == 'en')], experiments, weights, means, sds)
     en_twins = en_all[en_all['country'].isin(twin_bases)]
 
     countries = C.load_country_centroids()
