@@ -2079,7 +2079,7 @@
     "release": "2026-07-10"
   },
   "20001": {
-    "provider": "OpenAI",
+    "provider": "Foundry",
     "model": "gpt-5.6-sol",
     "label": "GPT-5.6 Sol (NO)",
     "vendor": "OpenAI",
@@ -2097,6 +2097,16 @@
     "batch": "v2",
     "language": "NO",
     "release": "2026-07-09"
+  },
+  "20003": {
+    "provider": "Foundry",
+    "model": "gpt-6-astra",
+    "label": "GPT-6 Astra (NO)",
+    "vendor": "OpenAI",
+    "lineage": "GPT-6",
+    "batch": "v2",
+    "language": "NO",
+    "release": "2026-09-04"
   },
   "21000": {
     "provider": "Anthropic",
@@ -2138,6 +2148,15 @@
     "language": "NO",
     "release": "2026-06-09"
   },
+  "22000": {
+    "provider": "Foundry",
+    "model": "MAI-Thinking-1",
+    "label": "MAI Thinking 1 (NO)",
+    "vendor": "Microsoft",
+    "lineage": "MAI",
+    "batch": "v2",
+    "language": "NO"
+  },
   "30000": {
     "provider": "OpenAI",
     "model": "gpt-5.6-terra",
@@ -2149,7 +2168,7 @@
     "release": "2026-07-10"
   },
   "30001": {
-    "provider": "OpenAI",
+    "provider": "Foundry",
     "model": "gpt-5.6-sol",
     "label": "GPT-5.6 Sol (KA)",
     "vendor": "OpenAI",
@@ -2167,6 +2186,16 @@
     "batch": "v2",
     "language": "KA",
     "release": "2026-07-09"
+  },
+  "30003": {
+    "provider": "Foundry",
+    "model": "gpt-6-astra",
+    "label": "GPT-6 Astra (KA)",
+    "vendor": "OpenAI",
+    "lineage": "GPT-6",
+    "batch": "v2",
+    "language": "KA",
+    "release": "2026-09-04"
   },
   "31000": {
     "provider": "Anthropic",
@@ -2207,5 +2236,14 @@
     "batch": "v2",
     "language": "KA",
     "release": "2026-06-09"
+  },
+  "32000": {
+    "provider": "Foundry",
+    "model": "MAI-Thinking-1",
+    "label": "MAI Thinking 1 (KA)",
+    "vendor": "Microsoft",
+    "lineage": "MAI",
+    "batch": "v2",
+    "language": "KA"
   }
 }

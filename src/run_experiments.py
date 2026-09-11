@@ -171,8 +171,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('--expts', nargs='+', metavar='ID', help='Experiment IDs to run')
-    parser.add_argument('--jobs', '-j', type=int, default=4,
-                        help='Max experiments to run concurrently (default: 4)')
+    parser.add_argument('--jobs', '-j', type=int, default=6,
+                        help='Max experiments to run concurrently (default: 6)')
     parser.add_argument('--force', action='store_true',
                         help='Re-run experiments even if they already appear in responses.csv')
     args = parser.parse_args()
