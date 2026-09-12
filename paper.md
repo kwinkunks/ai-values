@@ -1,14 +1,14 @@
 # Do large language models share values with humans?
 
-Human beings have **values** — ideas and practices that they cherish and propagate in their societies. LLMs do not have values per se, but the alignment steps in their training (eg the RLHF step) likely reflect the value systems of the people and corporations that trained them.
+Matt Hall, Equinor, Bergen, Norway
 
-So a question we can ask is: Is it possible to get an LLM to reveal the value system it has learned?
+Human beings have **values** — ideas and practices that they cherish and propagate in their societies. Large language models do not have values per se, but the alignment steps in their training (e.g. the RLHF step) likely reflect the value systems of the people and corporations that trained them.
 
-The World Values Survey and European Values Survey have run multiple international surveys: 200+ questions, more than 100 countries, more than 1000 respondents per country, most than 40 years of data.
+We ask: Is it possible to get an LLM to reveal the value system it has learned? Do learned values align with identifiable groups of humans? Are these values changing over time, with successive versions of the models from major labs?
 
-Ten of the WVS/EVS questions contribute to two key indicators: 'survival vs self-expression values' and 'traditional vs secular values'. Together, these are often shown on a Inglehart–Welzel Cultural Map. A recent paper, Tao et al 2024, plots LLMs on this map. This work reproduces and extends that paper.
+Questions that are much harder to answer: Do learned value systems affect the model's own behviour in any way? Does it mean anything to say that the model _has_ those values, or does it merely know _about_ them?
 
-This document contains the narrative and web links for a short conference paper on this topic. (I usually just open these links in my browser and support the talk that way.)
+This paper focuses on the first class of questions, leaving the harder questions to others. In particular, this work reproduces and extends Tao et al. (2024), which compared LLM and human responses to the long-running World Values Survey (WVS) and European Values Study (EVS) which together have run multiple international surveys consisting of 200+ questions, asked of more than 1000 people in each of more than 100 countries, over a period of several decades. Ten of the questions contribute to two key indicators: 'survival vs self-expression values' and 'traditional vs secular values'. Together, these are often shown on a Inglehart–Welzel Cultural Map. This map allows us to compare human and LLM responses, and also to track responses over time — and thereby to try to answer some of our research questions.
 
 
 ## Introduction
@@ -73,3 +73,5 @@ EVS (2022). EVS Trend File 1981-2017 (ZA7503; Version 3.0.0) [Data set]. GESIS, 
 Haerpfer, C., Inglehart, R., Moreno, A., Welzel, C., Kizilova, K., Diez-Medrano J., M. Lagos, P. Norris, E. Ponarin & B. Puranen et al. (eds.). 2022. World Values Survey Trend File (1981-2022) Cross-National Data-Set. Madrid, Spain & Vienna, Austria: JD Systems Institute & WVSA Secretariat. Data File Version 4.0.0, doi:10.14281/18241.27.
 
 Tao, Y, O Viberg, RS Baker, RF Kizilcec (2024). Cultural bias and cultural alignment of large language models. PNAS Nexus 3 (9), September 2024, https://doi.org/10.1093/pnasnexus/pgae346.
+
+The Economist, AI models’ values are very different from most people’s (Briefing), _The Economist_, 25 June 2026, https://www.economist.com/briefing/2026/06/25/ai-models-values-are-very-different-from-most-peoples
