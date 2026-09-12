@@ -21,8 +21,9 @@ from matplotlib.patches import Ellipse
 sys.path.insert(0, str(Path(__file__).parent))
 import compare as C  # noqa: E402
 
-BASES = ['GPT-5.6 Sol', 'GPT-6 Astra', 'MAI Thinking 1']
-MODEL_COLOR = {'GPT-5.6 Sol': '#2a78d6', 'GPT-6 Astra': '#eb6834', 'MAI Thinking 1': '#1baf7a'}
+BASES = ['Claude Sonnet 5', 'GPT-5.6 Sol', 'GPT-6 Astra', 'MAI Thinking 1']
+MODEL_COLOR = {'Claude Sonnet 5': '#4a3aa7', 'GPT-5.6 Sol': '#2a78d6',
+               'GPT-6 Astra': '#eb6834', 'MAI Thinking 1': '#1baf7a'}
 # condition key -> (question language, persona set, label suffix, marker)
 COND = {
     'EN':      ('EN', 'en',          '',           'o'),
@@ -97,8 +98,12 @@ def main():
             if r is None:
                 continue
             ax.scatter([r.x], [r.y], marker=marker, s=95, c=color, edgecolors='white', lw=1.2, zorder=5)
+        # Label these to the LEFT: MAI (its baseline overlaps Sonnet's) and Astra
+        # (its right-side label clashes with the role arrow).
+        left = b in ('MAI Thinking 1', 'GPT-6 Astra')
         ax.annotate(b, (en.x, en.y), fontsize=9, fontweight='bold', color=color,
-                    xytext=(7, -12), textcoords='offset points', zorder=8)
+                    xytext=(-7 if left else 7, -12), textcoords='offset points',
+                    ha='right' if left else 'left', zorder=8)
 
     ax.set_xlabel('Survival  ←→  Self-expression', fontsize=11, color='#52514e')
     ax.set_ylabel('Traditional  ←→  Secular-rational', fontsize=11, color='#52514e')
