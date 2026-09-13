@@ -65,8 +65,15 @@ def hotelling_ellipse(x: np.ndarray, y: np.ndarray, conf: float) -> dict | None:
     return {'ea': a, 'eb': b, 'etheta': theta, 'en': int(n)}
 
 
-def load_responses(latest_only: bool) -> pd.DataFrame:
+def load_responses(latest_only: bool, drop_zero_shot: bool = True) -> pd.DataFrame:
     df = pd.read_csv(RESPONSES_FILE)
+    if drop_zero_shot:
+        # Zero-shot runs (each question asked in isolation) are a separate methodological
+        # condition and must not pool with the conversation runs, so exclude them from all
+        # position analyses by default.
+        with open(EXPERIMENTS_FILE) as f:
+            zero = {int(k) for k, v in json.load(f).items() if v.get('zero_shot')}
+        df = df[~df['experiment_id'].isin(zero)]
     if latest_only and 'run_at' in df.columns:
         # Keep only rows from the most recent run per experiment. Pre-timestamp
         # snapshots (migrated from the old Colab CSV, run_at NaN) are always kept
