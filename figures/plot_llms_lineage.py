@@ -49,6 +49,8 @@ def main():
                    help="also render the earliest-model-only figure (default on)")
     p.add_argument('--out', default=None, help="filename for the combined figure (default llms_<slug>_all.png)")
     p.add_argument('--title', default=None, help="title override for the combined figure")
+    p.add_argument('--color', nargs='*', default=[],
+                   help="per-model colour overrides as LABEL=HEX (e.g. 'GPT-5=#d62728')")
     args = p.parse_args()
     left_set = set(args.label_left)
     slug = args.lineage.split()[-1].lower()
@@ -67,7 +69,12 @@ def main():
         missing = [lab for lab in args.models if lab not in models]
         if missing:
             print(f'  (not found / no release, skipped: {missing})')
-    color = {lab: plt.cm.viridis(t) for lab, t in zip(models, np.linspace(0.12, 0.78, len(models)))}
+    # viridis over the non-overridden models (keeps their shades stable), then apply
+    # explicit --color LABEL=HEX overrides (e.g. highlight GPT-5 in red).
+    overrides = dict(pair.split('=', 1) for pair in args.color)
+    ramp = [lab for lab in models if lab not in overrides]
+    color = {lab: plt.cm.viridis(t) for lab, t in zip(ramp, np.linspace(0.12, 0.78, len(ramp)))}
+    color.update(overrides)
 
     def render(subset, out, title, trajectory):
         fig, ax = plt.subplots(figsize=(11, 8.6), dpi=200)
