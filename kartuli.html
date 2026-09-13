@@ -30,6 +30,10 @@
       <input class="form-check-input" type="checkbox" id="ellipseToggle" checked>
       <label class="form-check-label" for="ellipseToggle">Show uncertainty ellipses</label>
     </div>
+    <div class="form-check d-inline-block me-3">
+      <input class="form-check-input" type="checkbox" id="labelToggle" checked>
+      <label class="form-check-label" for="labelToggle">Show point labels</label>
+    </div>
     <div class="form-check d-inline-block">
       <input class="form-check-input" type="checkbox" id="vectorToggle" checked>
       <label class="form-check-label" for="vectorToggle">Show shift vectors</label>
@@ -59,6 +63,7 @@ const COUNTRY_COLOR = '#8ecae6';   // light blue — distinct from the grey resp
 const VECTOR_COLOR = '#7a7a7a';
 
 let showEllipses = true;   // #ellipseToggle
+let showLabels = true;     // #labelToggle
 let showVectors = true;    // #vectorToggle
 let hoveredPoint = null;   // model under the cursor → drives the response scatter
 
@@ -66,6 +71,7 @@ let hoveredPoint = null;   // model under the cursor → drives the response sca
 const labelPlugin = {
   id: 'pointLabels',
   afterDatasetsDraw(chart) {
+    if (!showLabels) return;
     const { ctx } = chart;
     chart.data.datasets.forEach((dataset, datasetIndex) => {
       if (!chart.isDatasetVisible(datasetIndex)) return;
@@ -330,6 +336,9 @@ initChart(window.TWIN_COORDS);
 
 document.getElementById('ellipseToggle').addEventListener('change', e => {
   showEllipses = e.target.checked; chart.update();
+});
+document.getElementById('labelToggle').addEventListener('change', e => {
+  showLabels = e.target.checked; chart.update();
 });
 document.getElementById('vectorToggle').addEventListener('change', e => {
   showVectors = e.target.checked; chart.update();
