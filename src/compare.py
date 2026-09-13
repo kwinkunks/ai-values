@@ -36,19 +36,20 @@ VARIABLES = ['F063', 'Y003', 'F120', 'G006', 'E018', 'Y002', 'A008', 'F118', 'E0
 # carries no persona information).
 _SUFFIX_RE = re.compile(r'\s*It is very important to respond EXACTLY as requested\.\s*Be terse\.\s*$')
 
-
 def _persona(system: str) -> str:
     return _SUFFIX_RE.sub('', system).strip()
+
 
 # Fewest per-label points needed for a Hotelling ellipse (needs n-2 >= 1 F dof,
 # but 4 is the practical floor for a non-silly 2x2 covariance).
 MIN_ELLIPSE_N = 4
 
-
 def hotelling_ellipse(x: np.ndarray, y: np.ndarray, conf: float) -> dict | None:
-    """80%-style confidence ellipse *of the mean* of n (x, y) points, via
+    """
+    Confidence ellipse *of the mean* of n (x, y) points, via
     Hotelling's T^2. Returns semi-axes (ea, eb), major-axis angle (etheta, rad)
-    and n (en), or None if there aren't enough / the covariance is degenerate."""
+    and n (en), or None if there aren't enough / the covariance is degenerate.
+    """
     n = len(x)
     if n < MIN_ELLIPSE_N:
         return None
