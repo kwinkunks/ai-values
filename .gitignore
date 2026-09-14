@@ -17,3 +17,4 @@ out/coords.csv
 
 # Raw WVS/EVS data (licensed, must not be redistributed)
 data/*.dta
+EVS_WVS_Joint*
