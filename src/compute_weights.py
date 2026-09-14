@@ -50,7 +50,11 @@ META = ['S003', 'S017', 'versn_w']
 SURV_ITEMS = {'Y002', 'A008', 'F118', 'E025', 'A165'}   # Survival vs Self-expression
 TRAD_ITEMS = {'F063', 'Y003', 'F120', 'G006', 'E018'}   # Traditional vs Secular
 
-EVS_WAVES = ['4.0.0 (2015-10-30)', '5.0.0 (2022-06-08)']
+# NB: versn_w is the SOURCE-dataset version string, not the wave number. Two EVS
+# blocks both read "5.0.0" and differ only by date: (2022-06-08)=wave 4 / EVS 2008,
+# (2022-05-16)=wave 5 / EVS 2017 (ZA7500). Confirm with S002EVS if changing this.
+EVS_WAVES = ['5.0.0 (2022-06-08)',   # EVS 2008 (wave 4)
+             '5.0.0 (2022-05-16)']   # EVS 2017 (wave 5)
 WVS_WAVES = ['WVS5 v.20180912', 'WVS6 v.20201117', 'WVS7 v.5.0']
 
 CRAN = 'https://cloud.r-project.org'
