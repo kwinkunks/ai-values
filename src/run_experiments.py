@@ -45,12 +45,20 @@ SHORT_ANSWER_THRESHOLD = 5
 
 
 def load_experiments() -> dict:
+    """
+    Load the experiments configuration from the JSON file.
+
+    Returns:
+        A dictionary mapping experiment IDs to their configuration.
+    """
     with open(EXPERIMENTS_FILE) as f:
         return json.load(f)
 
 
 def load_questions() -> dict[str, str]:
-    """Return {VARIABLE: prompt_text} with the 'Question: ' prefix stripped."""
+    """
+    Return {VARIABLE: prompt_text} with the 'Question: ' prefix stripped.
+    """
     df = pd.read_csv(QUESTIONS_FILE)
     questions = df.set_index('scale')['prompt'].to_dict()
     return {k.upper(): v[10:] for k, v in questions.items()}
@@ -68,19 +76,39 @@ BATCH_SELECTORS = {
 
 
 def load_respondents() -> pd.DataFrame:
-    """Persona descriptors with the batch (version) each was introduced in."""
+    """
+    Persona descriptors with the batch (version) each was introduced in.
+    """
     return pd.read_csv(RESPONDENTS_FILE)[['respondent_descriptor', 'batch']]
 
 
 def personas_for(respondents: pd.DataFrame, batch: str) -> list[str]:
-    """Descriptors selected by an experiment's `batch` (see BATCH_SELECTORS)."""
+    """
+    Descriptors selected by an experiment's `batch` (see BATCH_SELECTORS).
+    """
     if batch not in BATCH_SELECTORS:
         raise ValueError(f'Unknown batch {batch!r}. Known: {sorted(BATCH_SELECTORS)}')
     return respondents[respondents['batch'].isin(BATCH_SELECTORS[batch])]['respondent_descriptor'].tolist()
 
 
-def run_experiment(expt_id: str, cfg: dict, questions: dict, respondents: list,
+def run_experiment(expt_id: str,
+                   cfg: dict,
+                   questions: dict,
+                   respondents: list,
                    position: int = 1) -> list[dict]:
+    """
+    Run a single experiment for the given respondents and questions.
+
+    Args:
+        expt_id: The experiment ID.
+        cfg: Configuration dictionary containing 'provider', 'model', and optional 'zero_shot' and 'reasoning_effort'.
+        questions: Dictionary mapping variable names to question texts.
+        respondents: List of respondent descriptors (system prompts).
+        position: Position of the progress bar (for concurrent experiments).
+
+    Returns:
+        A list of dictionaries, each representing a respondent's answers and computed scores.
+    """
     provider = cfg['provider']
     model = cfg['model']
     zero_shot = cfg.get('zero_shot', False)
@@ -118,6 +146,12 @@ def run_experiment(expt_id: str, cfg: dict, questions: dict, respondents: list,
 
 
 def append_responses(rows: list[dict]) -> None:
+    """
+    Append new experiment responses to the responses CSV file.
+
+    Args:
+        rows: A list of dictionaries, each representing a respondent's answers and computed scores.
+    """
     df_new = pd.DataFrame(rows)
     RESPONSES_FILE.parent.mkdir(exist_ok=True)
     if RESPONSES_FILE.exists():
@@ -141,7 +175,9 @@ def select_experiments(all_expts: dict, ids: list[str]) -> dict:
 
 
 def already_run_ids() -> set[str]:
-    """IDs already present in responses.csv, as strings (the column is stored as int)."""
+    """
+    IDs already present in responses.csv, as strings (the column is stored as int).
+    """
     if not RESPONSES_FILE.exists():
         return set()
     existing = pd.read_csv(RESPONSES_FILE, usecols=['experiment_id'])['experiment_id']
@@ -149,6 +185,12 @@ def already_run_ids() -> set[str]:
 
 
 def main() -> None:
+    """
+    Main entry point for running experiments in parallel.
+
+    Parses command-line arguments, selects experiments to run, and manages concurrent execution.
+    Skips already-run experiments unless --force is specified.
+    """
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('--expts', nargs='+', metavar='ID', help='Experiment IDs to run')

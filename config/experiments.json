@@ -2067,5 +2067,49 @@
     "label": "MAI Thinking 1",
     "vendor": "Microsoft",
     "lineage": "MAI"
+  },
+  "3001": {
+    "provider": "Foundry",
+    "model": "gpt-5.6-sol",
+    "label": "GPT-5.6 Sol (zero-shot)",
+    "vendor": "OpenAI",
+    "batch": "v2",
+    "zero_shot": true,
+    "release": "2026-07-11"
+  },
+  "3002": {
+    "provider": "Foundry",
+    "model": "gpt-5.4-mini",
+    "label": "GPT-5.4 mini (zero-shot)",
+    "vendor": "OpenAI",
+    "reasoning_effort": "medium",
+    "batch": "v2",
+    "zero_shot": true
+  },
+  "3003": {
+    "provider": "Foundry",
+    "model": "mistral-medium-3-5",
+    "label": "Mistral M 3.5 (zero-shot)",
+    "vendor": "Mistral",
+    "batch": "v2",
+    "zero_shot": true
+  },
+  "3004": {
+    "provider": "Anthropic",
+    "model": "claude-sonnet-4-6",
+    "label": "Claude Sonnet 4.6 (zero-shot)",
+    "vendor": "Anthropic",
+    "batch": "v2",
+    "zero_shot": true,
+    "release": "2026-02-17"
+  },
+  "3005": {
+    "provider": "Anthropic",
+    "model": "claude-sonnet-5",
+    "label": "Claude Sonnet 5 (zero-shot)",
+    "vendor": "Anthropic",
+    "batch": "v2",
+    "zero_shot": true,
+    "release": "2026-06-30"
   }
 }
