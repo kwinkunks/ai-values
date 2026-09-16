@@ -53,7 +53,7 @@ def _label(ax, text, x, y, left=False):
                 path_effects=[pe.withStroke(linewidth=2.2, foreground='white')])
 
 
-def draw_base_map(ax, extra_handles=None, labels=True, grey=False, label_countries=None):
+def draw_base_map(ax, extra_handles=None, labels=True, grey=False, label_countries=None, legend=True):
     """Draw the country cultural map on `ax` (dots, human-average marker, axes, legend).
 
     grey=False: colour countries by cultural group; with labels=True add the key-country
@@ -117,9 +117,10 @@ def draw_base_map(ax, extra_handles=None, labels=True, grey=False, label_countri
     ax.set_aspect('equal', 'box')
     ax.margins(0.04)
 
-    handles = base_handles + (extra_handles or [])
-    ax.legend(handles=handles, loc='lower right', fontsize=9, frameon=True, facecolor=SURFACE,
-              edgecolor=GRID, title=legend_title, title_fontsize=9.5)
+    if legend:
+        handles = base_handles + (extra_handles or [])
+        ax.legend(handles=handles, loc='lower right', fontsize=9, frameon=True, facecolor=SURFACE,
+                  edgecolor=GRID, title=legend_title, title_fontsize=9.5)
 
 
 def main():

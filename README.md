@@ -66,4 +66,6 @@ The 10 IVS variables (F063, Y003, F120, G006, E018, Y002, A008, F118, E025, A165
 
 ## Further information
 
-See [`paper.md`](./paper.md) for more on this project.
+[AIA HAb CeNc Hin R Claude Opus v1.0](https://aiattribution.github.io/statements/AIA-HAb-CeNc-Hin-R-?model=Claude%20Opus-v1.0)
+
+This work was created with an even blend of human and AI contributions. AI was used to make content edits, such as changes to scope, information, and ideas. AI was used to make new content, such as text, images, analysis, and ideas. AI was prompted for its contributions, or AI assistance was enabled. AI-generated content was reviewed and approved. The following model(s) or application(s) were used: Claude Opus.

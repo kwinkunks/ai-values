@@ -42,7 +42,11 @@ def main():
     p.add_argument('--label-left', nargs='*', default=[],
                    help="model labels whose on-plot text goes to the LEFT of the point")
     p.add_argument('--label-dy', type=float, default=0.0,
-                   help="vertical nudge for on-plot labels, in map units (negative = down)")
+                   help="vertical nudge for ALL on-plot labels, in map units (negative = down)")
+    p.add_argument('--label-dy-for', nargs='*', default=[],
+                   help="per-model vertical nudges as LABEL=DY (map units, negative = down); adds to --label-dy")
+    p.add_argument('--legend', action=argparse.BooleanOptionalAction, default=True,
+                   help="draw the legend (default on; use --no-legend to hide)")
     p.add_argument('--trajectory', action=argparse.BooleanOptionalAction, default=True,
                    help="draw the release-ordered trajectory line (default on)")
     p.add_argument('--first', action=argparse.BooleanOptionalAction, default=True,
@@ -53,6 +57,7 @@ def main():
                    help="per-model colour overrides as LABEL=HEX (e.g. 'GPT-5=#d62728')")
     args = p.parse_args()
     left_set = set(args.label_left)
+    dy_for = {k: float(v) for k, v in (pair.split('=', 1) for pair in args.label_dy_for)}
     slug = args.lineage.split()[-1].lower()
 
     exp = json.load(open(C.EXPERIMENTS_FILE))
@@ -106,14 +111,15 @@ def main():
             ax.scatter([r['x']], [r['y']], s=95, color=color[lab], edgecolors='white',
                        linewidths=1.2, zorder=7)
             left = lab in left_set
-            ax.annotate(f"{lab.replace('Claude ', '')}  {rel[lab][:7]}", (r['x'], r['y'] + args.label_dy),
+            ax.annotate(f"{lab.replace('Claude ', '')}  {rel[lab][:7]}",
+                        (r['x'], r['y'] + args.label_dy + dy_for.get(lab, 0.0)),
                         fontsize=8.5, fontweight='bold', color=color[lab], zorder=8,
                         xytext=(-7 if left else 7, 4), textcoords='offset points',
                         ha='right' if left else 'left',
                         path_effects=[pe.withStroke(linewidth=2.2, foreground='white')])
 
         base.draw_base_map(ax, extra_handles=handles, grey=True,
-                           label_countries=['United States', 'China'])
+                           label_countries=['United States', 'China'], legend=args.legend)
         ax.set_title(title, fontsize=14, color=base.INK, pad=12)
         fig.tight_layout()
         fig.savefig(FIG_DIR / out, dpi=200, facecolor=base.SURFACE, bbox_inches='tight')
