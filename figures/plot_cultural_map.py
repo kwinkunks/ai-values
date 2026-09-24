@@ -8,6 +8,7 @@ Reads out/country_centroids.csv. Writes figures/cultural_map.png.
 
 Usage: uv run --with matplotlib python figures/plot_cultural_map.py
 """
+import os
 from pathlib import Path
 
 import pandas as pd
@@ -17,9 +18,14 @@ import matplotlib.pyplot as plt
 import matplotlib.patheffects as pe
 from matplotlib.lines import Line2D
 
+# Shared output settings for all figure scripts (they `import plot_cultural_map as base`).
+# Draft: 600-dpi PNG rasters. Production: `FIG_EXT=eps` for vector art (per journal spec).
+DPI = int(os.environ.get('FIG_DPI', '600'))
+FIG_EXT = os.environ.get('FIG_EXT', 'png')
+
 ROOT = Path(__file__).parent.parent
 CENTROIDS = ROOT / 'out' / 'country_centroids.csv'
-OUT = Path(__file__).parent / 'cultural_map.png'
+OUT = Path(__file__).parent / f'cultural_map.{FIG_EXT}'
 
 # Cultural group -> colour (matplotlib tab10, distinct qualitative).
 GROUP_COLOR = {
@@ -129,7 +135,7 @@ def main():
     draw_base_map(ax)
     ax.set_title('The Inglehart–Welzel Cultural Map', fontsize=15, color=INK, pad=12)
     fig.tight_layout()
-    fig.savefig(OUT, dpi=200, facecolor=SURFACE, bbox_inches='tight')
+    fig.savefig(OUT, dpi=DPI, facecolor=SURFACE, bbox_inches='tight')
     print(f'Wrote {OUT}')
 
 

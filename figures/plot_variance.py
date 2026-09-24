@@ -113,8 +113,8 @@ def main():
             sp.set_color(base.GRID)
 
     fig.tight_layout()
-    out = FIG_DIR / 'variance_components.png'
-    fig.savefig(out, dpi=200, facecolor=base.SURFACE, bbox_inches='tight')
+    out = FIG_DIR / f'variance_components.{base.FIG_EXT}'
+    fig.savefig(out, dpi=base.DPI, facecolor=base.SURFACE, bbox_inches='tight')
     print(f'Wrote {out}')
 
 

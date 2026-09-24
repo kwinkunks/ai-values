@@ -117,8 +117,8 @@ def main():
     fig.suptitle(f'Zero-shot vs conversation questionnaires  ({len(paired)} models run both ways)',
                  fontsize=13.5, color=base.INK, y=0.99)
     fig.tight_layout(rect=(0, 0, 1, 0.96))
-    out = FIG_DIR / 'zeroshot_vs_conversation.png'
-    fig.savefig(out, dpi=200, facecolor=base.SURFACE, bbox_inches='tight')
+    out = FIG_DIR / f'zeroshot_vs_conversation.{base.FIG_EXT}'
+    fig.savefig(out, dpi=base.DPI, facecolor=base.SURFACE, bbox_inches='tight')
     print(f'Wrote {out}')
 
 

@@ -101,8 +101,8 @@ def main():
             title += f'  ({args.conf*100:g}% mean conf. ellipse)'
         ax.set_title(title, fontsize=15, color=base.INK, pad=12)
         fig.tight_layout()
-        out = FIG_DIR / ('cultural_map_norway_ellipse.png' if with_ellipse else 'cultural_map_norway.png')
-        fig.savefig(out, dpi=200, facecolor=base.SURFACE, bbox_inches='tight')
+        out = FIG_DIR / (f'cultural_map_norway_ellipse.{base.FIG_EXT}' if with_ellipse else f'cultural_map_norway.{base.FIG_EXT}')
+        fig.savefig(out, dpi=base.DPI, facecolor=base.SURFACE, bbox_inches='tight')
         plt.close(fig)
         print(f'Wrote {out}')
 

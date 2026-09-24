@@ -122,15 +122,15 @@ def main():
                            label_countries=['United States', 'China'], legend=args.legend)
         ax.set_title(title, fontsize=14, color=base.INK, pad=12)
         fig.tight_layout()
-        fig.savefig(FIG_DIR / out, dpi=200, facecolor=base.SURFACE, bbox_inches='tight')
+        fig.savefig(FIG_DIR / out, dpi=base.DPI, facecolor=base.SURFACE, bbox_inches='tight')
         plt.close(fig)
         print(f'Wrote {FIG_DIR / out}')
 
     if args.first:
         first = models[0]
-        render([first], f'llms_{slug}_first.png',
+        render([first], f'llms_{slug}_first.{base.FIG_EXT}',
                f'{first} on the cultural map (all records + 80% ellipse)', trajectory=False)
-    render(models, args.out or f'llms_{slug}_all.png',
+    render(models, args.out or f'llms_{slug}_all.{base.FIG_EXT}',
            args.title or f'{args.lineage} over time (all records, 80% ellipses, release trajectory)',
            trajectory=args.trajectory)
 

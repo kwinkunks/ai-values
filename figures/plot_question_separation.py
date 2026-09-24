@@ -107,8 +107,8 @@ def main():
               edgecolor=base.GRID, ncol=2, title=f'Vendor ({len(Z)} models)', title_fontsize=9)
 
     fig.tight_layout()
-    out = FIG_DIR / 'question_separation.png'
-    fig.savefig(out, dpi=200, facecolor=base.SURFACE, bbox_inches='tight')
+    out = FIG_DIR / f'question_separation.{base.FIG_EXT}'
+    fig.savefig(out, dpi=base.DPI, facecolor=base.SURFACE, bbox_inches='tight')
     print(f'Wrote {out}')
 
 
