@@ -1,0 +1,373 @@
+Skip to main content
+Springer Nature Link
+Log in
+Find a journal
+Publish with us
+Track your research
+Search
+ Saved research
+ Cart
+Home  AI & SOCIETY  Submission guidelines
+Springer
+
+AI & SOCIETY
+Journal of Knowledge, Culture and Communication
+
+Publishing model
+Hybrid
+Submit your manuscript
+Save journal
+Explore open access funding Select institution
+About this journal
+Articles
+For authors
+Journal updates
+Submission guidelines
+Contents
+Instructions for Authors
+Important Information on Manuscript Preparation and Submission
+Editorial procedure
+Article Types/Submission Categories
+Manuscript Submission
+Title Page
+Text
+References
+Tables
+Artwork and Illustrations Guidelines
+Supplementary Information (SI)
+Research Data Policy and Data Availability Statements
+Editing Services
+Ethical Responsibilities of Authors
+Competing Interests
+Authorship principles
+After acceptance
+Open Choice
+Open access publishing
+Mistakes to avoid during manuscript preparation
+Instructions for Authors
+Important Information on Manuscript Preparation and Submission
+This journal recently switched to a different submission and peer review system. In order to ensure that the author(s) remain anonymous to the reviewers throughout the peer review process, you will be asked to submit certain information and statements directly in the system’s interface instead of including it in the manuscript or on a separate title page. We are currently working on revising our submission guidelines to reflect this properly. When preparing your manuscript, please make sure to have all the necessary author details and statements as described below at hand, but please note that you will have to submit some of them via the according fields in the system’s interface during submission and not on a separate title page.
+
+SNAPP Double Anonymous Peer Review Guidelines
+SNAPP Double Anonymous Peer Review Guidelines
+
+Back to top
+Editorial procedure
+Double-blind peer review
+This journal follows a double-blind reviewing procedure. This means that the author will remain anonymous to the reviewers throughout peer review. It is the responsibility of the author to anonymize the manuscript and any associated materials.
+
+Author names, affiliations and any other potentially identifying information should be removed from the manuscript text and any accompanying files (such as figures of supplementary material);
+A separate Title Page should be submitted, containing title, author names, affiliations, and the contact information of the corresponding author. Any acknowledgements, disclosures, or funding information should also be included on this page;
+Authors should avoid citing their own work in a way that could reveal their identity.
+Additional Information for Peer Review Process
+Although the Editors of AI & SOCIETY strive for the most timely and efficient process for peer review, our over-arching goal is to provide substantive reviews to our authors along with constructive suggestions for improvements and clarifications when needed. Manuscripts submitted to AI & SOCIETY are usually reviewed by two referees selected from the relevant worldwide research community. No article is accepted without two complete and final reviews. For revisions of prior submissions, it is common for suggested major revisions to be re-evaluated by the original referees, but articles requiring only minor revisions are often only re-evaluated by the Editor-in-Chief. The reviewers handling a paper are all anonymous and are invited by the Editor-in-Chief. Only the Editor-in-Chief can make a final decision to accept or reject an article.
+
+When selecting reviewers, the Editor-in-Chief seek to avoid conflicts of interest and close associates of the authors, such as frequent collaborators, former advisees, or former advisors. AI & SOCIETY accepts manuscript submissions from its own editorial board members. To be accepted, manuscripts must meet the same quality standards as all other accepted submissions; there is absolutely no special preference or consideration given to such submissions.
+
+AI & SOCIETY also publishes special issues/topical collections. The peer review process of any submission associated with a special issue is handled by Guest Editors who are responsible for assigning at least two referees to each article and evaluating the reviews. Guest Editors make recommendations and request and evaluate revisions, but only the Editor-in-Chief can make final decisions of accept or reject on any special issue article. Any articles submitted to a special issue by Guest Editors are handled confidentially outside of the normal refereeing process of the special issue to ensure that the evaluation of these articles is completely objective.
+
+Back to top
+Article Types/Submission Categories
+Research Articles
+Research articles are strictly focused, academically coherent, theoretically grounded, methodologically sound and empirically strong. In keeping with the ethos of the journal, submissions should provide a substantial and explicit argument on the purpose of the article, its relevance to current and future design and applications of AI, particularly on the societal dimension of research, potential benefits, impacts and implications for society. Articles in this category are expected to make a significant contribution to knowledge.
+
+Open Forum
+Open Forum articles advance on established and ongoing research, focusing on social impacts of emerging technologies, applications, and practices. Controversial themes are to be treated with balance, nuance, informed scholarship and insight. Submissions are expected to expose key concepts, ideas, and theories through deep and detailed engagement with foundational works and comparable contemporary research programs and publications. The articles should develop strong central messages clearly communicating their significance as contributions to current inquiries and attendant discussions.
+
+Curmudgeon Corner
+Curmudgeon Corner is a short opinionated letter to the editor on trends in technology, arts, science and society, commenting emphatically on issues of concern to the research community and wider society. The Curmudgeon usually benefits from a clearly staked claim, a distinctive argumentative voice, and a slightly combative or contrarian edge. Curmudgeon article is a straight essay (no abstract, no key words), with no subsections, no more than 3 references and 2 co-authors. The Curmudgeon Corner letters are reviewed by the Editorial Board.
+
+Review Articles
+Review articles provide analytically rigorous and conceptually grounded examinations of existing scholarship, practices, or debates relevant to the journal’s scope. Suitable formats include structured literature reviews of research, theory driven integrative surveys, critical state of the field analyses, and reflective reviews that advance conceptual or methodological understanding. Review articles may also examine science practices, exhibitions, research forums, policy developments, or books, provided they demonstrate analytical depth and clear relevance to societal, cultural, or application domains. Reviews should engage critically with existing empirical findings, compare approaches across studies, and articulate implications for future research, design, or implementation. Book Reviews are reviewed by the Editorial Board.
+
+Submissions in all the above categories should be clear, accessible, and informative for readers from diverse cultural backgrounds and disciplines, who are often reading in English as a second and/or foreign language outside of personal areas of expertise. LLM use for tasks other than grammar and translation, and high similarity submissions (archived/published) are strongly discouraged. Pre-publications should be acknowledged in the declaration section. Normal word length: Research 10k, Open Forum 8k, Curmudgeon 1-1.5k, Reviews 8k, Book Reviews: 1-1.5k
+
+Back to top
+Manuscript Submission
+Manuscript Submission
+Submission of a manuscript implies: that the work described has not been published before; that it is not under consideration for publication anywhere else; that its publication has been approved by all co-authors, if any, as well as by the responsible authorities – tacitly or explicitly – at the institute where the work has been carried out. The publisher will not be held legally responsible should there be any claims for compensation.
+
+Permissions
+Authors wishing to include figures, tables, or text passages that have already been published elsewhere are required to obtain permission from the copyright owner(s) for both the print and online format and to include evidence that such permission has been granted when submitting their papers. Any material received without such evidence will be assumed to originate from the authors.
+
+Online Submission
+Please follow the hyperlink “Submit manuscript” and upload all of your manuscript files following the instructions given on the screen.
+
+Source Files
+Please ensure you provide all relevant editable source files at every submission and revision. Failing to submit a complete set of editable source files will result in your article not being considered for review. For your manuscript text please always submit in common word processing formats such as .docx or LaTeX.
+
+Submitting Declarations
+Please note that Author Contribution information and Competing Interest information must be provided at submission via the submission interface. Only the information submitted via the interface will be used in the final published version. Please make sure that if you are an editorial board member and also a listed author that you also declare this information in the Competing Interest section of the interface.
+
+Please see the relevant sections in the submission guidelines for further information on these statements as well as possible other mandatory statements.
+
+NOTES TO AUTHORS: This Journal only accepts Word files for manuscript submissions.
+
+The Journal expects its authors to include, in their submissions:
+
+a) An acknowledgement of the pre-accept/pre-publication versions of their manuscripts on non-commercial and academic sites.
+
+b) Images: obtain permissions from the copyright holder/original sources.
+
+c) Formal permission from their ethics committees when conducting studies with people.
+
+Back to top
+Title Page
+Please make sure your title page contains the following information.
+
+Title
+The title should be concise and informative.
+
+Author information
+The name(s) of the author(s)
+The affiliation(s) of the author(s), i.e. institution, (department), city, (state), country
+A clear indication and an active e-mail address of the corresponding author
+If available, the 16-digit ORCID of the author(s)
+If address information is provided with the affiliation(s) it will also be published.
+
+For authors that are (temporarily) unaffiliated we will only capture their city and country of residence, not their e-mail address unless specifically requested.
+
+Large Language Models (LLMs), such as ChatGPT, do not currently satisfy our authorship criteria. Notably an attribution of authorship carries with it accountability for the work, which cannot be effectively applied to LLMs. Use of an LLM should be properly documented in the Methods section (and if a Methods section is not available, in a suitable alternative part) of the manuscript. The use of an LLM (or other AI-tool) for "AI assisted copy editing" purposes does not need to be declared. In this context, we define the term "AI assisted copy editing" as AI-assisted improvements to human-generated texts for readability and style, and to ensure that the texts are free of errors in grammar, spelling, punctuation and tone. These AI-assisted improvements may include wording and formatting changes to the texts, but do not include generative editorial work and autonomous content creation. In all cases, there must be human accountability for the final version of the text and agreement from the authors that the edits reflect their original work.
+
+Abstract
+Please provide an abstract of 150 to 250 words. The abstract should not contain any undefined abbreviations or unspecified references.
+
+Please note: For some articles (particularly, systematic reviews and original research articles), 250 words may not be sufficient to provide all necessary information in the abstract. Therefore, the abstract length can be increased from the 250-word limit (to up to 450 words) if the topic dictates, and to allow full compliance with the relevant reporting guidelines.
+
+For life science journals only (when applicable)
+
+Trial registration number and date of registration for prospectively registered trials
+Trial registration number and date of registration, followed by “retrospectively registered”, for retrospectively registered trials
+Keywords
+Please provide 4 to 6 keywords which can be used for indexing purposes.
+
+Acknowledgements
+An Acknowledgment section may be included to acknowledge, for example, people who have assisted with aspects of the work (but who do not qualify as authors), disclaimers, collaborations, etc.
+
+Statements and Declarations
+The following statements should be included under the heading "Statements and Declarations" for inclusion in the published paper. Please note that submissions that do not include relevant declarations will be returned as incomplete.
+
+Competing Interests: Authors are required to disclose financial or non-financial interests that are directly or indirectly related to the work submitted for publication. Please refer to “Competing Interests and Funding” below for more information on how to complete this section.
+Back to top
+Text
+Text Formatting
+Manuscripts should be submitted in Word.
+
+Use a normal, plain font (e.g., 10-point Times Roman) for text.
+Use italics for emphasis.
+Use the automatic page numbering function to number the pages.
+Do not use field functions.
+Use tab stops or other commands for indents, not the space bar.
+Use the table function, not spreadsheets, to make tables.
+Use the equation editor or MathType for equations.
+Save your file in docx format (Word 2007 or higher) or doc format (older Word versions).
+Headings
+Please use the decimal system of headings with no more than three levels.
+
+Abbreviations
+Abbreviations should be defined at first mention and used consistently thereafter.
+
+Footnotes
+Footnotes can be used to give additional information, which may include the citation of a reference included in the reference list. They should not consist solely of a reference citation, and they should never include the bibliographic details of a reference. They should also not contain any figures or tables.
+
+Footnotes to the text are numbered consecutively; those to tables should be indicated by superscript lower-case letters (or asterisks for significance values and other statistical data). Footnotes to the title or the authors of the article are not given reference symbols.
+
+Always use footnotes instead of endnotes.
+
+Acknowledgments
+Acknowledgments of people, grants, funds, etc. should be placed in a separate section on the title page. The names of funding organizations should be written in full.
+
+Back to top
+References
+Citation
+Cite references in the text by name and year in parentheses. Some examples:
+
+Negotiation research spans many disciplines (Thompson 1990).
+This result was later contradicted by Becker and Seligman (1996).
+This effect has been widely studied (Abbott 1991; Barakat et al. 1995a, b; Kelso and Smith 1998; Medvec et al. 1999, 2000).
+Reference list
+The list of references should only include works that are cited in the text and that have been published or accepted for publication. Personal communications and unpublished works should only be mentioned in the text.
+
+Reference list entries should be alphabetized by the last names of the first author of each work. Please alphabetize according to the following rules: 1) For one author, by name of author, then chronologically; 2) For two authors, by name of author, then name of coauthor, then chronologically; 3) For more than two authors, by name of first author, then chronologically.
+
+If available, please always include DOIs as full DOI links in your reference list (e.g. “https://doi.org/abc”).
+
+Journal article
+Gamelin FX, Baquet G, Berthoin S, Thevenet D, Nourry C, Nottin S, Bosquet L (2009) Effect of high intensity intermittent training on heart rate variability in prepubescent children. Eur J Appl Physiol 105:731-738. https://doi.org/10.1007/s00421-008-0955-8
+
+Ideally, the names of all authors should be provided, but the usage of “et al” in long author lists will also be accepted:
+
+Smith J, Jones M Jr, Houghton L et al (1999) Future of health insurance. N Engl J Med 965:325–329
+
+Article by DOI
+Slifka MK, Whitton JL (2000) Clinical implications of dysregulated cytokine production. J Mol Med. https://doi.org/10.1007/s001090000086
+
+Book
+South J, Blass B (2001) The future of modern genomics. Blackwell, London
+
+Book chapter
+Brown B, Aaron M (2001) The politics of nature. In: Smith J (ed) The rise of modern genomics, 3rd edn. Wiley, New York, pp 230-257
+
+Online document
+Cartwright J (2007) Big stars have weather too. IOP Publishing PhysicsWeb. http://physicsweb.org/articles/news/11/6/16/1. Accessed 26 June 2007
+
+Dissertation
+Trent JW (1975) Experimental acute renal failure. Dissertation, University of California
+
+Always use the standard abbreviation of a journal’s name according to the ISSN List of Title Word Abbreviations, see
+
+ISSN LTWA
+
+If you are unsure, please use the full journal title.
+
+Back to top
+Tables
+All tables are to be numbered using Arabic numerals.
+Tables should always be cited in text in consecutive numerical order.
+For each table, please supply a table caption (title) explaining the components of the table.
+Identify any previously published material by giving the original source in the form of a reference at the end of the table caption.
+Footnotes to tables should be indicated by superscript lower-case letters (or asterisks for significance values and other statistical data) and included beneath the table body.
+Back to top
+Artwork and Illustrations Guidelines
+Electronic Figure Submission
+Supply all figures electronically.
+Indicate what graphics program was used to create the artwork.
+For vector graphics, the preferred format is EPS; for halftones, please use TIFF format. MSOffice files are also acceptable.
+Vector graphics containing fonts must have the fonts embedded in the files.
+Name your figure files with "Fig" and the figure number, e.g., Fig1.eps.
+Line Art
+
+Definition: Black and white graphic with no shading.
+Do not use faint lines and/or lettering and check that all lines and lettering within the figures are legible at final size.
+All lines should be at least 0.1 mm (0.3 pt) wide.
+Scanned line drawings and line drawings in bitmap format should have a minimum resolution of 1200 dpi.
+Vector graphics containing fonts must have the fonts embedded in the files.
+Halftone Art
+
+Definition: Photographs, drawings, or paintings with fine shading, etc.
+If any magnification is used in the photographs, indicate this by using scale bars within the figures themselves.
+Halftones should have a minimum resolution of 300 dpi.
+Combination Art
+
+Definition: a combination of halftone and line art, e.g., halftones containing line drawing, extensive lettering, color diagrams, etc.
+Combination artwork should have a minimum resolution of 600 dpi.
+Color Art
+Color art is free of charge for online publication.
+If black and white will be shown in the print version, make sure that the main information will still be visible. Many colors are not distinguishable from one another when converted to black and white. A simple way to check this is to make a xerographic copy to see if the necessary distinctions between the different colors are still apparent.
+If the figures will be printed in black and white, do not refer to color in the captions.
+Color illustrations should be submitted as RGB (8 bits per channel).
+Figure Lettering
+To add lettering, it is best to use Helvetica or Arial (sans serif fonts).
+Keep lettering consistently sized throughout your final-sized artwork, usually about 2–3 mm (8–12 pt).
+Variance of type size within an illustration should be minimal, e.g., do not use 8-pt type on an axis and 20-pt type for the axis label.
+Avoid effects such as shading, outline letters, etc.
+Do not include titles or captions within your illustrations.
+Figure Numbering
+All figures are to be numbered using Arabic numerals.
+Figures should always be cited in text in consecutive numerical order.
+Figure parts should be denoted by lowercase letters (a, b, c, etc.).
+If an appendix appears in your article and it contains one or more figures, continue the consecutive numbering of the main text. Do not number the appendix figures,"A1, A2, A3, etc." Figures in online appendices [Supplementary Information (SI)] should, however, be numbered separately.
+Figure Captions
+Each figure should have a concise caption describing accurately what the figure depicts. Include the captions in the text file of the manuscript, not in the figure file.
+Figure captions begin with the term Fig. in bold type, followed by the figure number, also in bold type.
+No punctuation is to be included after the number, nor is any punctuation to be placed at the end of the caption.
+Identify all elements found in the figure in the figure caption; and use boxes, circles, etc., as coordinate points in graphs.
+Identify previously published material by giving the original source in the form of a reference citation at the end of the figure caption.
+Figure Placement and Size
+Figures should be submitted within the body of the text. Only if the file size of the manuscript causes problems in uploading it, the large figures should be submitted separately from the text.
+When preparing your figures, size figures to fit in the column width.
+For large-sized journals the figures should be 84 mm (for double-column text areas), or 174 mm (for single-column text areas) wide and not higher than 234 mm.
+For small-sized journals, the figures should be 119 mm wide and not higher than 195 mm.
+Permissions
+If you include figures that have already been published elsewhere, you must obtain permission from the copyright owner(s) for both the print and online format. Please be aware that some publishers do not grant electronic rights for free and that Springer will not be able to refund any costs that may have occurred to receive these permissions. In such cases, material from other sources should be used.
+
+Accessibility
+In order to give people of all abilities and disabilities access to the content of your figures, please make sure that
+
+All figures have descriptive captions (blind users could then use a text-to-speech software or a text-to-Braille hardware)
+Patterns are used instead of or in addition to colors for conveying information (colorblind users would then be able to distinguish the visual elements)
+Any figure lettering has a contrast ratio of at least 4.5:1
+Generative AI Images
+Please check Springer’s policy on generative AI images and make sure your work adheres to the principles described therein.
+
+Back to top
+Supplementary Information (SI)
+Springer accepts electronic multimedia files (animations, movies, audio, etc.) and other supplementary files to be published online along with an article or a book chapter. This feature can add dimension to the author's article, as certain information cannot be printed or is more convenient in electronic form.
+
+Before submitting research datasets as Supplementary Information, authors should read the journal’s Research data policy. We encourage research data to be archived in data repositories wherever possible.
+
+Submission
+Supply all supplementary material in standard file formats.
+Please include in each file the following information: article title, journal name, author names; affiliation and e-mail address of the corresponding author.
+To accommodate user downloads, please keep in mind that larger-sized files may require very long download times and that some users may experience other problems during downloading.
+Audio, Video, and Animations
+Aspect ratio: 16:9 or 4:3
+Maximum file size: 2 GB
+Minimum video duration: 1 sec
+Supported file formats: avi, wmv, mp4, mov, m2p, mp2, mpg, mpeg, flv, mxf, mts, m4v, 3gp
+Text and Presentations
+Submit your material in PDF format; .doc or .ppt files are not suitable for long-term viability.
+A collection of figures may also be combined in a PDF file.
+Spreadsheets
+Spreadsheets should be submitted as .csv or .xlsx files (MS Excel).
+Specialized Formats
+Specialized format such as .pdb (chemical), .wrl (VRML), .nb (Mathematica notebook), and .tex can also be supplied.
+Collecting Multiple Files
+It is possible to collect multiple files in a .zip or .gz file.
+Numbering
+If supplying any supplementary material, the text must make specific mention of the material as a citation, similar to that of figures and tables.
+Refer to the supplementary files as “Online Resource”, e.g., "... as shown in the animation (Online Resource 3)", “... additional data are given in Online Resource 4”.
+Name the files consecutively, e.g. “ESM_3.mpg”, “ESM_4.pdf”.
+Captions
+For each supplementary material, please supply a concise caption describing the content of the file.
+Processing of supplementary files
+Supplementary Information (SI) will be published as received from the author without any conversion, editing, or reformatting.
+Accessibility
+In order to give people of all abilities and disabilities access to the content of your supplementary files, please make sure that
+
+The manuscript contains a descriptive caption for each supplementary material
+Video files do not contain anything that flashes more than three times per second (so that users prone to seizures caused by such effects are not put at risk)
+Generative AI Images
+Please check Springer’s policy on generative AI images and make sure your work adheres to the principles described therein.
+
+Back to top
+Research Data Policy and Data Availability Statements
+This journal follows Springer Nature research data policy. Sharing of all relevant research data is strongly encouraged and authors must add a Data Availability Statement to original research articles.
+
+Research data includes a wide range of types, including spreadsheets, images, textual extracts, archival documents, video or audio, interview notes or any specialist formats generated during research.
+
+Data availability statements
+All original research must include a data availability statement. This statement should explain how to access data supporting the results and analysis in the article, including links/citations to publicly archived datasets analysed or generated during the study. Please see our full policy here.
+
+If it is not possible to share research data publicly, for instance when individual privacy could be compromised, this statement should describe how data can be accessed and any conditions for reuse. Participant consent should be obtained and documented prior to data collection. See our guidance on sensitive data for more information.
+
+When creating a data availability statement, authors are encouraged to consider the minimal dataset that would be necessary to interpret, replicate and build upon the findings reported in the article.
+
+Further guidance on writing a data availability statement, including examples, is available at:
+
+Data availability statements
+
+Data repositories
+Authors are strongly encouraged to deposit their supporting data in a publicly available repository. Sharing your data in a repository promotes the integrity, discovery and reuse of your research, making it easier for the research community to build on and credit your work.
+
+See our data repository guidance for information on finding a suitable repository.
+
+We recommend the use of discipline-specific repositories where available. For a number of data types, submission to specific public repositories is mandatory.
+
+See our list of mandated data types.
+
+The journal encourages making research data available under open licences that permit reuse. The journal does not enforce use of particular licences in third party repositories. You should ensure you have necessary rights to share any data that you deposit in a repository.
+
+Data citation
+The journal recommends that authors cite any publicly available data on which the conclusions of the paper rely. This includes data the authors are sharing alongside their publication and any secondary data the authors have reused. Data citations should include a persistent identifier (such as a DOI), should be included in the reference list using the minimum information recommended by DataCite (Dataset Creator, Dataset Title, Publisher [repository], Publication Year, Identifier [e.g. DOI, Handle, Accession or ARK]) and follow journal style.
+
+See our further guidance on citing datasets.
+
+Research data and peer review
+If the journal that you are submitting to uses double-anonymous peer review and you are providing reviewers with access to your data (for example via a repository link, supplementary information or data on request), it is strongly suggested that the authorship in the data is also anonymised. There are data repositories that can assist with this and/or will create a link to mask the authorship of your data.
+
+Support with research data policy
+Authors who need help understanding our data sharing policy, finding a suitable data repository, or organising and sharing research data can consult our Research Data Helpdesk for guidance.
+
+See our FAQ page for more information on Springer Nature's research data policy.
+    

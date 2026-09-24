@@ -1,0 +1,14 @@
+# Author metadata, kept out of the manuscript for AI & SOCIETY double-blind review.
+# For a NON-blind build (preprint / camera-ready) inject it:
+#   quarto render hall-2026-llm-values.qmd --metadata-file _authors.yml
+# The blind submission build is the plain `quarto render ... --to docx` (no authors).
+author:
+  - name: Matt Hall
+    id: mtha
+    email: mtha@equinor.com
+    affiliation:
+      - name: Equinor
+        city: Bergen
+copyright:
+  holder: Equinor
+  year: 2026

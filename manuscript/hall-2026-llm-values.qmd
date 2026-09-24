@@ -1,20 +1,22 @@
 ---
 title: "Human values expressed by large language models"
 date: 2026-08
-author: 
-  - name: Matt Hall
-    id: mtha
-    email: mtha@equinor.com
-    affiliation: 
-      - name: Equinor
-        city: Bergen
+# Author/affiliation intentionally omitted for AI & SOCIETY double-blind review.
+# They live in _authors.yml; add them with `--metadata-file _authors.yml` for a
+# non-blind (preprint / camera-ready) build. See _submission-checklist.md.
 abstract: |
-  The US government stated repeatedly in 2025 that AI models should be "free from ideological bias", and in particular not "woke" (in the broad sense of being socially progressive). In order to track whether these pronouncements correspond to changes in the alignment of large language models, we can try to measure how such models express human values, and how these expressions change over time. One such measure is the Ingelhart–Welzel Cultural Map. In this study, we plot large language models on this map. Our results indicates that models have indeed been changing over time, and in ways that are consistent with the goal of "free from ideological bias" — most models have generally been moving towards the United States, but also towards the origin of the plot, a point which could be interpreted as the average world citizen. Conversely, this means that most models have moved away from the more secular–rational, freedom and self-expression oriented values they expressed in 2024. Some models (notably Grok 4.1, GPT-5.1, Gemini 3, Qwen 3, and Claude Fable 5) express values which are statistical outliers in the global context. Reasoning level (GPT) and model size (Claude) appear to affect expressed values, but in ways that are not straightforward.
+  The US government stated repeatedly in 2025 that AI models should be "free from ideological bias", and in particular not "woke" (in the broad sense of being socially progressive). In order to track whether these pronouncements correspond to changes in the alignment of large language models, we can try to measure how such models express human values, and how these expressions change over time. One such measure is the Inglehart–Welzel Cultural Map. In this study, we plot large language models on this map. Our results indicates that models have indeed been changing over time, and in ways that are consistent with the goal of "free from ideological bias" — most models have generally been moving towards the United States, but also towards the origin of the plot, a point which could be interpreted as the average world citizen. Conversely, this means that most models have moved away from the more secular–rational, freedom and self-expression oriented values they expressed in 2024. Some models (notably Grok 4.1, GPT-5.1, Gemini 3, Qwen 3, and Claude Fable 5) express values which are statistical outliers in the global context. Reasoning level (GPT) and model size (Claude) appear to affect expressed values, but in ways that are not straightforward.
 keywords:
   - Generative AI
   - Large language models
-  - Failure modes
+  - Human values
+  - Ideology
+  - Bias
 bibliography: references.bib
+csl: springer-basic-author-date.csl
+crossref:
+  fig-title: "Fig."   # Springer captions read "Fig. 1 ...", not "Figure 1"
+  fig-prefix: Fig.    # in-text cross-references read "Fig. 1"
 format:
   gfm:
     preview-mode: raw
@@ -24,10 +26,12 @@ format:
   pdf:
     toc: true
     number-sections: true
+  docx:
+    toc: false            # Springer manuscript carries no TOC
+    number-sections: true # decimal headings (1, 1.1, 1.1.1), max 3 levels
+    # reference-doc: springer-reference.docx  # optional house styling; not required for a blind submission
 license: "CC BY"
-copyright: 
-  holder: Equinor
-  year: 2026
+# copyright holder also omitted for blind review — see _authors.yml
 ---
 
 When Elon Musk launched the Grok language model and chatbot service in November 2023, he touted it as "anti-woke" [@zeff2023enter]. A little over a year later, with Elon Musk advising US President Donald Trump as a Special Government Employee, the president issued an executive order requiring that US-made AI systems must be "free from ideological bias" [@obrien2025trump]. Later still, in July 2025, Trump announced the US AI Action Plan [@whitehouse2025actionplan], which made it clear that the US sees AI as a strategic advantage and which also contained language promoting models expressing American values:
@@ -47,11 +51,11 @@ The central question of this work is therefore: _Are AI labs giving their models
 
 Human beings have many, often deeply held, values — ideas and practices that they cherish and propagate in their societies.
 
-Conversely, language models are unconcscious, mechanistic text-prediction machines and as such it is not clear that they can have values _per se_. That said, both the implicit 'knowledge' in their weights, and the alignment steps in their training (eg the RLHF step), likely reflect the value systems of the people that created the training data, and the corporations that trained the models.
+Conversely, language models are unconscious, mechanistic text-prediction machines and as such it is not clear that they can have values _per se_. That said, both the implicit 'knowledge' in their weights, and the alignment steps in their training (eg the RLHF step), likely reflect the value systems of the people that created the training data, and the corporations that trained the models.
 
 So a question we can ask is: _Is it possible to get an LLM to reveal the value system it has learned?_
 
-Some researchers have tried to answer this question. For example, Tao et al [@tao2024cultural] compared the question responses of several OpenAI LLMs to the results of the Integrated Values Survey (IVS) and plotted the result on the Inglehart–Welzel Cultural Map [@inglehart2013wvs].
+Some researchers have tried to answer this question. For example, @tao2024cultural compared the question responses of several OpenAI LLMs to the results of the Integrated Values Survey (IVS) and plotted the result on the Inglehart–Welzel Cultural Map [@inglehart2013wvs].
 
 To get at our questions, I attempted to first reproduce this study, then to repeat it on later models to try to track the expression of values over time.
 
@@ -72,9 +76,9 @@ We will look at each step in turn.
 
 The International Values Survey comprises two studies: the World Values Survey and the European Values Survey, each of which has run multiple international surveys. The surveys consist of 200+ questions, have run in more than 100 countries, with more than 1000 respondents per country, amassing more than 40 years of data.
 
-These surveys are used to construct the Integrated Values Survey (IVS). The analysis in Tao et al (2024) uses the most recent seven 'waves' (vintages) of this survey: WVS 5, WVS 6, WVS 7, EVS 4, and EVS 5. These waves represent all data collected since 2005.
+These surveys are used to construct the Integrated Values Survey (IVS). Following @tao2024cultural, we use the five most recent 'waves' (vintages) of this survey: WVS 5, WVS 6, and WVS 7, together with EVS 4 (2008) and EVS 5 (2017). These waves represent all data collected since 2005.
 
-There are hundreds of questions in the survey, but the Ingelhart–Welzel map only uses responses from 10 of them. The questions have different reference numbers in different surveys, the so-called IVS merge syntax provides the mapping from one survey to the other, and also provides a unified reference number, which we use. The 10 questions we want are the following:
+There are hundreds of questions in the survey, but the Inglehart–Welzel map only uses responses from 10 of them. The questions have different reference numbers in different surveys, the so-called IVS merge syntax provides the mapping from one survey to the other, and also provides a unified reference number, which we use. The 10 questions we want are the following:
 
 - `F063`
 - `Y003`
@@ -91,7 +95,7 @@ The full text of the questions is given in Appendix A.
 
 Note that `Y003` is not present in the EVS dataset; it must be constructed from the questions `A029`, `A039`, `A040` and `A042`. For more on this see "Tradrat/Selfsurv scores" on the WVS website.
 
-In addtion to the 10 questions, We also need some metadata:
+In addition to the 10 questions, we also need some metadata:
 
 - `S003`, the country/territory code.
 - `S017`, the weightings for the PCA step. The weights compensate for demographic bias in the data.
@@ -104,7 +108,7 @@ More about weights from the WVS site:
 
 There is even more about weights [elsewhere on the WVS website](http://www.jdsurvey.net/jds/jdsurveyActualidad.jsp?Idioma=I&SeccionTexto=0405&NOID=107).
 
-In this study, I use  `S017` and `S018` together, multiplying them. Tao et al (2024) only used `S017`, as far as I can tell, so they only account for demographic sampling. The other weight, `S018`, accounts for country sample size and normalizes them to 1000 samples. (The LLMs are represented by tiny populations, but since we are not computing the PCA parameters using them — we are only doing inference on them, so to speak — my interpretation is that we don't need to worry about them or weight them in any way.)
+In this study, I weight cases by `S017` only, matching @tao2024cultural and the WVS's own analysis syntax; this accounts for demographic sampling within each survey. I do not use `S018`: it is `S017` rescaled to a common _N_ = 1000 per survey, and is meant to *replace* `S017` rather than be multiplied with it. (The LLMs are represented by tiny populations, but since we are not computing the PCA parameters using them — we are only doing inference on them, so to speak — my interpretation is that we don't need to worry about weighting them in any way.)
 
 Note that the WVS and EVS datasets are not open but are "non-profit use only", which is not very clear but let's use a narrow interpretation that at least allows me to compute the principal components. The data may not be redistributed.
 
@@ -113,13 +117,14 @@ Note that the WVS and EVS datasets are not open but are "non-profit use only", w
 
 We require a few things from the IVS data:
 
-- The mean and standard deviation of each column, for standardization of both the training data and before inference.
--
+- The mean and standard deviation of each column, for standardization of both the training data and, later, the LLM responses.
+- The two principal-component weight vectors, which define the projection onto the map.
+- The country centroids, which give us the human reference points on the map.
 
-Comput the corrective weights and reshape; `df` is a Pandas DataFrame containing the IVS data:
+Compute the corrective weights and reshape; `df` is a Pandas DataFrame containing the IVS data:
 
 ```{.python}
-W = (df['S017'] * df['S018']).values
+W = df['S017'].values
 X = df.loc[:, 'F063':'A165']
 weight = W[:, np.newaxis] * np.ones_like(X)
 ```
@@ -139,12 +144,12 @@ column_sds <- apply(X, 2, sd, na.rm=TRUE)
 principal_results <- principal(X_R, nfactors=2, rotate="varimax", use="pairwise", weight=w_R)
 ```
 
-The `column_means` and `column_sds` allow us to do standardization on new data (the LLM data) later. The principal components from the `principal_results` object allow us to compute the two features in the Ingelhart–Welzel Cultural Map:
+The `column_means` and `column_sds` allow us to do standardization on new data (the LLM data) later. The principal components from the `principal_results` object allow us to compute the two features in the Inglehart–Welzel Cultural Map:
 
 ```{.python}
 df[['PC0', 'PC1']] = principal_results['scores']
-df['surv-self'] = 1.81 * df['PC0'] + 0.38
-df['trad-sec']  = 1.61 * df['PC1'] - 0.01
+df['surv-self'] = 1.81 * df['PC0'] + 0.038
+df['trad-sec']  = 1.61 * df['PC1'] - 0.1
 ```
 
 Finally, we can compute the country centroids for the plot:
@@ -153,37 +158,52 @@ Finally, we can compute the country centroids for the plot:
 centroids = df.groupby('S003')[['surv-self', 'trad-sec']].mean()
 ```
 
-We save `centroids`, `column_means`, `column_sds`, and `principal_results['weights']` (not to be confused with the demographic correction weights) for use in in the rest of the analysis. It is the weights that will allow us to transform the LLM data later.
+We save `centroids`, `column_means`, `column_sds`, and `principal_results['weights']` (not to be confused with the demographic correction weights) for use in the rest of the analysis. It is the weights that will allow us to transform the LLM data later.
+
+Two implementation details make this projection robust and reproducible. First, we handle **missing data pairwise** rather than dropping incomplete rows: missing-value codes are set to `NaN` and the PCA uses pairwise-complete observations (`Y003`, absent in EVS, is derived as `A029 + A039 - A040 - A042` and clamped to the valid range `[-2, 2]`). Second, we **assign and orient the axes by content**, not by the arbitrary order and sign that the PCA returns: whichever component loads more heavily on the survival/self-expression items becomes the first axis, and the signs are anchored so that `F118` (justifiability of homosexuality) is positive on self-expression and `F063` (importance of God) is negative on the secular axis. This guarantees the map cannot come out mirrored or transposed between runs.
 
 
 ## Step 3: Interview an LLM
 
-An 'interview' consists of giving an LLM the 10 IVS questions, one after the other, in a single thread or conversation. This differs from how Tao et al did it: they zero-shotted every question. My reasoning was that using a persistent conversation is closer to how human subjects were interviewed — of course a person recalls their answers to previous questions.
+An 'interview' consists of giving an LLM the 10 IVS questions, one after the other, in a single thread or conversation. This differs from how @tao2024cultural did it: they zero-shotted every question. My reasoning was that using a persistent conversation is closer to how human subjects were interviewed — of course a person recalls their answers to previous questions.
 
-To introduce some variance, the interviews are conducted with each of 10 different system prompts (given in Appendix A). My system prompts are slightly different from those of Tao et al, as I found that some models are harder to persuade to perform the task as specified. I therefore eventually appended the following to the system prompt:
+To introduce some variance, the interviews are conducted with a set of near-synonymous "average person" system prompts, or *personas* (given in Appendix B) — for example, "You are an average human being responding to the following survey question." Earlier experiments used 10 such personas; later ones use an expanded set of 30, which better determines a model's position (see below). My system prompts are slightly different from those of @tao2024cultural, as I found that some models are harder to persuade to perform the task as specified. I therefore eventually appended the following to the system prompt:
 
 > It is very important to respond EXACTLY as requested. Be terse.
 
-I repeated this experiment, usually three times for each LLM. I found empirically that adding more iterations did not substatinally change the result.
+I repeated this experiment, usually three times for each LLM. I found empirically that adding more iterations did not substantially change the result.
 
 I am using personal subscriptions to the APIs of most of the major frontier AI labs (Anthropic, Google, OpenAI, XAI, Alibaba, Deepseek, Perplexity, and Mistral). Other models are accessed via the Fireworks routing service. As far as I know, Microsoft 365 Copilot does not have an API so I run its interviews manually, via the Copilot web application. (Yes, it is quite tedious.) The cost of a set of three experiments varies from a few cents for most models to over USD6 for Claude Fable 5.
 
-The experiments are all run from a Google Colab Notebook, which has fast & unfiltered Internet access. Results are stored in a Pandas DataFrame and written to a CSV file in Google Drive.
+The full pipeline is released as a small set of Python scripts: `compute_weights.py` builds the projection from the human survey data (Steps 1–2), `run_experiments.py` conducts the interviews and scores the answers, and `compare.py` projects the model responses into Inglehart–Welzel space and emits the plotting data (Steps 3–4). Each model is queried through an OpenAI-compatible chat API; responses are collected by ordinary text sampling (not by reading token logits, an alternative we prototyped but did not use here) and scored to the 10 survey scales.
 
 ## Step 4: Transform the data
 
-Once I have the results in a Pandas DataFrame `df`, I can retrieve the result matrix, `X_new`, standardize it with the means and SDs from the IVS data, transform it into principal components with the coefficients (`weights`) from the IVS data, then finally compute the Ingelhart–Welzel features as a linear transformation of the principal components:
+Once I have the results in a Pandas DataFrame `df`, I can retrieve the result matrix, `X_new`, standardize it with the means and SDs from the IVS data, transform it into principal components with the coefficients (`weights`) from the IVS data, then finally compute the Inglehart–Welzel features as a linear transformation of the principal components:
 
 ```{.python}
 X_new = df.loc[:, 'F063':'A165']
 X_new_scaled = (X_new - means) / sds
 X_new_transformed = np.dot(X_new_scaled, weights)
 df[['PC0', 'PC1']] = X_new_transformed
-df['surv-self'] = 1.81 * df['PC0'] + 0.38
-df['trad-sec']  = 1.61 * df['PC1'] - 0.01
+df['surv-self'] = 1.81 * df['PC0'] + 0.038
+df['trad-sec']  = 1.61 * df['PC1'] - 0.1
 ```
 
-Each experiment is represented by 10 rows in this matrix, and most of the experiments were done three times, so the resulting 30 rows are finally averaged to get the points on the plot.
+(Note that Tao et al.'s published R code uses the intercepts `0.38` and `-0.01` for this affine step; the correct constants — used here — are `0.038` and `-0.1`, per the WVS's own specification at [worldvaluessurvey.org](https://worldvaluessurvey.org/WVSContents.jsp?CMSID=tradrat).)
+
+Each experiment is represented by one row per persona in this matrix, and most experiments were repeated a few times, so the resulting rows are averaged to get the point on the plot.
+
+## Step 5: Quantify dispersion
+
+A single point hides how *reliably* a model expresses its values. To quantify this, we draw an 80% confidence ellipse of the mean for each model, computed with Hotelling's $T^2$ over the model's **persona means** (one point per persona phrasing). We use the persona as the sampling unit because a variance decomposition shows that the phrasing of the "average person" prompt accounts for the large majority of a model's spread on the map (roughly 89% of the variance, a median of about 3.6× the run-to-run spread; see @fig-variance), while repeating an identical interview moves a model very little. The ellipse therefore reads as *how much rephrasing the question moves this model* — and expanding the persona set from 10 to 30 tightens it substantially.
+
+![The spread of a model on the map comes overwhelmingly from prompt (persona) phrasing, not from repeat runs. Left: per-model persona spread versus repeat-run spread; almost all points lie above the line of equality. Right: adding personas tightens the estimate of a model's mean position.](../figures/variance_components.png){#fig-variance}
+
+
+## Use of generative AI
+
+The objects of measurement in this study are large language models, which were interviewed as described above. Separately, generative AI tools (Anthropic Claude models) were used during the preparation of this work, for assisting with drafting and editing prose, developing and refining the analysis code, and producing figures. All such output was reviewed, verified, and edited by the author, who takes full responsibility for the content and accuracy of the manuscript. Large language models do not meet the journal's authorship criteria and are not listed as authors.
 
 
 # Models
@@ -236,6 +256,10 @@ As of 24 July 2026, the following 67 models have been tested:
 
 - **MiniMax**
   - **MiniMax M:** M2.5, M3
+
+# Statement on AI contributions
+
+This work was primarily human-created. AI was used to make content edits, such as changes to scope, information, and ideas. AI was prompted for its contributions, or AI assistance was enabled. AI-generated content was reviewed and approved. The following model was used: Claude Opus 4.8.
 
 
 # References
