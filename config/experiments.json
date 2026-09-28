@@ -1641,6 +1641,15 @@
     "lineage": "Claude Opus",
     "batch": "v2"
   },
+  "1552": {
+    "provider": "Anthropic",
+    "model": "claude-sonnet-5-5",
+    "label": "Claude Sonnet 5.5",
+    "vendor": "Anthropic",
+    "release": "2026-09-28",
+    "lineage": "Claude Sonnet",
+    "batch": "v2"
+  },
   "1600": {
     "provider": "Microsoft",
     "model": "M365 Copilot",
