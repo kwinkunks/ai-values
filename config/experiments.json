@@ -1064,6 +1064,15 @@
     "batch": "v2",
     "release": "2026-09-22"
   },
+  "1375": {
+    "provider": "Foundry",
+    "model": "gpt-6.1-sol",
+    "label": "GPT-6.1 Sol",
+    "vendor": "OpenAI",
+    "lineage": "GPT-6",
+    "batch": "v2",
+    "release": "2026-09-29"
+  },
   "1400": {
     "provider": "XAI",
     "model": "grok-3",
