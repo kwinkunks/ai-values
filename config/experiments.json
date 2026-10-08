@@ -1659,6 +1659,15 @@
     "lineage": "Claude Sonnet",
     "batch": "v2"
   },
+  "1553": {
+    "provider": "Anthropic",
+    "model": "claude-haiku-5-5",
+    "label": "Claude Haiku 5.5",
+    "vendor": "Anthropic",
+    "release": "2026-10-08",
+    "lineage": "Claude Haiku",
+    "batch": "v2"
+  },
   "1600": {
     "provider": "Microsoft",
     "model": "M365 Copilot",
