@@ -104,6 +104,24 @@
     "lineage": "Mistral Large",
     "release": "2025-12"
   },
+  "1110": {
+    "provider": "Mistral",
+    "model": "mistral-large-4",
+    "label": "Mistral L 4",
+    "vendor": "Mistral",
+    "lineage": "Mistral Large",
+    "release": "2026-10",
+    "batch": "v2"
+  },
+  "1111": {
+    "provider": "Mistral",
+    "model": "mistral-small-2603",
+    "label": "Mistral S 4",
+    "vendor": "Mistral",
+    "lineage": "Mistral Small",
+    "release": "2026-03",
+    "batch": "v2"
+  },
   "1200": {
     "provider": "Gemini",
     "model": "gemini-2.0-flash",

@@ -10,6 +10,7 @@ Usage:
 import argparse
 import json
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
@@ -123,12 +124,14 @@ def run_experiment(expt_id: str, cfg: dict, questions: dict, respondents: list,
         row = {'experiment_id': expt_id, 'run_at': run_at, 'system': system}
 
         for variable, question in questions.items():
+
             prompt = f'{q_prefix}{question}'
 
             if zero_shot:
                 answer = Convo(provider, model, system_prompt).ask(prompt, reasoning_effort).casefold()
             else:
                 for _ in range(MAX_RETRIES):
+                    time.sleep(0.5)  # brief pause before retrying
                     answer = convo.ask(prompt, reasoning_effort).casefold()
                     if len(answer) < SHORT_ANSWER_THRESHOLD:
                         break
@@ -138,6 +141,8 @@ def run_experiment(expt_id: str, cfg: dict, questions: dict, respondents: list,
             except (ValueError, AttributeError):
                 tqdm.write(f'  Could not score {variable} for expt {expt_id}: {answer!r}')
                 row[variable] = np.nan
+
+            time.sleep(0.5)  # brief pause between questions
 
         rows.append(row)
     return rows

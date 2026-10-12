@@ -11,6 +11,15 @@ _THINK_RE = re.compile(r'<(thought|thinking|think)>.*?</\1>', re.IGNORECASE | re
 def _strip_thoughts(text: str) -> str:
     return _THINK_RE.sub('', text).strip()
 
+
+def _text_of(content) -> str:
+    """Some reasoning models (e.g. Mistral Large 4) return content as a list of chunks,
+    [{'type': 'thinking', ...}, {'type': 'text', 'text': ...}]. Keep only the text chunks."""
+    if isinstance(content, list):
+        return ''.join(c.get('text', '') for c in content
+                       if isinstance(c, dict) and c.get('type') == 'text')
+    return content
+
 PROVIDER_URLS = {
     'foundry': 'https://mtha-testbed-proj-resource.openai.azure.com/openai/v1',
     'anthropic': 'https://api.anthropic.com/v1',
@@ -51,7 +60,7 @@ class Convo:
         if reasoning_effort is not None:
             params['reasoning_effort'] = reasoning_effort
         response = self._client.chat.completions.create(**params)
-        content = response.choices[0].message.content
+        content = _text_of(response.choices[0].message.content)
         if content:
             content = _strip_thoughts(content)
         self.log_data.append(response)
