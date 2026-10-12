@@ -11,8 +11,7 @@ __pycache__/
 # Environment / secrets
 .env
 
-# Experiment outputs (responses are local; weights/centroids are committed)
-out/responses.csv
+# Regenerable experiment outputs (responses.csv is committed: LLM runs cannot be repeated)
 out/coords.csv
 
 # Raw WVS/EVS data (licensed, must not be redistributed)
