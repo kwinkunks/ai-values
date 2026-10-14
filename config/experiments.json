@@ -136,7 +136,8 @@
     "label": "Gemini 2",
     "vendor": "Google",
     "lineage": "Gemini",
-    "release": "2025-02-05"
+    "release": "2025-02-05",
+    "exclude": "E025 and A165 missing for every row (lost in the Colab migration); model retired (404), cannot be re-run. Gemini 2 = 1200 only."
   },
   "1202": {
     "provider": "Gemini",
@@ -144,7 +145,8 @@
     "label": "Gemini 2",
     "vendor": "Google",
     "lineage": "Gemini",
-    "release": "2025-02-05"
+    "release": "2025-02-05",
+    "exclude": "E025 and A165 missing for every row (lost in the Colab migration); model retired (404), cannot be re-run. Gemini 2 = 1200 only."
   },
   "1203": {
     "provider": "Gemini",
@@ -437,6 +439,15 @@
     "zero_shot": true,
     "lineage": "Gemma",
     "batch": "v1.5"
+  },
+  "1237": {
+    "provider": "Gemini",
+    "model": "gemini-4-argon",
+    "label": "Gemini 4 Argon",
+    "vendor": "Google",
+    "release": "2026-10",
+    "lineage": "Gemini",
+    "batch": "v2"
   },
   "1300": {
     "provider": "OpenAI",
@@ -1684,6 +1695,15 @@
     "vendor": "Anthropic",
     "release": "2026-10-08",
     "lineage": "Claude Haiku",
+    "batch": "v2"
+  },
+  "1554": {
+    "provider": "Anthropic",
+    "model": "claude-sonnet-5-5",
+    "label": "Claude Sonnet 5.5",
+    "vendor": "Anthropic",
+    "release": "2026-09-28",
+    "lineage": "Claude Sonnet",
     "batch": "v2"
   },
   "1600": {

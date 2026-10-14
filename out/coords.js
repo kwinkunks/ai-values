@@ -2,644 +2,674 @@ window.COORDS = [
 {
 "country": "Albania",
 "region": "African-Islamic",
-"x": -0.892257,
-"y": -0.004902
+"x": -0.865031,
+"y": 0.090798
 },
 {
 "country": "Algeria",
 "region": "African-Islamic",
-"x": -1.208666,
-"y": -0.371844
+"x": -1.232757,
+"y": -0.345058
 },
 {
 "country": "Andorra",
 "region": "Catholic Europe",
-"x": 2.045015,
-"y": 0.232155
+"x": 1.889936,
+"y": 0.210762
 },
 {
 "country": "Argentina",
 "region": "Latin America",
-"x": 0.288082,
-"y": -0.396402
+"x": 0.244762,
+"y": -0.349562
 },
 {
 "country": "Armenia",
 "region": "Orthodox Europe",
-"x": -1.096778,
-"y": -0.3498
+"x": -1.110553,
+"y": -0.319797
 },
 {
 "country": "Australia",
 "region": "English-Speaking",
-"x": 2.233949,
-"y": -0.496401
+"x": 2.157587,
+"y": -0.497772
 },
 {
 "country": "Austria",
 "region": "Catholic Europe",
-"x": 1.519651,
-"y": 0.145792
+"x": 1.434979,
+"y": 0.218089
 },
 {
 "country": "Azerbaijan",
 "region": "African-Islamic",
-"x": -1.08499,
-"y": -0.254335
+"x": -1.04499,
+"y": -0.24346
 },
 {
 "country": "Bangladesh",
 "region": "African-Islamic",
-"x": -1.195078,
-"y": -1.19901
+"x": -1.256844,
+"y": -1.155498
 },
 {
 "country": "Belarus",
 "region": "Orthodox Europe",
-"x": -0.334991,
-"y": 0.376651
+"x": -0.378042,
+"y": 0.503985
 },
 {
 "country": "Belgium",
 "region": "Catholic Europe",
-"x": 1.507168,
-"y": -0.204419
+"x": 1.474659,
+"y": -0.214108
 },
 {
 "country": "Bolivia",
 "region": "Latin America",
-"x": -0.829802,
-"y": -0.979804
+"x": -0.870633,
+"y": -0.966903
 },
 {
 "country": "Bosnia Herzegovina",
 "region": "Orthodox Europe",
-"x": -0.684177,
-"y": 0.280546
+"x": -0.694962,
+"y": 0.285076
 },
 {
 "country": "Brazil",
 "region": "Latin America",
-"x": -0.378097,
-"y": -0.466772
+"x": -0.406487,
+"y": -0.383923
 },
 {
 "country": "Bulgaria",
 "region": "Orthodox Europe",
-"x": -0.255993,
-"y": 0.988137
+"x": -0.351508,
+"y": 1.093984
 },
 {
 "country": "Burkina Faso",
 "region": "African-Islamic",
-"x": -1.189182,
-"y": -0.933758
+"x": -1.149224,
+"y": -0.878211
 },
 {
 "country": "Canada",
 "region": "English-Speaking",
-"x": 2.065482,
-"y": -0.16357
+"x": 2.01461,
+"y": -0.203381
 },
 {
 "country": "Chile",
 "region": "Latin America",
-"x": -0.082343,
-"y": -0.190113
+"x": -0.121917,
+"y": -0.092983
 },
 {
 "country": "China",
 "region": "Confucian",
-"x": 0.120588,
-"y": 0.620403
+"x": 0.038211,
+"y": 0.755881
 },
 {
 "country": "Colombia",
 "region": "Latin America",
-"x": -0.491168,
-"y": -1.62753
+"x": -0.505261,
+"y": -1.614372
 },
 {
 "country": "Croatia",
 "region": "Catholic Europe",
-"x": 0.133114,
-"y": 0.102402
+"x": 0.119765,
+"y": 0.126574
 },
 {
 "country": "Cyprus",
 "region": "West & South Asia",
-"x": -0.501571,
-"y": -0.292018
+"x": -0.482357,
+"y": -0.232529
 },
 {
 "country": "Czechia",
 "region": "Catholic Europe",
-"x": 1.097628,
-"y": 0.929337
+"x": 1.082391,
+"y": 0.930271
 },
 {
 "country": "Denmark",
 "region": "Protestant Europe",
-"x": 3.067646,
-"y": 0.024179
+"x": 2.956834,
+"y": 0.027792
 },
 {
 "country": "Ecuador",
 "region": "Latin America",
-"x": -0.731803,
-"y": -1.585103
+"x": -0.725231,
+"y": -1.573531
+},
+{
+"country": "Egypt",
+"region": "African-Islamic",
+"x": -1.959586,
+"y": -0.274127
 },
 {
 "country": "Estonia",
 "region": "Orthodox Europe",
-"x": 0.257996,
-"y": 1.050017
+"x": 0.178298,
+"y": 0.986889
 },
 {
 "country": "Ethiopia",
 "region": "African-Islamic",
-"x": -1.192332,
-"y": -0.630401
+"x": -1.156381,
+"y": -0.54557
 },
 {
 "country": "Finland",
 "region": "Protestant Europe",
-"x": 2.079555,
-"y": 0.156514
+"x": 1.963269,
+"y": 0.169779
 },
 {
 "country": "France",
 "region": "Catholic Europe",
-"x": 1.769232,
-"y": -0.025752
+"x": 1.752788,
+"y": -0.034076
 },
 {
 "country": "Georgia",
 "region": "Orthodox Europe",
-"x": -1.357424,
-"y": -0.399842
+"x": -1.338218,
+"y": -0.373667
 },
 {
 "country": "Germany",
 "region": "Protestant Europe",
-"x": 1.729091,
-"y": 0.832819
+"x": 1.640452,
+"y": 0.822747
 },
 {
 "country": "Ghana",
 "region": "African-Islamic",
-"x": -1.413788,
-"y": -1.539598
+"x": -1.406907,
+"y": -1.524765
 },
 {
 "country": "Great Britain",
 "region": "English-Speaking",
-"x": 2.129918,
-"y": -0.158372
+"x": 2.022358,
+"y": -0.164666
 },
 {
 "country": "Greece",
 "region": "Orthodox Europe",
-"x": -0.175543,
-"y": 0.267861
+"x": -0.196069,
+"y": 0.300353
 },
 {
 "country": "Guatemala",
 "region": "Latin America",
-"x": -0.712364,
-"y": -1.180141
+"x": -0.508696,
+"y": -1.102385
 },
 {
 "country": "Haiti",
 "region": "Latin America",
-"x": -0.249498,
-"y": -0.776307
+"x": -0.256583,
+"y": -0.773747
 },
 {
 "country": "Hong Kong SAR",
 "region": "Confucian",
-"x": 0.52116,
-"y": 1.386459
+"x": 0.395398,
+"y": 1.378255
 },
 {
 "country": "Hungary",
 "region": "Catholic Europe",
-"x": 0.087995,
-"y": 0.6896
+"x": 0.119284,
+"y": 0.692239
 },
 {
 "country": "Iceland",
 "region": "Protestant Europe",
-"x": 2.787673,
-"y": -0.327594
+"x": 2.700087,
+"y": -0.337254
 },
 {
 "country": "India",
 "region": "West & South Asia",
-"x": -0.734847,
-"y": -0.368275
+"x": -0.767899,
+"y": -0.36889
 },
 {
 "country": "Indonesia",
 "region": "West & South Asia",
-"x": -1.343998,
-"y": -0.50289
+"x": -1.346394,
+"y": -0.445092
 },
 {
 "country": "Iran",
 "region": "African-Islamic",
-"x": -1.12531,
-"y": -0.152242
+"x": -1.281059,
+"y": -0.247496
 },
 {
 "country": "Iraq",
 "region": "African-Islamic",
-"x": -1.577285,
-"y": -0.356765
+"x": -1.594847,
+"y": -0.510724
 },
 {
 "country": "Ireland",
 "region": "English-Speaking",
-"x": 0.679042,
-"y": -1.19427
+"x": 0.69673,
+"y": -1.121225
 },
 {
 "country": "Italy",
 "region": "Catholic Europe",
-"x": 0.784969,
-"y": 0.0789
+"x": 0.616538,
+"y": 0.005607
 },
 {
 "country": "Japan",
 "region": "Confucian",
-"x": 1.337496,
-"y": 1.573986
+"x": 1.231373,
+"y": 1.545688
 },
 {
 "country": "Jordan",
 "region": "African-Islamic",
-"x": -1.760614,
-"y": -1.121209
+"x": -1.746103,
+"y": -1.103107
 },
 {
 "country": "Kazakhstan",
 "region": "African-Islamic",
-"x": -0.683075,
-"y": -0.038334
+"x": -0.668672,
+"y": 0.008849
 },
 {
 "country": "Kenya",
 "region": "African-Islamic",
-"x": -0.61574,
-"y": -0.744078
+"x": -0.568026,
+"y": -0.700559
 },
 {
 "country": "Kosovo",
 "region": "African-Islamic",
-"x": -0.803779,
-"y": -0.964644
+"x": -0.778664,
+"y": -0.843529
+},
+{
+"country": "Kuwait",
+"region": "African-Islamic",
+"x": -0.65365,
+"y": -1.195419
 },
 {
 "country": "Kyrgyzstan",
 "region": "African-Islamic",
-"x": -0.973835,
-"y": -0.640177
+"x": -0.93501,
+"y": -0.65591
 },
 {
 "country": "Latvia",
 "region": "Catholic Europe",
-"x": 0.084637,
-"y": 0.902786
+"x": 0.001025,
+"y": 0.925383
 },
 {
 "country": "Lebanon",
 "region": "African-Islamic",
-"x": -1.083681,
-"y": 0.018203
+"x": -1.033729,
+"y": 0.092076
 },
 {
 "country": "Libya",
 "region": "African-Islamic",
-"x": -1.577842,
-"y": -1.249374
+"x": -1.525649,
+"y": -1.199867
 },
 {
 "country": "Lithuania",
 "region": "Catholic Europe",
-"x": -0.115038,
-"y": 1.048269
+"x": -0.16195,
+"y": 1.099388
 },
 {
 "country": "Luxembourg",
 "region": "Catholic Europe",
-"x": 1.596898,
-"y": 0.000242
+"x": 1.485722,
+"y": -0.051492
 },
 {
 "country": "Macau SAR",
 "region": "Confucian",
-"x": 0.595046,
-"y": 1.278324
+"x": 0.59798,
+"y": 1.287374
 },
 {
 "country": "Malaysia",
 "region": "West & South Asia",
-"x": -0.705467,
-"y": -0.279742
+"x": -0.702615,
+"y": -0.28604
 },
 {
 "country": "Maldives",
 "region": "African-Islamic",
-"x": -1.10498,
-"y": -1.10218
+"x": -1.117245,
+"y": -1.097616
 },
 {
 "country": "Mali",
 "region": "African-Islamic",
-"x": -0.573251,
-"y": -1.3104
+"x": -0.640391,
+"y": -1.13026
 },
 {
 "country": "Malta",
 "region": "Latin America",
-"x": -0.408713,
-"y": -1.284026
+"x": -0.565735,
+"y": -1.192253
 },
 {
 "country": "Mexico",
 "region": "Latin America",
-"x": -0.115906,
-"y": -1.379835
+"x": -0.137139,
+"y": -1.361978
 },
 {
 "country": "Moldova",
 "region": "Orthodox Europe",
-"x": -1.394527,
-"y": 1.049451
+"x": -1.411564,
+"y": 0.997162
 },
 {
 "country": "Mongolia",
 "region": "Confucian",
-"x": 0.363083,
-"y": 0.852786
+"x": 0.369651,
+"y": 0.848069
 },
 {
 "country": "Montenegro",
 "region": "Orthodox Europe",
-"x": -0.393389,
-"y": 0.140474
+"x": -0.337058,
+"y": 0.115321
 },
 {
 "country": "Morocco",
 "region": "African-Islamic",
-"x": -1.264827,
-"y": -0.227766
+"x": -1.399435,
+"y": -0.323167
 },
 {
 "country": "Myanmar",
 "region": "West & South Asia",
-"x": -1.388643,
-"y": -0.527814
+"x": -1.379778,
+"y": -0.524713
 },
 {
 "country": "Netherlands",
 "region": "Protestant Europe",
-"x": 2.398557,
-"y": 0.018439
+"x": 2.263095,
+"y": 0.077267
 },
 {
 "country": "New Zealand",
 "region": "English-Speaking",
-"x": 2.436745,
-"y": -0.535351
+"x": 2.12337,
+"y": -0.526857
 },
 {
 "country": "Nicaragua",
 "region": "Latin America",
-"x": -0.980701,
-"y": -1.463178
+"x": -0.974745,
+"y": -1.410255
 },
 {
 "country": "Nigeria",
 "region": "African-Islamic",
-"x": -1.337475,
-"y": -0.923592
+"x": -1.34279,
+"y": -0.928103
 },
 {
 "country": "North Ireland",
 "region": "English-Speaking",
-"x": 0.910949,
-"y": -0.472001
+"x": 0.939471,
+"y": -0.498419
 },
 {
 "country": "North Macedonia",
 "region": "Orthodox Europe",
-"x": -0.013292,
-"y": 0.438382
+"x": -0.159907,
+"y": 0.175492
 },
 {
 "country": "Northern Cyprus",
 "region": "West & South Asia",
-"x": -0.76702,
-"y": 0.069956
+"x": -0.763038,
+"y": 0.088539
 },
 {
 "country": "Norway",
 "region": "Protestant Europe",
-"x": 2.9144,
-"y": 0.128596
+"x": 2.827608,
+"y": 0.124214
 },
 {
 "country": "Pakistan",
 "region": "African-Islamic",
-"x": -1.143179,
-"y": -0.880937
+"x": -1.127852,
+"y": -0.883439
 },
 {
 "country": "Palestine",
 "region": "African-Islamic",
-"x": -1.620069,
-"y": -0.451462
+"x": -1.613135,
+"y": -0.388628
 },
 {
 "country": "Peru",
 "region": "Latin America",
-"x": -0.82121,
-"y": -0.777943
+"x": -0.814201,
+"y": -0.700268
 },
 {
 "country": "Philippines",
 "region": "Latin America",
-"x": -0.486229,
-"y": -1.231241
+"x": -0.487837,
+"y": -1.230265
 },
 {
 "country": "Poland",
 "region": "Catholic Europe",
-"x": -0.125133,
-"y": -0.367357
+"x": -0.192101,
+"y": -0.34242
 },
 {
 "country": "Portugal",
 "region": "Catholic Europe",
-"x": -0.11328,
-"y": -0.286883
+"x": -0.190007,
+"y": -0.261254
 },
 {
 "country": "Puerto Rico",
 "region": "Latin America",
-"x": 0.023108,
-"y": -1.572725
+"x": 0.082986,
+"y": -1.528954
+},
+{
+"country": "Qatar",
+"region": "African-Islamic",
+"x": -1.112736,
+"y": -2.027873
 },
 {
 "country": "Romania",
 "region": "Orthodox Europe",
-"x": -1.118708,
-"y": 0.137669
+"x": -1.134718,
+"y": 0.192308
 },
 {
 "country": "Russia",
 "region": "Orthodox Europe",
-"x": -0.508602,
-"y": 0.619317
+"x": -0.539164,
+"y": 0.644946
 },
 {
 "country": "Rwanda",
 "region": "African-Islamic",
-"x": -1.240991,
-"y": -0.895208
+"x": -1.24273,
+"y": -0.891117
 },
 {
 "country": "Serbia",
 "region": "Orthodox Europe",
-"x": -0.26088,
-"y": 0.50621
+"x": -0.276203,
+"y": 0.538218
 },
 {
 "country": "Singapore",
 "region": "West & South Asia",
-"x": -0.13078,
-"y": 0.185384
+"x": 0.062635,
+"y": 0.053504
 },
 {
 "country": "Slovakia",
 "region": "Catholic Europe",
-"x": 0.358479,
-"y": 0.405369
+"x": 0.265829,
+"y": 0.457876
 },
 {
 "country": "Slovenia",
 "region": "Catholic Europe",
-"x": 1.17501,
-"y": 0.508466
+"x": 1.043881,
+"y": 0.537885
 },
 {
 "country": "South Africa",
 "region": "African-Islamic",
-"x": -0.024091,
-"y": -0.252691
+"x": -0.329029,
+"y": -0.591961
 },
 {
 "country": "South Korea",
 "region": "Confucian",
-"x": 0.048353,
-"y": 1.292632
+"x": 0.044824,
+"y": 1.289073
 },
 {
 "country": "Spain",
 "region": "Catholic Europe",
-"x": 1.110302,
-"y": 0.019879
+"x": 1.004693,
+"y": 0.003296
 },
 {
 "country": "Sweden",
 "region": "Protestant Europe",
-"x": 3.247857,
-"y": 0.518817
+"x": 3.053718,
+"y": 0.48039
 },
 {
 "country": "Switzerland",
 "region": "Protestant Europe",
-"x": 2.363355,
-"y": 0.032483
+"x": 2.169494,
+"y": 0.024419
 },
 {
 "country": "Taiwan ROC",
 "region": "Confucian",
-"x": -0.084344,
-"y": 1.472403
+"x": -0.113231,
+"y": 1.441894
+},
+{
+"country": "Tajikistan",
+"region": "African-Islamic",
+"x": -0.846418,
+"y": -1.156743
 },
 {
 "country": "Thailand",
 "region": "West & South Asia",
-"x": -0.233054,
-"y": -0.137011
+"x": -0.203724,
+"y": -0.099465
 },
 {
 "country": "Trinidad and Tobago",
 "region": "Latin America",
-"x": -0.939656,
-"y": -1.58974
+"x": -0.942303,
+"y": -1.576133
 },
 {
 "country": "Tunisia",
 "region": "African-Islamic",
-"x": -1.687997,
-"y": -0.273522
+"x": -1.64784,
+"y": -0.162215
 },
 {
 "country": "Turkey",
 "region": "African-Islamic",
-"x": -0.97759,
-"y": -0.481141
+"x": -1.135002,
+"y": -0.414441
 },
 {
 "country": "Ukraine",
 "region": "Orthodox Europe",
-"x": -0.700921,
-"y": 0.721195
+"x": -0.710819,
+"y": 0.684932
 },
 {
 "country": "United States",
 "region": "English-Speaking",
-"x": 1.219632,
-"y": -0.404278
+"x": 1.176629,
+"y": -0.412833
 },
 {
 "country": "Uruguay",
 "region": "Latin America",
-"x": 0.868616,
-"y": -0.536034
+"x": 0.720152,
+"y": -0.466663
+},
+{
+"country": "Uzbekistan",
+"region": "African-Islamic",
+"x": -0.325993,
+"y": -1.277546
 },
 {
 "country": "Venezuela",
 "region": "Latin America",
-"x": -0.620734,
-"y": -0.897054
+"x": -0.621189,
+"y": -0.892649
 },
 {
 "country": "Vietnam",
 "region": "West & South Asia",
-"x": 0.175507,
-"y": -0.583768
+"x": 0.150733,
+"y": -0.506761
 },
 {
 "country": "Yemen",
 "region": "African-Islamic",
-"x": -1.581255,
-"y": -1.015774
+"x": -1.588342,
+"y": -0.958293
 },
 {
 "country": "Zambia",
 "region": "African-Islamic",
-"x": -1.077242,
-"y": -0.146348
+"x": -1.037944,
+"y": -0.136305
 },
 {
 "country": "Zimbabwe",
 "region": "African-Islamic",
-"x": -1.587823,
-"y": -0.520036
+"x": -1.589916,
+"y": -0.514902
 },
 {
 "country": "Claude Fable 5",
@@ -1366,12 +1396,12 @@ window.COORDS = [
 {
 "country": "Claude Haiku 5.5",
 "region": "Anthropic",
-"x": 0.567018,
-"y": -0.464099,
-"ea": 0.317122,
-"eb": 0.25732,
-"etheta": 1.926732,
-"en": 28,
+"x": 0.593273,
+"y": -0.38656,
+"ea": 0.333114,
+"eb": 0.259801,
+"etheta": 1.644464,
+"en": 29,
 "lineage": "Claude Haiku",
 "release": "2026-10-08",
 "pts": [
@@ -1458,6 +1488,10 @@ window.COORDS = [
 [
 -0.7167,
 -0.5088
+],
+[
+1.3284,
+1.7845
 ],
 [
 0.6358,
@@ -2202,11 +2236,11 @@ window.COORDS = [
 {
 "country": "Claude Opus 5",
 "region": "Anthropic",
-"x": 1.072662,
-"y": 0.64499,
-"ea": 0.435763,
-"eb": 0.093253,
-"etheta": -2.410549,
+"x": 1.062646,
+"y": 0.630956,
+"ea": 0.435842,
+"eb": 0.09334,
+"etheta": -2.409701,
 "en": 30,
 "lineage": "Claude Opus",
 "release": "2026-07-24",
@@ -2242,6 +2276,10 @@ window.COORDS = [
 [
 0.6504,
 0.397
+],
+[
+0.5719,
+-0.0567
 ],
 [
 -1.1385,
@@ -3296,11 +3334,11 @@ window.COORDS = [
 {
 "country": "Claude Sonnet 5.5",
 "region": "Anthropic",
-"x": 1.705005,
-"y": 1.060954,
-"ea": 0.167223,
-"eb": 0.059653,
-"etheta": 2.910077,
+"x": 1.699522,
+"y": 1.032582,
+"ea": 0.15743,
+"eb": 0.04104,
+"etheta": 2.982973,
 "en": 30,
 "lineage": "Claude Sonnet",
 "release": "2026-09-28",
@@ -3424,6 +3462,126 @@ window.COORDS = [
 [
 0.8231,
 1.3396
+],
+[
+1.3486,
+1.1296
+],
+[
+1.8742,
+0.9196
+],
+[
+2.0395,
+0.9145
+],
+[
+1.3486,
+1.1296
+],
+[
+1.514,
+1.1245
+],
+[
+2.0395,
+0.9145
+],
+[
+1.1071,
+0.8727
+],
+[
+2.0395,
+0.9145
+],
+[
+2.0395,
+0.9145
+],
+[
+2.0395,
+0.9145
+],
+[
+2.0395,
+0.9145
+],
+[
+2.0395,
+0.9145
+],
+[
+2.2811,
+1.1714
+],
+[
+1.514,
+1.1245
+],
+[
+2.0395,
+0.9145
+],
+[
+2.2811,
+1.1714
+],
+[
+2.0395,
+0.9145
+],
+[
+2.0395,
+0.9145
+],
+[
+2.0395,
+0.9145
+],
+[
+0.8231,
+1.3396
+],
+[
+1.3486,
+1.1296
+],
+[
+1.8742,
+0.9196
+],
+[
+2.0395,
+0.9145
+],
+[
+2.2811,
+1.1714
+],
+[
+1.3486,
+1.1296
+],
+[
+0.8586,
+0.6128
+],
+[
+1.3486,
+1.1296
+],
+[
+0.8231,
+1.3396
+],
+[
+1.514,
+1.1245
+],
+[
+0.8586,
+0.6128
 ]
 ]
 },
@@ -4248,11 +4406,11 @@ window.COORDS = [
 {
 "country": "GPT-4o",
 "region": "OpenAI",
-"x": 0.997338,
-"y": 1.490305,
-"ea": 0.496675,
-"eb": 0.291142,
-"etheta": 2.139905,
+"x": 0.97332,
+"y": 1.511304,
+"ea": 0.591187,
+"eb": 0.272511,
+"etheta": 2.14467,
 "en": 10,
 "lineage": "GPT-4",
 "release": "2024-11-20",
@@ -4306,6 +4464,10 @@ window.COORDS = [
 0.2245
 ],
 [
+-0.0363,
+3.4454
+],
+[
 -0.144,
 2.6958
 ],
@@ -4314,8 +4476,16 @@ window.COORDS = [
 1.7727
 ],
 [
+0.9538,
+1.6514
+],
+[
 1.2767,
 4.3434
+],
+[
+1.6182,
+-0.2269
 ],
 [
 2.2516,
@@ -4326,11 +4496,11 @@ window.COORDS = [
 {
 "country": "GPT-5",
 "region": "OpenAI",
-"x": 1.192148,
-"y": 0.501408,
-"ea": 0.954563,
-"eb": 0.319583,
-"etheta": -2.824122,
+"x": 1.174767,
+"y": 0.520835,
+"ea": 0.907653,
+"eb": 0.297885,
+"etheta": -2.876171,
 "en": 10,
 "lineage": "GPT-5",
 "release": "2025-08-07",
@@ -4350,6 +4520,10 @@ window.COORDS = [
 [
 -0.0252,
 0.3852
+],
+[
+0.8445,
+0.8899
 ],
 [
 -0.897,
@@ -7684,15 +7858,47 @@ window.COORDS = [
 {
 "country": "GPT-OSS 120b",
 "region": "OpenAI",
-"x": 2.326633,
-"y": 0.807879,
-"ea": 0.277307,
-"eb": 0.099594,
-"etheta": 1.93343,
+"x": 2.197804,
+"y": 0.775069,
+"ea": 0.220822,
+"eb": 0.149707,
+"etheta": 1.767756,
 "en": 10,
 "lineage": "GPT-OSS",
 "release": "2025-08-05",
 "pts": [
+[
+2.7818,
+-0.2787
+],
+[
+1.4369,
+0.872
+],
+[
+1.1698,
+1.0996
+],
+[
+1.579,
+1.1402
+],
+[
+1.6848,
+1.0828
+],
+[
+1.5605,
+0.8801
+],
+[
+1.9673,
+1.1306
+],
+[
+2.0061,
+-0.1192
+],
 [
 2.8738,
 0.8839
@@ -7770,6 +7976,10 @@ window.COORDS = [
 1.5548
 ],
 [
+2.7966,
+1.0072
+],
+[
 2.3375,
 0.8549
 ],
@@ -7778,12 +7988,20 @@ window.COORDS = [
 0.623
 ],
 [
+1.9149,
+1.145
+],
+[
 2.592,
 0.5828
 ],
 [
 1.8522,
 1.109
+],
+[
+1.7998,
+-0.3196
 ],
 [
 2.022,
@@ -8662,11 +8880,11 @@ window.COORDS = [
 {
 "country": "Gemini 3.6 Flash",
 "region": "Google",
-"x": 1.947361,
-"y": 0.599627,
-"ea": 0.381732,
-"eb": 0.134825,
-"etheta": -2.864019,
+"x": 1.934701,
+"y": 0.59239,
+"ea": 0.379085,
+"eb": 0.134318,
+"etheta": -2.858561,
 "en": 30,
 "lineage": "Gemini",
 "release": "2026-07-21",
@@ -8722,6 +8940,10 @@ window.COORDS = [
 [
 3.3591,
 0.6297
+],
+[
+1.3144,
+0.2377
 ],
 [
 0.5855,
@@ -9298,6 +9520,140 @@ window.COORDS = [
 ]
 },
 {
+"country": "Gemini 4 Argon",
+"region": "Google",
+"x": 0.675568,
+"y": 0.337229,
+"ea": 0.316895,
+"eb": 0.127694,
+"etheta": -2.894603,
+"en": 30,
+"lineage": "Gemini",
+"release": "2026-10",
+"pts": [
+[
+0.0705,
+0.2368
+],
+[
+0.1673,
+-0.1168
+],
+[
+-0.1906,
+0.3903
+],
+[
+0.6504,
+0.397
+],
+[
+0.051,
+0.6471
+],
+[
+2.1777,
+1.4064
+],
+[
+-0.1906,
+0.3903
+],
+[
+0.4089,
+0.1401
+],
+[
+2.6006,
+0.2212
+],
+[
+0.051,
+0.6471
+],
+[
+-0.9732,
+-1.1405
+],
+[
+0.8158,
+0.3919
+],
+[
+0.5742,
+0.135
+],
+[
+2.6018,
+1.214
+],
+[
+1.3413,
+0.1819
+],
+[
+-0.7949,
+-0.0775
+],
+[
+0.8158,
+0.3919
+],
+[
+0.6701,
+0.4487
+],
+[
+-0.1906,
+0.3903
+],
+[
+1.1365,
+0.4345
+],
+[
+1.6621,
+0.2245
+],
+[
+0.8949,
+0.1776
+],
+[
+2.0322,
+-0.0331
+],
+[
+0.0143,
+0.261
+],
+[
+0.051,
+0.6471
+],
+[
+1.176,
+0.187
+],
+[
+0.6504,
+0.397
+],
+[
+0.9712,
+0.4395
+],
+[
+0.9712,
+0.4395
+],
+[
+0.051,
+0.6471
+]
+]
+},
+{
 "country": "Grok 3",
 "region": "xAI",
 "x": 1.201446,
@@ -9394,11 +9750,11 @@ window.COORDS = [
 {
 "country": "Grok 4",
 "region": "xAI",
-"x": 1.591326,
-"y": 0.165271,
-"ea": 1.267158,
-"eb": 0.526383,
-"etheta": 0.894268,
+"x": 1.545538,
+"y": 0.183002,
+"ea": 1.266606,
+"eb": 0.531703,
+"etheta": 0.894518,
 "en": 10,
 "lineage": "Grok",
 "release": "2025-07-09",
@@ -9422,6 +9778,10 @@ window.COORDS = [
 [
 1.0163,
 -3.2804
+],
+[
+0.7214,
+0.5022
 ],
 [
 1.4205,
@@ -9877,11 +10237,11 @@ window.COORDS = [
 {
 "country": "Grok 4.5",
 "region": "xAI",
-"x": 1.178508,
-"y": 1.392098,
-"ea": 1.208305,
-"eb": 0.204954,
-"etheta": -2.867849,
+"x": 1.190462,
+"y": 1.385629,
+"ea": 1.202337,
+"eb": 0.206203,
+"etheta": -2.872703,
 "en": 10,
 "lineage": "Grok",
 "release": "2026-07-08",
@@ -9929,6 +10289,10 @@ window.COORDS = [
 [
 0.0154,
 1.3739
+],
+[
+0.2652,
+1.1449
 ],
 [
 4.4015,
@@ -9997,6 +10361,10 @@ window.COORDS = [
 [
 2.2049,
 0.9095
+],
+[
+2.4504,
+1.4452
 ]
 ]
 },
@@ -10840,11 +11208,11 @@ window.COORDS = [
 {
 "country": "MiniMax M2.5",
 "region": "MiniMax",
-"x": 2.768263,
-"y": 1.293667,
-"ea": 0.582417,
-"eb": 0.325143,
-"etheta": 1.475108,
+"x": 2.700623,
+"y": 1.254554,
+"ea": 0.596252,
+"eb": 0.284231,
+"etheta": 1.465472,
 "en": 10,
 "lineage": "MiniMax",
 "pts": [
@@ -10859,6 +11227,10 @@ window.COORDS = [
 [
 3.3664,
 3.2231
+],
+[
+2.4484,
+0.0423
 ],
 [
 3.7029,
@@ -10933,6 +11305,10 @@ window.COORDS = [
 0.3573
 ],
 [
+1.4648,
+1.6063
+],
+[
 2.767,
 3.4733
 ]
@@ -10941,15 +11317,19 @@ window.COORDS = [
 {
 "country": "MiniMax M3",
 "region": "MiniMax",
-"x": 0.651256,
-"y": 1.30821,
-"ea": 0.305445,
-"eb": 0.273356,
-"etheta": 1.90472,
+"x": 0.651119,
+"y": 1.309434,
+"ea": 0.304644,
+"eb": 0.265274,
+"etheta": 1.976943,
 "en": 10,
 "lineage": "MiniMax",
 "release": "2026-06-01",
 "pts": [
+[
+0.6471,
+1.3449
+],
 [
 1.52,
 0.5925
@@ -12531,11 +12911,11 @@ window.COORDS = [
 {
 "country": "o4-mini",
 "region": "OpenAI",
-"x": 1.51242,
-"y": 0.801859,
-"ea": 0.57228,
-"eb": 0.35301,
-"etheta": -2.984295,
+"x": 1.481957,
+"y": 0.822679,
+"ea": 0.566242,
+"eb": 0.359513,
+"etheta": -2.997739,
 "en": 10,
 "lineage": "GPT o-series",
 "release": "2025-04-16",
@@ -12603,6 +12983,10 @@ window.COORDS = [
 [
 2.3838,
 0.367
+],
+[
+0.5985,
+1.4264
 ],
 [
 -1.4735,
