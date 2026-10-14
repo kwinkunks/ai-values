@@ -6,10 +6,16 @@ from openai import OpenAI
 # Some models (e.g. Gemma) prefix the answer with a reasoning block like
 # <thought>...</thought>5. Strip such blocks so only the actual reply is scored.
 _THINK_RE = re.compile(r'<(thought|thinking|think)>.*?</\1>', re.IGNORECASE | re.DOTALL)
+# Others (e.g. Gemini 4 Argon) leak a bare channel label before the answer:
+# 'thought\n2', 'sthought\n6', 'thinking\n4', or the Chinese '思想7' ('thought'). Only a
+# short label on its own line (or a CJK label) is removed, so real replies starting
+# "Thinking about..." survive.
+_THINK_LABEL_RE = re.compile(r'^\s*(?:\w{0,3}(?:thoughts?|thinking|think)[ \t]*:?[ \t]*\n|(?:思想|思考|思维)[:：]?)',
+                             re.IGNORECASE)
 
 
 def _strip_thoughts(text: str) -> str:
-    return _THINK_RE.sub('', text).strip()
+    return _THINK_LABEL_RE.sub('', _THINK_RE.sub('', text).strip()).strip()
 
 
 def _text_of(content) -> str:

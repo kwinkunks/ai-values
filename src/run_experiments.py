@@ -139,7 +139,8 @@ def run_experiment(expt_id: str, cfg: dict, questions: dict, respondents: list,
             try:
                 row[variable] = compute_score(variable, answer)
             except (ValueError, AttributeError):
-                tqdm.write(f'  Could not score {variable} for expt {expt_id}: {answer!r}')
+                tqdm.write(f'  Could not score {variable} for expt {expt_id} '
+                           f'(persona: {system[:60]!r}): {answer!r}')
                 row[variable] = np.nan
 
             time.sleep(0.5)  # brief pause between questions
