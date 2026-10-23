@@ -6,7 +6,8 @@ Reads the two Stata files in `data/`, runs R's `psych::principal()` (via rpy2)
 for the weighted 2-factor varimax PCA, and writes the four files in `out/`
 consumed by `src/compare.py`:
 
-    weights.txt  column_means.txt  column_sds.txt  country_centroids.csv
+    weights.txt  column_means.txt  column_sds.txt  item_correlations.txt
+    country_centroids.csv
 
 Reproduces Tao et al. (2024)'s workflow but fixes its errors:
   * Inglehart-Welzel intercepts +0.038 (x) and -0.1 (y) — the WVS official
@@ -24,7 +25,8 @@ pooling, never to be multiplied by it. Requires R with `psych` (installed on
 first run) and the licensed WVS/EVS .dta files in data/.
 
 Usage:
-  uv run python src/compute_weights.py
+  uv run python src/compute_weights.py            # complete-case centroids
+  uv run python src/compute_weights.py --impute   # impute missing items (src/impute.py)
 """
 import argparse
 import sys
@@ -32,6 +34,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+from impute import MIN_OBSERVED, map_coords
 
 ROOT = Path(__file__).parent.parent
 DATA = ROOT / 'data'
@@ -101,9 +105,10 @@ def _filter_waves(df: pd.DataFrame, waves: list[str], label: str) -> pd.DataFram
     return df.loc[df['versn_w'].isin(waves)]
 
 
-def principal_weights(X: np.ndarray, weight: np.ndarray) -> np.ndarray:
+def principal_weights(X: np.ndarray, weight: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     """Weighted 2-factor varimax PCA via R's psych::principal().
-    Returns the 10x2 factor-score weight matrix (rows in FEATURES order)."""
+    Returns the 10x2 factor-score weight matrix (rows in FEATURES order) and the
+    10x10 weighted pairwise correlation matrix psych factored (used for imputation)."""
     from rpy2.robjects import default_converter, globalenv, numpy2ri, r
     from rpy2.robjects.conversion import localconverter
     from rpy2.robjects.packages import importr, isinstalled
@@ -118,7 +123,7 @@ def principal_weights(X: np.ndarray, weight: np.ndarray) -> np.ndarray:
         globalenv['w_R'] = weight                     # n x p case-weight matrix
         r('X_R <- as.matrix(X_R); w_R <- as.matrix(w_R)')
         r('pr <- principal(X_R, nfactors=2, rotate="varimax", use="pairwise", weight=w_R)')
-        return np.asarray(r('pr$weights'))
+        return np.asarray(r('pr$weights')), np.asarray(r('pr$r'))
 
 
 def assign_axes(weights: np.ndarray) -> np.ndarray:
@@ -141,8 +146,13 @@ def assign_axes(weights: np.ndarray) -> np.ndarray:
 
 
 def main() -> None:
-    argparse.ArgumentParser(description=__doc__,
-                            formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    p = argparse.ArgumentParser(description=__doc__,
+                                formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument('--impute', action='store_true',
+                   help='Impute missing items when scoring respondents (default: complete-case)')
+    p.add_argument('--min-observed', type=int, default=MIN_OBSERVED, metavar='K',
+                   help=f'With --impute, drop respondents with fewer than K items (default: {MIN_OBSERVED})')
+    args = p.parse_args()
 
     for f in (EVS_FILE, WVS_FILE, S003_FILE):
         if not f.exists():
@@ -155,7 +165,8 @@ def main() -> None:
     weight = w[:, None] * np.ones((len(dx), len(FEATURES)))
     print('Case weighting: S017')
 
-    weights = assign_axes(principal_weights(X, weight))
+    raw_weights, item_corr = principal_weights(X, weight)
+    weights = assign_axes(raw_weights)
 
     # Unweighted standardisation params (used to standardise both countries here
     # and LLMs in compare.py, so both share one projection).
@@ -165,10 +176,14 @@ def main() -> None:
     # Inglehart-Welzel affine map, using the WVS official rescaling constants.
     # NB Tao et al. (2024)'s R code erroneously uses +0.38 / -0.01.
 
-    # Scores by projection (identical to psych's factor scores; NaN-safe row-wise).
-    scores = ((X - column_means) / column_sds) @ weights
-    dx = dx.assign(**{'surv-self': 1.81 * scores[:, 0] + 0.038,
-                      'trad-sec': 1.61 * scores[:, 1] - 0.1})
+    # Scores by projection (identical to psych's factor scores). Complete-case unless
+    # --impute: a respondent with any missing item otherwise gets no position, which
+    # drops ~30% of respondents and every country that never asked some item.
+    xy = map_coords(X, column_means, column_sds, weights,
+                    R=item_corr if args.impute else None, min_observed=args.min_observed)
+    dx = dx.assign(**{'surv-self': xy[:, 0], 'trad-sec': xy[:, 1]})
+    print(f'Scoring: {"imputed" if args.impute else "complete-case"}; '
+          f'{np.isfinite(xy[:, 0]).mean():.1%} of respondents positioned')
 
     cc = dx.groupby('S003')[['surv-self', 'trad-sec']].mean()
     s003 = pd.read_csv(S003_FILE).rename(
@@ -181,8 +196,9 @@ def main() -> None:
     np.savetxt(OUT / 'weights.txt', weights)
     np.savetxt(OUT / 'column_means.txt', column_means)
     np.savetxt(OUT / 'column_sds.txt', column_sds)
+    np.savetxt(OUT / 'item_correlations.txt', item_corr)
     centroids.to_csv(OUT / 'country_centroids.csv', index=False)
-    print(f'Wrote weights/means/sds and {len(centroids)} country centroids to {OUT}/')
+    print(f'Wrote weights/means/sds/correlations and {len(centroids)} country centroids to {OUT}/')
 
 
 if __name__ == '__main__':

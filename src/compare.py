@@ -10,6 +10,7 @@ Usage:
   python src/compare.py --out coords.csv # write to file instead of stdout
   python src/compare.py --llm-only       # skip country centroids
   python src/compare.py --language NO --out out/coords_no.js  # Norwegian-run results
+  python src/compare.py --impute         # impute missing answers instead of dropping the row
 """
 import argparse
 import json
@@ -21,6 +22,8 @@ import numpy as np
 import pandas as pd
 from scipy.stats import f as f_dist
 
+from impute import MIN_OBSERVED, map_coords
+
 ROOT = Path(__file__).parent.parent
 EXPERIMENTS_FILE = ROOT / 'config' / 'experiments.json'
 RESPONSES_FILE = ROOT / 'out' / 'responses.csv'
@@ -28,6 +31,7 @@ CENTROIDS_FILE = ROOT / 'out' / 'country_centroids.csv'
 WEIGHTS_FILE = ROOT / 'out' / 'weights.txt'
 MEANS_FILE = ROOT / 'out' / 'column_means.txt'
 SDS_FILE = ROOT / 'out' / 'column_sds.txt'
+CORR_FILE = ROOT / 'out' / 'item_correlations.txt'
 
 VARIABLES = ['F063', 'Y003', 'F120', 'G006', 'E018', 'Y002', 'A008', 'F118', 'E025', 'A165']
 
@@ -95,7 +99,8 @@ def load_country_centroids() -> pd.DataFrame:
 
 
 def compute_llm_coordinates(df: pd.DataFrame, experiments: dict, weights, means, sds,
-                            conf: float = 0.80) -> pd.DataFrame:
+                            conf: float = 0.80, item_corr: np.ndarray = None,
+                            min_observed: int = MIN_OBSERVED) -> pd.DataFrame:
     # `label` is the curated display name (unique per config, incl. effort suffix
     # where needed); `vendor` is the model's true origin, used as the plot region
     # so points colour by vendor. Runs sharing a label are averaged into one point.
@@ -105,14 +110,15 @@ def compute_llm_coordinates(df: pd.DataFrame, experiments: dict, weights, means,
     ids = df['experiment_id'].astype(str)
     df['country'] = ids.map(label_map)
     df['region'] = ids.map(vendor_map)
-    df = df.dropna(subset=['country'] + VARIABLES)
+    df = df.dropna(subset=['country'])
 
-    X_scaled = (df[VARIABLES].values - means) / sds
-    transformed = np.dot(X_scaled, weights)
-
-    # Inglehart-Welzel affine scaling (from Tao et al / compute_weights notebook).
-    df['x'] = 1.81 * transformed[:, 0] + 0.038
-    df['y'] = 1.61 * transformed[:, 1] - 0.1
+    # Complete-case unless item_corr is given, in which case missing answers (refusals,
+    # unparseable replies) are imputed exactly as for human respondents in
+    # compute_weights.py; either way rows that can't be positioned are dropped.
+    xy = map_coords(df[VARIABLES].values.astype(float), means, sds, weights,
+                    R=item_corr, min_observed=min_observed)
+    df['x'], df['y'] = xy[:, 0], xy[:, 1]
+    df = df.dropna(subset=['x', 'y'])
 
     grouped = df.groupby(['country', 'region'])
     result = grouped[['x', 'y']].mean().reset_index()
@@ -163,9 +169,15 @@ def main() -> None:
                         help="Only include experiments using this persona set, per their config "
                              "`persona` field (default: the generic set for --language, i.e. "
                              "language.lower(); pass e.g. en_no_role for a role condition)")
+    parser.add_argument('--impute', action='store_true',
+                        help='Impute missing answers (see src/impute.py) instead of dropping the row')
+    parser.add_argument('--min-observed', type=int, default=MIN_OBSERVED, metavar='K',
+                        help=f'With --impute, drop rows with fewer than K answers (default: {MIN_OBSERVED})')
     args = parser.parse_args()
 
     required = [EXPERIMENTS_FILE, RESPONSES_FILE, WEIGHTS_FILE, MEANS_FILE, SDS_FILE]
+    if args.impute:
+        required.append(CORR_FILE)
     if not args.llm_only:
         required.append(CENTROIDS_FILE)
     for path in required:
@@ -193,7 +205,9 @@ def main() -> None:
     df = df[(ids.map(lang_map).fillna('EN') == args.language)
             & (ids.map(persona_map).fillna('en') == persona)]
 
-    llm_coords = compute_llm_coordinates(df, experiments, weights, means, sds, conf=args.conf)
+    item_corr = np.loadtxt(CORR_FILE) if args.impute else None
+    llm_coords = compute_llm_coordinates(df, experiments, weights, means, sds, conf=args.conf,
+                                         item_corr=item_corr, min_observed=args.min_observed)
 
     if args.llm_only:
         combined = llm_coords
