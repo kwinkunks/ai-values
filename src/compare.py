@@ -67,6 +67,11 @@ def hotelling_ellipse(x: np.ndarray, y: np.ndarray, conf: float) -> dict | None:
 
 def load_responses(latest_only: bool, drop_zero_shot: bool = True) -> pd.DataFrame:
     df = pd.read_csv(RESPONSES_FILE)
+    with open(EXPERIMENTS_FILE) as f:
+        # Experiments with an `exclude` field (its value records why) are known-bad
+        # runs; their rows stay in responses.csv but never enter any analysis.
+        excluded = {int(k) for k, v in json.load(f).items() if v.get('exclude')}
+    df = df[~df['experiment_id'].isin(excluded)]
     if drop_zero_shot:
         # Zero-shot runs (each question asked in isolation) are a separate methodological
         # condition and must not pool with the conversation runs, so exclude them from all
