@@ -1102,6 +1102,15 @@
     "batch": "v2",
     "release": "2026-09-29"
   },
+  "1376": {
+    "provider": "Foundry",
+    "model": "gpt-6.1-terra",
+    "label": "GPT-6.1 Terra",
+    "vendor": "OpenAI",
+    "lineage": "GPT-6",
+    "batch": "v2",
+    "release": "2026-10-26"
+  },
   "1400": {
     "provider": "XAI",
     "model": "grok-3",
@@ -2193,6 +2202,15 @@
     "label": "Muse Spark 1.1",
     "vendor": "Meta",
     "lineage": "Muse Spark",
+    "release": "2026-07-09",
+    "batch": "v2"
+  },  
+  "2504": {
+    "provider": "Fireworks",
+    "model": "accounts/fireworks/models/muse-spark-open",
+    "label": "Muse Spark Open",
+    "vendor": "Meta",
+    "lineage": "Muse Open",
     "release": "2026-07-09",
     "batch": "v2"
   },  
