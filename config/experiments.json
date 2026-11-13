@@ -449,6 +449,24 @@
     "lineage": "Gemini",
     "batch": "v2"
   },
+  "1238": {
+    "provider": "Gemini",
+    "model": "gemini-4-hydrogen",
+    "label": "Gemini 4 Hydrogen",
+    "vendor": "Google",
+    "release": "2026-11",
+    "lineage": "Gemini",
+    "batch": "v2"
+  },
+  "1239": {
+    "provider": "Gemini",
+    "model": "gemini-4-carbon",
+    "label": "Gemini 4 Carbon",
+    "vendor": "Google",
+    "release": "2026-11",
+    "lineage": "Gemini",
+    "batch": "v2"
+  },
   "1300": {
     "provider": "OpenAI",
     "model": "o4-mini-2025-04-16",
@@ -1713,6 +1731,15 @@
     "vendor": "Anthropic",
     "release": "2026-09-28",
     "lineage": "Claude Sonnet",
+    "batch": "v2"
+  },
+  "1555": {
+    "provider": "Anthropic",
+    "model": "claude-fable-5-2",
+    "label": "Claude Fable 5.2",
+    "vendor": "Anthropic",
+    "release": "2026-11-09",
+    "lineage": "Claude Fable",
     "batch": "v2"
   },
   "1600": {
