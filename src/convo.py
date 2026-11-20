@@ -58,6 +58,10 @@ class Convo:
         self._client = OpenAI(
             base_url=PROVIDER_URLS[key],
             api_key=os.environ[f'{key.upper()}_API_KEY'],
+            # Retry transient failures (connection errors, 429s, 5xx) with backoff,
+            # and don't let a hung request stall a persona indefinitely.
+            max_retries=6,
+            timeout=300,
         )
 
     def ask(self, prompt: str, reasoning_effort: str = None) -> str:

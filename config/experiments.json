@@ -467,6 +467,15 @@
     "lineage": "Gemini",
     "batch": "v2"
   },
+  "1240": {
+    "provider": "Gemini",
+    "model": "gemini-4-neon",
+    "label": "Gemini 4 Neon",
+    "vendor": "Google",
+    "release": "2026-11",
+    "lineage": "Gemini",
+    "batch": "v2"
+  },
   "1300": {
     "provider": "OpenAI",
     "model": "o4-mini-2025-04-16",
@@ -1128,6 +1137,24 @@
     "lineage": "GPT-6",
     "batch": "v2",
     "release": "2026-10-26"
+  },
+  "1377": {
+    "provider": "Foundry",
+    "model": "gpt-6.2-astra",
+    "label": "GPT-6.2 Astra",
+    "vendor": "OpenAI",
+    "lineage": "GPT-6",
+    "batch": "v2",
+    "release": "2026-11-18"
+  },
+  "1378": {
+    "provider": "Foundry",
+    "model": "gpt-6.2-sol",
+    "label": "GPT-6.2 Sol",
+    "vendor": "OpenAI",
+    "lineage": "GPT-6",
+    "batch": "v2",
+    "release": "2026-11-18"
   },
   "1400": {
     "provider": "XAI",

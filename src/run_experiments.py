@@ -10,6 +10,7 @@ Usage:
 import argparse
 import json
 import sys
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
@@ -105,48 +106,65 @@ def personas_for(respondents: pd.DataFrame, batch: str) -> list[str]:
 
 
 def run_experiment(expt_id: str, cfg: dict, questions: dict, respondents: list,
-                   position: int = 1) -> list[dict]:
+                   position: int = 1, run_at: str | None = None, on_row=None) -> list[dict]:
+    """Interview one experiment's personas. Each finished persona's row is passed to
+    `on_row` immediately (so a crash loses at most the persona in flight). A persona that
+    errors is logged and skipped; re-running the experiment fills in the gaps."""
     provider = cfg['provider']
     model = cfg['model']
     zero_shot = cfg.get('zero_shot', False)
     reasoning_effort = cfg.get('reasoning_effort')
     language = cfg.get('language', 'EN')
     suffix, q_prefix = QLANG[language]['suffix'], QLANG[language]['q_prefix']
-    run_at = datetime.now(timezone.utc).isoformat(timespec='seconds')
+    run_at = run_at or datetime.now(timezone.utc).isoformat(timespec='seconds')
 
     rows = []
     # Each concurrently-running experiment gets its own stacked progress bar
     # (position 0 is the top-level bar in main()), so they don't clobber each
     # other and you can see per-respondent progress within every experiment.
     for system in tqdm(respondents, desc=f'  {expt_id}', position=position, leave=False):
-        system_prompt = system + suffix
-        convo = None if zero_shot else Convo(provider, model, system_prompt)
-        row = {'experiment_id': expt_id, 'run_at': run_at, 'system': system}
-
-        for variable, question in questions.items():
-
-            prompt = f'{q_prefix}{question}'
-
-            if zero_shot:
-                answer = Convo(provider, model, system_prompt).ask(prompt, reasoning_effort).casefold()
-            else:
-                for _ in range(MAX_RETRIES):
-                    time.sleep(0.5)  # brief pause before retrying
-                    answer = convo.ask(prompt, reasoning_effort).casefold()
-                    if len(answer) < SHORT_ANSWER_THRESHOLD:
-                        break
-
-            try:
-                row[variable] = compute_score(variable, answer)
-            except (ValueError, AttributeError):
-                tqdm.write(f'  Could not score {variable} for expt {expt_id} '
-                           f'(persona: {system[:60]!r}): {answer!r}')
-                row[variable] = np.nan
-
-            time.sleep(0.5)  # brief pause between questions
-
+        try:
+            row = _interview(expt_id, run_at, system, questions, provider, model,
+                             zero_shot, reasoning_effort, suffix, q_prefix)
+        except Exception as e:  # noqa: BLE001 - lose one persona, not the experiment
+            tqdm.write(f'  ✗ {expt_id} persona {system[:60]!r} failed: {e!r}')
+            continue
+        if on_row:
+            on_row(row)
         rows.append(row)
     return rows
+
+
+def _interview(expt_id, run_at, system, questions, provider, model,
+               zero_shot, reasoning_effort, suffix, q_prefix) -> dict:
+    """Ask all questions of one persona; return its row."""
+    system_prompt = system + suffix
+    convo = None if zero_shot else Convo(provider, model, system_prompt)
+    row = {'experiment_id': expt_id, 'run_at': run_at, 'system': system}
+
+    for variable, question in questions.items():
+
+        prompt = f'{q_prefix}{question}'
+
+        if zero_shot:
+            answer = Convo(provider, model, system_prompt).ask(prompt, reasoning_effort).casefold()
+        else:
+            for _ in range(MAX_RETRIES):
+                time.sleep(0.5)  # brief pause before retrying
+                answer = convo.ask(prompt, reasoning_effort).casefold()
+                if len(answer) < SHORT_ANSWER_THRESHOLD:
+                    break
+
+        try:
+            row[variable] = compute_score(variable, answer)
+        except (ValueError, AttributeError):
+            tqdm.write(f'  Could not score {variable} for expt {expt_id} '
+                       f'(persona: {system[:60]!r}): {answer!r}')
+            row[variable] = np.nan
+
+        time.sleep(0.5)  # brief pause between questions
+
+    return row
 
 
 def append_responses(rows: list[dict]) -> None:
@@ -172,12 +190,21 @@ def select_experiments(all_expts: dict, ids: list[str]) -> dict:
     return {k: all_expts[k] for k in ids if k in all_expts}
 
 
-def already_run_ids() -> set[str]:
-    """IDs already present in responses.csv, as strings (the column is stored as int)."""
+def existing_progress() -> dict[str, tuple[str | None, set[str]]]:
+    """{experiment_id: (run_at, personas done)} for the latest run of each experiment
+    in responses.csv. Used to resume a partially-completed experiment under the same
+    run_at, so compare.py (which keeps only the latest run_at) sees all its rows."""
     if not RESPONSES_FILE.exists():
-        return set()
-    existing = pd.read_csv(RESPONSES_FILE, usecols=['experiment_id'])['experiment_id']
-    return {str(i) for i in existing.unique()}
+        return {}
+    df = pd.read_csv(RESPONSES_FILE, usecols=['experiment_id', 'run_at', 'system'])
+    df['experiment_id'] = df['experiment_id'].astype(str)
+    out = {}
+    for eid, g in df.groupby('experiment_id'):
+        latest = g['run_at'].max() if g['run_at'].notna().any() else None
+        if latest is not None:
+            g = g[g['run_at'] == latest]
+        out[eid] = (latest, set(g['system']))
+    return out
 
 
 def main() -> None:
@@ -202,30 +229,52 @@ def main() -> None:
         print(f'Skipping manual experiments: {manual}')
     to_run = {k: v for k, v in to_run.items() if not v.get('manual')}
 
+    respondents_by_persona = {p: load_respondents(p) for p in {persona_of(cfg) for cfg in to_run.values()}}
+    personas = {k: personas_for(respondents_by_persona[persona_of(cfg)], cfg.get('batch', 'v1'))
+                for k, cfg in to_run.items()}
+
+    # Resume: an experiment with rows already saved runs only its missing personas, under
+    # its existing run_at. --force starts a fresh run (new run_at) instead.
+    run_ats = {}
     if not args.force:
-        done = already_run_ids()
-        skipped = [k for k in to_run if k in done]
+        progress = existing_progress()
+        skipped = []
+        for k in list(to_run):
+            if k not in progress:
+                continue
+            run_at, done = progress[k]
+            remaining = [p for p in personas[k] if p not in done]
+            if not remaining:
+                skipped.append(k)
+                del to_run[k]
+                continue
+            print(f'Resuming {k}: {len(personas[k]) - len(remaining)}/{len(personas[k])} personas '
+                  f'already saved, running the remaining {len(remaining)}')
+            personas[k], run_ats[k] = remaining, run_at
         if skipped:
-            print(f'Skipping already-run experiments (use --force to re-run): {skipped}')
-        to_run = {k: v for k, v in to_run.items() if k not in done}
+            print(f'Skipping already-complete experiments (use --force to re-run): {skipped}')
 
     if not to_run:
         print('Nothing to run.')
         return
 
     questions_by_lang = {lang: load_questions(lang) for lang in QLANG}
-    respondents_by_persona = {p: load_respondents(p) for p in {persona_of(cfg) for cfg in to_run.values()}}
+
+    # Rows are saved as each persona finishes, from the worker threads; the lock keeps
+    # the read-concat-write of responses.csv atomic.
+    write_lock = threading.Lock()
+
+    def save_row(row: dict) -> None:
+        with write_lock:
+            append_responses([row])
 
     # Experiments are independent and I/O-bound, so run them concurrently.
-    # Completions are collected in this (main) thread, keeping all CSV writes
-    # single-threaded — no locking needed, and progress is saved incrementally.
     workers = max(1, min(args.jobs, len(to_run)))
     with ThreadPoolExecutor(max_workers=workers) as pool:
         futures = {
             pool.submit(run_experiment, expt_id, cfg,
-                        questions_by_lang[cfg.get('language', 'EN')],
-                        personas_for(respondents_by_persona[persona_of(cfg)], cfg.get('batch', 'v1')),
-                        position=i + 1): expt_id
+                        questions_by_lang[cfg.get('language', 'EN')], personas[expt_id],
+                        position=i + 1, run_at=run_ats.get(expt_id), on_row=save_row): expt_id
             for i, (expt_id, cfg) in enumerate(to_run.items())
         }
         for expt_id, cfg in to_run.items():
@@ -238,8 +287,9 @@ def main() -> None:
             except Exception as e:  # noqa: BLE001 - isolate one experiment's failure
                 tqdm.write(f'  ✗ {expt_id} failed: {e!r}')
                 continue
-            append_responses(rows)
-            tqdm.write(f'  → {expt_id}: {len(rows)} rows saved to {RESPONSES_FILE}')
+            missing = len(personas[expt_id]) - len(rows)
+            note = f' ({missing} failed — re-run to fill in)' if missing else ''
+            tqdm.write(f'  → {expt_id}: {len(rows)} rows saved to {RESPONSES_FILE}{note}')
 
 
 if __name__ == '__main__':
